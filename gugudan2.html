@@ -59,7 +59,7 @@
     <meta property="article:author" content="https://www.facebook.com/" />
     <meta property="article:published_time" content="2021-02-15T20:40:00+09:00" />
     <meta property="article:modified_time" content="2021-02-15T20:40:00+09:00" />
-    <meta property="article:tag" content="Java Practice" />
+    <meta property="article:tag" content="Training" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="구구단 2" />
     <meta name="twitter:description" content="실습 박재성님의 자바 플레이그라운드 - 2 0. 목차 1. 배열로 구구단 구현 2. 메서드로 구구단 구현 3. 클래스로 구구단 구현 4. 최종요구사항 1. 배열로 구구단 구현 public class Gugudan { public static void main(String[] arg) { int[] result = new int [9]; for (int i = 0; i &lt; result.length;" />
@@ -68,7 +68,7 @@
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="100'Log" />
     <meta name="twitter:label2" content="Filed under" />
-    <meta name="twitter:data2" content="Java Practice" />
+    <meta name="twitter:data2" content="Training" />
     <meta name="twitter:site" content="@" />
     <meta name="twitter:creator" content="@" />
     <meta property="og:image:width" content="1400" />
@@ -177,7 +177,7 @@ into the {body} of the default.hbs template -->
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
 
-        <article class="post-full  tag-java-practice post tag-java ">
+        <article class="post-full  tag-training post tag-training ">
 
             <header class="post-full-header">
                 <section class="post-full-meta">
@@ -186,7 +186,7 @@ into the {body} of the default.hbs template -->
                         <span class="date-divider">/</span>
                         
                             
-                               <a href='/tag/java-practice/'>JAVA PRACTICE</a>
+                               <a href='/tag/training/'>TRAINING</a>
                             
                         
                     
@@ -229,7 +229,7 @@ into the {body} of the default.hbs template -->
 	<span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div></div>
-<h3 id="1-int-result--new-int9"><strong>1. int[] result = new int[9];</strong><br /></h3>
+<h4 id="-int-result--new-int9">▷ int[] result = new int[9];<br /></h4>
 <p>배열<br />
 9개의 칸이 있다고 생각하면 이와 같은 모양<br />
 <img src="assets/built/postsImages/javapractice/2021-02-15-gugudan/img_12.png" width="80%" align="left" /><br /></p>
@@ -240,16 +240,15 @@ result[1]은<br />
 1번 칸에는 0이 있음<br />
 [1]에는 1(X) <strong>0(O)</strong><br /></p>
 
-<h3 id="2-for-int-i--0-i--resultlength-i"><strong>2. for (int i = 0; i &lt; result.length; i++)</strong><br /></h3>
+<h4 id="-for-int-i--0-i--resultlength-i">▷ for (int i = 0; i &lt; result.length; i++)<br /></h4>
 <p><strong>int i = 0;</strong> 배열은 0 부터 시작하기 때문<br />
 <strong>i &lt; result.length;</strong> 배열의 길이는 0~8까지 총 9<br /></p>
 
-<h3 id="3-resulti--2--i--1"><strong>3. result[i] = 2 * (i + 1);</strong><br /></h3>
-<p>‘2’는 2단<br />
-배열은 ‘0’ 부터 시작<br />
+<h4 id="-resulti--2--i--1">▷ result[i] = 2 * (i + 1);<br /></h4>
+<p>배열은 ‘0’ 부터 시작<br />
 그래서 ‘i + 1’<br /></p>
 
-<h3 id="4-systemoutprintlnresulti"><strong>4. System.out.println(result[i]);</strong><br /></h3>
+<h4 id="-systemoutprintlnresulti">▷ System.out.println(result[i]);<br /></h4>
 
 <p><img src="assets/built/postsImages/javapractice/2021-02-15-gugudan/img_13.png" width="80%" align="left" /><br /></p>
 
@@ -267,6 +266,7 @@ result[1]은<br />
 
 <h1 id="2-메서드로-구구단-구현">2. 메서드로 구구단 구현</h1>
 <hr />
+<h4 id="-9단을-메서드로-구현">▶ 9단을 메서드로 구현<br /></h4>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Gugudan</span> <span class="o">{</span>
 	
 	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">calculate</span><span class="o">(</span><span class="kt">int</span> <span class="n">times</span><span class="o">)</span> <span class="o">{</span>
@@ -287,9 +287,7 @@ result[1]은<br />
 	<span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div></div>
-
-<h2 id="9단을-메서드로-구현"><strong>[9단을 메서드로 구현]</strong><br /></h2>
-<h3 id="1-main-메서드-부터-실행"><strong>1. Main 메서드 부터 실행</strong><br /></h3>
+<h4 id="-main-메서드-부터-실행">▷ Main 메서드 부터 실행<br /></h4>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
   <span class="kt">int</span><span class="o">[]</span> <span class="n">result</span> <span class="o">=</span> <span class="n">calculate</span><span class="o">(</span><span class="mi">9</span><span class="o">);</span>
   
@@ -298,11 +296,10 @@ result[1]은<br />
   <span class="o">}</span> 
 <span class="o">}</span> 
 </code></pre></div></div>
-
-<p>int배열(정수배열)로 되어있는 result라는 사물함에<br />
-calculate에 9를 넣어둬라!<br />
+<p>int배열(정수배열)로 되어있는 result라는 사물함에는<br />
+9를 받는 calculate가 들어있음<br />
 <br /></p>
-<h3 id="2-그럼-calculate로-가보자"><strong>2. 그럼 calculate로 가보자</strong><br /></h3>
+<h4 id="-calculate">▷ calculate<br /></h4>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">calculate</span><span class="o">(</span><span class="kt">int</span> <span class="n">times</span><span class="o">)</span> <span class="o">{</span>
   <span class="kt">int</span><span class="o">[]</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">9</span><span class="o">];</span>
   
@@ -333,7 +330,7 @@ return 값인 9단을 얻음<br /></p>
 
 <p>다시 main으로 가자<br /></p>
 
-<h3 id="3-다시-main으로"><strong>3. 다시 main으로</strong><br /></h3>
+<h4 id="-다시-main">▷ 다시 main<br /></h4>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">int</span><span class="o">[]</span> <span class="n">result</span> <span class="o">=</span> <span class="n">calculate</span><span class="o">(</span><span class="mi">9</span><span class="o">);</span>
     
@@ -342,9 +339,9 @@ return 값인 9단을 얻음<br /></p>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div></div>
-<p>int[] result에는 calculate에서 얻은 return 값인 9단이 들어있음<br />
+<p>int[] result에는 calculate에서 얻은 return 값인 9단이 배열로 들어있음<br />
 이걸 반복문에 넣어서<br />
-차례로 꺼내는 것<br /></p>
+차례로 꺼내는 것(println)<br /></p>
 
 <p><img src="assets/built/postsImages/javapractice/2021-02-15-gugudan/img_18.png" width="80%" align="left" /><br /></p>
 
@@ -359,7 +356,7 @@ return 값인 9단을 얻음<br /></p>
 72
 81
 </code></pre></div></div>
-<h2 id="5단을-메서드로-구현"><strong>[5단을 메서드로 구현]</strong></h2>
+<h4 id="-5단을-메서드로-구현">▶ 5단을 메서드로 구현</h4>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Gugudan</span> <span class="o">{</span>
 	
 	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">calculate</span><span class="o">(</span><span class="kt">int</span> <span class="n">times</span><span class="o">)</span> <span class="o">{</span>
@@ -396,7 +393,7 @@ return 값인 9단을 얻음<br /></p>
 40
 45
 </code></pre></div></div>
-<h2 id="메서드로-출력-구현5단-출력"><strong>[메서드로 출력 구현/5단 출력]</strong><br /></h2>
+<h4 id="-메서드로-출력-구현---5단-출력">▶ 메서드로 출력 구현 - 5단 출력<br /></h4>
 <p>출력하는 메서드를 만들어서<br />
 for문 + System.out.println(); → 이 중복 없애기<br /></p>
 
@@ -423,21 +420,19 @@ for문 + System.out.println(); → 이 중복 없애기<br /></p>
 	<span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div></div>
-
+<p><strong>print</strong>라는 return 값이 없는 void 메서드를 생성<br /></p>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">print</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">result</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">result</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">result</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div></div>
-<p><strong>print</strong>라는 return 값이 없는 void 메서드를 생성<br />
-calculate 메서드의 return 값인 result를 받는 메서드<br />
+<p>calculate 메서드의 return 값인 result를 받는 메서드<br />
 for문을 result의 배열길이만큼 돈 후<br />
 값을 출력<br />
 <br />
 그래서 main 메서드 에서는<br />
 출력문을 생략하고 print 메서드를 호출<br /></p>
-
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">int</span><span class="o">[]</span> <span class="n">baek</span> <span class="o">=</span> <span class="n">calculate</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span>
     <span class="n">print</span><span class="o">(</span><span class="n">baek</span><span class="o">);</span>
@@ -455,9 +450,9 @@ for문을 result의 배열길이만큼 돈 후<br />
 45
 </code></pre></div></div>
 
-<h2 id="2단부터-9단까지-자동으로-출력되는-메서드-구현"><strong>[2단부터 9단까지 자동으로 출력되는 메서드 구현]</strong><br /></h2>
-<p>main 메서드에서 for문을 이용하여 2단부터 9단까지 자동으로 출력되는 메서드를 구현<br />
-<br /></p>
+<h4 id="-2단부터-9단까지-자동으로-출력되는-메서드-구현">▶ 2단부터 9단까지 자동으로 출력되는 메서드 구현<br /></h4>
+<h4 id="-for문-사용">▷ for문 사용<br /></h4>
+<p><br /></p>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Gugudan</span> <span class="o">{</span>
 	
 	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">calculate</span><span class="o">(</span><span class="kt">int</span> <span class="n">times</span><span class="o">)</span> <span class="o">{</span>
@@ -483,6 +478,24 @@ for문을 result의 배열길이만큼 돈 후<br />
 	<span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//console
+2
+4
+6
+8
+10
+12
+14
+16
+18
+3
+6
+9
+12
+15
+18
+··· 9단까지 계속
+</code></pre></div></div>
 <ul>
   <li><strong>main</strong> 메서드<br />
     <ul>
@@ -499,27 +512,10 @@ for문을 result의 배열길이만큼 돈 후<br />
 <ul>
   <li>GugudanMain 클래스 생성<br /></li>
   <li>calculate 메서드는 Gugudan 클래스에 있기때문에<br />
-다른 클래스에 있는 메서드를 호출 할 때는 앞에 메서드가 속한 클래스명 적어주기<br />
 Gugudan.calculate<br /></li>
   <li>print 메서드도 Gugudan 클래스에 있기때문에 Gugudan.print로 호출<br /></li>
 </ul>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Gugudan</span> <span class="o">{</span>
-	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"몇 단?"</span><span class="o">);</span>
-		<span class="n">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
-		<span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
-		
-		<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">number</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-			<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">number</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
-				<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="s">"X"</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="s">"="</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">j</span><span class="o">);</span>
-			<span class="o">}</span>
-		<span class="o">}</span>
-	<span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GugudanMain</span> <span class="o">{</span>
 	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
 		<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
@@ -529,23 +525,52 @@ Gugudan.calculate<br /></li>
 	<span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div></div>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Gugudan</span> <span class="o">{</span>
-	
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">baekGugudan</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Gugudan</span> <span class="o">{</span>
+
 	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">calculate</span><span class="o">(</span><span class="kt">int</span> <span class="n">times</span><span class="o">)</span> <span class="o">{</span>
 		<span class="kt">int</span><span class="o">[]</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">9</span><span class="o">];</span>
-		
-		<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">result</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+
+		<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">result</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
 			<span class="n">result</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">times</span> <span class="o">*</span> <span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
 		<span class="o">}</span>
 		<span class="k">return</span> <span class="n">result</span><span class="o">;</span>
 	<span class="o">}</span>
-	
+
 	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">print</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">result</span><span class="o">)</span> <span class="o">{</span>
-		<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">result</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+		<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">result</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
 			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">result</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
 		<span class="o">}</span>
 	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"몇 단?"</span><span class="o">);</span>
+		<span class="n">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+		<span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+
+		<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">number</span> <span class="o">+</span> <span class="s">"X"</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="s">"="</span> <span class="o">+</span> <span class="n">number</span> <span class="o">*</span> <span class="n">j</span><span class="o">);</span>
+		<span class="o">}</span>
+		<span class="n">scanner</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+	<span class="o">}</span>
 <span class="o">}</span>
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//console
+몇 단?
+5
+5X1=5
+5X2=10
+5X3=15
+5X4=20
+5X5=25
+5X6=30
+5X7=35
+5X8=40
+5X9=45
 </code></pre></div></div>
 <h1 id="4-최종요구사항">4. 최종요구사항</h1>
 <hr />
@@ -556,7 +581,7 @@ Gugudan.calculate<br /></li>
 19를 입력하면 십구십구단(2 * 1에서 19 * 19)을 계산해 출력한다.</li>
 </ul>
 
-<p><strong>[혼자 해보기 - 힌트참고X]</strong></p>
+<h4 id="-혼자-해보기---힌트참고x">▶ 혼자 해보기 - 힌트참고X</h4>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Gugudan</span> <span class="o">{</span>
@@ -573,6 +598,30 @@ Gugudan.calculate<br /></li>
 	<span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//console
+몇 단?
+5
+2X1=2
+2X2=4
+2X3=6
+2X4=8
+2X5=10
+3X1=3
+3X2=6
+3X3=9
+3X4=12
+3X5=15
+4X1=4
+4X2=8
+4X3=12
+4X4=16
+4X5=20
+5X1=5
+5X2=10
+5X3=15
+5X4=20
+5X5=25
+</code></pre></div></div>
 <h3 id="최종-요구사항-2">최종 요구사항 2</h3>
 <ul>
   <li>사용자가 입력한 값에 따라 크기가 다른 구구단을 계산해 출력한다.</li>
@@ -581,7 +630,7 @@ Gugudan.calculate<br /></li>
 구현하는 것을 의미한다.</li>
 </ul>
 
-<p><strong>[혼자 해보기 - 힌트참고X]</strong></p>
+<h4 id="-혼자-해보기---힌트참고x-1">▶ 혼자 해보기 - 힌트참고X</h4>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Gugudan</span> <span class="o">{</span>
@@ -603,7 +652,60 @@ Gugudan.calculate<br /></li>
 	<span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div></div>
-<p><strong>[힌트참고]</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//console
+2단부터 시작됩니다.
+8 7
+2X1=2
+2X2=4
+2X3=6
+2X4=8
+2X5=10
+2X6=12
+2X7=14
+3X1=3
+3X2=6
+3X3=9
+3X4=12
+3X5=15
+3X6=18
+3X7=21
+4X1=4
+4X2=8
+4X3=12
+4X4=16
+4X5=20
+4X6=24
+4X7=28
+5X1=5
+5X2=10
+5X3=15
+5X4=20
+5X5=25
+5X6=30
+5X7=35
+6X1=6
+6X2=12
+6X3=18
+6X4=24
+6X5=30
+6X6=36
+6X7=42
+7X1=7
+7X2=14
+7X3=21
+7X4=28
+7X5=35
+7X6=42
+7X7=49
+8X1=8
+8X2=16
+8X3=24
+8X4=32
+8X5=40
+8X6=48
+8X7=56
+</code></pre></div></div>
+<h4 id="-힌트참고">▶ 힌트참고</h4>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Gugudan</span> <span class="o">{</span>
@@ -629,7 +731,27 @@ Gugudan.calculate<br /></li>
 	<span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div></div>
-<p><strong>[알게 된 점]</strong><br /></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//console
+입력하세요. a,b
+4,5
+4단까지 5만큼 곱하겠습니다!
+2X1=2
+2X2=4
+2X3=6
+2X4=8
+2X5=10
+3X1=3
+3X2=6
+3X3=9
+3X4=12
+3X5=15
+4X1=4
+4X2=8
+4X3=12
+4X4=16
+4X5=20
+</code></pre></div></div>
+<h4 id="-알게-된-점">▶ 알게 된 점<br /></h4>
 <ul>
   <li>
     <p><strong>String</strong> inputValue = <strong>scanner.nextLine()</strong>;<br />
@@ -751,7 +873,7 @@ String → int<br />
                         <header class="read-next-card-header">
                             <small class="read-next-card-header-sitetitle">&mdash; 100'Log &mdash;</small>
                             
-                                <h3 class="read-next-card-header-title"><a href="/tag/java-practice/">Java practice</a></h3>
+                                <h3 class="read-next-card-header-title"><a href="/tag/training/">Training</a></h3>
                             
                         </header>
                         <div class="read-next-divider">cd<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
@@ -762,13 +884,9 @@ String → int<br />
                                 
                                   
                                     
-                                  
-                                
-                                  
-                                    
                                         
                                         
-                                            <li><a href="/gugudan">구구단 1</a></li>
+                                            <li><a href="/calculator2">calculator 2</a></li>
                                         
                                     
                                   
@@ -777,9 +895,38 @@ String → int<br />
                                     
                                         
                                         
-                                            <li><a href="/case">eclips 프로젝트와 github 저장소 연결</a></li>
+                                            <li><a href="/calculator">calculator 1</a></li>
                                         
                                     
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/calender2">Calender 2</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
                                   
                                 
                                   
@@ -787,9 +934,9 @@ String → int<br />
                             </ul>
                         </div>
                         <footer class="read-next-card-footer">
-                            <a href="/tag/java-practice/">
+                            <a href="/tag/training/">
                                 
-                                    See all 2 posts  →
+                                    See all 5 posts  →
                                 
                             </a>
                         </footer>
@@ -798,6 +945,55 @@ String → int<br />
             
 
             <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/calender">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/calendar.jpg)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/calender">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Training</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">Calender 1</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p></p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/author-logo.png" alt="JungRan-Baek" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/JungRan-Baek/">JungRan-Baek</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
             
 
             <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
@@ -816,7 +1012,7 @@ String → int<br />
                     
                         
                             
-                                <span class="post-card-tags">Java practice</span>
+                                <span class="post-card-tags">Training</span>
                             
                         
                     
