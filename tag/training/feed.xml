@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://100jran.github.io/tag/training/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://100jran.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-05-28T17:57:31+09:00</updated>
+  <updated>2021-05-29T18:56:21+09:00</updated>
   <id>https://100jran.github.io/tag/training/feed.xml</id>
 
   
@@ -328,16 +328,16 @@
 &lt;hr /&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-  &lt;h4 id=&quot;1-가상의-달력-찍기1&quot;&gt;1. &lt;a href=&quot;#Verse 1&quot;&gt;가상의 달력 찍기1&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
-  &lt;h4 id=&quot;2-가상의-달력-찍기2---윤년&quot;&gt;2. &lt;a href=&quot;#Verse 2&quot;&gt;가상의 달력 찍기2 - 윤년&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
-  &lt;h4 id=&quot;3-시작일-설정-달력-찍기&quot;&gt;3. &lt;a href=&quot;#Verse 3&quot;&gt;시작일 설정 달력 찍기&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
-  &lt;h4 id=&quot;4-진짜-달력-자동으로-찍기&quot;&gt;4. &lt;a href=&quot;#Verse 4&quot;&gt;진짜 달력 자동으로 찍기&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;6-가상의-달력-찍기1&quot;&gt;6. &lt;a href=&quot;#Verse 1&quot;&gt;가상의 달력 찍기1&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;7-가상의-달력-찍기2---윤년&quot;&gt;7. &lt;a href=&quot;#Verse 2&quot;&gt;가상의 달력 찍기2 - 윤년&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;8-시작일-설정-달력-찍기&quot;&gt;8. &lt;a href=&quot;#Verse 3&quot;&gt;시작일 설정 달력 찍기&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;9-진짜-달력-자동으로-찍기&quot;&gt;9. &lt;a href=&quot;#Verse 4&quot;&gt;진짜 달력 자동으로 찍기&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h1 id=&quot;1-가상의-달력-찍기1-1&quot;&gt;1. 가상의 달력 찍기1&lt;/h1&gt;
+&lt;h1 id=&quot;1-가상의-달력-찍기1&quot;&gt;1. 가상의 달력 찍기1&lt;/h1&gt;
 &lt;hr /&gt;
 
 &lt;h4 id=&quot;-mission&quot;&gt;▶ Mission.&lt;br /&gt;&lt;/h4&gt;
@@ -650,7 +650,7 @@ Prompt 클래스에서 호출&lt;br /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 2&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h1 id=&quot;2-가상의-달력-찍기2---윤년-1&quot;&gt;2. 가상의 달력 찍기2 - 윤년&lt;/h1&gt;
+&lt;h1 id=&quot;2-가상의-달력-찍기2---윤년&quot;&gt;2. 가상의 달력 찍기2 - 윤년&lt;/h1&gt;
 &lt;hr /&gt;
 
 &lt;h4 id=&quot;-mission-1&quot;&gt;▶ Mission.&lt;br /&gt;&lt;/h4&gt;
@@ -839,7 +839,7 @@ A 아니면 B == true&lt;br /&gt;
 &lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 3&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h1 id=&quot;3-시작일-설정-달력-찍기-1&quot;&gt;3. 시작일 설정 달력 찍기&lt;/h1&gt;
+&lt;h1 id=&quot;3-시작일-설정-달력-찍기&quot;&gt;3. 시작일 설정 달력 찍기&lt;/h1&gt;
 &lt;hr /&gt;
 
 &lt;h4 id=&quot;-mission-2&quot;&gt;▶ Mission.&lt;br /&gt;&lt;/h4&gt;
@@ -1059,7 +1059,7 @@ A 아니면 B == true&lt;br /&gt;
 &lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 4&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h1 id=&quot;4-진짜-달력-자동으로-찍기-1&quot;&gt;4. 진짜 달력 자동으로 찍기&lt;/h1&gt;
+&lt;h1 id=&quot;4-진짜-달력-자동으로-찍기&quot;&gt;4. 진짜 달력 자동으로 찍기&lt;/h1&gt;
 &lt;hr /&gt;
 
 &lt;h4 id=&quot;-mission-3&quot;&gt;▶ Mission.&lt;br /&gt;&lt;/h4&gt;
@@ -2343,15 +2343,15 @@ public &lt;strong&gt;static final&lt;/strong&gt; int[] maxDays&lt;br /&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-  &lt;h4 id=&quot;1-메서드로-기능-분리&quot;&gt;1. &lt;a href=&quot;#Verse 1&quot;&gt;메서드로 기능 분리&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
-  &lt;h4 id=&quot;2-클래스로-기능-분리&quot;&gt;2. &lt;a href=&quot;#Verse 2&quot;&gt;클래스로 기능 분리&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
-  &lt;h4 id=&quot;3-사칙연산---문자열로-입력받기&quot;&gt;3. &lt;a href=&quot;#Verse 3&quot;&gt;사칙연산 - 문자열로 입력받기&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;5-메서드로-기능-분리&quot;&gt;5. &lt;a href=&quot;#Verse 1&quot;&gt;메서드로 기능 분리&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;6-클래스로-기능-분리&quot;&gt;6. &lt;a href=&quot;#Verse 2&quot;&gt;클래스로 기능 분리&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;7-사칙연산---문자열로-입력받기&quot;&gt;7. &lt;a href=&quot;#Verse 3&quot;&gt;사칙연산 - 문자열로 입력받기&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h1 id=&quot;1-메서드로-기능-분리-1&quot;&gt;1. 메서드로 기능 분리&lt;/h1&gt;
+&lt;h1 id=&quot;1-메서드로-기능-분리&quot;&gt;1. 메서드로 기능 분리&lt;/h1&gt;
 &lt;hr /&gt;
 
 &lt;h4 id=&quot;-기능분리&quot;&gt;▶ 기능분리&lt;br /&gt;&lt;/h4&gt;
@@ -2508,7 +2508,7 @@ public &lt;strong&gt;static final&lt;/strong&gt; int[] maxDays&lt;br /&gt;
 &lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 2&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h1 id=&quot;2-클래스로-기능-분리-1&quot;&gt;2. 클래스로 기능 분리&lt;/h1&gt;
+&lt;h1 id=&quot;2-클래스로-기능-분리&quot;&gt;2. 클래스로 기능 분리&lt;/h1&gt;
 &lt;hr /&gt;
 
 &lt;h4 id=&quot;-기능분리-1&quot;&gt;▶ 기능분리&lt;br /&gt;&lt;/h4&gt;
@@ -2549,35 +2549,35 @@ public &lt;strong&gt;static final&lt;/strong&gt; int[] maxDays&lt;br /&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h4 id=&quot;-클래스2---명령&quot;&gt;▷ 클래스2 - 명령&lt;/h4&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Command
-import java.util.Scanner;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Command&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.Scanner&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
 
-public class Command {
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Command&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
 
-	public static void main(String[] args) {
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
 
-		Scanner scanner = new Scanner(System.in);
+		&lt;span class=&quot;n&quot;&gt;Scanner&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scanner&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scanner&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 
-		int numOne = Input.getFirstValue(scanner);
-		int result = numOne;
+		&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numOne&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Input&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getFirstValue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scanner&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+		&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numOne&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
 
-		while (true) {
+		&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
 
-			String symbol = Input.getSymbol(scanner);
+			&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;symbol&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Input&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSymbol&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scanner&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 
-			if (symbol.equals(&quot;q&quot;)) {
-				Output.print(result);
-				break;
-			}
+			&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;symbol&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;equals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;q&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+				&lt;span class=&quot;n&quot;&gt;Output&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+				&lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+			&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 
-			int second = Input.getSecondValue(scanner);
+			&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;second&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Input&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSecondValue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scanner&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 
-			result = Calculate.getCalculater(result, symbol, second);
-		}
+			&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Calculate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getCalculater&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;symbol&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 
-		System.out.println(&quot;종료&quot;);
-	}
-}
+		&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;종료&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;h4 id=&quot;-클래스3---입력&quot;&gt;▷ 클래스3 - 입력&lt;/h4&gt;
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Input&lt;/span&gt;
@@ -2630,7 +2630,7 @@ public class Command {
 &lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 3&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h1 id=&quot;3-사칙연산---문자열로-입력받기-1&quot;&gt;3. 사칙연산 - 문자열로 입력받기&lt;/h1&gt;
+&lt;h1 id=&quot;3-사칙연산---문자열로-입력받기&quot;&gt;3. 사칙연산 - 문자열로 입력받기&lt;/h1&gt;
 &lt;hr /&gt;
 
 &lt;h4 id=&quot;-사칙연산&quot;&gt;▶ 사칙연산&lt;br /&gt;&lt;/h4&gt;
@@ -2694,7 +2694,7 @@ public class Command {
 &lt;p&gt;첫번째 값은 첫번째 배열에 담겨있음&lt;br /&gt;
 &lt;em&gt;numOne&lt;/em&gt;에 첫번째 배열 값을 넣음&lt;br /&gt;
 이 때, &lt;em&gt;nextLine&lt;/em&gt;은 String으로 받아왔기 때문에&lt;br /&gt;
-첫번째 값을 &lt;em&gt;parseInt&lt;/em&gt;를 통해 정수타입으로 바꿔서 넣어 줌&lt;br /&gt;&lt;/p&gt;
+첫번째 값을 &lt;em&gt;parseInt&lt;/em&gt;를 통해 Int으로 바꿔서 넣어 줌&lt;br /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;-symbol과-numtwo-입력받기&quot;&gt;▷ symbol과 numTwo 입력받기&lt;/h4&gt;
 
@@ -3067,10 +3067,10 @@ system.out.println(number * i)&lt;br /&gt;
 
 &lt;h1 id=&quot;0-목차&quot;&gt;0. 목차&lt;/h1&gt;
 &lt;hr /&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. 배열로 구구단 구현
-2. 메서드로 구구단 구현
-3. 클래스로 구구단 구현
-4. 최종요구사항
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;5. 배열로 구구단 구현
+6. 메서드로 구구단 구현
+7. 클래스로 구구단 구현
+8. 최종요구사항
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;1-배열로-구구단-구현&quot;&gt;1. 배열로 구구단 구현&lt;/h1&gt;

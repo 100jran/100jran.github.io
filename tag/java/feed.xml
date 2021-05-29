@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://100jran.github.io/tag/java/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://100jran.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-05-28T17:57:31+09:00</updated>
+  <updated>2021-05-29T18:56:21+09:00</updated>
   <id>https://100jran.github.io/tag/java/feed.xml</id>
 
   
@@ -28,6 +28,119 @@
   
   
 
+  
+    <entry>
+      <title type="html">자바의 정석 - Chapter1</title>
+      <link href="https://100jran.github.io/cornerstoneJava" rel="alternate" type="text/html" title="자바의 정석 - Chapter1" />
+      <published>2021-02-19T20:40:00+09:00</published>
+      <updated>2021-02-19T20:40:00+09:00</updated>
+      <id>https://100jran.github.io/cornerstoneJava</id>
+      <content type="html" xml:base="https://100jran.github.io/cornerstoneJava">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;0-목차&quot;&gt;0. 목차&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;chapter1-자바를-시작하기-전에&quot;&gt;&lt;span style=&quot;color:orangered&quot;&gt;Chapter1. 자바를 시작하기 전에&lt;/span&gt;&lt;br /&gt;&lt;/h2&gt;
+  &lt;h4 id=&quot;ch1---1-자바란&quot;&gt;Ch1 - 1. &lt;a href=&quot;#Verse 1&quot;&gt;자바란?&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;ch1---2-자바의-역사&quot;&gt;Ch1 - 2. &lt;a href=&quot;#Verse 2&quot;&gt;자바의 역사&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;ch1---3-자바의-특징&quot;&gt;Ch1 - 3. &lt;a href=&quot;#Verse 3&quot;&gt;자바의 특징&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;ch1---4-자바-가상머신jvm&quot;&gt;Ch1 - 4. &lt;a href=&quot;#Verse 4&quot;&gt;자바 가상머신(JVM)&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch1---1-자바란-1&quot;&gt;Ch1 - 1. 자바란?&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;-자바란&quot;&gt;▶ 자바란?&lt;/h3&gt;
+&lt;h6 id=&quot;-프로그래밍-언어&quot;&gt;▷ 프로그래밍 언어&lt;/h6&gt;
+&lt;h6 id=&quot;-애플리케이션을-만드는데-사용&quot;&gt;▷ 애플리케이션을 만드는데 사용&lt;/h6&gt;
+&lt;h6 id=&quot;-실행환경jre--개발도구jdk--라이브러리api&quot;&gt;▷ 실행환경(JRE) + 개발도구(JDK) + 라이브러리(API)&lt;/h6&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-자바의-쓰임&quot;&gt;▶ 자바의 쓰임?&lt;/h3&gt;
+&lt;h6 id=&quot;-애플리케이션---pc-웹-모바일안드로이드&quot;&gt;▷ 애플리케이션 - PC, 웹, 모바일(안드로이드)&lt;/h6&gt;
+&lt;h6 id=&quot;-빅데이터&quot;&gt;▷ 빅데이터&lt;/h6&gt;
+&lt;h6 id=&quot;-게임-등&quot;&gt;▷ 게임 ···등&lt;/h6&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 2&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch1---2-자바의-역사-1&quot;&gt;Ch1 - 2. 자바의 역사&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;-자바-버전&quot;&gt;▶ 자바 버전&lt;/h3&gt;
+&lt;h4 id=&quot;-jdk-10-1996&quot;&gt;&lt;span style=&quot;color:darkblue&quot;&gt;▷ JDK 1.0 (1996)&lt;/span&gt;&lt;/h4&gt;
+
+&lt;h6 id=&quot;-jdk-11-1996&quot;&gt;▷ JDK 1.1 (1996)&lt;/h6&gt;
+
+&lt;h4 id=&quot;-j2se-12-1998&quot;&gt;&lt;span style=&quot;color:darkblue&quot;&gt;▷ J2SE 1.2 (1998)&lt;/span&gt;&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;J2&lt;/strong&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;S&lt;/strong&gt;&lt;/span&gt;&lt;strong&gt;E&lt;/strong&gt; : 스탠다드&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;J2&lt;/strong&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;M&lt;/strong&gt;&lt;/span&gt;&lt;strong&gt;E&lt;/strong&gt; : 마이크로(소형기계)&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;J2&lt;/strong&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;E&lt;/strong&gt;&lt;/span&gt;&lt;strong&gt;E&lt;/strong&gt; : 엔터프라이즈(대기업)&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;-j2se-13-2000&quot;&gt;▷ J2SE 1.3 (2000)&lt;/h6&gt;
+&lt;h6 id=&quot;-j2se-14-2002&quot;&gt;▷ J2SE 1.4 (2002)&lt;/h6&gt;
+&lt;h4 id=&quot;-j2se-50-2004&quot;&gt;&lt;span style=&quot;color:darkblue&quot;&gt;▷ J2SE 5.0 (2004)&lt;/span&gt;&lt;/h4&gt;
+&lt;h6 id=&quot;-java-se-6-2006&quot;&gt;▷ JAVA SE 6 (2006)&lt;/h6&gt;
+&lt;h6 id=&quot;-java-se-7-2011&quot;&gt;▷ JAVA SE 7 (2011)&lt;/h6&gt;
+&lt;h4 id=&quot;-java-se-8-2014&quot;&gt;&lt;span style=&quot;color:darkblue&quot;&gt;▷ JAVA SE 8 (2014)&lt;/span&gt;&lt;/h4&gt;
+&lt;h6 id=&quot;-java-se-9-2017&quot;&gt;▷ JAVA SE 9 (2017)&lt;/h6&gt;
+&lt;h6 id=&quot;-java-se-10-2018&quot;&gt;▷ JAVA SE 10 (2018)&lt;/h6&gt;
+&lt;h6 id=&quot;-java-se-11-2018&quot;&gt;▷ JAVA SE 11 (2018)&lt;/h6&gt;
+&lt;h6 id=&quot;-java-se-12-2019&quot;&gt;▷ JAVA SE 12 (2019)&lt;/h6&gt;
+&lt;h6 id=&quot;-java-se-13-2019&quot;&gt;▷ JAVA SE 13 (2019)&lt;/h6&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;안정성&lt;/strong&gt;을 중요시 여기던 JAVA&lt;br /&gt;
+최신버전을 반영하기 위해 업데이트 주기가 짧아짐&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 3&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch1---3-자바의-특징-1&quot;&gt;Ch1 - 3. 자바의 특징&lt;/h1&gt;
+&lt;hr /&gt;
+
+&lt;h6 id=&quot;-객체지향-언어&quot;&gt;▷ 객체지향 언어&lt;/h6&gt;
+&lt;h6 id=&quot;-자동-메모리-관리---garbage-collectiongc&quot;&gt;▷ 자동 메모리 관리 - Garbage Collection(GC)&lt;/h6&gt;
+&lt;h6 id=&quot;-멀티-쓰레드-지원&quot;&gt;▷ 멀티 쓰레드 지원&lt;/h6&gt;
+&lt;h6 id=&quot;-풍부한-라이브러리로-쉽게-개발가능&quot;&gt;▷ 풍부한 라이브러리로 쉽게 개발가능&lt;/h6&gt;
+&lt;h6 id=&quot;-운영체제에-독립적---jvm관련&quot;&gt;▷ 운영체제에 독립적 - JVM관련&lt;/h6&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 3&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch1---4-자바-가상머신jvm-1&quot;&gt;Ch1 - 4. 자바 가상머신(JVM)&lt;br /&gt;&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;a href=&quot;https://100jran.github.io/basic#JVM&quot;&gt;JVM 설명&lt;/a&gt;&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>JungRan-Baek</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="java" />
+      
+
+      
+        <summary type="html">자바의 정석 기초편</summary>
+      
+
+      
+      
+    </entry>
   
     <entry>
       <title type="html">eclips 프로젝트와 github 저장소 연결</title>
@@ -258,6 +371,8 @@ compile한 &lt;strong&gt;.class가 CPU에 전달 되기까지&lt;/strong&gt; 어
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&quot;assets/built/postsImages/Java/2021-02-13-basic/javaplatform.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;JVM&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;7jvm&quot;&gt;7.JVM?&lt;/h1&gt;
 &lt;hr /&gt;
