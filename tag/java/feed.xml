@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://100jran.github.io/tag/java/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://100jran.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-06-02T00:08:20+09:00</updated>
+  <updated>2021-06-10T20:43:33+09:00</updated>
   <id>https://100jran.github.io/tag/java/feed.xml</id>
 
   
@@ -30,8 +30,461 @@
 
   
     <entry>
-      <title type="html">자바의 정석 Ch1 - 1···4</title>
-      <link href="https://100jran.github.io/cornerstoneJava" rel="alternate" type="text/html" title="자바의 정석 Ch1 - 1···4" />
+      <title type="html">자바의 정석 Ch1 ㉤</title>
+      <link href="https://100jran.github.io/cornerstoneJava5" rel="alternate" type="text/html" title="자바의 정석 Ch1 ㉤" />
+      <published>2021-02-19T20:40:00+09:00</published>
+      <updated>2021-02-19T20:40:00+09:00</updated>
+      <id>https://100jran.github.io/cornerstoneJava5</id>
+      <content type="html" xml:base="https://100jran.github.io/cornerstoneJava5">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;0-목차&quot;&gt;0. 목차&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;chapter1-자바를-시작하기-전에&quot;&gt;&lt;span style=&quot;color:orangered&quot;&gt;Chapter1. 자바를 시작하기 전에&lt;/span&gt;&lt;br /&gt;&lt;/h2&gt;
+  &lt;h4 id=&quot;ch1---13-이클립스-단축키&quot;&gt;Ch1 - 13. &lt;a href=&quot;#Verse 1&quot;&gt;이클립스 단축키&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;ch1---14-단축키-설정-변경&quot;&gt;Ch1 - 14. &lt;a href=&quot;#Verse 2&quot;&gt;단축키 설정 변경&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;ch1---15-자동완성-설정-변경&quot;&gt;Ch1 - 15. &lt;a href=&quot;#Verse 3&quot;&gt;자동완성 설정 변경&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;ch1---16-자동완성-목록-설정&quot;&gt;Ch1 - 16. &lt;a href=&quot;#Verse 4&quot;&gt;자동완성 목록 설정&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch1---13-이클립스-단축키-1&quot;&gt;Ch1 - 13. 이클립스 단축키&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;-ctrl--shift--l&quot;&gt;▶ Ctrl + Shift + L&lt;/h3&gt;
+&lt;h6 id=&quot;-단축키-전체-목록-보기&quot;&gt;▷ 단축키 전체 목록 보기&lt;/h6&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-ctrl-----&quot;&gt;▶ Ctrl + ‘+’ / ‘-‘&lt;/h3&gt;
+&lt;h6 id=&quot;-폰트-크기-증가--감소&quot;&gt;▷ 폰트 크기 증가 / 감소&lt;/h6&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-ctrl--d&quot;&gt;▶ Ctrl + D&lt;/h3&gt;
+&lt;h6 id=&quot;-한-줄-삭제&quot;&gt;▷ 한 줄 삭제&lt;/h6&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-ctrl--alt--&quot;&gt;▶ Ctrl + alt + ↓&lt;/h3&gt;
+&lt;h6 id=&quot;-한-줄-복사&quot;&gt;▷ 한 줄 복사&lt;/h6&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-alt--shift--a&quot;&gt;▶ alt + shift + A&lt;/h3&gt;
+&lt;h6 id=&quot;-멀티컬럼-편집&quot;&gt;▷ 멀티컬럼 편집&lt;/h6&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-alt----&quot;&gt;▶ alt + ‘↑’ / ‘↓’&lt;/h3&gt;
+&lt;h6 id=&quot;-한-줄-이동&quot;&gt;▷ 한 줄 이동&lt;/h6&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-ctrl--i&quot;&gt;▶ Ctrl + I&lt;/h3&gt;
+&lt;h6 id=&quot;-자동-들여쓰기&quot;&gt;▷ 자동 들여쓰기&lt;/h6&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-ctrl--&quot;&gt;▶ Ctrl + /&lt;/h3&gt;
+&lt;h6 id=&quot;-한-줄-주석토글&quot;&gt;▷ 한 줄 주석(토글)&lt;/h6&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;토글?&lt;/strong&gt;&lt;br /&gt;
+한 번 눌리면 생기고 또 한 번 눌리면 없어지고 하는 것&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;-주석처리-할-부분-드래그--ctrl--shift--&quot;&gt;▶ 주석처리 할 부분 드래그 + Ctrl + Shift + /&lt;/h3&gt;
+&lt;h6 id=&quot;-블록-주석&quot;&gt;▷ 블록 주석&lt;/h6&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-ctrl--shift--&quot;&gt;▶ Ctrl + Shift + \&lt;/h3&gt;
+&lt;h6 id=&quot;-블록-주석-제거&quot;&gt;▷ 블록 주석 제거&lt;/h6&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;---enter&quot;&gt;▶ /** + Enter&lt;/h3&gt;
+&lt;h6 id=&quot;-주석-템플릿&quot;&gt;▷ 주석 템플릿&lt;/h6&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-ctrl--space&quot;&gt;▶ Ctrl + space&lt;/h3&gt;
+&lt;h6 id=&quot;-자동완성&quot;&gt;▷ 자동완성&lt;/h6&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 2&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch1---14-단축키-설정-변경-1&quot;&gt;Ch1 - 14. 단축키 설정 변경&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;-window--preferences--general--keys&quot;&gt;▶ Window &amp;gt; Preferences &amp;gt; General &amp;gt; keys&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-05-cornerstoneJava5/img.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-05-cornerstoneJava5/img_1.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h6 id=&quot;-한-줄-복사-단축키-변경-해-보기&quot;&gt;▷ 한 줄 복사 단축키 변경 해 보기&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-05-cornerstoneJava5/img_2.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 3&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch1---15-자동완성-설정-변경-1&quot;&gt;Ch1 - 15. 자동완성 설정 변경&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;-window--preferences--java--editor--templates&quot;&gt;▶ Window &amp;gt; Preferences &amp;gt; Java &amp;gt; Editor &amp;gt; Templates&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-05-cornerstoneJava5/img_3.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-05-cornerstoneJava5/img_4.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h6 id=&quot;-sysout-자동완성을-sop-으로-변경-해-보기&quot;&gt;▷ sysout 자동완성을 sop 으로 변경 해 보기&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-05-cornerstoneJava5/img_5.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-05-cornerstoneJava5/img_6.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-05-cornerstoneJava5/img_7.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-05-cornerstoneJava5/img_8.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 4&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch1---16-자동완성-목록-설정-1&quot;&gt;Ch1 - 16. 자동완성 목록 설정&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;-window--preferences--java--editor--content-assist&quot;&gt;▶ Window &amp;gt; Preferences &amp;gt; Java &amp;gt; Editor &amp;gt; Content Assist&lt;/h3&gt;
+&lt;h6 id=&quot;-소문자-입력하면-자동으로-자동완성-목록이-나오게-하기&quot;&gt;▷ 소문자 입력하면 자동으로 자동완성 목록이 나오게 하기&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-05-cornerstoneJava5/img_9.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-05-cornerstoneJava5/img_10.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>JungRan-Baek</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="java" />
+      
+
+      
+        <summary type="html">자바의 정석 기초편</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">자바의 정석 Ch1 ㉣</title>
+      <link href="https://100jran.github.io/cornerstoneJava4" rel="alternate" type="text/html" title="자바의 정석 Ch1 ㉣" />
+      <published>2021-02-19T20:40:00+09:00</published>
+      <updated>2021-02-19T20:40:00+09:00</updated>
+      <id>https://100jran.github.io/cornerstoneJava4</id>
+      <content type="html" xml:base="https://100jran.github.io/cornerstoneJava4">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;0-목차&quot;&gt;0. 목차&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;chapter1-자바를-시작하기-전에&quot;&gt;&lt;span style=&quot;color:orangered&quot;&gt;Chapter1. 자바를 시작하기 전에&lt;/span&gt;&lt;br /&gt;&lt;/h2&gt;
+  &lt;h4 id=&quot;ch1---10-이클립스-설치&quot;&gt;Ch1 - 10. &lt;a href=&quot;#Verse 1&quot;&gt;이클립스 설치&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;ch1---11-이클립스로-자바프로그램-작성&quot;&gt;Ch1 - 11. &lt;a href=&quot;#Verse 2&quot;&gt;이클립스로 자바프로그램 작성&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;ch1---12-build-관련-메뉴-설명&quot;&gt;Ch1 - 12. &lt;a href=&quot;#Verse 3&quot;&gt;Build 관련 메뉴 설명&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch1---10-이클립스-설치-1&quot;&gt;Ch1 - 10. 이클립스 설치&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-04-cornerstoneJava4/img.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-04-cornerstoneJava4/img_1.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-04-cornerstoneJava4/img_2.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-04-cornerstoneJava4/img_3.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-04-cornerstoneJava4/img_4.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-04-cornerstoneJava4/img_5.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-04-cornerstoneJava4/img_6.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-04-cornerstoneJava4/img_7.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-04-cornerstoneJava4/img_8.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-04-cornerstoneJava4/img_9.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-04-cornerstoneJava4/img_10.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-04-cornerstoneJava4/img_11.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-04-cornerstoneJava4/img_12.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-04-cornerstoneJava4/img_13.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 2&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch1---11-이클립스로-자바프로그램-작성-1&quot;&gt;Ch1 - 11. 이클립스로 자바프로그램 작성&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;-프로젝트-생성&quot;&gt;▶ 프로젝트 생성&lt;/h3&gt;
+&lt;h6 id=&quot;-방법1-메뉴-file--new--java-project&quot;&gt;▷ 방법1) 메뉴 File &amp;gt; New &amp;gt; Java Project&lt;/h6&gt;
+&lt;h6 id=&quot;-방법2-ctrl--n--java-p--java-project&quot;&gt;▷ 방법2) Ctrl + N &amp;gt; java p &amp;gt; Java Project&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-04-cornerstoneJava4/img_14.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-04-cornerstoneJava4/img_15.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-클래스-생성&quot;&gt;▶ 클래스 생성&lt;/h3&gt;
+&lt;h6 id=&quot;-방법1-프로젝트명-우클릭--new--class&quot;&gt;▷ 방법1) 프로젝트명 우클릭 &amp;gt; New &amp;gt; Class&lt;/h6&gt;
+&lt;h6 id=&quot;-방법2-ctrl--n--class--java-class&quot;&gt;▷ 방법2) Ctrl + N &amp;gt; class &amp;gt; Java Class&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-04-cornerstoneJava4/img_16.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-04-cornerstoneJava4/img_17.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-java-파일-작성-후-저장--자동-컴파일-됨&quot;&gt;▶ .java 파일 작성 후 저장 &amp;gt; 자동 컴파일 됨&lt;/h3&gt;
+&lt;h3 id=&quot;-실행&quot;&gt;▶ 실행&lt;/h3&gt;
+&lt;h6 id=&quot;-메뉴-run--run&quot;&gt;▷ 메뉴 Run &amp;gt; Run&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-04-cornerstoneJava4/img_18.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-자동-컴파일&quot;&gt;▶ 자동 컴파일?&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-04-cornerstoneJava4/img_20.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-04-cornerstoneJava4/img_21.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-04-cornerstoneJava4/img_22.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 3&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch1---12-build-관련-메뉴-설명-1&quot;&gt;Ch1 - 12. Build 관련 메뉴 설명&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;-build란&quot;&gt;▶ Build란?&lt;/h3&gt;
+&lt;h6 id=&quot;-소스파일java로부터-프로그램을-만들어내는-전-과정&quot;&gt;▷ 소스파일(.java)로부터 프로그램을 만들어내는 전 과정&lt;/h6&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-project--build-all&quot;&gt;▶ Project &amp;gt; Build All&lt;/h3&gt;
+&lt;h6 id=&quot;-workspace의-모든-므로젝트를-빌드&quot;&gt;▷ workspace의 모든 므로젝트를 빌드&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-04-cornerstoneJava4/img_19.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-project--build-project&quot;&gt;▶ Project &amp;gt; Build Project&lt;/h3&gt;
+&lt;h6 id=&quot;-현재-프로젝트를-빌드---변경-된-소스파일만-새로-컴파일&quot;&gt;▷ 현재 프로젝트를 빌드 - 변경 된 소스파일만 새로 컴파일&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-04-cornerstoneJava4/img_23.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-project--clean&quot;&gt;▶ Project &amp;gt; Clean&lt;/h3&gt;
+&lt;h6 id=&quot;-이전-빌드의-정보를-모두-삭제---모든-소스파일을-새로-컴파일&quot;&gt;▷ 이전 빌드의 정보를 모두 삭제 - 모든 소스파일을 새로 컴파일&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-04-cornerstoneJava4/img_24.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-project--build-automatically&quot;&gt;▶ Project &amp;gt; Build Automatically&lt;/h3&gt;
+&lt;h6 id=&quot;-소스파일을-변경-후-저장할-때마다-자동-컴파일&quot;&gt;▷ 소스파일을 변경 후, 저장할 때마다 자동 컴파일&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-04-cornerstoneJava4/img_25.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>JungRan-Baek</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="java" />
+      
+
+      
+        <summary type="html">자바의 정석 기초편</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">자바의 정석 Ch1 ㉢</title>
+      <link href="https://100jran.github.io/cornerstoneJava3" rel="alternate" type="text/html" title="자바의 정석 Ch1 ㉢" />
+      <published>2021-02-19T20:40:00+09:00</published>
+      <updated>2021-02-19T20:40:00+09:00</updated>
+      <id>https://100jran.github.io/cornerstoneJava3</id>
+      <content type="html" xml:base="https://100jran.github.io/cornerstoneJava3">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;0-목차&quot;&gt;0. 목차&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;chapter1-자바를-시작하기-전에&quot;&gt;&lt;span style=&quot;color:orangered&quot;&gt;Chapter1. 자바를 시작하기 전에&lt;/span&gt;&lt;br /&gt;&lt;/h2&gt;
+  &lt;h4 id=&quot;ch1---8-첫-번째-자바-프로그램-작성&quot;&gt;Ch1 - 8. &lt;a href=&quot;#Verse 1&quot;&gt;첫 번째 자바 프로그램 작성&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;ch1---9-자바-프로그램의-실행과정&quot;&gt;Ch1 - 9. &lt;a href=&quot;#Verse 2&quot;&gt;자바 프로그램의 실행과정&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch1---8-첫-번째-자바-프로그램-작성-1&quot;&gt;Ch1 - 8. 첫 번째 자바 프로그램 작성&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;-hellojava-생성&quot;&gt;▶ Hello.java 생성&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-03-cornerstoneJava3/img.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-03-cornerstoneJava3/img_1.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-03-cornerstoneJava3/img_2.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-03-cornerstoneJava3/img_3.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-03-cornerstoneJava3/img_4.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-03-cornerstoneJava3/img_5.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-03-cornerstoneJava3/img_6.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-03-cornerstoneJava3/img_7.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-03-cornerstoneJava3/img_8.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-hellojava-입력&quot;&gt;▶ Hello.java 입력&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-03-cornerstoneJava3/img_9.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-03-cornerstoneJava3/img_10.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-03-cornerstoneJava3/img_11.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-03-cornerstoneJava3/img_12.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://100jran.github.io/basic#Compile&quot;&gt;컴파일?&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;-hellojava-오류해결&quot;&gt;▶ Hello.java 오류해결&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-03-cornerstoneJava3/img_13.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-03-cornerstoneJava3/img_14.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-03-cornerstoneJava3/img_15.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://like-a-forest.tistory.com/61&quot;&gt;문제2해결-참고&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-컴파일이-바로-되지-않는다면&quot;&gt;▶ 컴파일이 바로 되지 않는다면?&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-03-cornerstoneJava3/img_16.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-03-cornerstoneJava3/img_17.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-경로-적지-않고-컴파일-하기&quot;&gt;▶ 경로 적지 않고 컴파일 하기&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-03-cornerstoneJava3/img_18.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-03-cornerstoneJava3/img_19.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-03-cornerstoneJava3/img_20.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-03-cornerstoneJava3/img_21.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-03-cornerstoneJava3/img_22.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-03-cornerstoneJava3/img_23.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-cmd창-새로-켜서-확인-해-보기---경로미작성&quot;&gt;▶ cmd창 새로 켜서 확인 해 보기 - 경로미작성&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-03-cornerstoneJava3/img_24.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 2&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch1---9-자바-프로그램의-실행과정-1&quot;&gt;Ch1 - 9. 자바 프로그램의 실행과정&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;-class--java&quot;&gt;▶ .class / .java&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://100jran.github.io/basic#classfile&quot;&gt;.class? .java?&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-03-cornerstoneJava3/img_26.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-03-cornerstoneJava3/img_25.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-컴파일러--인터프리터&quot;&gt;▶ 컴파일러 / 인터프리터&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://100jran.github.io/basic#Compile&quot;&gt;컴파일러?&lt;/a&gt;
+&lt;a href=&quot;https://100jran.github.io/basic#interpreter&quot;&gt;인터프리터?&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-03-cornerstoneJava3/img_27.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-클래스&quot;&gt;▶ 클래스&lt;/h3&gt;
+&lt;h6 id=&quot;-자바-프로그램의-단위&quot;&gt;▷ 자바 프로그램의 단위&lt;/h6&gt;
+&lt;h6 id=&quot;-자바-프로그램은-클래스들로-구성&quot;&gt;▷ 자바 프로그램은 클래스들로 구성&lt;/h6&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;모든&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;문장은&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;클래스의&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;안에&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;있어야&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;한다&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;클래스이름&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;→&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;클래스&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;시작&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;→&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;클래스&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;끝&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;-main-메서드&quot;&gt;▶ main 메서드&lt;/h3&gt;
+&lt;h6 id=&quot;-자바-프로그램의-시작점&quot;&gt;▷ 자바 프로그램의 시작점&lt;/h6&gt;
+&lt;h6 id=&quot;-main-메서드-없이-프로그램-실행-불가&quot;&gt;▷ main 메서드 없이 프로그램 실행 불가&lt;/h6&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;클래스이름&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt; 
+    &lt;span class=&quot;nc&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;→&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;메서드&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;시작&lt;/span&gt;
+        &lt;span class=&quot;err&quot;&gt;실행&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;할&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;문장을&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;넣기&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;첫&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;문장부터&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;순서대로&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;실행&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;→&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;메서드&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;끝&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>JungRan-Baek</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="java" />
+      
+
+      
+        <summary type="html">자바의 정석 기초편</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">자바의 정석 Ch1 ㉡</title>
+      <link href="https://100jran.github.io/cornerstoneJava2" rel="alternate" type="text/html" title="자바의 정석 Ch1 ㉡" />
+      <published>2021-02-19T20:40:00+09:00</published>
+      <updated>2021-02-19T20:40:00+09:00</updated>
+      <id>https://100jran.github.io/cornerstoneJava2</id>
+      <content type="html" xml:base="https://100jran.github.io/cornerstoneJava2">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;0-목차&quot;&gt;0. 목차&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;chapter1-자바를-시작하기-전에&quot;&gt;&lt;span style=&quot;color:orangered&quot;&gt;Chapter1. 자바를 시작하기 전에&lt;/span&gt;&lt;br /&gt;&lt;/h2&gt;
+  &lt;h4 id=&quot;ch1---5-jdk-설치&quot;&gt;Ch1 - 5. &lt;a href=&quot;#Verse 1&quot;&gt;JDK 설치&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;ch1---6-jdk-설정&quot;&gt;Ch1 - 6. &lt;a href=&quot;#Verse 2&quot;&gt;JDK 설정&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;ch1---7-자바-api-문서-설치&quot;&gt;Ch1 - 7. &lt;a href=&quot;#Verse 3&quot;&gt;자바 API 문서 설치&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch1---5-jdk-설치-1&quot;&gt;Ch1 - 5. JDK 설치&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;-jdk--java-development-kit&quot;&gt;▶ JDK = Java Development Kit&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_1.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_2.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_3.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_4.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 2&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch1---6-jdk-설정-1&quot;&gt;Ch1 - 6. JDK 설정&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_5.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_6.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_7.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_8.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_9.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_10.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 3&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch1---7-자바-api-문서-설치-1&quot;&gt;Ch1 - 7. 자바 API 문서 설치&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;-java-api란&quot;&gt;▶ Java API란?&lt;/h3&gt;
+&lt;h6 id=&quot;-java로-프로그램을-만드는데-필요한-주요기능을-미리-만들어-둔-것&quot;&gt;▷ Java로 프로그램을 만드는데 필요한 주요기능을 미리 만들어 둔 것&lt;/h6&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-java-api-문서란&quot;&gt;▶ Java API 문서란?&lt;/h3&gt;
+&lt;h6 id=&quot;-java-api가-제공하는-기능에-대한-상세정보-제공---html&quot;&gt;▷ Java API가 제공하는 기능에 대한 상세정보 제공 - .html&lt;/h6&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-java-api-문서-설치&quot;&gt;▶ Java API 문서 설치&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_11.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_12.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_13.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_14.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_15.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_16.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;-java-api-문서-사용법&quot;&gt;▶ Java API 문서 사용법&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_17.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_18.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>JungRan-Baek</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="java" />
+      
+
+      
+        <summary type="html">자바의 정석 기초편</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
+      <title type="html">자바의 정석 Ch1 ㉠</title>
+      <link href="https://100jran.github.io/cornerstoneJava" rel="alternate" type="text/html" title="자바의 정석 Ch1 ㉠" />
       <published>2021-02-19T20:40:00+09:00</published>
       <updated>2021-02-19T20:40:00+09:00</updated>
       <id>https://100jran.github.io/cornerstoneJava</id>
@@ -143,69 +596,59 @@
     </entry>
   
     <entry>
-      <title type="html">자바의 정석 Ch1 - 5···7</title>
-      <link href="https://100jran.github.io/cornerstoneJava2" rel="alternate" type="text/html" title="자바의 정석 Ch1 - 5···7" />
+      <title type="html">자바의 정석 Ch1 ㉥</title>
+      <link href="https://100jran.github.io/cornerstoneJava6" rel="alternate" type="text/html" title="자바의 정석 Ch1 ㉥" />
       <published>2021-02-19T20:40:00+09:00</published>
       <updated>2021-02-19T20:40:00+09:00</updated>
-      <id>https://100jran.github.io/cornerstoneJava2</id>
-      <content type="html" xml:base="https://100jran.github.io/cornerstoneJava2">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+      <id>https://100jran.github.io/cornerstoneJava6</id>
+      <content type="html" xml:base="https://100jran.github.io/cornerstoneJava6">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;0-목차&quot;&gt;0. 목차&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;blockquote&gt;
   &lt;h2 id=&quot;chapter1-자바를-시작하기-전에&quot;&gt;&lt;span style=&quot;color:orangered&quot;&gt;Chapter1. 자바를 시작하기 전에&lt;/span&gt;&lt;br /&gt;&lt;/h2&gt;
-  &lt;h4 id=&quot;ch1---5-jdk-설치&quot;&gt;Ch1 - 5. &lt;a href=&quot;#Verse 1&quot;&gt;JDK 설치&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
-  &lt;h4 id=&quot;ch1---6-jdk-설치---설정&quot;&gt;Ch1 - 6. &lt;a href=&quot;#Verse 2&quot;&gt;JDK 설치 - 설정&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
-  &lt;h4 id=&quot;ch1---7-자바-api-문서-설치와-사용법&quot;&gt;Ch1 - 7. &lt;a href=&quot;#Verse 3&quot;&gt;자바 API 문서 설치와 사용법&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;ch1---17-깃허브에서-전체파일-다운&quot;&gt;Ch1 - 17. &lt;a href=&quot;#Verse 1&quot;&gt;깃허브에서 전체파일 다운&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;ch1---18-이클립스로-소스파일-가져오기&quot;&gt;Ch1 - 18. &lt;a href=&quot;#Verse 2&quot;&gt;이클립스로 소스파일 가져오기&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;ch1---19-이클립스에서-소스파일-내보내기&quot;&gt;Ch1 - 19. &lt;a href=&quot;#Verse 3&quot;&gt;이클립스에서 소스파일 내보내기&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h1 id=&quot;ch1---5-jdk-설치-1&quot;&gt;Ch1 - 5. JDK 설치&lt;/h1&gt;
+&lt;h1 id=&quot;ch1---17-깃허브에서-전체파일-다운-1&quot;&gt;Ch1 - 17. 깃허브에서 전체파일 다운&lt;/h1&gt;
 &lt;hr /&gt;
-&lt;h3 id=&quot;-jdk--java-development-kit&quot;&gt;▶ JDK = Java Development Kit&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_1.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_2.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_3.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_4.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-깃허브--검색창--javajungsuk_basic&quot;&gt;▶ 깃허브 &amp;gt; 검색창 &amp;gt; javajungsuk_basic&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-06-cornerstoneJava6/img.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-06-cornerstoneJava6/img_1.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-06-cornerstoneJava6/img_2.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-06-cornerstoneJava6/img_3.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 2&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h1 id=&quot;ch1---6-jdk-설치---설정-1&quot;&gt;Ch1 - 6. JDK 설치 - 설정&lt;/h1&gt;
+&lt;h1 id=&quot;ch1---18-이클립스로-소스파일-가져오기-1&quot;&gt;Ch1 - 18. 이클립스로 소스파일 가져오기&lt;/h1&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_5.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_6.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_7.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_8.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_9.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_10.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-import-하기&quot;&gt;▶ import 하기&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-06-cornerstoneJava6/img_4.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-06-cornerstoneJava6/img_5.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-06-cornerstoneJava6/img_6.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-06-cornerstoneJava6/img_7.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-06-cornerstoneJava6/img_8.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-06-cornerstoneJava6/img_9.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 3&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h1 id=&quot;ch1---7-자바-api-문서-설치와-사용법-1&quot;&gt;Ch1 - 7. 자바 API 문서 설치와 사용법&lt;/h1&gt;
+&lt;h1 id=&quot;ch1---19-이클립스에서-소스파일-내보내기-1&quot;&gt;Ch1 - 19. 이클립스에서 소스파일 내보내기&lt;/h1&gt;
 &lt;hr /&gt;
-&lt;h3 id=&quot;-java-api란&quot;&gt;▶ Java API란?&lt;/h3&gt;
-&lt;h6 id=&quot;-java로-프로그램을-만드는데-필요한-주요기능을-미리-만들어-둔-것&quot;&gt;▷ Java로 프로그램을 만드는데 필요한 주요기능을 미리 만들어 둔 것&lt;/h6&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;-java-api-문서란&quot;&gt;▶ Java API 문서란?&lt;/h3&gt;
-&lt;h6 id=&quot;-java-api가-제공하는-기능에-대한-상세정보-제공---html&quot;&gt;▷ Java API가 제공하는 기능에 대한 상세정보 제공 - .html&lt;/h6&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;-java-api-문서-설치&quot;&gt;▶ Java API 문서 설치&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_11.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_12.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_13.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_14.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_15.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_16.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;-java-api-문서-사용법&quot;&gt;▶ Java API 문서 사용법&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_17.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-02-19-cornerstoneJava2/img_18.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;</content>
+&lt;h3 id=&quot;-export-하기&quot;&gt;▶ export 하기&lt;/h3&gt;
+&lt;h6 id=&quot;-ch4-파일만-빼내기&quot;&gt;▷ ch4 파일만 빼내기&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-06-cornerstoneJava6/img_10.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-06-cornerstoneJava6/img_11.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-06-cornerstoneJava6/img_12.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-06-cornerstoneJava6/img_13.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-06-cornerstoneJava6/img_14.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;</content>
 
       
       
@@ -407,6 +850,8 @@ eclips에서 github 도착&lt;br /&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;&lt;a id=&quot;Compile&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
 &lt;h1 id=&quot;4compile&quot;&gt;4.Compile?&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
@@ -422,7 +867,8 @@ eclips에서 github 도착&lt;br /&gt;
 &lt;p&gt;&lt;img src=&quot;assets/built/postsImages/Java/2021-02-13-basic/cpu.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;고급언어인 알파벳이 바로 기계어로 변환 안됨&lt;br /&gt;
-고급언어 - 낮은 수준의 언어 - 기계어 순으로 변환 됨&lt;/p&gt;
+고급언어 - 낮은 수준의 언어 - 기계어 순으로 변환 됨
+&lt;a id=&quot;classfile&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h5 id=&quot;compile은-compiler로-고급언어를-한-단계-낮춰주는-것&quot;&gt;&lt;em&gt;&lt;strong&gt;Compile은 Compiler로 고급언어를 한 단계 낮춰주는 것&lt;/strong&gt;&lt;/em&gt;&lt;br /&gt;&lt;/h5&gt;
 &lt;p&gt;&lt;strong&gt;Java&lt;/strong&gt;로 예를 들어보자&lt;/p&gt;
 
@@ -433,14 +879,12 @@ Java는 &lt;strong&gt;Compile&lt;/strong&gt;과정을 거쳐 &lt;strong&gt;.java
 &lt;strong&gt;.java&lt;/strong&gt;는 &lt;strong&gt;&lt;em&gt;고급언어&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;.class&lt;/strong&gt;는 &lt;strong&gt;&lt;em&gt;낮은 수준의 언어&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;h5 id=&quot;class파일은-compiler가-compile한-결과-즉-낮은-수준의-언어&quot;&gt;&lt;em&gt;&lt;strong&gt;.class파일은 Compiler가 compile한 결과! 즉 낮은 수준의 언어&lt;/strong&gt;&lt;/em&gt;&lt;br /&gt;&lt;/h5&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;.class = 중간코드 = 바이트코드&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;5interpreter&quot;&gt;5.Interpreter?&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/Java/2021-02-13-basic/interpreter.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;.class = 중간코드 = 바이트코드&lt;/strong&gt;
+&lt;a id=&quot;interpreter&quot;&gt;&lt;/a&gt;
+    &lt;h1 id=&quot;5interpreter&quot;&gt;5.Interpreter?&lt;/h1&gt;
+    &lt;hr /&gt;
+    &lt;p&gt;&lt;img src=&quot;assets/built/postsImages/Java/2021-02-13-basic/interpreter.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Interpreter&lt;/strong&gt;&lt;br /&gt;
 compile한 &lt;strong&gt;.class가 CPU에 전달 되기까지&lt;/strong&gt; 어떤 과정을 거치는가?&lt;br /&gt;
 &lt;strong&gt;interpreter&lt;/strong&gt;는 &lt;strong&gt;compile한 .class를&lt;/strong&gt; 한 줄 한 줄 &lt;strong&gt;기계어로 변환&lt;/strong&gt;시켜 &lt;strong&gt;CPU에게 전달&lt;/strong&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
