@@ -8,13 +8,208 @@
     
       
       <item>
-        <title>자바의 정석 Ch1 ㉥</title>
+        <title>Ch2-17. 타입 간 변환</title>
         
           <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
 
 </description>
         
-        <pubDate>Fri, 19 Feb 2021 20:40:00 +0900</pubDate>
+        <pubDate>Thu, 10 Jun 2021 09:00:00 +0900</pubDate>
+        <link>
+        https://100jran.github.io/2cornerstoneJava19</link>
+        <guid isPermaLink="true">https://100jran.github.io/2cornerstoneJava19</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Ch2-15~16. 오버플로우</title>
+        
+          <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 10 Jun 2021 09:00:00 +0900</pubDate>
+        <link>
+        https://100jran.github.io/2cornerstoneJava18</link>
+        <guid isPermaLink="true">https://100jran.github.io/2cornerstoneJava18</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Ch2-14. 화면 → 입력</title>
+        
+          <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 10 Jun 2021 09:00:00 +0900</pubDate>
+        <link>
+        https://100jran.github.io/2cornerstoneJava17</link>
+        <guid isPermaLink="true">https://100jran.github.io/2cornerstoneJava17</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Ch2-12~13. printf()</title>
+        
+          <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 10 Jun 2021 09:00:00 +0900</pubDate>
+        <link>
+        https://100jran.github.io/2cornerstoneJava16</link>
+        <guid isPermaLink="true">https://100jran.github.io/2cornerstoneJava16</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Ch2-11. 기본형</title>
+        
+          <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 10 Jun 2021 09:00:00 +0900</pubDate>
+        <link>
+        https://100jran.github.io/2cornerstoneJava15</link>
+        <guid isPermaLink="true">https://100jran.github.io/2cornerstoneJava15</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Ch2-10. 기본형과 참조형</title>
+        
+          <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 10 Jun 2021 09:00:00 +0900</pubDate>
+        <link>
+        https://100jran.github.io/2cornerstoneJava14</link>
+        <guid isPermaLink="true">https://100jran.github.io/2cornerstoneJava14</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Ch2-9. 변수 값 바꾸기</title>
+        
+          <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 10 Jun 2021 09:00:00 +0900</pubDate>
+        <link>
+        https://100jran.github.io/2cornerstoneJava13</link>
+        <guid isPermaLink="true">https://100jran.github.io/2cornerstoneJava13</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Ch2-7~8. 문자와 문자열</title>
+        
+          <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 10 Jun 2021 09:00:00 +0900</pubDate>
+        <link>
+        https://100jran.github.io/2cornerstoneJava12</link>
+        <guid isPermaLink="true">https://100jran.github.io/2cornerstoneJava12</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Ch2-6. 접미사, 접두사</title>
+        
+          <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 10 Jun 2021 09:00:00 +0900</pubDate>
+        <link>
+        https://100jran.github.io/2cornerstoneJava11</link>
+        <guid isPermaLink="true">https://100jran.github.io/2cornerstoneJava11</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Ch2-5. 변수, 상수, 리터럴</title>
+        
+          <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 10 Jun 2021 09:00:00 +0900</pubDate>
+        <link>
+        https://100jran.github.io/2cornerstoneJava10</link>
+        <guid isPermaLink="true">https://100jran.github.io/2cornerstoneJava10</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Ch2-4. 변수의 타입</title>
+        
+          <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 09 Jun 2021 09:00:00 +0900</pubDate>
+        <link>
+        https://100jran.github.io/2cornerstoneJava9</link>
+        <guid isPermaLink="true">https://100jran.github.io/2cornerstoneJava9</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Ch2-3. 변수의 선언과 저장</title>
+        
+          <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Tue, 08 Jun 2021 09:00:00 +0900</pubDate>
+        <link>
+        https://100jran.github.io/2cornerstoneJava8</link>
+        <guid isPermaLink="true">https://100jran.github.io/2cornerstoneJava8</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Ch2-1~2. 출력</title>
+        
+          <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 07 Jun 2021 09:00:00 +0900</pubDate>
+        <link>
+        https://100jran.github.io/2cornerstoneJava7</link>
+        <guid isPermaLink="true">https://100jran.github.io/2cornerstoneJava7</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Ch1-17~19. 가져오기, 내보내기</title>
+        
+          <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 06 Jun 2021 09:00:00 +0900</pubDate>
         <link>
         https://100jran.github.io/cornerstoneJava6</link>
         <guid isPermaLink="true">https://100jran.github.io/cornerstoneJava6</guid>
@@ -23,13 +218,13 @@
     
       
       <item>
-        <title>자바의 정석 Ch1 ㉤</title>
+        <title>Ch1-13~16. 이클립스 단축키</title>
         
           <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
 
 </description>
         
-        <pubDate>Fri, 19 Feb 2021 20:40:00 +0900</pubDate>
+        <pubDate>Sat, 05 Jun 2021 09:00:00 +0900</pubDate>
         <link>
         https://100jran.github.io/cornerstoneJava5</link>
         <guid isPermaLink="true">https://100jran.github.io/cornerstoneJava5</guid>
@@ -38,13 +233,13 @@
     
       
       <item>
-        <title>자바의 정석 Ch1 ㉣</title>
+        <title>Ch1-10~12. 이클립스</title>
         
           <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
 
 </description>
         
-        <pubDate>Fri, 19 Feb 2021 20:40:00 +0900</pubDate>
+        <pubDate>Fri, 04 Jun 2021 09:00:00 +0900</pubDate>
         <link>
         https://100jran.github.io/cornerstoneJava4</link>
         <guid isPermaLink="true">https://100jran.github.io/cornerstoneJava4</guid>
@@ -53,13 +248,13 @@
     
       
       <item>
-        <title>자바의 정석 Ch1 ㉢</title>
+        <title>Ch1-8~9. 자바 프로그램</title>
         
           <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
 
 </description>
         
-        <pubDate>Fri, 19 Feb 2021 20:40:00 +0900</pubDate>
+        <pubDate>Thu, 03 Jun 2021 09:00:00 +0900</pubDate>
         <link>
         https://100jran.github.io/cornerstoneJava3</link>
         <guid isPermaLink="true">https://100jran.github.io/cornerstoneJava3</guid>
@@ -68,13 +263,13 @@
     
       
       <item>
-        <title>자바의 정석 Ch1 ㉡</title>
+        <title>Ch1-5~7. JDK?</title>
         
           <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
 
 </description>
         
-        <pubDate>Fri, 19 Feb 2021 20:40:00 +0900</pubDate>
+        <pubDate>Wed, 02 Jun 2021 09:00:00 +0900</pubDate>
         <link>
         https://100jran.github.io/cornerstoneJava2</link>
         <guid isPermaLink="true">https://100jran.github.io/cornerstoneJava2</guid>
@@ -83,13 +278,13 @@
     
       
       <item>
-        <title>자바의 정석 Ch1 ㉠</title>
+        <title>Ch1-1~4. JVM?</title>
         
           <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
 
 </description>
         
-        <pubDate>Fri, 19 Feb 2021 20:40:00 +0900</pubDate>
+        <pubDate>Tue, 01 Jun 2021 09:00:00 +0900</pubDate>
         <link>
         https://100jran.github.io/cornerstoneJava</link>
         <guid isPermaLink="true">https://100jran.github.io/cornerstoneJava</guid>
@@ -106,7 +301,7 @@
 
 </description>
         
-        <pubDate>Tue, 16 Feb 2021 20:40:00 +0900</pubDate>
+        <pubDate>Mon, 17 May 2021 20:40:00 +0900</pubDate>
         <link>
         https://100jran.github.io/calculator2</link>
         <guid isPermaLink="true">https://100jran.github.io/calculator2</guid>
@@ -123,7 +318,7 @@
 
 </description>
         
-        <pubDate>Tue, 16 Feb 2021 20:40:00 +0900</pubDate>
+        <pubDate>Mon, 17 May 2021 20:40:00 +0900</pubDate>
         <link>
         https://100jran.github.io/calculator</link>
         <guid isPermaLink="true">https://100jran.github.io/calculator</guid>
@@ -140,7 +335,7 @@
 
 </description>
         
-        <pubDate>Tue, 16 Feb 2021 20:40:00 +0900</pubDate>
+        <pubDate>Sun, 16 May 2021 20:40:00 +0900</pubDate>
         <link>
         https://100jran.github.io/calender2</link>
         <guid isPermaLink="true">https://100jran.github.io/calender2</guid>
@@ -157,7 +352,7 @@
 
 </description>
         
-        <pubDate>Tue, 16 Feb 2021 20:40:00 +0900</pubDate>
+        <pubDate>Sun, 16 May 2021 20:40:00 +0900</pubDate>
         <link>
         https://100jran.github.io/calender</link>
         <guid isPermaLink="true">https://100jran.github.io/calender</guid>
@@ -174,7 +369,7 @@
 
 </description>
         
-        <pubDate>Mon, 15 Feb 2021 20:40:00 +0900</pubDate>
+        <pubDate>Sat, 15 May 2021 20:40:00 +0900</pubDate>
         <link>
         https://100jran.github.io/gugudan2</link>
         <guid isPermaLink="true">https://100jran.github.io/gugudan2</guid>
@@ -191,7 +386,7 @@
 
 </description>
         
-        <pubDate>Mon, 15 Feb 2021 20:40:00 +0900</pubDate>
+        <pubDate>Sat, 15 May 2021 20:40:00 +0900</pubDate>
         <link>
         https://100jran.github.io/gugudan</link>
         <guid isPermaLink="true">https://100jran.github.io/gugudan</guid>
@@ -208,7 +403,7 @@
 
 </description>
         
-        <pubDate>Sun, 14 Feb 2021 20:40:00 +0900</pubDate>
+        <pubDate>Fri, 14 May 2021 20:40:00 +0900</pubDate>
         <link>
         https://100jran.github.io/case</link>
         <guid isPermaLink="true">https://100jran.github.io/case</guid>
@@ -225,7 +420,7 @@
 
 </description>
         
-        <pubDate>Sun, 14 Feb 2021 01:40:00 +0900</pubDate>
+        <pubDate>Fri, 14 May 2021 01:40:00 +0900</pubDate>
         <link>
         https://100jran.github.io/basic</link>
         <guid isPermaLink="true">https://100jran.github.io/basic</guid>

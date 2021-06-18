@@ -190,8 +190,125 @@ into the {body} of the default.hbs template -->
 <script>
     window.store = {
     
+    "2cornerstonejava19": {
+        "title": "Ch2-17. 타입 간 변환",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter2. 변수  Ch2 - 17. 타입 간의 변환방법Ch2 - 17. 타입 간의 변환방법▶ 문자와 숫자간의 변환▷ 숫자 → 문자 = 문자 ‘0’을 더함3 + '0' = '3'▷ 문자 → 숫자 = 문자 ‘0’을 뺌'3' - '0' = 3▶ 문자열로 변환▷ 숫자 → 문자열 = “ “을 더함3 + \"\" = \"3\"▷ 문자 → 문자열 = “ “을 더함'3' + \"\" = \"3\"▶ 문자열을 숫자로 변환▷ 문자열 → 숫자(정수) = Integer.parseIntInteger.parseInt(\"3\") = 3▷ 문자열 → 숫자(실수) = Double.parseDoubleDouble.parseDouble(\"3.4\") = 3.4▷ 문자열 → 문자 = charAt\"3\".charAt(0) = '3'▶ 실습▷ ‘문자 3’을 ‘숫자 3’으로 변환System.out.println('3' - '0');// console3▷ ‘3’ - ‘0’ + 1 = ?System.out.println('3' - '0' + 1);  // '3' - '0' = 3(숫자)// console4▷ Integer.parseInt(“3”) + 1 = ?System.out.println(Integer.parseInt(\"3\") + 1);  // Integer.parseInt(\"3\") = 3// console4",
+        "url": "/2cornerstoneJava19"
+    }
+    ,
+    
+    "2cornerstonejava18": {
+        "title": "Ch2-15~16. 오버플로우",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter2. 변수  Ch2 - 15. 정수형의 오버플로우  Ch2 - 16. 부호있는 정수의 오버플로우Ch2 - 15. 정수형의 오버플로우▶ 오버플로우란?▷ 표현가능한 범위를 넘어가는 것최대값 + 1 = 최소값최소값 - 1 = 최대값▶ 부호없는 정수 char▷ char = 2 byte = 16bit▷ 216 = 65536▷ 0 ~ 65536Ch2 - 16. 부호있는 정수의 오버플로우▶ 부호있는 정수 short▷ short = 2 byte = 16bit▷ 216 = 65536▷ -32768 ~ 32767",
+        "url": "/2cornerstoneJava18"
+    }
+    ,
+    
+    "2cornerstonejava17": {
+        "title": "Ch2-14. 화면 → 입력",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter2. 변수  Ch2 - 14. 화면으로부터 입력받기Ch2 - 14. 화면으로부터 입력받기▶ Scanner란?▷ 화면으로부터 데이터를 입력받는 기능을 제공하는 클래스· 클래스 = 기능을 제공하는 역할▶ Scanner를 사용하려면?▷ import문 추가import java.util.*;▷ Scanner 객체의 생성Scanner scanner = new Scanner(System.in);System.in : 화면입력▷ Scanner 객체를 사용int num = scanner.nextInt();    // 화면에서 입력받은 정수를 num에 저장String input = scanner.nextLine();    // 화면에서 입력받은 한 줄을 input에 저장int num = Integer.parseInt(input);    // 문자열(input)을 숫자(num)로 변환· 숫자 → 문자열 / 문자열 → 숫자▶ 실습▷  scanner.nextInt 사용하여 ‘100’, ‘200’ 출력import java.util.*; // 1. import문 추가public class ScanfEx21 {\tpublic static void main(String[] args) {        // 2. Scanner 클래스 객체 생성\t\tScanner scanner = new Scanner(System.in);\t\t\t\tint num = scanner.nextInt();\t\tint num2 = scanner.nextInt();\t\t\t\tSystem.out.println(num);\t\tSystem.out.println(num2);\t}}// console100 // 입력 값(화면에서 입력)200100 // 출력 값200▷ scanner.nextLine 사용하여 ‘100’ 출력import java.util.*;public class ScanfEx21 {\tpublic static void main(String[] args) {\t\tScanner scanner = new Scanner(System.in);\t\t\t\tString input = scanner.nextLine();\t\tint num = Integer.parseInt(input);\t\tSystem.out.println(num);\t}}// console100100‘100’을 출력할 경우 nextInt로 한 줄로 코딩 가능, 굳이 2줄로 코딩하지 않아도 됨",
+        "url": "/2cornerstoneJava17"
+    }
+    ,
+    
+    "2cornerstonejava16": {
+        "title": "Ch2-12~13. printf()",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter2. 변수  Ch2 - 12. printf를 이용한 출력  Ch2 - 13. printf를 이용한 출력 예제Ch2 - 12. printf를 이용한 출력▶ println()의 단점 - 출력형식 지정불가▷ 실수의 자리수 조정불가 - 소수점 n자리만 출력하려면?· 정수 ÷ 정수 = 정수System.out.println(10/3); // console3· 실수 ÷ 정수 = 실수System.out.println(10.0/3);// console3.33333333...▷ 10진수로만 출력 - 8진수, 16진수로 출력하려면?System.out.println(0x1A);// console26▶ printf()로 출력형식 지정가능▷ “%.2f” : 소수점 둘째자리까지 출력System.out.printf(\"%.2f\", 10.0/3);// console3.33▷ “%d” : 10진수로 출력System.out.printf(\"%d\", 0x1A);// console26▷ “%x” : 16진수로 출력System.out.printf(\"%x\", 0x1A);// console1a▶ printf()의 지시자 1▷ 개행문자 : %n과 /n%n은 OS 상관 없이 됨System.out.printf(\"age:%d year:%d%n줄바꿈ok?\", 14, 2017);// consoleage:14 year:2017줄바꿈ok?/n은 OS별로 조금 다를 수 있음System.out.printf(\"age:%d year:%d\\n줄바꿈ok?\", 14, 2017);\t// console\tage:14 year:2017줄바꿈ok?▶ printf()의 지시자 2▷ 정수 ‘15’를 10진수로 출력System.out.printf(\"%d\", 15);\t\t// console15\t\t▷ 정수 ‘15’를 8진수로 출력System.out.printf(\"%o\", 15);\t\t// console17  // 일칠 10진수에서 1은 8을 의미▷ 정수 ‘15’를 16진수로 출력System.out.printf(\"%x\", 15);\t\t// consolef ▷ toBinaryString : 정수를 2진 문자열로 변환System.out.printf(\"%s\", Integer.toBinaryString(15));\t// console1111▷ 8진수와 16진수에 접두사 붙이기#을 붙여주기System.out.printf(\"%#o%n\", 15);System.out.printf(\"%#x%n\", 15);System.out.printf(\"%#X%n\", 15); // X를 대문자로 사용하면 접두사도 대문자로 출력// console0170xf0XF▷ 실수 출력 지시자 %f+ 지수형식 %efloat f = 123.4567890f;System.out.printf(\"%f%n\", f);System.out.printf(\"%e%n\", f);// console123.456787  // f는 정밀도 7자리 123.4567 = 총 7자리 그 외 87 두 자리는 의미 없는 수1.234568e+02    // 8e+02 = ① 8은 반올림 ② e+02는 10² → 지수형식+ 간략한 형식 %gSystem.out.printf(\"%g%n\", 123.456789);System.out.printf(\"%g%n\", 0.00000001);// console123.457 // 간단한 형식 - 7자리 내로 표현 %f1.00000e-08 // 간단한 형식 - 지수 형식 %e▶ printf()의 지시자 3▷ 지정한 자리수만큼 출력 : %5d(지정한 자리수는 5자리)System.out.printf(\"[%5d]\", 10);// console[   10] // 출력 수 = 10(두 자리) / 지정 수 = 5자리 → 앞 3자리는 비움▷ 왼쪽정렬 : %-dSystem.out.printf(\"[%-5d]\", 10);// console[10   ]▷ 공백 채우기 : %05d(5자리에서 공백인 자리는 0으로 채움)System.out.printf(\"[%05d]\", 10);// console[00010]▷ %전체자리 수.소수점아래자리 수fdouble d = 123.456789;System.out.printf(\"d=%14.10f\", d);// consoled=123.4567890000    // '.'포함 하여 총 14자리, 소수점 아래는 총 10자리, 빈자리는 0으로 채움▷ 문자열 출력 : %sString url = \"100jran.github.io\";System.out.printf(\"%s\", url);// console100jran.github.io▷ 지정한 자리수만큼 출력 : %20s(지정한 자리수는 20자리)String url = \"100jran.github.io\";\t\tSystem.out.printf(\"[%20s]\", url);// console[   100jran.github.io]▷ 왼쪽 정렬 : %-20sString url = \"100jran.github.io\";\t\tSystem.out.printf(\"[%-20s]\", url);// console[100jran.github.io   ]▷ 부분 출력 : %.8s(전체 중 8자리만 출력)String url = \"100jran.github.io\";System.out.printf(\"[%.8s]\", url);// console[100jran.]  // '.'포함 총 8자리Ch2 - 3. printf를 이용한 출력 예제▶ 정수 출력▷ 10진수 ‘10’ 출력System.out.printf(\"%d\", 10);// console10▷ 10진수 ‘10’을 8진수로 출력System.out.printf(\"%o\", 10);// console12▷ 10진수 ‘10’을 16진수로 출력System.out.printf(\"%x\", 10);// consolea▷ 10진수 ‘10’을 10진수, 8진수, 16진수로 접두사 붙여 출력System.out.printf(\"%d%n\", 10);System.out.printf(\"%#o%n\", 10);System.out.printf(\"%#x%n\", 10);// console100120xa▷ 10진수 ‘10’을 2진수 문자열로 출력System.out.printf(\"%s\", Integer.toBinaryString(10));\t// console1010▶ 실수 출력▷ float 타입으로 ‘123.456789’ 출력float f = 123.456789f;System.out.printf(\"%f\", f);\t// console123.456787  // float 타입은 끝 두자리 수 87 = 의미없는 수(정밀도가 7자리까지 7자리 이후 수는 의미無)▷ double 타입으로 ‘123.456789’ 출력double f = 123.456789;System.out.printf(\"%f\", f);// console123.456789  // double 타입 끝 두자리 89 = 의미있는 수(정밀도가 15자리까지 15자리까지의 수는 의미有)▷ double 타입의 ‘123.456789’를 %e로 출력double f = 123.456789;System.out.printf(\"%e\", f);// console1.234568e+02▷ double 타입의 ‘123.456789’를 %g로 출력double f = 123.456789;System.out.printf(\"%g\", f);// console123.457▶ 지정 출력▷ 지정자리 10자리 → ‘10’ 출력System.out.printf(\"[%10d]\", 10);// console[        10]지정자리 수가 출력할 값 보다 크다면?지정자리 수 무시 → 값 출력System.out.printf(\"[%2d]\", 12345);// console[12345]▷ 지정자리 10자리 + 왼쪽 정렬로 → ‘10’ 출력System.out.printf(\"[%-10d]\", 10);// console[10        ]▷ 지정자리 10자리 + 공백은 0으로 채워 → ‘10’ 출력System.out.printf(\"[%010d]\", 10);// console[0000000010]▷ 전체 16자리 + 소수점 아래는 10자리로 → ‘1.23456789’ 출력System.out.printf(\"[%16.10f]\", d);// console[    1.2345678900]▷ 지정자리 20자리 + 왼쪽정렬 → ‘100jran.github.io’ 출력String url = \"100jran.github.io\";System.out.printf(\"[%20s]\", url);// console[100jran.github.io   ]▷ ‘100jran.github.io’ 출력 → 10자리만 출력System.out.printf(\"[%.10s]\", url);// console[100jran.gi]",
+        "url": "/2cornerstoneJava16"
+    }
+    ,
+    
+    "2cornerstonejava15": {
+        "title": "Ch2-11. 기본형",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter2. 변수  Ch2 - 11. 기본형의 종류와 범위Ch2 - 11. 기본형의 종류와 범위▶ 논리형 - boolean▷ 값 : true와 false 중 하나▷ 조건식과 논리적 계산에 사용▶ 문자형 - char▷ 값 : 문자▷ 변수 당 하나의 문자만 저장 가능▷ 변수 당 여러 문자를 저장하려면 String(참조형) 사용▶ 정수형 - int, long, byte, short▷ 값 : 정수▷ 정수형의 디폴트타입(주로 사용하는 타입) = int▷ 아주 큰 정수는 long▷ byte는 이진 데이터(이미지 파일…)를 다루는데 사용▷ short는 c언어와의 호환을 위해 추가(활용도 낮음)▶ 실수형 - float, double▷ 값 : 실수▷ float - floating point에서 저장▷ double - float 타입의 정밀도가 2배▷ 실수형의 디폴트타입 = double▶ 기본형의 종류와 크기▶ 기본형 - 표현범위 1▷ 변수의 타입마다 표현하는 방식이 다름▷ byte 타입을 예로 들면,byte b;b = 3;▷ n비트로 표현할 수 있는 값의 개수 : 2ⁿ개▷ n비트로 표현할 수 있는 부호없는 정수(양수)의 범위 : 0 ~ 2n - 1byte로 예를 들면2n =  28 = 256개양수 = 1 ~ 2ⁿ = 256개그러나 0을 포함시켜야 함으로0 ~ 2ⁿ - 1 = 256개그래서 1 ~ 256 0 ~ 255 = 256개▷ n비트로 표현할 수 있는 부호있는 정수(음/양수)의 범위 : -2n-1 ~ 2n-1 - 1▶ 기본형 - 표현범위 2▷ byte-27 ~ 27 - 1▷ short-215 ~ 215 - 1▷ char0 ~ 216 - 1▷ int-231 ~ 231 - 1▷ long-263 ~ 263 - 1  800경 보다 더 많은 수를 입력해야한다면?  Bit Integer 클래스 사용▶ 기본형 - 표현범위 3▷ float▷ double  정밀도가 float의 2배라서 double  정밀도가 2배인 만큼 정확도가 더 큼  그래서 실수형의 디폴트타입이 double",
+        "url": "/2cornerstoneJava15"
+    }
+    ,
+    
+    "2cornerstonejava14": {
+        "title": "Ch2-10. 기본형과 참조형",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter2. 변수  Ch2 - 10. 기본형과 참조형Ch2 - 10. 기본형과 참조형▶ 기본형 Primitive type▷ 오직 8개  문자 - char(문자)  숫자          정수 - byte, short, int,long(20억이 넘는 정수는 long으로)      실수 - float(오차없이 7자리), double(15자리)        논리 - boolean(true와 false를 저장)▷ 실제 값을 저장▶ 참조형 Reference type▷ 객체의 주소를 저장 - 4 byte, 0x00000000~0xffffffffDate today; // 참조형 변수 today를 선언today = new Date(); // today에 객체의 주소를 저장▷ 기본형을 제외한 나머지 - String, System 등▷ 메모리 주소를 저장 (4 byte 또는 8 byte)※ 32bit JVM의 경우, 참조형의 크기는 4 byte    (MAX = 40억 byte = 4GB / 실사용량 = 2GB)※ 64bit JVM의 경우, 참조형의 크기는 8 byte    (MAX = 40억×40억 = 160경 byte = 160만TB / 실사용량 = TB단위 정도..)",
+        "url": "/2cornerstoneJava14"
+    }
+    ,
+    
+    "2cornerstonejava13": {
+        "title": "Ch2-9. 변수 값 바꾸기",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter2. 변수  Ch2 - 9. 두 변수의 값 바꾸기Ch2 - 9. 두 변수의 값 바꾸기▶ x와 y값 바꾸기▷ x, y▷ x, y, tmp▶ 실습int x = 2, y = 4;int tmp;tmp = x;x = y;y = tmp;System.out.println(\"x = \" + x);System.out.println(\"y = \" + y);//consolex = 4y = 2",
+        "url": "/2cornerstoneJava13"
+    }
+    ,
+    
+    "2cornerstonejava12": {
+        "title": "Ch2-7~8. 문자와 문자열",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter2. 변수  Ch2 - 7. 문자 리터럴과 문자열 리터럴  Ch2 - 8. 문자열 결합Ch2 - 7. 문자 리터럴과 문자열 리터럴▶ 문자▷ char ch = 'A';▷ char ch = 'AB';   // 에러▷ char ch = ''; // 에러▶ 문자열▷ String s = \"AB\";▷ String s1 = \"AB\";  String은 자바에서 제공하는 클래스  클래스를 사용하기 위해서는 new 연산자를 통해 객체생성 해야함String s2 = new String(\"AB\");  그러나 String은 자주 사용하는 클래스 임으로 생략가능▷ String s = \"\";    // 빈 문자열▷ String s1 = \"A\" + \"B\" // 문자열 결합 = \"AB\"Ch2 - 8. 문자열 결합▶ 문자열 + anytype▷ 빈 문자열 + 숫자 = 숫자 → 문자열\"\" + 7 → \"\" + \"7\" → \"7\"(문자열)▷ 빈 문자열 + 숫자 + 숫자= 숫자 → 문자열\"\" + 7 + 7 → \"7\" + 7 → \"7\" + \"7\" → \"77\"(문자열)▷ 숫자 + 숫자 + 빈 문자열 = 숫자 → 문자열7 + 7 + \"\" → 14 + \"\" → \"14\" + \"\" → \"14\"(문자열)문자열 + anytype → 문자열anytype + 문자열 → 문자열▶ 실습int i = 'A';    // 문자코드 A의 값인 65가 출력 System.out.println(i);// console65String string = \"\";String str2 = \"ABCD\";String str3 = \"123\";String str4 = str2 + str3;System.out.println(str4);// consoleABCD123System.out.println(\"\" + 7 + 7);System.out.println(7 + 7 + \"\");// console7714",
+        "url": "/2cornerstoneJava12"
+    }
+    ,
+    
+    "2cornerstonejava11": {
+        "title": "Ch2-6. 접미사, 접두사",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter2. 변수  Ch2 - 6. 리터럴의 타입과 접미사Ch2 - 6. 리터럴의 타입과 접미사▶ 정리0x-참고▶ 예시▷ boolean power = true;▷ char ch = 'A';▷ String str = \"ABC\";▷ byte b = 127;▷ long l = 10000000000L▷ float f = 3.14f▷ float f = 100f▷ int hex = 0x100;▷ short s = 32767;▷ double d = 3.14d▶ 10.▷ 10.0▶ .10▷ 0.10▶ 10f▷ 10.0f▶ 3.14e3f▷ 3.140.0f▶ 1e1▷ 10.0",
+        "url": "/2cornerstoneJava11"
+    }
+    ,
+    
+    "2cornerstonejava10": {
+        "title": "Ch2-5. 변수, 상수, 리터럴",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter2. 변수  Ch2 - 5. 변수, 상수, 리터럴Ch2 - 5. 변수, 상수, 리터럴▶ 변수(variable) - 변경가능▷ 하나의 값을 저장하기 위한 공간▶ 상수(constant) - 변경불가▷ 한 번만 값을 저장할 수 있는 변수▶ 리터럴(literal)▷ 그 자체로 값을 의미하는 것int score = 100;score = 200;final int MAX = 100; // MAX는 상수MAX = 200; // 에러char ch = 'A';String str = \"abc\";▶ 상수 / 변수 / 리터럴 구분",
+        "url": "/2cornerstoneJava10"
+    }
+    ,
+    
+    "2cornerstonejava9": {
+        "title": "Ch2-4. 변수의 타입",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter2. 변수  Ch2 - 4. 변수의 타입Ch2 - 4. 변수의 타입▶ 변수의 타입▷ 변수의 타입은 저장할 값의 타입에 의해 결정int age = 25;   // int(정수타입) --일치-- 25(정수) → 변수선언int age = 3.14; // int(정수타입) --불일치-- 3.14(실수) → 변수선언불가 ▷ 저장할 값의 타입과 일치하는 타입으로 변수 선언char ch = '가';    // char(문자타입) --일치-- 가(문자) → 변수선언double pi = 3.14; // double(실수타입) --일치-- 3.14(실수) → 변수선언▶ 값의 타입▷ 값 - 변수의 타입(기본형 Primitive type)  문자 - char(문자)  숫자          정수 - byte, short, int,long(20억이 넘는 정수는 long으로)      실수 - float(오차없이 7자리), double(15자리)        논리 - boolean(true와 false를 저장)",
+        "url": "/2cornerstoneJava9"
+    }
+    ,
+    
+    "2cornerstonejava8": {
+        "title": "Ch2-3. 변수의 선언과 저장",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter2. 변수  Ch2 - 3. 변수의 선언과 저장Ch2 - 3. 변수의 선언과 저장▶ 변수(variable)란?▷ 하나의 값을 저장할 수 있는 메모리 공간▶ 변수의 선언▷ 변수의 선언 이유  값(data)을 저장할 공간을 마련하기 위해▷ 변수의 선언 방법  변수타입 변수이름;    int age; // 정수(int)타입의 변수 age를 선언          ▶ 변수에 값 저장하기▷ 변수에 값 저장하기 (‘=’은 등호 X 대입 O)int age; // 정수(int)타입의 변수 age를 선언age = 25; // 변수 age에 25를 저장 / age에 25를 대입int age = 25; // 위의 두 줄을 한 줄로 선언▷ 변수의 초기화 - 변수에 처음으로 값을 저장int x = 0; // 변수 x 선언 후, 0 으로 초기화int y = 5; // 변수 y 선언 후, 5 로 초기화int x = 0, y = 5; // 위으 두 줄을 한 줄로 선언▷ 변수의 종류 - 간략  클래스 변수  인스턴스 변수  지역 변수※ 지역 변수는 읽기 전에 꼭 초기화 해 주어야 함!▶ 변수의 값 읽어오기▷ 변수의 값이 필요한 곳에 변수의 이름을 작성int year = 0, age = 14;year = age + 2000;// year = 14 + 2000;// year = 2014;age = age + 1;// age = 14 + 1;// age = 15;System.out.println(age);// System.out.println(15);// 15가 화면에 출력▶ 실습int x = 4, y = 2;System.out.println(x + y);System.out.println(x - y);System.out.println(x * y);System.out.println(x / y);6282",
+        "url": "/2cornerstoneJava8"
+    }
+    ,
+    
+    "2cornerstonejava7": {
+        "title": "Ch2-1~2. 출력",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter2. 변수  Ch2 - 1. 화면에 글자 출력하기  Ch2 - 2. 덧셈 뺄셈 계산하기Ch2 - 1. 화면에 글자 출력하기▶ 프로젝트 + 클래스 생성▶ print()▷ 출력 후 줄바꿈 XSystem.out.print(\"Hello\");System.out.print(\"Hello\");System.out.print(\"Hello\");HelloHelloHello▶ println()▷ 출력 후 줄바꿈 OSystem.out.print(\"Hello\");System.out.print(\"Hello\");System.out.print(\"Hello\");HelloHelloHelloCh2 - 2. 덧셈 뺄셈 계산하기▶ “3 + 5”▷ “” 안에 있는 건 문자로 인식하여 입력한 그대로 출력System.out.print(\"3 + 5\");3 + 5▶ 3 + 5▷ 입력한 숫자와 기호를 계산하여 출력System.out.print(3 + 5);8",
+        "url": "/2cornerstoneJava7"
+    }
+    ,
+    
     "cornerstonejava6": {
-        "title": "자바의 정석 Ch1 ㉥",
+        "title": "Ch1-17~19. 가져오기, 내보내기",
             "author": "JungRan-Baek",
             "category": "",
             "content": "자바의 정석 기초편0. 목차  Chapter1. 자바를 시작하기 전에  Ch1 - 17. 깃허브에서 전체파일 다운  Ch1 - 18. 이클립스로 소스파일 가져오기  Ch1 - 19. 이클립스에서 소스파일 내보내기Ch1 - 17. 깃허브에서 전체파일 다운▶ 깃허브 &gt; 검색창 &gt; javajungsuk_basicCh1 - 18. 이클립스로 소스파일 가져오기▶ import 하기Ch1 - 19. 이클립스에서 소스파일 내보내기▶ export 하기▷ ch4 파일만 빼내기",
@@ -200,7 +317,7 @@ into the {body} of the default.hbs template -->
     ,
     
     "cornerstonejava5": {
-        "title": "자바의 정석 Ch1 ㉤",
+        "title": "Ch1-13~16. 이클립스 단축키",
             "author": "JungRan-Baek",
             "category": "",
             "content": "자바의 정석 기초편0. 목차  Chapter1. 자바를 시작하기 전에  Ch1 - 13. 이클립스 단축키  Ch1 - 14. 단축키 설정 변경  Ch1 - 15. 자동완성 설정 변경  Ch1 - 16. 자동완성 목록 설정Ch1 - 13. 이클립스 단축키▶ Ctrl + Shift + L▷ 단축키 전체 목록 보기▶ Ctrl + ‘+’ / ‘-‘▷ 폰트 크기 증가 / 감소▶ Ctrl + D▷ 한 줄 삭제▶ Ctrl + alt + ↓▷ 한 줄 복사▶ alt + shift + A▷ 멀티컬럼 편집▶ alt + ‘↑’ / ‘↓’▷ 한 줄 이동▶ Ctrl + I▷ 자동 들여쓰기▶ Ctrl + /▷ 한 줄 주석(토글)  토글?한 번 눌리면 생기고 또 한 번 눌리면 없어지고 하는 것▶ 주석처리 할 부분 드래그 + Ctrl + Shift + /▷ 블록 주석▶ Ctrl + Shift + \\▷ 블록 주석 제거▶ /** + Enter▷ 주석 템플릿▶ Ctrl + space▷ 자동완성Ch1 - 14. 단축키 설정 변경▶ Window &gt; Preferences &gt; General &gt; keys▷ 한 줄 복사 단축키 변경 해 보기Ch1 - 15. 자동완성 설정 변경▶ Window &gt; Preferences &gt; Java &gt; Editor &gt; Templates▷ sysout 자동완성을 sop 으로 변경 해 보기Ch1 - 16. 자동완성 목록 설정▶ Window &gt; Preferences &gt; Java &gt; Editor &gt; Content Assist▷ 소문자 입력하면 자동으로 자동완성 목록이 나오게 하기",
@@ -209,7 +326,7 @@ into the {body} of the default.hbs template -->
     ,
     
     "cornerstonejava4": {
-        "title": "자바의 정석 Ch1 ㉣",
+        "title": "Ch1-10~12. 이클립스",
             "author": "JungRan-Baek",
             "category": "",
             "content": "자바의 정석 기초편0. 목차  Chapter1. 자바를 시작하기 전에  Ch1 - 10. 이클립스 설치  Ch1 - 11. 이클립스로 자바프로그램 작성  Ch1 - 12. Build 관련 메뉴 설명Ch1 - 10. 이클립스 설치Ch1 - 11. 이클립스로 자바프로그램 작성▶ 프로젝트 생성▷ 방법1) 메뉴 File &gt; New &gt; Java Project▷ 방법2) Ctrl + N &gt; java p &gt; Java Project▶ 클래스 생성▷ 방법1) 프로젝트명 우클릭 &gt; New &gt; Class▷ 방법2) Ctrl + N &gt; class &gt; Java Class▶ .java 파일 작성 후 저장 &gt; 자동 컴파일 됨▶ 실행▷ 메뉴 Run &gt; Run▶ 자동 컴파일?Ch1 - 12. Build 관련 메뉴 설명▶ Build란?▷ 소스파일(.java)로부터 프로그램을 만들어내는 전 과정▶ Project &gt; Build All▷ workspace의 모든 므로젝트를 빌드▶ Project &gt; Build Project▷ 현재 프로젝트를 빌드 - 변경 된 소스파일만 새로 컴파일▶ Project &gt; Clean▷ 이전 빌드의 정보를 모두 삭제 - 모든 소스파일을 새로 컴파일▶ Project &gt; Build Automatically▷ 소스파일을 변경 후, 저장할 때마다 자동 컴파일",
@@ -218,7 +335,7 @@ into the {body} of the default.hbs template -->
     ,
     
     "cornerstonejava3": {
-        "title": "자바의 정석 Ch1 ㉢",
+        "title": "Ch1-8~9. 자바 프로그램",
             "author": "JungRan-Baek",
             "category": "",
             "content": "자바의 정석 기초편0. 목차  Chapter1. 자바를 시작하기 전에  Ch1 - 8. 첫 번째 자바 프로그램 작성  Ch1 - 9. 자바 프로그램의 실행과정Ch1 - 8. 첫 번째 자바 프로그램 작성▶ Hello.java 생성▶ Hello.java 입력컴파일?▶ Hello.java 오류해결문제2해결-참고▶ 컴파일이 바로 되지 않는다면?▶ 경로 적지 않고 컴파일 하기▶ cmd창 새로 켜서 확인 해 보기 - 경로미작성Ch1 - 9. 자바 프로그램의 실행과정▶ .class / .java.class? .java?▶ 컴파일러 / 인터프리터컴파일러?인터프리터?▶ 클래스▷ 자바 프로그램의 단위▷ 자바 프로그램은 클래스들로 구성모든 문장은 클래스의 {} 안에 있어야 한다!class 클래스이름 { → 클래스 시작} → 클래스 끝▶ main 메서드▷ 자바 프로그램의 시작점▷ main 메서드 없이 프로그램 실행 불가class 클래스이름 {     public static void main(String[] args) { → main 메서드 시작        실행 할 문장을 넣기 - 첫 문장부터 순서대로 실행    } → main 메서드 끝}",
@@ -227,7 +344,7 @@ into the {body} of the default.hbs template -->
     ,
     
     "cornerstonejava2": {
-        "title": "자바의 정석 Ch1 ㉡",
+        "title": "Ch1-5~7. JDK?",
             "author": "JungRan-Baek",
             "category": "",
             "content": "자바의 정석 기초편0. 목차  Chapter1. 자바를 시작하기 전에  Ch1 - 5. JDK 설치  Ch1 - 6. JDK 설정  Ch1 - 7. 자바 API 문서 설치Ch1 - 5. JDK 설치▶ JDK = Java Development KitCh1 - 6. JDK 설정Ch1 - 7. 자바 API 문서 설치▶ Java API란?▷ Java로 프로그램을 만드는데 필요한 주요기능을 미리 만들어 둔 것▶ Java API 문서란?▷ Java API가 제공하는 기능에 대한 상세정보 제공 - .html▶ Java API 문서 설치▶ Java API 문서 사용법",
@@ -236,7 +353,7 @@ into the {body} of the default.hbs template -->
     ,
     
     "cornerstonejava": {
-        "title": "자바의 정석 Ch1 ㉠",
+        "title": "Ch1-1~4. JVM?",
             "author": "JungRan-Baek",
             "category": "",
             "content": "자바의 정석 기초편0. 목차  Chapter1. 자바를 시작하기 전에  Ch1 - 1. 자바란?  Ch1 - 2. 자바의 역사  Ch1 - 3. 자바의 특징  Ch1 - 4. 자바 가상머신(JVM)Ch1 - 1. 자바란?▶ 자바란?▷ 프로그래밍 언어▷ 애플리케이션을 만드는데 사용▷ 실행환경(JRE) + 개발도구(JDK) + 라이브러리(API)▶ 자바의 쓰임?▷ 애플리케이션 - PC, 웹, 모바일(안드로이드)▷ 빅데이터▷ 게임 ···등Ch1 - 2. 자바의 역사▶ 자바 버전▷ JDK 1.0 (1996)▷ JDK 1.1 (1996)▷ J2SE 1.2 (1998)  J2SE : 스탠다드  J2ME : 마이크로(소형기계)  J2EE : 엔터프라이즈(대기업)▷ J2SE 1.3 (2000)▷ J2SE 1.4 (2002)▷ J2SE 5.0 (2004)▷ JAVA SE 6 (2006)▷ JAVA SE 7 (2011)▷ JAVA SE 8 (2014)▷ JAVA SE 9 (2017)▷ JAVA SE 10 (2018)▷ JAVA SE 11 (2018)▷ JAVA SE 12 (2019)▷ JAVA SE 13 (2019)안정성을 중요시 여기던 JAVA최신버전을 반영하기 위해 업데이트 주기가 짧아짐Ch1 - 3. 자바의 특징▷ 객체지향 언어▷ 자동 메모리 관리 - Garbage Collection(GC)▷ 멀티 쓰레드 지원▷ 풍부한 라이브러리로 쉽게 개발가능▷ 운영체제에 독립적 - JVM관련Ch1 - 4. 자바 가상머신(JVM)JVM 설명",
