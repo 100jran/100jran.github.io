@@ -190,6 +190,87 @@ into the {body} of the default.hbs template -->
 <script>
     window.store = {
     
+    "3cornerstonejava9": {
+        "title": "Ch3-17~19. 조건",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter3. 연산자  Ch3 - 17. 조건 연산자 ? :  Ch3 - 18. 대입 연산자 =  Ch3 - 19. 복합 대입 연산자 +=Ch3 - 17. 조건 연산자 ? :▶ 조건 연산자란?▷ 피연산자가 3개▷ 조건식의 결과에 따라 연산결과를 달리함  조건식 결과 = true 일 때      int x = 5, y = 3;      boolean b = x &gt; y;  int result = (x &gt; y) ? x : y;      System.out.println(b);  System.out.println(result);      // console  true  5   // 조건식이 true일 때, 결과값은 x        조건식 결과 = false 일 때    int x = 3, y = 5;          boolean b = x &gt; y;int result = (x &gt; y) ? x : y;  System.out.println(b);System.out.println(result);  // consolefalse5   // 조건식이 flase일 때, 결과값은 y        result = (x &gt; y) ? x : y; → if문으로 작성하면?    if (x &gt;  y)  result = x;else {  result = y;}   // if문은 길다        간단한 if문은 삼항 연산자로!  Ch3 - 18. 대입 연산자 =▶ 대입 연산자란?▷ 오른쪽 피연산자를 왼쪽 피연산자에 저장 후 저장된 값을 반환▷ 모든 연산자는 결과값을 반환▷ 연산방향 : ←▶ lvalue와 rvalue▷ lvalue : 대입 연산자의 왼쪽 피연산자      lvalue는 저장공간변수, 배열… 저장공간만 lvalue가 될 수 있음        lvalue가 저장공간이 아닐 시 에러발생상수, 정수… 저장공간이 아닌 lvalue는 모두 에러    int i = 0;  3 = i + 3;  // 에러, 3 ≠ 저장공간i + 3 = i;  // 에러, i + 3 = 0 + 3 = 3 ≠ 저장공간  final int MAX = 3;  // 변수 앞 final = 상수 ≠ 저장공간MAX = 10; // 에러, MAX = 상수 ≠ 저장공간      ▷ rvalue : 대입 연산자의 오른쪽 피연산자Ch3 - 18. 복합 대입 연산자 +=▶ 복합 대입 연산자란?▷ 대입 연산자와 다른 연산자를 하나로 축약▶ 예시▷ i += 3;  i = i + 3;▷ i -= 3;  i = i - 3;▷ i *= 3;  i = i * 3;▷ i /= 3;  i = i / 3;▷ i %= 3;  i = i % 3;▷ i «= 3;  i = i &lt;&lt; 3;▷ i »= 3;  i = i &gt;&gt; 3;▷ i &amp;= 3;  i = i &amp; 3;▷ i ^= 3;  i = i ^ 3;▷ i |= 3;  i = i | 3;▷ i *= 10 + 3;  피연산자가 2개인 경우 괄호 쳐 주기!  i = i * (10 + 3);",
+        "url": "/3cornerstoneJava9"
+    }
+    ,
+    
+    "3cornerstonejava8": {
+        "title": "Ch3-15~16. 논리",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter3. 연산자  Ch3 - 15. 논리 연산자 &amp;&amp; || !  Ch3 - 16. 논리 부정 연산자 !Ch3 - 15. 논리 연산자 &amp;&amp; || !▶ 논리 연산자 &amp;&amp; ||란?▷ 조건식을 연결할 때 사용하는 연산자▷ ||(or)   : 피연산자 중 어느 하나가 true면, true!▷ &amp;&amp;(and)  : 피연산자 모두 true가 되면, true!▶ 실습▷ x는 10보다 크고, 20보다 작다  10 &lt; x &lt; 20 // 이런식의 표기는 허용X  논리 연산자를 사용해야 함  ① 10 &lt; x &amp;&amp; x &lt; 20  ② x &gt; 10 &amp;&amp; x &lt; 20  ①, ② 중 하나로 표기▷ x는 10보다 크고, 20보다 작다i는 2의 배수 또는, 3의 배수이다      2의 배수 = i ÷ 2 → 나머지 03의 배수 = i ÷ 3 → 나머지 0    i%2==0 || i%3==0      int i = 8;              System.out.println(i%2==0 || i%3==0);      // console  ture        계산과정  i%2==0 || i%3==0  → 8%2==0 || 8%3==0  → 0==0   || 2==0  → true   || false  → true▷ i는 2의 배수 또는, 3의 배수지만, 6의 배수는 아니다  (i%2==0 || i%3==0) &amp;&amp; 6%0!=0  우선순위 : || &gt; &amp;&amp; → 괄호를 사용하여 우선순위 잡아주기▷ 문자 ch는 숫자(‘0’ ~ ‘9’)이다  '0' &lt;= ch &lt;= '9'  '0' &lt;= ch &amp;&amp; ch &lt;= '9'char ch = '5';System.out.println('0' &lt;= ch &amp;&amp; ch &lt;= '9');// consoletrue  계산과정  '0' &lt;= ch &amp;&amp; ch &lt;= '9'  → 48 &lt;= '5' &amp;&amp; '5' &lt;= 57  → 48 &lt;= 53  &amp;&amp; 53 &lt;= 57  → true▷ 문자 ch는 대문자 또는 소문자이다  'a' &lt;= ch &lt;= 'z'          || 'A' &lt;= ch &lt;= 'Z''a' &lt;= ch &amp;&amp; ch &lt;= 'z'    || 'A' &lt;= ch &amp;&amp; ch &lt;= 'Z' ('a' &lt;= ch &amp;&amp; ch &lt;= 'z')  || ('A' &lt;= ch &amp;&amp; ch &lt;= 'Z')Ch3 - 16. 논리 부정 연산자 !▶ 논리 부정 연산자란?▷ true를 flase로, flase는 true로 바꿈  x = ture  !x = false▷ 논리 부정 연산자 : 대입 연산자, 단항 연산자  단항 연산자의 연산방향 : ←boolean b = true;System.out.println(!b);System.out.println(!!b);// consolefalsetrue▷ 문자 ch는 소문자가 아니다  문자 ch는 소문자다  'a' &lt;= ch &lt;= 'z'  'a' &lt;= ch &amp;&amp; ch &lt;= 'z'  아니다(문자 ch는 소문자다)  !('a' &lt;= ch &amp;&amp; ch &lt;= 'z')",
+        "url": "/3cornerstoneJava8"
+    }
+    ,
+    
+    "3cornerstonejava7": {
+        "title": "Ch3-13~14. 비교",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter3. 연산자  Ch3 - 13. 비교 연산자  Ch3 - 14. 문자열의 비교Ch3 - 13. 비교 연산자▶  &gt;  &lt;  &gt;=  &lt;=  ==  !=▷ 두 피연산자를 비교해서 ture 또는 false를 반환▶ 연산자의 종류와 연산결과▷ 대소비교▷ 등가비교▶ 실습▷ char : &gt;char ch1 = 'A', ch2 = 'B';System.out.println(ch1 &gt; ch2);// consolefalse  계산과정          char : int 보다 작은 타입  char → int 자동 형변환      ch1 &gt; ch2  'A' = 65, 'B' = 66  'A' &gt; 'B'  65 &gt; 66 false!      Ch3 - 14. 문자열의 비교▶ 문자열을 비교할 때는?▷ 문자열 비교에는 == 대신 equals()를 사용  문자열 비교 : == 사용가능String str1 = \"abc\";String str2 = \"abc\";System.out.println(str1 == str2);System.out.println(str1.equals(str2));// consoletruetrue  문자열 비교 : == 사용불가String str1 = new String(\"abc\");String str2 = new String(\"abc\");System.out.println(str1 == str2);System.out.println(str1.equals(str2));// consolefalsetrue",
+        "url": "/3cornerstoneJava7"
+    }
+    ,
+    
+    "3cornerstonejava6": {
+        "title": "Ch3-11~12. Math.round()",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter3. 연산자  Ch3 - 11. Math.round()로 반올림하기  Ch3 - 12. 나머지 연산자 %Ch3 - 11. Math.round()로 반올림하기▶ Math.round()란?▷ 실수를 소수점 첫째 자리에서 반올림한 정수를 반환long result = Math.round(4.52);System.out.println(result);// console5▶ 실습▷ double pi = 3.141592;    pi에서 소수점 셋째 자리까지 반올림 하여 3.142를 출력하시오    Math.round() 사용double pi = 3.141592;double thirdUpPi = Math.round(pi * 1000) / 1000.0;System.out.println(thirdUpPi);// console3.142  계산과정Math.round(pi * 1000) / 1000.0→ Math.round(3.141592 * 1000) / 1000.0→ Math.round(3141.592) / 1000.0   // 소수점 첫째자리 5에서 반올림 → 3142→ 3142 / 1000.0(double) // int ÷ double = double→ 3.142(double)▷ double pi = 3.141592;    pi를 3.141로 출력하시오double pi = 3.141592;\t\tdouble thirdUpPi = ((int)(pi * 1000) / 1000.0);// console3.141\t\t  계산과정((int)(pi * 1000) / 1000.0) // (pi * 1000)을 괄호를 사용하여 우선순위→ Math.round(3.141592 * 1000) / 1000.0→ Math.round(3141.592) / 1000.0   // 소수점 첫째자리 5에서 반올림 → 3142→ 3142 / 1000.0(double) // int ÷ double = double→ 3.142(double)Ch3 - 12. 나머지 연산자 %▶ 나머지 연산자 %란?▷ 오른쪽 피연산자로 나누고 남은 나머지를 반환10 ÷ 8 = 1…2  // 몫 = 1, 나머지 = 210/8 = 1 // 몫10%8 = 2 // 나머지System.out.println(10/8);System.out.println(10%8);// console1 // 몫2 // 나머지▶ % : 부호는 무시▷ 10%8 = 10%-8System.out.println(10%8);System.out.println(10%-8);// console22",
+        "url": "/3cornerstoneJava6"
+    }
+    ,
+    
+    "3cornerstonejava5": {
+        "title": "Ch3-9~10. 산술변환",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter3. 연산자  Ch3 - 9. 사칙 연산자  Ch3 - 10. 산술 변환Ch3 - 9. 사칙 연산자▶ + - * /▷ 10 / 4 = 2?▷ 컴퓨터는 같은 타입끼리만 계산가능▷ 10 ÷ 4 = 2.5▷ 10(int) / 4(int) = 2(int)  // 소수점 이하는 버려짐▷ 10(int) / 4.0f → 10.0f / 4.0f = 2.5f  // 결과를 실수로 얻으려면 피연산자 타입을 실수로 통일int a = 10, b = 4;System.out.printf(\"%d ÷ %d = %d%n\", a, b, a / b);System.out.printf(\"%d ÷ %f = %f%n\", a, (float)b, a / (float)b);// console10 ÷ 4 = 210 ÷ 4.000000 = 2.500000Ch3 - 10. 산술 변환▶ 산술 변환이란?▷ 연산 전에 피연산자의 타입을 일치시키는 것① 두 피연산자의 타입을 같게 일치 - 보다 큰 타입으로 일치long(8 byte) + int(4 byte) → long + long = long   // long &gt; intfloat(4 byte) + int(4 byte) → float + float = float    // float의 범위 ⊃ int의 범위double(8 byte) + float(4 byte) → double + double = double   // double &gt; float② 피연산자의 타입이 int보다 작은 타입이면 int로 변환      int보다 작은 타입 = byte, char, short   · byte : -128 ~127   · char : 0 ~ 6만   · short : ±3만    ‘300 × 300 = 9만’ 이 정도만 계산해도 short의 범위를 넘어버림  오버플로우 발생  그래서 int보다 작은 단위는 오버플로우 방지를 위해 int로 변환byte(1 byte) + short(2 byte) → int + int → intchar(2 byte) + short(2 byte) → int + int → int ▶ 산술 변환 예시▷ char - char → int - int = int'2'(char) - '0'(char) → 50(int) - 48(int) = 2(int) ▷ long = int × int → long = long × intint  a = 1_000_000,\t// 1백만 = 10의 6제곱     b = 2_000_000;\t// 2백만 = 10의 6제곱long c = a * b;\t// 10의6제곱 * 10의6제곱 = 10의 12제곱System.out.println(c);// console-1454759936    // ?? 오버플로우 난듯,,long c = a(int) * b(int)      문제① int의 범위는 10의9제곱 결과값은 10의12제곱, 오버플로우 발생문제② long에 int를 넣으려면 값손실 발생    해결 a나 b 둘 중 하나를 int → long으로 수동 형변환  오버플로우 벗어나는 법  int → long 수동 형변환long c = a * b;long c = (long)a * b;int  a = 1_000_000,\t// 1백만 = 10의 6제곱     b = 2_000_000;\t// 2백만 = 10의 6제곱long c = (long)a * b;\t// 10의6제곱 * 10의6제곱 = 10의 12제곱System.out.println(c);// console2000000000000  계산과정long c = (long)a * b;long c = (long)1000000 * 2000000;long c = 1000000L * 2000000;long c = 1000000L * 2000000L;long c = 2000000000000L;",
+        "url": "/3cornerstoneJava5"
+    }
+    ,
+    
+    "3cornerstonejava4": {
+        "title": "Ch3-7~8. 형변환",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter3. 연산자  Ch3 - 7. 형변환 연산자  Ch3 - 8. 자동 형변환Ch3 - 7. 형변환 연산자▶ 형변환이란?▷ 변수 또는 상수의 타입을 다른 타입으로 변환하는 것(타입)피연산자▷ double → intdouble d = 85.4;int score = (int)d;System.out.println(score);System.out.println(d);// console85  // score, 형변환85.4    // d, 형변환이 된 건 score안에 들어간 d값이지 변수 d 그 자체가 아님▷ 유니코드 문자표애초에 컴퓨터는 0과 1 밖에 모름사람이 문자로 써도 컴퓨터는 0과 1로 바꿔서 알아들음그래서 애초에 약속 같은 코드 문자표가 존재▷ int → charint i = 65;char ch = (char)i;System.out.println(ch);// consoleA▷ char → intchar ch = 'A';int i = (int)ch;System.out.println(i);// console65▷ float → intfloat f = 1.6f;int i = (int)f;System.out.println(i);// console1   // 형변환 시 반올림 안함, 소수점은 그냥 버림▷ int → floatint i = 10;float f = (float)i;System.out.println(f);// console10.0Ch3 - 8. 자동 형변환▶ 자동 형변환이란?▷ 컴파일러가 자동으로 형변환 해주는 것▶ 변수 타입 &gt; 값 : 자동 형변환 가능float f = 1234;System.out.println(f);// console1234.0▶ 변수 타입 &lt; 값 : 자동 형변환 불가능▷ 값손실 발생int i = 3.14f;  // 에러▷ 수동 형변환 가능int i = (int)3.14f;System.out.println(i);// console3▶ 예시▷ byte → int▷ int → byte▶ 자동 형변환 정리▶ 예외▷ 예외 1. 변수 타입 &lt; 값 : 자동 형변환 불가한 조건지만 가능한 경우byte b = 100;    // byte(-128 ~ 127)의 범위 안에 리터럴(100)이 들어감 → 자동 형변환 가능▷ 예외 1과 비슷하지만 → 자동 형변환 불가한 경우 1int i = 100;byte b = i; // 에러, i는 리터럴이 아닌 변수, 변수 내 값이 바뀔 수 있기 때문에 에러를 냄▷ 예외 1과 비슷하지만 → 자동 형변환 불가한 경우 2byte b = 1000;  // 에러, 1000이 변수 아닌 리터럴이지만 byte(-128 ~ 127)의 범위를 넘어감 → 값손실 발생 → 수동 형변환",
+        "url": "/3cornerstoneJava4"
+    }
+    ,
+    
+    "3cornerstonejava3": {
+        "title": "Ch3-5~6. 증감",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter3. 연산자  Ch3 - 5. 증감 연산자 ++와 –  Ch3 - 6. 부호 연산자Ch3 - 5. 증감 연산자 ++와 –▶ 증가 연산자(++)▷ 피연산자의 값을 1 증가 시킴▶ 감소 연산자(–)▷ 피연산자의 값을 1 감소 시킴▶ 전위형 후위형▷ 전위형? 후위형?▷ 증감 연산자가 독립적으로 사용된 경우, 전위형과 후위형의 차이 없음int i = 1;\t\tSystem.out.println(i++);System.out.println(++i);// console22▷ 전위형 j = ++i;int i = 1, j = 0;++i;    // ① 전위형은 자기 먼저 더하기, i = 1 + 1 = 2j = i;  // ② 더한 걸 대입, j = 2        System.out.println(j);// console2▷ 후위형 j = i++;int i = 1, j = 0;j = i;  // ① 후위형은 먼저 대입, j = 1i++;    // ② j와 별개로 i만 더해져 있음, i = 2        System.out.println(j);  // j는? 더해진 i를 모름, 더하기 전의 i인 1을 출력// console1Ch3 - 6. 부호 연산자▶ 단항 연산자 - +▷ - : 피연산자의 부호를 반대로 변경▷ + : 아무런 일도 일어나지 않음(실제 사용안함)▶ 실습int i = -10;i = -i;System.out.println(i);// console10",
+        "url": "/3cornerstoneJava3"
+    }
+    ,
+    
+    "3cornerstonejava2": {
+        "title": "Ch3-3~4. 순위와 규칙",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter3. 연산자  Ch3 - 3. 연산자의 우선순위  Ch3 - 4. 연산자의 결합규칙Ch3 - 3. 연산자의 우선순위▶ 연산자의 우선순위란?▷ 하나의 식(expression)에 연산자가 둘 이상 있을 때,     어떤 연산을 먼저 수행할지를 자동 결정하는 것▷ () : 수동결정▷ 그러나 계속 수동결정을 통해 우선순위를 줄 순 없음▷ 우선순위를 상식적으로 생각Ch3 - 4. 연산자의 결합규칙▶ 결합규칙이란?▷ 우선순위가 같은 연산자가 있을 때,     어떤 것을 먼저 연산할 것인가?▷ 대입·단항 연산자 = 왼쪽 ← 오른쪽▷ 대입·단항 연산자 외 모든 연산자 = 왼쪽 → 오른쪽&lt;연산자의 우선순위와 결합법칙 결론 3가지&gt;1. 산술 &gt; 비교 &gt; 논리 &gt; 대입2. 단항 &gt; 이항 &gt; 삼항3. 왼쪽 -&gt; 오른쪽(단항·대입 연산자 제외)",
+        "url": "/3cornerstoneJava2"
+    }
+    ,
+    
+    "3cornerstonejava1": {
+        "title": "Ch3-1~2. 종류",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter3. 연산자  Ch3 - 1. 연산자와 피연산자  Ch3 - 2. 연산자의 종류Ch3 - 1. 연산자와 피연산자▶ 연산자란?▷ 연산을 수행하는 기호 : + - × ÷▶ 피연산자란?▷ 연산자의 연산 수행 대상모든 연산자는 연산결과를 반환한다int x = 5;\t\tSystem.out.println(4 * x + 3);  // 4 * 5 + 3 → 20 + 3// console23  // 연산결과Ch3 - 2. 연산자의 종류▶ 산술 연산자▷ + - * / : 사칙 연산▷ % : 나머지 연산▶ 비교 연산자▷ &gt; &lt; : 큼 작음▷ &gt;= &lt;= : 크거나 같음 작거나 같음▷ == != : 같음 다름▶ 논리 연산자▷ &amp;&amp; : and(둘 다)x &gt; 3 &amp;&amp; x &lt; 5 // x는 3보다 크고 5보다 작다▷ || : or(둘 중 하나)x &gt; 3 || x &lt; 5 // x는 3보다 크거나 5보다 작다▷ ! : not!(x &gt; 3) // x는 3보다 작거나 같다▶ 대입 연산자▷ = : 우변의 값을 좌변에 저장result = x + y▶ 기타 연산자▷ (type) : 형변환 연산자▷ ?: : 삼항 연산자▷ instanceof : instanceof 연산자",
+        "url": "/3cornerstoneJava1"
+    }
+    ,
+    
     "2cornerstonejava19": {
         "title": "Ch2-17. 타입 간 변환",
             "author": "JungRan-Baek",
