@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>Calender 1</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+    <!-- syntax.css 추가 -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+    <!-- 웹폰트 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="" />
+    <link rel="shortcut icon" href="https://100jran.github.io/assets/built/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://100jran.github.io/calender" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="100'Log" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Calender 1" />
+    <meta property="og:description" content="실습 코드스쿼드 자바 플레이그라운드 캘린더 만들기 0. 목차 1. 달력구현 2. 두 수의 합 출력 3. 입력받은 월의 일수 출력 4. 반복입력 프로그램 설정 5. 종료 조건을 이용해 반복하기 1. 달력구현 ▶ Mission. ▷ 아래 내용을 그대로 출력하는 프로그램을 작성해 본다. 일 월 화 수 목 금 토 -------------------- 1" />
+    <meta property="og:url" content="https://100jran.github.io/calender" />
+    <meta property="og:image" content="https://100jran.github.io/assets/built/images/calendar.jpg" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2021-05-16T20:40:00+09:00" />
+    <meta property="article:modified_time" content="2021-05-16T20:40:00+09:00" />
+    <meta property="article:tag" content="Training" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Calender 1" />
+    <meta name="twitter:description" content="실습 코드스쿼드 자바 플레이그라운드 캘린더 만들기 0. 목차 1. 달력구현 2. 두 수의 합 출력 3. 입력받은 월의 일수 출력 4. 반복입력 프로그램 설정 5. 종료 조건을 이용해 반복하기 1. 달력구현 ▶ Mission. ▷ 아래 내용을 그대로 출력하는 프로그램을 작성해 본다. 일 월 화 수 목 금 토 -------------------- 1" />
+    <meta name="twitter:url" content="https://100jran.github.io/" />
+    <meta name="twitter:image" content="https://100jran.github.io/assets/built/images/calendar.jpg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="100'Log" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Training" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "100'Log",
+        "logo": "https://100jran.github.io/"
+    },
+    "url": "https://100jran.github.io/calender",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://100jran.github.io/assets/built/images/calendar.jpg",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://100jran.github.io/calender"
+    },
+    "description": "실습 코드스쿼드 자바 플레이그라운드 캘린더 만들기 0. 목차 1. 달력구현 2. 두 수의 합 출력 3. 입력받은 월의 일수 출력 4. 반복입력 프로그램 설정 5. 종료 조건을 이용해 반복하기 1. 달력구현 ▶ Mission. ▷ 아래 내용을 그대로 출력하는 프로그램을 작성해 본다. 일 월 화 수 목 금 토 -------------------- 1"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="Calender 1" href="/feed.xml" />
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://100jran.github.io/">100'Log</a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <!-- about
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    -->
+    <!--
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/java/">java</a></li>
+    -->
+    <!-- javascript
+    <li class="nav-python" role="menuitem"><a href="/tag/javaScript/">javaScript</a></li>
+    -->
+    <!--
+    <li class="nav-python" role="menuitem"><a href="/tag/java practice/">java practice</a></li>
+    -->
+    <!-- til
+    <li class="nav-python" role="menuitem"><a href="/tag/til/">til</a></li>
+    -->
+    <li class="nav-archive" role="menuitem">
+        <a href="/archive.html">Posts</a>
+    </li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/author_archive.html">Tag</a>
+    </li>
+  </ul>
+
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Search</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-training post tag-training ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="16 May 2021">16 May 2021</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/training/'>TRAINING</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">Calender 1</h1>
+            </header>
+
+            <!-- 포스팅 했을 때 상단 이미지
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/calendar.jpg)">
+            </figure>
+            
+             -->
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <blockquote>
+  <p>실습</p>
+</blockquote>
+
+<p><a href="https://youtu.be/qmn_cM1YC2A">코드스쿼드 자바 플레이그라운드 캘린더 만들기</a></p>
+
+<p><br /></p>
+<h1 id="0-목차">0. 목차<br /></h1>
+<hr />
+<p><br /></p>
+<blockquote>
+  <h4 id="1-달력구현">1. <a href="#Verse 1">달력구현</a><br /></h4>
+  <h4 id="2-두-수의-합-출력">2. <a href="#Verse 2">두 수의 합 출력</a><br /></h4>
+  <h4 id="3-입력받은-월의-일수-출력">3. <a href="#Verse 3">입력받은 월의 일수 출력</a><br /></h4>
+  <h4 id="4-반복입력-프로그램-설정-">4. <a href="#Verse 4">반복입력 프로그램 설정 </a><br /></h4>
+  <h4 id="5-종료-조건을-이용해-반복하기">5. <a href="#Verse 5">종료 조건을 이용해 반복하기</a></h4>
+</blockquote>
+
+<p><br /><a id="Verse 1"></a></p>
+<h1 id="1-달력구현-1">1. 달력구현</h1>
+<hr />
+
+<h4 id="-mission">▶ Mission.<br /></h4>
+<h4 id="-아래-내용을-그대로-출력하는-프로그램을-작성해-본다">▷ 아래 내용을 그대로 출력하는 프로그램을 작성해 본다.<br /></h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">일</span> <span class="err">월</span> <span class="err">화</span> <span class="err">수</span> <span class="err">목</span> <span class="err">금</span> <span class="err">토</span>
+<span class="o">--------------------</span>
+ <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">4</span>  <span class="mi">5</span>  <span class="mi">6</span>  <span class="mi">7</span>
+ <span class="mi">8</span>  <span class="mi">9</span> <span class="mi">10</span> <span class="mi">11</span> <span class="mi">12</span> <span class="mi">13</span> <span class="mi">14</span>
+<span class="mi">15</span> <span class="mi">16</span> <span class="mi">17</span> <span class="mi">18</span> <span class="mi">19</span> <span class="mi">20</span> <span class="mi">21</span>
+<span class="mi">22</span> <span class="mi">23</span> <span class="mi">24</span> <span class="mi">25</span> <span class="mi">26</span> <span class="mi">27</span> <span class="mi">28</span>
+</code></pre></div></div>
+
+<h4 id="-혼자-mission-해보기---1">▶ <em>혼자 Mission 해보기 - 1</em><br /></h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">baek</span><span class="o">.</span><span class="na">calender</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Calender</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"일 월 화 수 목 금 토"</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"---------------------"</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">" 1  2  3  4  5  6  7"</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">" 8  9 10 11 12 13 14"</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"15 16 17 18 19 20 21"</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"22 23 24 25 26 27 28"</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"29 30 31"</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">일</span> <span class="err">월</span> <span class="err">화</span> <span class="err">수</span> <span class="err">목</span> <span class="err">금</span> <span class="err">토</span>
+<span class="o">---------------------</span>
+ <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">4</span>  <span class="mi">5</span>  <span class="mi">6</span>  <span class="mi">7</span>
+ <span class="mi">8</span>  <span class="mi">9</span> <span class="mi">10</span> <span class="mi">11</span> <span class="mi">12</span> <span class="mi">13</span> <span class="mi">14</span>
+<span class="mi">15</span> <span class="mi">16</span> <span class="mi">17</span> <span class="mi">18</span> <span class="mi">19</span> <span class="mi">20</span> <span class="mi">21</span>
+<span class="mi">22</span> <span class="mi">23</span> <span class="mi">24</span> <span class="mi">25</span> <span class="mi">26</span> <span class="mi">27</span> <span class="mi">28</span>
+<span class="mi">29</span> <span class="mi">30</span> <span class="mi">31</span>
+</code></pre></div></div>
+<p>간격이 맞지 않음<br />
+콘솔로 볼 때는 맞지 않았는데 블로그에 올리니 간격 맞음<br /></p>
+
+<h4 id="-혼자-mission-해보기---2">▶ <em>혼자 Mission 해보기 - 2</em><br /></h4>
+<h4 id="-간격을-아예-넓혀서-코딩">▷ 간격을 아예 넓혀서 코딩<br /></h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">baek</span><span class="o">.</span><span class="na">calender</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Calender</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"일	월	화	수	목	금	토"</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"---------------------------------------------------"</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"1	2	3	4	5	6	7"</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"8	9	10	11	12	13	14"</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"15	16	17	18	19	20	21"</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"22	23	24	25	26	27	28"</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"29	30	31"</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">일</span>	<span class="err">월</span>	<span class="err">화</span>	<span class="err">수</span>	<span class="err">목</span>	<span class="err">금</span>	<span class="err">토</span>
+<span class="o">---------------------------------------------------</span>
+<span class="mi">1</span>	<span class="mi">2</span>	<span class="mi">3</span>	<span class="mi">4</span>	<span class="mi">5</span>	<span class="mi">6</span>	<span class="mi">7</span>
+<span class="mi">8</span>	<span class="mi">9</span>	<span class="mi">10</span>	<span class="mi">11</span>	<span class="mi">12</span>	<span class="mi">13</span>	<span class="mi">14</span>
+<span class="mi">15</span>	<span class="mi">16</span>	<span class="mi">17</span>	<span class="mi">18</span>	<span class="mi">19</span>	<span class="mi">20</span>	<span class="mi">21</span>
+<span class="mi">22</span>	<span class="mi">23</span>	<span class="mi">24</span>	<span class="mi">25</span>	<span class="mi">26</span>	<span class="mi">27</span>	<span class="mi">28</span>
+<span class="mi">29</span>	<span class="mi">30</span>	<span class="mi">31</span>
+</code></pre></div></div>
+<ul>
+  <li>자동정렬<br />
+Ctrl + Shift + F<br /></li>
+</ul>
+
+<p><br /><a id="Verse 2"></a></p>
+<h1 id="2-두-수의-합-출력---scanner-활용">2. 두 수의 합 출력 - scanner 활용<br /></h1>
+<hr />
+
+<h4 id="-mission-1">▶ Mission.</h4>
+<h4 id="-키보드로-입력받은-두-숫자의-합을-구한다">▷ 키보드로 입력받은 두 숫자의 합을 구한다.</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">두</span> <span class="err">수를</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="mi">5</span> <span class="mi">10</span> <span class="o">(</span><span class="err">엔터</span><span class="o">)</span>
+<span class="err">두</span> <span class="err">수의</span> <span class="err">합은</span> <span class="mi">15</span><span class="err">입니다</span><span class="o">.</span>
+</code></pre></div></div>
+
+<h4 id="-혼자-mission-해보기">▶ <em>혼자 Mission 해보기</em><br /></h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">baek</span><span class="o">.</span><span class="na">calender</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Calender</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"두 수를 입력하세요."</span><span class="o">);</span>
+		
+		<span class="n">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+		
+		<span class="n">String</span> <span class="n">inputValue</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span>
+		
+		<span class="n">String</span><span class="o">[]</span> <span class="n">splitedValue</span> <span class="o">=</span> <span class="n">inputValue</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">" "</span><span class="o">);</span>
+		
+		<span class="kt">int</span> <span class="n">first</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">splitedValue</span><span class="o">[</span><span class="mi">0</span><span class="o">]);</span>
+		<span class="kt">int</span> <span class="n">second</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">splitedValue</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span>
+		
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"두 수의 합은 "</span> <span class="o">+</span> <span class="o">(</span><span class="n">first</span> <span class="o">+</span> <span class="n">second</span><span class="o">)</span> <span class="o">+</span> <span class="s">" 입니다."</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">두</span> <span class="err">수를</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="mi">5</span> <span class="mi">10</span>
+<span class="err">두</span> <span class="err">수의</span> <span class="err">합은</span> <span class="mi">15</span> <span class="err">입니다</span><span class="o">.</span>
+</code></pre></div></div>
+
+<h4 id="-해설-보고-mission-해보기">▶ <em>해설 보고 Mission 해보기</em><br /></h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">baek</span><span class="o">.</span><span class="na">calender</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Sum</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="c1">//입력</span>
+		<span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">;</span>
+		<span class="n">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+		<span class="n">String</span> <span class="n">s1</span><span class="o">,</span> <span class="n">s2</span><span class="o">;</span>
+		
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"두 수를 입력하세요."</span><span class="o">);</span>
+		<span class="n">s1</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+		<span class="n">s2</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+		<span class="n">a</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">s1</span><span class="o">);</span>
+		<span class="n">b</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">s2</span><span class="o">);</span>
+		
+		<span class="c1">//출력</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"두 수의 합은 %d 입니다."</span><span class="o">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">);</span>
+		<span class="n">scanner</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">두</span> <span class="err">수를</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="mi">5</span> <span class="mi">10</span>
+<span class="err">두</span> <span class="err">수의</span> <span class="err">합은</span> <span class="mi">15</span> <span class="err">입니다</span><span class="o">.</span>
+</code></pre></div></div>
+<ul>
+  <li>자동 import<br />
+Ctrl + Shift + M<br /></li>
+</ul>
+
+<h6 id="알게-된-점">[알게 된 점]<br /><br /></h6>
+
+<blockquote>
+  <h6 id="1-systemin">1. System.in<br /></h6>
+  <p>키보드로 입력을 받겠다<br /></p>
+</blockquote>
+
+<blockquote>
+  <h6 id="2-scannernext">2. scanner.next<br /></h6>
+  <p>키보드로 입력받는 값 = scanner.next = String<br />
+    1) s1, s2 = String 타입 변수 → s1, s2를 이용하여 키보드로 입력한 값을 담음<br />
+    2) s1, s2 → int a, b에 담음<br />
+       a = Integer.parseInt(s1);<br />
+       b = Integer.parseInt(s2);<br /></p>
+</blockquote>
+
+<blockquote>
+  <h6 id="3-integer">3. Integer<br /></h6>
+  <p>Integer는 정수형 클래스<br />
+    int ≠ Integer<br /></p>
+</blockquote>
+
+<blockquote>
+  <h6 id="4-printf-이용하기">4. printf 이용하기<br /></h6>
+  <p>a = 1, b = 2 일 때<br />
+   system.out.printf(“두 수의 합은 %d”, a + b); = 두 수의 합은 3<br />
+   system.out.printf(“%d와 %d의 합은 %d”, a, b, a + b); = 1와 2의 합은 3<br /></p>
+</blockquote>
+
+<blockquote>
+  <h6 id="5-scannerclose">5. scanner.close();<br /></h6>
+  <p>다 썼으면 문 닫아줘야 경고안남<br /></p>
+</blockquote>
+
+<p><br /><a id="Verse 3"></a></p>
+<h1 id="3-입력받은-월의-일수-출력---배열-활용">3. 입력받은 월의 일수 출력 - 배열 활용</h1>
+<hr />
+
+<h4 id="-mission-2">▶ Mission.</h4>
+<h4 id="-달-입력-시-그-달의-일수를-출력하는-프로그램-작성하기">▷ 달 입력 시 그 달의 일수를 출력하는 프로그램 작성하기</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">달을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="mi">3</span> <span class="o">(</span><span class="err">엔터</span><span class="o">)</span>
+<span class="mi">3</span><span class="err">월은</span> <span class="mi">31</span><span class="err">일까지</span> <span class="err">있습니다</span><span class="o">.</span>
+</code></pre></div></div>
+
+<h4 id="-혼자-mission-해보기---1-1">▶ <em>혼자 Mission 해보기 - 1</em><br /></h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">baek</span><span class="o">.</span><span class="na">calender</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Calender</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"달을 입력하세요."</span><span class="o">);</span>
+		<span class="n">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+		<span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+		
+		<span class="kt">int</span><span class="o">[]</span> <span class="n">b</span> <span class="o">=</span> <span class="o">{</span><span class="mi">31</span><span class="o">,</span> <span class="mi">28</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">};</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">b</span><span class="o">[</span><span class="n">a</span><span class="o">]);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">달을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="mi">3</span>
+<span class="mi">30</span>
+</code></pre></div></div>
+
+<h4 id="-해설-보고-mission-해보기---1">▶ <em>해설 보고 Mission 해보기 - 1</em><br /></h4>
+<h4 id="-변수명-배열">▷ 변수명, 배열</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">baek</span><span class="o">.</span><span class="na">calender</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Calender</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"달을 입력하세요."</span><span class="o">);</span>
+		<span class="n">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+		<span class="kt">int</span> <span class="n">month</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+		
+		<span class="kt">int</span><span class="o">[]</span> <span class="n">maxDays</span> <span class="o">=</span> <span class="o">{</span><span class="mi">31</span><span class="o">,</span> <span class="mi">28</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">};</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"%d월은 %d일까지 있습니다. \n"</span><span class="o">,</span> <span class="n">month</span><span class="o">,</span> <span class="n">maxDays</span><span class="o">[</span><span class="n">month</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">달을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="mi">3</span>
+<span class="mi">3</span><span class="err">월은</span> <span class="mi">31</span><span class="err">일까지</span> <span class="err">있습니다</span><span class="o">.</span> 
+</code></pre></div></div>
+
+<h4 id="알게-된-점-1">[알게 된 점]<br /><br /></h4>
+
+<blockquote>
+  <h6 id="1-배열에서-마이너스-쓰기-가능">1. 배열에서 마이너스 쓰기 가능<br /></h6>
+  <p>배열에는 0이 있기 때문에 입력한 달에서 -1을 해 주어야 날짜가 맞음<br /></p>
+</blockquote>
+
+<blockquote>
+  <h6 id="2-변수명은-무엇을-하는-변수인지-알기쉽게">2. 변수명은 무엇을 하는 변수인지 알기쉽게!<br /></h6>
+  <p>혼자 했을 때는 a, b라고 변수명을 만들었음<br />
+달 입력을 받는 변수는 month<br />
+최대 일수를 나타내는 변수는 maxDays<br />
+라고 해 주니 가시성 up<br /></p>
+</blockquote>
+
+<blockquote>
+  <h6 id="3-n">3. \n<br /></h6>
+  <p>printf로 할 때 줄바꿈 키 : \n</p>
+</blockquote>
+
+<p><br /></p>
+<h4 id="-해설-보고-mission-해보기---2">▶ <em>해설 보고 Mission 해보기 - 2</em><br /></h4>
+<h4 id="-메서드-배열">▷ 메서드, 배열</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">baek</span><span class="o">.</span><span class="na">calender</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Calendar</span> <span class="o">{</span>
+	
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">maxDays</span> <span class="o">=</span> <span class="o">{</span><span class="mi">31</span><span class="o">,</span> <span class="mi">28</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">};</span>
+	
+	<span class="kd">public</span> <span class="kt">int</span> <span class="nf">maxDaysOfMonth</span><span class="o">(</span><span class="kt">int</span> <span class="n">month</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">maxDays</span><span class="o">[</span><span class="n">month</span> <span class="o">-</span> <span class="mi">1</span><span class="o">];</span>
+	<span class="o">}</span>
+	
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"달을 입력하세요."</span><span class="o">);</span>
+		<span class="n">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+		<span class="n">Calender</span> <span class="n">cal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Calender</span><span class="o">();</span>
+		<span class="kt">int</span> <span class="n">month</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+	
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"%d월은 %d일까지 있습니다. \n"</span><span class="o">,</span> <span class="n">month</span><span class="o">,</span> <span class="n">cal</span><span class="o">.</span><span class="na">maxDaysOfMonth</span><span class="o">(</span><span class="n">month</span><span class="o">));</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">달을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="mi">3</span>
+<span class="mi">3</span><span class="err">월은</span> <span class="mi">31</span><span class="err">일까지</span> <span class="err">있습니다</span><span class="o">.</span> 
+</code></pre></div></div>
+
+<h4 id="알게-된-점-2">[알게 된 점]<br /><br /></h4>
+
+<blockquote>
+  <h6 id="1-static과-final">1. static과 final<br /></h6>
+  <ul>
+    <li><strong>static</strong><br />
+메모리에 한번 입력된 건 그걸로 계속 씀<br />
+A가 10을 입력했는데 좀 있다 B도 10입력<br />
+A가 입력한 10, B가 입력한 10 이렇게 따로 저장 안함<br />
+A가 입력했을 때 10 잘 보관<br />
+B가 또 10 입력하면 또 새로운 10 저장하는게 아니라 있는 10 씀<br />
+메모리 낭비안함<br /></li>
+    <li><strong>final</strong><br />
+한번 한 결정이 최종결정<br />
+번복이란 없는 노빠꾸 친구<br /></li>
+    <li><strong>static과 final</strong><br />
+죽이 잘 맞는 친구<br />
+예를들어 <strong>A</strong>는 10을 입력하기도 하고 마음 변하면 20을 입력하기도 함<br />
+그럼 static은 장단맞춰 10 저장 20도 저장<br />
+근데 <strong>final A</strong>가 10 입력했다?<br />
+그럼 A랑 10은 그냥 결혼한거임 주구장창 10만 입력<br />
+<strong>static</strong>은 처음 입력해 둔 10만 꺼내주면 됨<br />
+그래서 static과 final은 찰떡궁합<br /></li>
+    <li>maxDays는?<br />
+public <strong>static final</strong> int[] maxDays<br />
+배열에 넣어두고 애초에 설정해 둔대로 딱 부르는 수만 나와라!<br />
+<a href="https://makemethink.tistory.com/184">참고</a></li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <h6 id="2-maxdaysofmonth-메서드를-사용하기-위해서는">2. maxDaysOfMonth 메서드를 사용하기 위해서는?<br /></h6>
+  <p>maxDaysOfMonth가 있는 Calender 클래스를 쓸 수 있게 만들어 줌<br />
+<strong>Calender cal = new Calender();</strong> 이걸 해 주고<br />
+<strong>cal.maxDaysOfMonth()</strong>를 해 주면 불러서 쓸 수 있음<br /></p>
+</blockquote>
+
+<p><br /></p>
+<h4 id="-해설-보고-mission-해보기---3">▶ <em>해설 보고 Mission 해보기 - 3</em><br /></h4>
+<h4 id="-if문">▷ if문</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">baek</span><span class="o">.</span><span class="na">calender</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Calender</span> <span class="o">{</span>
+	
+	<span class="kt">int</span> <span class="n">month</span><span class="o">;</span>
+	
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">maxDays</span> <span class="o">=</span> <span class="o">{</span><span class="mi">31</span><span class="o">,</span> <span class="mi">28</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">};</span>
+	
+	<span class="kd">public</span> <span class="kt">int</span> <span class="nf">maxDaysOfMonth</span><span class="o">(</span><span class="kt">int</span> <span class="n">month</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">if</span><span class="o">(</span><span class="n">month</span> <span class="o">==</span> <span class="mi">2</span><span class="o">)</span> <span class="o">{</span>
+			<span class="k">return</span> <span class="mi">28</span><span class="o">;</span>
+		<span class="o">}</span> <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">month</span> <span class="o">==</span> <span class="mi">4</span><span class="o">)</span> <span class="o">{</span>
+			<span class="k">return</span> <span class="mi">30</span><span class="o">;</span>
+		<span class="o">}</span> <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">month</span> <span class="o">==</span> <span class="mi">6</span><span class="o">)</span> <span class="o">{</span>
+			<span class="k">return</span> <span class="mi">30</span><span class="o">;</span>
+		<span class="o">}</span> <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">month</span> <span class="o">==</span> <span class="mi">9</span><span class="o">)</span> <span class="o">{</span>
+			<span class="k">return</span> <span class="mi">30</span><span class="o">;</span>
+		<span class="o">}</span> <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">month</span> <span class="o">==</span> <span class="mi">11</span><span class="o">)</span> <span class="o">{</span>
+			<span class="k">return</span> <span class="mi">30</span><span class="o">;</span>
+		<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+			<span class="k">return</span> <span class="mi">31</span><span class="o">;</span>
+		<span class="o">}</span>
+		
+	<span class="o">}</span>
+	
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"달을 입력하세요."</span><span class="o">);</span>
+		<span class="n">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+		<span class="n">Calender</span> <span class="n">cal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Calender</span><span class="o">();</span>
+		<span class="kt">int</span> <span class="n">month</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+		
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"%d월은 %d일까지 있습니다. \n"</span><span class="o">,</span> <span class="n">month</span><span class="o">,</span> <span class="n">cal</span><span class="o">.</span><span class="na">maxDaysOfMonth</span><span class="o">(</span><span class="n">month</span><span class="o">));</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">달을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="mi">3</span>
+<span class="mi">3</span><span class="err">월은</span> <span class="mi">31</span><span class="err">일까지</span> <span class="err">있습니다</span><span class="o">.</span> 
+</code></pre></div></div>
+
+<p>if문 보단 배열이 낫다</p>
+
+<p><br /></p>
+<h4 id="-해설-보고-mission-해보기---4">▶ <em>해설 보고 Mission 해보기 - 4</em><br /></h4>
+<h4 id="-switch">▷ switch</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">baek</span><span class="o">.</span><span class="na">calender</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Calender</span> <span class="o">{</span>
+	
+	<span class="kt">int</span> <span class="n">month</span><span class="o">;</span>
+	
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">maxDays</span> <span class="o">=</span> <span class="o">{</span><span class="mi">31</span><span class="o">,</span> <span class="mi">28</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">};</span>
+	
+	<span class="kd">public</span> <span class="kt">int</span> <span class="nf">maxDaysOfMonth</span><span class="o">(</span><span class="kt">int</span> <span class="n">month</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">switch</span><span class="o">(</span><span class="n">month</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">case</span> <span class="mi">2</span> <span class="o">:</span>
+			<span class="k">return</span> <span class="mi">28</span><span class="o">;</span>
+		<span class="k">case</span> <span class="mi">4</span> <span class="o">:</span>
+			<span class="k">return</span> <span class="mi">30</span><span class="o">;</span>
+		<span class="k">case</span> <span class="mi">6</span> <span class="o">:</span>
+			<span class="k">return</span> <span class="mi">30</span><span class="o">;</span>
+		<span class="k">case</span> <span class="mi">9</span> <span class="o">:</span>
+			<span class="k">return</span> <span class="mi">30</span><span class="o">;</span>
+		<span class="k">case</span> <span class="mi">11</span> <span class="o">:</span>
+			<span class="k">return</span> <span class="mi">30</span><span class="o">;</span>
+		<span class="k">default</span> <span class="o">:</span>
+			<span class="k">return</span> <span class="mi">31</span><span class="o">;</span>
+			<span class="o">}</span>
+		<span class="o">}</span>
+	
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"달을 입력하세요."</span><span class="o">);</span>
+		<span class="n">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+		<span class="n">Calender</span> <span class="n">cal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Calender</span><span class="o">();</span>
+		<span class="kt">int</span> <span class="n">month</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+	
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"%d월은 %d일까지 있습니다. \n"</span><span class="o">,</span> <span class="n">month</span><span class="o">,</span> <span class="n">cal</span><span class="o">.</span><span class="na">maxDaysOfMonth</span><span class="o">(</span><span class="n">month</span><span class="o">));</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">달을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="mi">3</span>
+<span class="mi">3</span><span class="err">월은</span> <span class="mi">31</span><span class="err">일까지</span> <span class="err">있습니다</span><span class="o">.</span> 
+</code></pre></div></div>
+
+<p>switch 보단 배열이 낫다</p>
+
+<p><br /></p>
+<h4 id="-혼자-응용-해보기">▶ <em>혼자 응용 해보기</em></h4>
+<h4 id="-달력도-나오게-해-보기-">▷ 달력도 나오게 해 보기 <br /></h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">baek</span><span class="o">.</span><span class="na">calender</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Calender</span> <span class="o">{</span>
+	
+	<span class="kt">int</span> <span class="n">month</span><span class="o">;</span>
+	
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">maxDays</span> <span class="o">=</span> <span class="o">{</span><span class="mi">31</span><span class="o">,</span> <span class="mi">28</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">};</span>
+	
+	<span class="kd">public</span> <span class="kt">int</span> <span class="nf">maxDaysOfMonth</span><span class="o">(</span><span class="kt">int</span> <span class="n">month</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">maxDays</span><span class="o">[</span><span class="n">month</span> <span class="o">-</span> <span class="mi">1</span><span class="o">];</span>
+	<span class="o">}</span>
+	
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">printCalender</span><span class="o">(</span><span class="kt">int</span> <span class="n">month</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">String</span> <span class="n">b</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+		<span class="n">String</span> <span class="n">i</span> <span class="o">=</span> <span class="s">"31"</span><span class="o">;</span>
+		<span class="n">String</span> <span class="n">j</span> <span class="o">=</span> <span class="s">"30 "</span><span class="o">;</span>
+		<span class="n">String</span> <span class="n">t</span> <span class="o">=</span> <span class="s">"29 "</span><span class="o">;</span>
+		<span class="n">String</span> <span class="n">k</span> <span class="o">=</span> <span class="s">" 28"</span><span class="o">;</span>
+		
+		<span class="k">if</span><span class="o">(</span><span class="n">month</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">b</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="n">i</span><span class="o">;</span>
+		<span class="o">}</span> <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">month</span> <span class="o">==</span> <span class="mi">2</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">b</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+		<span class="o">}</span> <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">month</span> <span class="o">==</span> <span class="mi">3</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">b</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="n">i</span><span class="o">;</span>
+		<span class="o">}</span> <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">month</span> <span class="o">==</span> <span class="mi">5</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">b</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="n">i</span><span class="o">;</span>
+		<span class="o">}</span> <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">month</span> <span class="o">==</span> <span class="mi">7</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">b</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="n">i</span><span class="o">;</span>
+		<span class="o">}</span> <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">month</span> <span class="o">==</span> <span class="mi">8</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">b</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="n">i</span><span class="o">;</span>
+		<span class="o">}</span> <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">month</span> <span class="o">==</span> <span class="mi">10</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">b</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="n">i</span><span class="o">;</span>
+		<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+			<span class="n">b</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">j</span><span class="o">;</span>
+		<span class="o">}</span>
+		
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"\n2021년 %d월\n"</span><span class="o">,</span> <span class="n">month</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"일 월 화 수 목 금 토"</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"---------------------"</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">" 1  2  3  4  5  6  7"</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">" 8  9 10 11 12 13 14"</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"15 16 17 18 19 20 21"</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"22 23 24 25 26 27"</span> <span class="o">+</span> <span class="n">k</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">b</span><span class="o">);</span>
+	<span class="o">}</span>
+	
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"달을 입력하세요."</span><span class="o">);</span>
+		<span class="n">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+		<span class="n">Calender</span> <span class="n">cal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Calender</span><span class="o">();</span>
+		<span class="kt">int</span> <span class="n">month</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+	
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"%d월은 %d일까지 있습니다. \n"</span><span class="o">,</span> <span class="n">month</span><span class="o">,</span> <span class="n">cal</span><span class="o">.</span><span class="na">maxDaysOfMonth</span><span class="o">(</span><span class="n">month</span><span class="o">));</span>
+		
+		<span class="n">cal</span><span class="o">.</span><span class="na">printCalender</span><span class="o">(</span><span class="n">month</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">달을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="mi">2</span>
+<span class="mi">2</span><span class="err">월은</span> <span class="mi">28</span><span class="err">일까지</span> <span class="err">있습니다</span><span class="o">.</span> 
+
+<span class="mi">2021</span><span class="err">년</span> <span class="mi">2</span><span class="err">월</span>
+<span class="err">일</span> <span class="err">월</span> <span class="err">화</span> <span class="err">수</span> <span class="err">목</span> <span class="err">금</span> <span class="err">토</span>
+<span class="o">---------------------</span>
+ <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">4</span>  <span class="mi">5</span>  <span class="mi">6</span>  <span class="mi">7</span>
+ <span class="mi">8</span>  <span class="mi">9</span> <span class="mi">10</span> <span class="mi">11</span> <span class="mi">12</span> <span class="mi">13</span> <span class="mi">14</span>
+<span class="mi">15</span> <span class="mi">16</span> <span class="mi">17</span> <span class="mi">18</span> <span class="mi">19</span> <span class="mi">20</span> <span class="mi">21</span>
+<span class="mi">22</span> <span class="mi">23</span> <span class="mi">24</span> <span class="mi">25</span> <span class="mi">26</span> <span class="mi">27</span> <span class="mi">28</span>
+</code></pre></div></div>
+
+<p><br /><a id="Verse 4"></a></p>
+<h1 id="4-반복입력-프로그램-설정---반복문-활용">4. 반복입력 프로그램 설정 - 반복문 활용<br /></h1>
+<hr />
+
+<h4 id="-mission-3">▶ Mission.</h4>
+<h4 id="-달-입력-시-그-달의-일수를-출력하는-프로그램-작성하기-1">▷ 달 입력 시 그 달의 일수를 출력하는 프로그램 작성하기</h4>
+<h4 id="-입력한-만큼-반복가능">▷ 입력한 만큼 반복가능</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">반복횟수를</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="mi">3</span> <span class="o">(</span><span class="err">엔터</span><span class="o">)</span>
+
+<span class="err">월을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="mi">1</span>
+<span class="mi">2</span>
+<span class="mi">3</span>
+
+<span class="mi">1</span><span class="err">월은</span> <span class="mi">31</span><span class="err">일까지</span> <span class="err">있습니다</span><span class="o">.</span>
+<span class="mi">2</span><span class="err">월은</span> <span class="mi">28</span><span class="err">일까지</span> <span class="err">있습니다</span><span class="o">.</span>
+<span class="mi">3</span><span class="err">월은</span> <span class="mi">31</span><span class="err">일까지</span> <span class="err">있습니다</span><span class="o">.</span>
+</code></pre></div></div>
+
+<h4 id="-혼자-mission-해보기-1">▶ <em>혼자 Mission 해보기</em><br /></h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">baek</span><span class="o">.</span><span class="na">calender</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Calender</span> <span class="o">{</span>
+	
+	<span class="kt">int</span> <span class="n">month</span><span class="o">;</span>
+	
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">maxDays</span> <span class="o">=</span> <span class="o">{</span><span class="mi">31</span><span class="o">,</span> <span class="mi">28</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">};</span>
+	
+	<span class="kd">public</span> <span class="kt">int</span> <span class="nf">maxDaysOfMonth</span><span class="o">(</span><span class="kt">int</span> <span class="n">month</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">maxDays</span><span class="o">[</span><span class="n">month</span> <span class="o">-</span> <span class="mi">1</span><span class="o">];</span>
+	<span class="o">}</span>
+	
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"반복 횟수를 입력하세요. \n"</span><span class="o">);</span>
+		<span class="n">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+		<span class="n">Calender</span> <span class="n">cal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Calender</span><span class="o">();</span>
+		
+		<span class="kt">int</span> <span class="n">month</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+		
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"\n월을 입력하세요.\n"</span><span class="o">);</span>
+		
+		<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">month</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">j</span><span class="o">);</span>
+		<span class="o">}</span>
+		
+		<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">month</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"\n%d월은 %d일까지 있습니다."</span><span class="o">,</span> <span class="n">i</span><span class="o">,</span> <span class="n">cal</span><span class="o">.</span><span class="na">maxDaysOfMonth</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
+	
+		<span class="o">}</span>
+		<span class="n">scanner</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">반복</span> <span class="err">횟수를</span> <span class="err">입력하세요</span><span class="o">.</span> 
+<span class="mi">3</span>
+
+<span class="err">월을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="mi">1</span>
+<span class="mi">2</span>
+<span class="mi">3</span>
+
+<span class="mi">1</span><span class="err">월은</span> <span class="mi">31</span><span class="err">일까지</span> <span class="err">있습니다</span><span class="o">.</span>
+<span class="mi">2</span><span class="err">월은</span> <span class="mi">28</span><span class="err">일까지</span> <span class="err">있습니다</span><span class="o">.</span>
+<span class="mi">3</span><span class="err">월은</span> <span class="mi">31</span><span class="err">일까지</span> <span class="err">있습니다</span><span class="o">.</span>
+</code></pre></div></div>
+
+<h4 id="-해설보고-mission-해보기">▶ <em>해설보고 Mission 해보기</em><br /></h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">baek</span><span class="o">.</span><span class="na">calender</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Calender</span> <span class="o">{</span>
+	
+	<span class="kt">int</span> <span class="n">month</span><span class="o">;</span>
+	
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">maxDays</span> <span class="o">=</span> <span class="o">{</span><span class="mi">31</span><span class="o">,</span> <span class="mi">28</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">};</span>
+	
+	<span class="kd">public</span> <span class="kt">int</span> <span class="nf">maxDaysOfMonth</span><span class="o">(</span><span class="kt">int</span> <span class="n">month</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">maxDays</span><span class="o">[</span><span class="n">month</span> <span class="o">-</span> <span class="mi">1</span><span class="o">];</span>
+	<span class="o">}</span>
+	
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		
+		<span class="n">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+		<span class="n">Calender</span> <span class="n">cal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Calender</span><span class="o">();</span>
+		
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"반복 횟수를 입력하세요. \n"</span><span class="o">);</span>
+		<span class="kt">int</span> <span class="n">repeat</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+
+		<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">repeat</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"\n월을 입력하세요.\n"</span><span class="o">);</span>
+			<span class="kt">int</span> <span class="n">month</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"\n%d월은 %d일까지 있습니다.\n"</span><span class="o">,</span> <span class="n">month</span><span class="o">,</span> <span class="n">cal</span><span class="o">.</span><span class="na">maxDaysOfMonth</span><span class="o">(</span><span class="n">month</span><span class="o">));</span>
+		<span class="o">}</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"repeat 종료"</span><span class="o">);</span>
+		<span class="n">scanner</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">반복</span> <span class="err">횟수를</span> <span class="err">입력하세요</span><span class="o">.</span> 
+<span class="mi">3</span>
+
+<span class="err">월을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="mi">1</span>
+
+<span class="mi">1</span><span class="err">월은</span> <span class="mi">31</span><span class="err">일까지</span> <span class="err">있습니다</span><span class="o">.</span>
+
+<span class="err">월을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="mi">2</span>
+
+<span class="mi">2</span><span class="err">월은</span> <span class="mi">28</span><span class="err">일까지</span> <span class="err">있습니다</span><span class="o">.</span>
+
+<span class="err">월을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="mi">3</span>
+
+<span class="mi">3</span><span class="err">월은</span> <span class="mi">31</span><span class="err">일까지</span> <span class="err">있습니다</span><span class="o">.</span>
+<span class="n">repeat</span> <span class="err">종료</span>
+</code></pre></div></div>
+
+<h4 id="알게-된-점-3">[알게 된 점]<br /><br /></h4>
+
+<blockquote>
+  <h6 id="for과-while">for과 while<br /></h6>
+  <ul>
+    <li><strong>for</strong><br />
+반복되는 횟수가 정해져 있을 때 쓰면 좋음<br /></li>
+    <li><strong>while</strong><br />
+반복되는 횟수가 정해져 있지 않을 때 쓰면 좋음<br /></li>
+  </ul>
+</blockquote>
+
+<p><br /><a id="Verse 5"></a></p>
+<h1 id="5-종료-조건을-이용해-반복하기-1">5. 종료 조건을 이용해 반복하기</h1>
+<hr />
+
+<h4 id="-mission-4">▶ Mission.</h4>
+<h4 id="-전-단계와-비슷하게-반복입력을-받을-수-있게-구현한다">▷ 전 단계와 비슷하게 반복입력을 받을 수 있게 구현한다.</h4>
+<h4 id="-입력하는-곳-앞에-프롬프트를-출력한다">▷ 입력하는 곳 앞에 프롬프트를 출력한다.</h4>
+<h4 id="--1일-입력받을-경우-프로그램을-종료한다">▷ -1일 입력받을 경우 프로그램을 종료한다.</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">월을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="o">&gt;</span> <span class="mi">3</span>
+<span class="mi">3</span><span class="err">월은</span> <span class="mi">31</span><span class="err">일까지</span> <span class="err">있습니다</span><span class="o">.</span>
+<span class="err">월을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="o">&gt;</span> <span class="mi">2</span>
+<span class="mi">2</span><span class="err">월은</span> <span class="mi">28</span><span class="err">일까지</span> <span class="err">있습니다</span><span class="o">.</span>
+<span class="err">월을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">Have</span> <span class="n">a</span> <span class="n">nice</span> <span class="n">day</span><span class="o">!</span>
+</code></pre></div></div>
+
+<h4 id="-혼자-mission-해보기-2">▶ <em>혼자 Mission 해보기</em><br /></h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">baek</span><span class="o">.</span><span class="na">calender</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Calender</span> <span class="o">{</span>
+	
+	<span class="kt">int</span> <span class="n">month</span><span class="o">;</span>
+	
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">maxDays</span> <span class="o">=</span> <span class="o">{</span><span class="mi">31</span><span class="o">,</span> <span class="mi">28</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">};</span>
+	
+	<span class="kd">public</span> <span class="kt">int</span> <span class="nf">maxDaysOfMonth</span><span class="o">(</span><span class="kt">int</span> <span class="n">month</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">maxDays</span><span class="o">[</span><span class="n">month</span> <span class="o">-</span> <span class="mi">1</span><span class="o">];</span>
+	<span class="o">}</span>
+	
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		
+		<span class="n">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+		<span class="n">Calender</span> <span class="n">cal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Calender</span><span class="o">();</span>
+	
+		<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"월을 입력하세요.\n&gt; "</span><span class="o">);</span>
+			<span class="kt">int</span> <span class="n">month</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"%d월은 %d일까지 있습니다.\n\n"</span><span class="o">,</span> <span class="n">month</span><span class="o">,</span> <span class="n">cal</span><span class="o">.</span><span class="na">maxDaysOfMonth</span><span class="o">(</span><span class="n">month</span><span class="o">));</span>
+		<span class="o">}</span>
+		<span class="n">scanner</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">월을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="o">&gt;</span> <span class="mi">3</span>
+<span class="mi">3</span><span class="err">월은</span> <span class="mi">31</span><span class="err">일까지</span> <span class="err">있습니다</span><span class="o">.</span>
+
+<span class="err">월을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="o">&gt;</span> <span class="mi">2</span>
+<span class="mi">2</span><span class="err">월은</span> <span class="mi">28</span><span class="err">일까지</span> <span class="err">있습니다</span><span class="o">.</span>
+
+<span class="err">월을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="o">&gt;</span> <span class="mi">1</span>
+<span class="mi">1</span><span class="err">월은</span> <span class="mi">31</span><span class="err">일까지</span> <span class="err">있습니다</span><span class="o">.</span>
+
+<span class="err">월을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="o">&gt;</span>
+</code></pre></div></div>
+
+<h4 id="-해설보고-mission-해보기---1">▶ <em>해설보고 Mission 해보기 - 1</em><br /></h4>
+<h4 id="-프롬프트-넣기">▷ 프롬프트 넣기</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">baek</span><span class="o">.</span><span class="na">calender</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Calender</span> <span class="o">{</span>
+	
+	<span class="kt">int</span> <span class="n">month</span><span class="o">;</span>
+	
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">maxDays</span> <span class="o">=</span> <span class="o">{</span><span class="mi">31</span><span class="o">,</span> <span class="mi">28</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">};</span>
+	
+	<span class="kd">public</span> <span class="kt">int</span> <span class="nf">maxDaysOfMonth</span><span class="o">(</span><span class="kt">int</span> <span class="n">month</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">maxDays</span><span class="o">[</span><span class="n">month</span> <span class="o">-</span> <span class="mi">1</span><span class="o">];</span>
+	<span class="o">}</span>
+	
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		
+		<span class="n">String</span> <span class="n">PROMPT</span> <span class="o">=</span> <span class="s">"cal&gt; "</span><span class="o">;</span>
+		<span class="n">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+		<span class="n">Calender</span> <span class="n">cal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Calender</span><span class="o">();</span>
+	
+		<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"월을 입력하세요.\n"</span><span class="o">);</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">PROMPT</span><span class="o">);</span>
+			<span class="kt">int</span> <span class="n">month</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"%d월은 %d일까지 있습니다.\n\n"</span><span class="o">,</span> <span class="n">month</span><span class="o">,</span> <span class="n">cal</span><span class="o">.</span><span class="na">maxDaysOfMonth</span><span class="o">(</span><span class="n">month</span><span class="o">));</span>
+		<span class="o">}</span>
+		<span class="n">scanner</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">월을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="n">cal</span><span class="o">&gt;</span> <span class="mi">3</span>
+<span class="mi">3</span><span class="err">월은</span> <span class="mi">31</span><span class="err">일까지</span> <span class="err">있습니다</span><span class="o">.</span>
+
+<span class="err">월을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="n">cal</span><span class="o">&gt;</span> <span class="mi">4</span>
+<span class="mi">4</span><span class="err">월은</span> <span class="mi">30</span><span class="err">일까지</span> <span class="err">있습니다</span><span class="o">.</span>
+
+<span class="err">월을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="n">cal</span><span class="o">&gt;</span> <span class="mi">11</span>
+<span class="mi">11</span><span class="err">월은</span> <span class="mi">30</span><span class="err">일까지</span> <span class="err">있습니다</span><span class="o">.</span>
+
+<span class="err">월을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="n">cal</span><span class="o">&gt;</span> <span class="mi">12</span>
+<span class="mi">12</span><span class="err">월은</span> <span class="mi">31</span><span class="err">일까지</span> <span class="err">있습니다</span><span class="o">.</span>
+
+<span class="err">월을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="n">cal</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<h4 id="알게-된-점-4">[알게 된 점]<br /><br /></h4>
+
+<blockquote>
+  <h6 id="print--println--printf-차이">print / println / printf 차이?<br /></h6>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="k">package</span> <span class="n">baek</span><span class="p">.</span><span class="n">calender</span><span class="p">;</span>
+
+   <span class="k">public</span> <span class="n">class</span> <span class="n">PlayGround</span> <span class="p">{</span>
+   
+       <span class="k">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="k">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+           <span class="nf">System</span><span class="p">.</span><span class="n">out</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s2">"프린트 print"</span><span class="p">);</span>
+           <span class="nf">System</span><span class="p">.</span><span class="n">out</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s2">"프린트 print"</span><span class="p">);</span>
+           <span class="nf">System</span><span class="p">.</span><span class="n">out</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s2">"프린트에프 printf"</span><span class="p">);</span>
+           <span class="nf">System</span><span class="p">.</span><span class="n">out</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s2">"프린트에프 printf"</span><span class="p">);</span>
+           <span class="nf">System</span><span class="p">.</span><span class="n">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s2">"프린트엘엔 println"</span><span class="p">);</span>
+           <span class="nf">System</span><span class="p">.</span><span class="n">out</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s2">"프린트엘엔 println"</span><span class="p">);</span>
+       <span class="p">}</span>
+   <span class="p">}</span>
+</code></pre></div>  </div>
+
+  <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">프린트</span> <span class="n">print</span><span class="err">프린트</span> <span class="n">print</span><span class="err">프린트에프</span> <span class="n">printf</span><span class="err">프린트에프</span> <span class="n">printf</span><span class="err">프린트엘엔</span> <span class="n">println</span>
+<span class="err">프린트엘엔</span> <span class="n">println</span>
+</code></pre></div>  </div>
+  <p><strong>println</strong>만 개행</p>
+
+  <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">baek</span><span class="o">.</span><span class="na">calender</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PlayGround</span> <span class="o">{</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"프린트 print\n"</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"프린트 print\n"</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"프린트에프 printf\n"</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"프린트에프 printf\n"</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"프린트엘엔 println"</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"프린트엘엔 println"</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>  </div>
+  <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">프린트</span> <span class="n">print</span>
+<span class="err">프린트</span> <span class="n">print</span>
+<span class="err">프린트에프</span> <span class="n">printf</span>
+<span class="err">프린트에프</span> <span class="n">printf</span>
+<span class="err">프린트엘엔</span> <span class="n">println</span>
+<span class="err">프린트엘엔</span> <span class="n">println</span>
+</code></pre></div>  </div>
+
+  <p><strong>print</strong> 개행  :\n<br />
+<strong>printf</strong> 개행 :\n<br />
+<strong>println</strong> 개행:자동<br /></p>
+  <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">baek</span><span class="o">.</span><span class="na">calender</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PlayGround</span> <span class="o">{</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		
+		<span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">100</span><span class="o">;</span>
+		
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"프린트 print\n %d, a"</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"프린트 print\n %d, a"</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"프린트에프 printf\n %d"</span><span class="o">,</span> <span class="n">a</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"프린트에프 printf\n %d"</span><span class="o">,</span> <span class="n">a</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"프린트엘엔 println %d, a"</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"프린트엘엔 println %d, a"</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>  </div>
+  <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">프린트</span> <span class="n">print</span>
+<span class="o">%</span><span class="n">d</span><span class="o">,</span> <span class="n">a</span><span class="err">프린트</span> <span class="n">print</span>
+<span class="o">%</span><span class="n">d</span><span class="o">,</span> <span class="n">a</span><span class="err">프린트에프</span> <span class="n">printf</span>
+<span class="mi">100</span><span class="err">프린트에프</span> <span class="n">printf</span>
+<span class="mi">100</span><span class="err">프린트엘엔</span> <span class="n">println</span> <span class="o">%</span><span class="n">d</span><span class="o">,</span> <span class="n">a</span>
+<span class="err">프린트엘엔</span> <span class="n">println</span> <span class="o">%</span><span class="n">d</span><span class="o">,</span> <span class="n">a</span>
+</code></pre></div>  </div>
+
+  <p><strong>printf</strong>만 %d가 적용<br /></p>
+  <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">baek</span><span class="o">.</span><span class="na">calender</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PlayGround</span> <span class="o">{</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		
+		<span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">100</span><span class="o">;</span>
+		
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"프린트 print"</span> <span class="o">+</span> <span class="n">a</span> <span class="o">+</span> <span class="s">"\n"</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"프린트 print"</span> <span class="o">+</span> <span class="n">a</span> <span class="o">+</span> <span class="s">"\n"</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"프린트에프 printf %d\n"</span><span class="o">,</span> <span class="n">a</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"프린트에프 printf %d\n"</span><span class="o">,</span> <span class="n">a</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"프린트엘엔 println"</span> <span class="o">+</span> <span class="n">a</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"프린트엘엔 println"</span> <span class="o">+</span> <span class="n">a</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>  </div>
+  <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">프린트</span> <span class="n">print100</span>
+<span class="err">프린트</span> <span class="n">print100</span>
+<span class="err">프린트에프</span> <span class="n">printf</span> <span class="mi">100</span>
+<span class="err">프린트에프</span> <span class="n">printf</span> <span class="mi">100</span>
+<span class="err">프린트엘엔</span> <span class="n">println100</span>
+<span class="err">프린트엘엔</span> <span class="n">println100</span>
+</code></pre></div>  </div>
+  <p>print / printf / printf는 계속하면서 적절한 게 무엇인지 파악</p>
+</blockquote>
+
+<p><br /></p>
+<h4 id="-해설보고-mission-해보기---2">▶ <em>해설보고 Mission 해보기 - 2</em><br /></h4>
+<h4 id="-while문-if문-사용">▷ while문, if문 사용</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">baek</span><span class="o">.</span><span class="na">calender</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Calender</span> <span class="o">{</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">maxDays</span> <span class="o">=</span> <span class="o">{</span><span class="mi">31</span><span class="o">,</span> <span class="mi">28</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">,</span> <span class="mi">30</span><span class="o">,</span> <span class="mi">31</span><span class="o">};</span>
+	
+	<span class="kd">public</span> <span class="kt">int</span> <span class="nf">maxDaysOfMonth</span><span class="o">(</span><span class="kt">int</span> <span class="n">month</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">maxDays</span><span class="o">[</span><span class="n">month</span> <span class="o">-</span> <span class="mi">1</span><span class="o">];</span>
+	<span class="o">}</span>
+	
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		
+		<span class="n">String</span> <span class="n">PROMPT</span> <span class="o">=</span> <span class="s">"cal&gt; "</span><span class="o">;</span>
+		<span class="n">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+		<span class="n">Calender</span> <span class="n">cal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Calender</span><span class="o">();</span>
+		
+		<span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"월을 입력하세요.\n"</span><span class="o">);</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">PROMPT</span><span class="o">);</span>
+			<span class="kt">int</span> <span class="n">month</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+			
+			<span class="k">if</span><span class="o">(</span><span class="n">month</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+				<span class="k">break</span><span class="o">;</span>
+			<span class="o">}</span>
+			
+			<span class="k">if</span><span class="o">(</span><span class="n">month</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="o">)</span> <span class="o">{</span>
+				<span class="k">continue</span><span class="o">;</span>
+			<span class="o">}</span>
+			
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"%d월은 %d일까지 있습니다.\n\n"</span><span class="o">,</span> <span class="n">month</span><span class="o">,</span> <span class="n">cal</span><span class="o">.</span><span class="na">maxDaysOfMonth</span><span class="o">(</span><span class="n">month</span><span class="o">));</span>
+		<span class="o">}</span>
+		
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Have a nice day!"</span><span class="o">);</span>
+		<span class="n">scanner</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">월을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="n">cal</span><span class="o">&gt;</span> <span class="mi">13</span>
+<span class="err">월을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="n">cal</span><span class="o">&gt;</span> <span class="mi">12</span>
+<span class="mi">12</span><span class="err">월은</span> <span class="mi">31</span><span class="err">일까지</span> <span class="err">있습니다</span><span class="o">.</span>
+
+<span class="err">월을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="n">cal</span><span class="o">&gt;</span> <span class="mi">11</span>
+<span class="mi">11</span><span class="err">월은</span> <span class="mi">30</span><span class="err">일까지</span> <span class="err">있습니다</span><span class="o">.</span>
+
+<span class="err">월을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="n">cal</span><span class="o">&gt;</span> <span class="mi">10</span>
+<span class="mi">10</span><span class="err">월은</span> <span class="mi">31</span><span class="err">일까지</span> <span class="err">있습니다</span><span class="o">.</span>
+
+<span class="err">월을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="n">cal</span><span class="o">&gt;</span> <span class="mi">9</span>
+<span class="mi">9</span><span class="err">월은</span> <span class="mi">30</span><span class="err">일까지</span> <span class="err">있습니다</span><span class="o">.</span>
+
+<span class="err">월을</span> <span class="err">입력하세요</span><span class="o">.</span>
+<span class="n">cal</span><span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">Have</span> <span class="n">a</span> <span class="n">nice</span> <span class="n">day</span><span class="o">!</span>
+</code></pre></div></div>
+
+<h4 id="알게-된-점-5">[알게 된 점]<br /><br /></h4>
+
+<blockquote>
+  <h6 id="1-whiletrue">1. while(<span style="color:red">true</span>)<br /></h6>
+  <p>while문 무한루프로 돌기</p>
+</blockquote>
+
+<blockquote>
+  <h6 id="2-ifmonth---1--break">2. if(month == -1) → <span style="color:red">break</span><br /></h6>
+  <p>-1치면 while문 빠져나오기</p>
+</blockquote>
+
+<blockquote>
+  <h6 id="3-ifmonth--12--continue">3. if(month &gt; 12) → <span style="color:red">continue</span><br /></h6>
+  <p>12이상으로 치면 while문의 맨 처음으로</p>
+</blockquote>
+
+                </div>
+            </section>
+
+            <!-- Email subscribe form at the bottom of the page
+            
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Subscribe to 100'Log</h3>
+                    <p>Get the latest posts delivered right to your inbox</p>
+                    <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+
+                </section>
+            
+             -->
+
+            <footer class="post-full-footer">
+                <!-- Everything inside the #author tags pulls data from the author -->
+                <!-- #author-->
+                
+                    
+                        <section class="author-card">
+                            
+                                <img class="author-profile-image" src="/assets/built/images/author-logo.png" alt="JungRan-Baek" />
+                            
+                            <section class="author-card-content">
+                                <h4 class="author-card-name"><a href="/author/JungRan-Baek">JungRan-Baek</a></h4>
+                                
+                                    <p></p>
+                                
+                            </section>
+                        </section>
+                        <div class="post-full-footer-right">
+                            <a class="author-card-button" href="/author/JungRan-Baek">Read More</a>
+                        </div>
+                    
+                
+                <!-- /author  -->
+            </footer>
+
+            <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                        var disqus_config = function () {
+                            this.page.url = 'https://100jran.github.io/calender';
+                            this.page.identifier = '/calender';
+                            this.page.title = 'Calender 1';
+                        };
+                        (function() {
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://100jran-github-io.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                </section>
+            
+
+        </article>
+
+    </div>
+</main>
+
+<!-- Links to Previous/Next posts -->
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+                
+                
+                
+                
+                    <article class="read-next-card"
+                        
+                            style="background-image: url(/assets/built/images/back.jpg)"
+                        
+                    >
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash; 100'Log &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title"><a href="/tag/training/">Training</a></h3>
+                            
+                        </header>
+                        <div class="read-next-divider">cd<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/calculator2">calculator 2</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/calculator">calculator 1</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/calender2">Calender 2</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/tag/training/">
+                                
+                                    See all 5 posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
+            
+
+            <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/calender2">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/calendar.jpg)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/calender2">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Training</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">Calender 2</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p></p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/author-logo.png" alt="JungRan-Baek" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/JungRan-Baek/">JungRan-Baek</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/gugudan2">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/gugudan.jpg)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/gugudan2">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Training</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">구구단 2</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p></p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/author-logo.png" alt="JungRan-Baek" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/JungRan-Baek/">JungRan-Baek</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+        </div>
+    </div>
+</aside>
+
+<!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="https://100jran.github.io/">
+            
+            <span>100'Log</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">Calender 1</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=Calender+1&amp;url=https://100jran.github.iocalender"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://100jran.github.iocalender"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://100jran.github.io/">100'Log</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    
+                    
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email search modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                <h1 class="subscribe-overlay-title">Search 100'Log</h1>
+                <p class="subscribe-overlay-description">
+                    lunr.js를 이용한 posts 검색 </p>
+                <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+
+            </div>
+        </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>
