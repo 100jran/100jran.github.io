@@ -190,6 +190,105 @@ into the {body} of the default.hbs template -->
 <script>
     window.store = {
     
+    "5cornerstonejava11": {
+        "title": "Ch5-24. Arrays",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter5. 배열  Ch5 - 24. Arrays로 배열 다루기Ch5 - 24. Arrays로 배열 다루기▶ 배열의 비교와 출력▷ Arrays.equals() : 1차원 배열 비교String[][] str2D = new String[][] { { \"aaa\", \"bbb\" }, { \"AAA\", \"BBB\" } };String[][] str2D2 = new String[][] { { \"aaa\", \"bbb\" }, { \"AAA\", \"BBB\" } };System.out.println(Arrays.equals(str2D, str2D2));// consolefalse비교불가▷ Arrays.deepEquals() : 2차원 이상 다차원 비교String[][] str2D = new String[][] { { \"aaa\", \"bbb\" }, { \"AAA\", \"BBB\" } };String[][] str2D2 = new String[][] { { \"aaa\", \"bbb\" }, { \"AAA\", \"BBB\" } };System.out.println(Arrays.deepEquals(str2D, str2D2));// consoletrue▷ Arrays.toString() : 1차원 배열 출력int[] arr = { 0, 1, 2, 3, 4 };System.out.println(Arrays.toString(arr));// console[0, 1, 2, 3, 4]▷ Arrays.deepToString() : 2차원 이상 다차원 배열 출력int[][] arr2D = { { 11, 12 }, { 21, 22 } };System.out.println(Arrays.deepToString(arr2D));// console[[11, 12], [21, 22]]▶ 배열의 복사▷ copyOf(메서드, 복사 수)arr의 0 ~ 복사 수까지 복사  Arrays.copyOf(arr, arr.length);      int[] arr = {0, 1, 2, 3, 4};  int[] arr2 = Arrays.copyOf(arr, arr.length);      System.out.println(Arrays.toString(arr2));      // console  [0, 1, 2, 3, 4]        Arrays.copyOf(arr, 3);    int[] arr = {0, 1, 2, 3, 4};int[] arr3 = Arrays.copyOf(arr, 3);  System.out.println(Arrays.toString(arr3));  // console[0, 1, 2]        Arrays.copyOf(arr, 7);    int[] arr4 = Arrays.copyOf(arr, 7);  System.out.println(Arrays.toString(arr4));    // console[0, 1, 2, 3, 4, 0, 0]      ▷ copyOfRange(메서드, 복사 범위의 첫 인덱스, 복사 범위의 마지막 인덱스)from ~ to의 개념첫 인덱스 ~ 마지막 인덱스to는 to - 1 : [마지막 인덱스]는 미포함 [마지막 인덱스 - 1]은 포함  Arrays.copyOfRange(arr, 0, arr.length);    int[] arr = {0, 1, 2, 3, 4};  int[] arr5 = Arrays.copyOfRange(arr, 0, arr.length);  // arr의 [0] ~ [5 - 1]  System.out.println(Arrays.toString(arr5));  // console[0, 1, 2, 3, 4]        Arrays.copyOfRange(arr, 2, 4);    int[] arr = {0, 1, 2, 3, 4};  int[] arr6 = Arrays.copyOfRange(arr, 2, 4); // arr의 [2] ~ [4 - 1]  System.out.println(Arrays.toString(arr6));  // console[2, 3]        Arrays.copyOfRange(arr, 3, 9);    int[] arr = {0, 1, 2, 3, 4};  int[] arr7 = Arrays.copyOfRange(arr, 3, 9); // arr의 [3] ~ [9 - 1]  System.out.println(Arrays.toString(arr7));  // console[3, 4, 0, 0, 0, 0]          ▶ 배열의 정렬 - 오름차순▷ sort()int[] arr = {4, 5, 3, 2, 1};Arrays.sort(arr);System.out.println(Arrays.toString(arr));// console[1, 2, 3, 4, 5]",
+        "url": "/5cornerstoneJava11"
+    }
+    ,
+    
+    "5cornerstonejava10": {
+        "title": "Ch5-21~23. 예제",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter5. 배열  Ch5 - 21. 2차원 배열의 초기화 예제1  Ch5 - 22. 2차원 배열의 초기화 예제2  Ch5 - 23. 2차원 배열의 초기화 예제3Ch5 - 21. 2차원 배열의 초기화 예제1▶ 2차원 배열의 모든 값 더하기▷ 변수 sum에 더한 값 저장▷ 2차원 배열의 값을 모두 꺼내려면, 이중 for문 이용int[][] score = {                {100, 100, 100}                , {20, 20, 20}                , {30, 30, 30}                , {40, 40, 40}                  };int sum = 0;for (int i = 0; i &lt; score.length; i++) {    for (int j = 0; j &lt; score[i].length; j++) {        System.out.printf(\"score[%d][%d] = %d\\n\", i, j, score[i][j]);                sum += score[i][j];    }    System.out.println(\"---\");}System.out.println(\"sum = \" + sum);// consolescore[0][0] = 100score[0][1] = 100score[0][2] = 100---score[1][0] = 20score[1][1] = 20score[1][2] = 20---score[2][0] = 30score[2][1] = 30score[2][2] = 30---score[3][0] = 40score[3][1] = 40score[3][2] = 40---sum = 570Ch5 - 22. 2차원 배열의 초기화 예제2▶ 국, 영, 수 성적의 총점과 평균값 구하기▷ 번호별 국, 영, 수 성적 총점 구하기▷ 번호별 국, 영, 수 성적 평균 구하기int[][] score = {                {100, 100, 100}                , {20, 20, 20}                , {30, 30, 30}                , {40, 40, 40}                  };\t\tint sum = 0;for (int i = 0; i &lt; score.length; i++) {    System.out.println(\"번호 \" + (i + 1));    System.out.printf(\"%s %s %s\\n\", \"국어\", \"수학\", \"영어\");        for (int j = 0; j &lt; score[i].length; j++) {        System.out.printf(\"%3d \", score[i][j]);                sum += score[i][j];    }    System.out.printf(\"\\n총점 %d\", sum);    System.out.printf(\"\\n평균 %f\", sum/(float)score[i].length);    System.out.printf(\"\\n---\\n\");}System.out.println(\"전체 총점 = \" + sum);// console번호 1국어 수학 영어100 100 100 총점 300평균 100.000000---번호 2국어 수학 영어 20  20  20 총점 360평균 120.000000---번호 3국어 수학 영어 30  30  30 총점 450평균 150.000000---번호 4국어 수학 영어 40  40  40 총점 570평균 190.000000---전체 총점 = 570Ch5 - 23. 2차원 배열의 초기화 예제3▶ 퀴즈▷ 배열의 인덱스 이용String[][] question = { { \"cup\", \"컵\" }, { \"integer\", \"정수\" }, { \"cat\", \"고양이\" }, { \"angel\", \"천사\" } };Scanner scanner = new Scanner(System.in);for (int i = 0; i &lt; question.length; i++) {    System.out.printf(\"Q%d. %s의 뜻은? \\n&gt; \", (i + 1), question[i][0]);    String inputString = scanner.nextLine();        if (inputString.equals(question[i][1])) {        System.out.printf(\"정답!\\n\\n\");    } else {        System.out.println(\"오답!\");        System.out.printf(\"정답은 %s\\n\\n\", question[i][1]);    }}// consoleQ1. cup의 뜻은?&gt; cup오답!정답은 컵Q2. integer의 뜻은?&gt; 정수정답!Q3. cat의 뜻은?&gt; 고양이정답!Q4. angel의 뜻은?&gt; 1004오답!정답은 천사",
+        "url": "/5cornerstoneJava10"
+    }
+    ,
+    
+    "5cornerstonejava9": {
+        "title": "Ch5-18~20. 2차원 배열",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter5. 배열  Ch5 - 18. 2차원 배열의 선언  Ch5 - 19. 2차원 배열의 인덱스  Ch5 - 20. 2차원 배열의 초기화Ch5 - 18. 2차원 배열의 선언▶ 2차원 배열이란?▷ 테이블 형태의 데이터를 저장하기 위한 배열▷ 1차원 배열이 여러 개 모인 배열int[][] score = new int[4][3];Ch5 - 19. 2차원 배열의 인덱스▶ 2차원 배열의 인덱스란?▷ 0에서 시작▷ 행의 길이 - 1 까지▷ 열의 길이 - 1 까지int[][] score = new int[4][3];score[0][0] = 100;System.out.println(score[0][0]);// console100Ch5 - 20. 2차원 배열의 초기화▶ 2차원 배열의 초기화란?▷ 2차원 배열 생성 시, 초기화 방법int[][] score = { {1, 2, 3,}, {4, 5, 6} };int[][] score = {                {1, 2, 3}                , {4, 5, 6}                  };int[][] score = {                {100, 100, 100}                , {20, 20, 20}                , {30, 30, 30}                , {40, 40, 40}                  };",
+        "url": "/5cornerstoneJava9"
+    }
+    ,
+    
+    "5cornerstonejava8": {
+        "title": "Ch5-16~17. 커맨드라인",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter5. 배열  Ch5 - 16. 커맨드라인을 통해 입력받기  Ch5 - 17. 이클립스 : 커맨드라인 입력받기Ch5 - 16. 커맨드라인을 통해 입력받기▶ 실습▷ 커맨드라인에 입력한 값이 문자열 배열에 담겨서 전달▷ 123 abc “hello world” 출력public static void main(String[] args) {    System.out.println(\"매개변수의 개수:\"+args.length);    for(int i=0;i&lt; args.length;i++) {        System.out.println(\"args[\" + i + \"] = \\\"\"+ args[i] + \"\\\"\");    }}// console매개변수의 개수:0Ch5 - 17. 이클립스 : 커맨드라인 입력받기▶ 실습▷ 커맨드라인에 입력한 값이 문자열 배열에 담겨서 전달▷ 123 abc “hello world” 출력",
+        "url": "/5cornerstoneJava8"
+    }
+    ,
+    
+    "5cornerstonejava7": {
+        "title": "Ch5-14~15. Stirng 클래스",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter5. 배열  Ch5 - 14. String 클래스  Ch5 - 15. Stirng 클래스의 주요 메서드Ch5 - 14. Stirng 클래스▶ String 클래스란?▷ String 클래스는 char[]와 메서드(기능)를 결합한 것String 클래스 = char[] + 메서드(기능)▷ String 클래스는 내용을 변경할 수 없다(read only)String a = \"a\";String b = \"b\";a = a + b;  // \"a\" + \"b\" = \"ab\"  “a”가 “ab”로 바뀌는 게 아님  변수 a가 “a”가 아닌 “ab”를 가리키는 것Ch5 - 15. Stirng 클래스의 주요 메서드▶ [char] str.charAt(int index)▷ 문자열에서 해당 위치(index)에 있는 문자를 반환String str = \"ABCDE\";char ch = str.charAt(3); // 문자열 str의 4번째 문자 'D'를 ch에 저장System.out.println(ch);// consoleD▶ [String] str.length()▷ 문자열의 길이를 반환String str = \"ABCDE\";System.out.println(str.length());// console5▶ [String] str.substring(int from, int to)▷ 문자열에서 해당 범위(from ~ to)의 문자열을 반환(to는 미포함)String str = \"ABCDE\";System.out.println(str.substring(0, 4));// consoleABCD▶ [boolean] str.equals(Object obj)▷ 문자열의 내용이 같은지 확인▷ 같으면 true▷ 다르면 falseString str = \"ABCDE\";System.out.println(str.equals(\"ABCDE\"));// consoletrue▶ [char[]] str.toCharArray()▷ 문자열을 문자배열(char[])로 변환해서 반환String str = \"ABCDE\";System.out.println(str.toCharArray());// consoleABCDE",
+        "url": "/5cornerstoneJava7"
+    }
+    ,
+    
+    "5cornerstonejava6": {
+        "title": "Ch5-12~13. String 배열",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter5. 배열  Ch5 - 12. String 배열의 선언과 생성  Ch5 - 13. String 배열의 초기화Ch5 - 12. String 배열의 선언과 생성▶ String 배열이란?▷ 여러 개의 문자열을 저장할 수 있는 배열▶ String 배열 선언과 생성▷ String 배열 선언과 생성String[] name = new String[3];Ch5 - 13. String 배열의 초기화▶ 초기값 참고표▶ String 배열 생성 후, 초기화name[0] = \"Kim\";name[1] = \"Park\";name[2] = \"Yi\";▶ String 배열 생성 시, 초기화String[] name = {\"Kim\", \"Park\", \"Yi\"};▶ 실습▷ {가위, 바위, 보} 랜덤으로 출력 하기String[] strArrStrings = {\"가위\", \"바위\", \"보\"};System.out.println(Arrays.toString(strArrStrings));for (int i = 0; i &lt; 10; i++) {    int tmp = (int) (Math.random() * 3);    System.out.println(strArrStrings[tmp]);}//console[가위, 바위, 보]바위보보바위가위가위보가위바위보",
+        "url": "/5cornerstoneJava6"
+    }
+    ,
+    
+    "5cornerstonejava5": {
+        "title": "Ch5-10~11. 섞기",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter5. 배열  Ch5 - 10. 배열의 활용(3) 섞기(shuffle)  Ch5 - 11. 배열의 활용(4) 로또 번호 만들기Ch5 - 10. 배열의 활용(3) 섞기(shuffle)▶ 섞기?▷ 배열의 요소의 순서를 반복해서 바꿈▶ 숫자 섞기▷ numArr[0] ↔ numArr[random] : 100번 반복int numArr[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};System.out.println(Arrays.toString(numArr));for (int i = 0; i &lt; 100; i++) {        int random = (int)(Math.random() * 10);    int tmp = numArr[0];    numArr[0] = numArr[random];    numArr[random] = tmp;}System.out.println(Arrays.toString(numArr));// console[0, 1, 2, 3, 4, 5, 6, 7, 8, 9][5, 0, 3, 6, 2, 4, 1, 8, 9, 7]  계산과정      [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]      0번째 반복  numArr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]  random = 2      numArr[0] = 0 → tmp에 저장  numArr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]  tmp = 0      numArr[2(random)] = 2 → numArr[0] = 2에 붙여넣기  numArr = [2, 1, 2, 3, 4, 5, 6, 7, 8, 9]  random = 2      tmp = 0를 → numArr[2(random)]에 저장  numArr = [2, 1, 0, 3, 4, 5, 6, 7, 8, 9]  tmp = 0      1번째 반복  numArr = [2, 1, 0, 3, 4, 5, 6, 7, 8, 9]  random = 5      numArr[0] = 2 → tmp에 저장  numArr = [2, 1, 0, 3, 4, 5, 6, 7, 8, 9]  tmp = 2      numArr[5(random)] = 5 → numArr[0] = 5에 붙여넣기  numArr = [5, 1, 0, 3, 4, 5, 6, 7, 8, 9]  random = 5      tmp = 2를 → numArr[5(random)]에 저장  numArr = [5, 1, 0, 3, 4, 2, 6, 7, 8, 9]  tmp = 2      ...          98번째 반복  numArr = [0, 7, 3, 6, 2, 4, 1, 8, 9, 5]  random = 1      numArr[0] = 0 → tmp에 저장  numArr = [0, 7, 3, 6, 2, 4, 1, 8, 9, 5]  tmp = 0      numArr[1(random)] = 7 → numArr[0] = 7에 붙여넣기  numArr = [7, 7, 3, 6, 2, 4, 1, 8, 9, 5]  random = 1      tmp = 0를 → numArr[1(random)]에 저장  numArr = [7, 0, 3, 6, 2, 4, 1, 8, 9, 5]  tmp = 0      99번째 반복  numArr = [7, 0, 3, 6, 2, 4, 1, 8, 9, 5]  random = 9      numArr[0] = 7 → tmp에 저장  numArr = [7, 0, 3, 6, 2, 4, 1, 8, 9, 5]  tmp = 7      numArr[9(random)] = 5 → numArr[0] = 5에 붙여넣기  numArr = [5, 0, 3, 6, 2, 4, 1, 8, 9, 5]  random = 9      tmp = 7를 → numArr[9(random)]에 저장  numArr = [5, 0, 3, 6, 2, 4, 1, 8, 9, 7]  tmp = 7      [5, 0, 3, 6, 2, 4, 1, 8, 9, 7]      ▷ numArr[0] ↔ numArr[random] : numArr.length 만큼 반복int numArr[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};System.out.println(\"최초. \" + Arrays.toString(numArr));    for (int i = 0; i &lt; numArr.length; i++) {        int random = (int)(Math.random() * 10);    int tmp = numArr[i];    numArr[0] = numArr[random];    numArr[random] = tmp;    System.out.println(i + \"번째 섞기. \" + Arrays.toString(numArr));}System.out.println(\"최종. \" + Arrays.toString(numArr));// console최초. [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]0번째 섞기. [9, 1, 2, 3, 4, 5, 6, 7, 8, 0]1번째 섞기. [6, 1, 2, 3, 4, 5, 1, 7, 8, 0]2번째 섞기. [2, 1, 2, 3, 4, 5, 1, 7, 8, 0]3번째 섞기. [8, 1, 2, 3, 4, 5, 1, 7, 3, 0]4번째 섞기. [4, 1, 2, 3, 4, 5, 1, 7, 3, 0]5번째 섞기. [1, 5, 2, 3, 4, 5, 1, 7, 3, 0]6번째 섞기. [5, 1, 2, 3, 4, 5, 1, 7, 3, 0]7번째 섞기. [7, 1, 2, 3, 4, 5, 1, 7, 3, 0]8번째 섞기. [1, 1, 2, 3, 4, 5, 3, 7, 3, 0]9번째 섞기. [4, 1, 2, 3, 0, 5, 3, 7, 3, 0]최종. [4, 1, 2, 3, 0, 5, 3, 7, 3, 0]Ch5 - 11. 배열의 활용(4) 로또 번호 만들기▶ 로또 번호 만들기▷ 배열 45개에 값 넣기int rotto[] = new int[45];for (int i = 0; i &lt; rotto.length; i++) {rotto[i] = i + 1;System.out.printf(\"[%d]\", rotto[i]);}// console[1][2][3][4][5][6][7][8][9][10]...[40][41][42][43][44][45]▷ 6번 섞기int rotto[] = new int[45];for (int i = 0; i &lt; rotto.length; i++) {    rotto[i] = i + 1;}for (int j = 0; j &lt; 6; j++) {        int random = (int)(Math.random() * 45);    int tmp = rotto[j];    rotto[j] = rotto[random];    rotto[random] = tmp;    System.out.println(Arrays.toString(rotto));}// console[44, 2, 3, 4, 5, 6, 7, 8, 9, 10, ... 42, 43, 1, 45][44, 6, 3, 4, 5, 2, 7, 8, 9, 10, ... 42, 43, 1, 45][44, 6, 27, 4, 5, 2, 7, 8, 9, 10, ... 42, 43, 1, 45][44, 6, 27, 18, 5, 2, 7, 8, 9, 10, ... 42, 43, 1, 45][44, 6, 27, 18, 25, 2, 7, 8, 9, 10, ... 42, 43, 1, 45][44, 6, 27, 18, 25, 35, 7, 8, 9, 10, ... 42, 43, 1, 45]▷ 6개 당청번호 출력int rotto[] = new int[45];for (int i = 0; i &lt; rotto.length; i++) {    rotto[i] = i + 1;}for (int j = 0; j &lt; 6; j++) {        int random = (int)(Math.random() * 45);    int tmp = rotto[j];    rotto[j] = rotto[random];    rotto[random] = tmp;}for (int t = 0; t &lt; 6; t++) {        System.out.printf(\"[%d]\", rotto[t]);}// console[7][6][4][44][19][23]",
+        "url": "/5cornerstoneJava5"
+    }
+    ,
+    
+    "5cornerstonejava4": {
+        "title": "Ch5-8~9. 총합·평균",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter5. 배열  Ch5 - 8. 배열의 활용(1) 총합과 평균  Ch5 - 9. 배열의 활용(2) 최대값과 최소값Ch5 - 8. 배열의 활용(1) 총합과 평균▶ 총합과 평균?▷ 배열의 모든 요소를 더해서 총합과 평균을 구함▶ 총합구하기int sum = 0;int[] iArr = { 1, 2, 3, 4, 100, -8 };for (int i = 0; i &lt; iArr.length; i++) {        System.out.printf(\"%d + %d = \", sum, iArr[i]);    sum += iArr[i];    System.out.printf(\"%d\\n\", sum);}System.out.printf(\"\\ntotal sum &gt; %d\", sum);// console0 + 1 = 11 + 2 = 33 + 3 = 66 + 4 = 1010 + 100 = 110110 + -8 = 102total sum &gt; 102▶ 평균구하기▷ 총합 ÷ 배열의 길이▷ 정확한 평균을 위해 float로 형변환int sum = 0;float average = 0f;int[] iArr = { 100, 50, 90, 80 };for (int i = 0; i &lt; iArr.length; i++) {        System.out.printf(\"%d + %d = \", sum, iArr[i]);    sum += iArr[i];    System.out.printf(\"%d\\n\", sum);}average = sum / (float)iArr.length;System.out.printf(\"\\n%d ÷ %f = %f\\n\", sum, (float)iArr.length, average);System.out.printf(\"\\ntotal sum &gt; %d\\n\", sum);System.out.printf(\"average &gt; %f\", average);// console0 + 100 = 100100 + 50 = 150150 + 90 = 240240 + 80 = 320320 ÷ 4.000000 = 80.000000total sum &gt; 320average &gt; 80.000000Ch5 - 9. 배열의 활용(2) 최대값과 최소값▶ 최대값과 최소값?▷ 배열의 요소 중에서 제일 큰 값과 제일 작은 값을 찾음int[] score = {77, 88, 33, 44, 222};int max = score[0];int min = score[0];for (int i = 1; i &lt; score.length; i++) {    if (score[i] &gt; max) {                System.out.println(\"max\");        System.out.printf(\"%d &gt; %d : %b\\n\", score[i], max, score[i] &gt; max);                max = score[i];        System.out.printf(\"max = %d\\n\\n\", max);    } else if (score[i] &lt; min) {        System.out.println(\"min\");        System.out.printf(\"%d &lt; %d : %b\\n\", score[i], min, score[i] &lt; min);        min = score[i];                System.out.printf(\"min = %d\\n\\n\", min);    }}System.out.println(\"max = \" + max);System.out.println(\"min = \" + min);// consolemax88 &gt; 77 : truemax = 88min33 &lt; 77 : truemin = 33max222 &gt; 88 : truemax = 222max = 222min = 33  score[i] &gt; max : true면 max(if문)  score[i] &gt; max : false면 min(else if문)",
+        "url": "/5cornerstoneJava4"
+    }
+    ,
+    
+    "5cornerstonejava3": {
+        "title": "Ch5-6~7. 출력",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter5. 배열  Ch5 - 6. 배열의 출력  Ch5 - 7. 배열의 출력 예제Ch5 - 6. 배열의 출력▶ 배열에 저장된 모든 값을 출력하려면?int[] iArr = {100, 95, 80, 70, 60};▷ System.out.println으로 출력  [I@7637f22이런 문자열 출력[I : int 배열7637f22 : 배열의 주소(?)  뒤 숫자는 배열마다 다 다르게 나옴System.out.println(iArr);// console[I@7637f22  예외 : char타입은 System.out.println으로 출력가능      char[] chArr = {'a', 'b', 'c', 'd'};      System.out.println(chArr);      // console  abcd      ▷ for문으로 출력모든 배열의 요소 출력int[] iArr = {100, 95, 80, 70, 60};for (int i = 0; i &lt; iArr.length; i++) {        System.out.printf(\"iArr[%d] = %d\\n\", i, iArr[i]);}// consoleiArr[0] = 100iArr[1] = 95iArr[2] = 80iArr[3] = 70iArr[4] = 60▷ Arrays.toString으로 출력Arrays.toString(배열이름)   // 배열을 to Stringint[] iArr = {100, 95, 80, 70, 60};System.out.printf(Arrays.toString(iArr));// console[100, 95, 80, 70, 60]Ch5 - 7. 배열의 출력 예제▶ 1 ~ 10의 숫자를 순서대로 배열에 넣기▷ for문int[] iArr = new int[10];for (int i = 0; i &lt; iArr.length; i++) {    iArr[i] = i + 1;    System.out.println(iArr[i]);}// console12345678910▶ 1 ~ 10의 숫자를 랜덤으로 배열에 넣기▷ Math.random(), for문for (int i = 0; i &lt; iArr.length; i++) {\t\t\t    iArr[i] = (int)(Math.random() * 10) + 1;    System.out.println(iArr[i]);}// console10167594912▶ 배열의 선언 시 저장한 값을 출력▷ Arrays.toString()int[] iArr = { 1, 2, 3, 4, 100, -8 };System.out.println(Arrays.toString(iArr));// console[1, 2, 3, 4, 100, -8]",
+        "url": "/5cornerstoneJava3"
+    }
+    ,
+    
+    "5cornerstonejava2": {
+        "title": "Ch5-4~5. 초기화",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter5. 배열  Ch5 - 4. 배열의 길이(배열이름.length)  Ch5 - 5. 배열의 초기화Ch5 - 4. 배열의 길이(배열이름.length)▶  배열의 길이란?▷ 배열의 길이는 배열이름.length를 통해 알아낼 수 있음▷ 배열은 한 번 생성하면 실행하는 동안 그 길이를 바꿀 수 없음int[] arr = new int[5];int tmp = arr.length;   // arr.length = 5, tmp = 5System.out.println(tmp);// console5▷ 그래서 배열이름.length = 배열의 길이(int형 상수)int[] score = new int[6];for (int i = 0; i &lt; score.length; i++) {    System.out.println(score[i]);}for (int i = 0; i &lt; score.length; i++)배열의 길이인 6을 찍어주지 않고 score.length를 찍음int[] score = new int[6];에서 int[5]로 변경그럼 자동으로 for문 조건식은 5로 변경굳이 바꿔주지 않아도 됨변경에 유리▶  실습int[] arr = new int[5];    for (int i = 0; i &lt; arr.length; i++) {        System.out.println(\"arr.length[\" + i + \"] = \" + arr[i]);    }    // consolearr.length[0] = 0arr.length[1] = 0arr.length[2] = 0arr.length[3] = 0arr.length[4] = 0Ch5 - 5. 배열의 초기화▶ 배열의 초기화▷ 배열의 각 요소에 처음으로 값을 저장하는 것▷ 배열은 기본적으로 초기화가 됨int i;  // i = 0으로 초기화▶ 배열의 초기화 방법▷ 변수에 값 넣듯 하나씩 초기화int[] score = new int[5];score[0] = 50;score[1] = 60;score[2] = 70;score[3] = 80;score[4] = 90;▷ 반복문 초기화int[] score = new int[5];for (int i = 0; i &lt; score.length; i++) {    System.out.printf(\"score[%d] = \", i);    System.out.println((i * 10) + 50);}// consolescore[0] = 50score[1] = 60score[2] = 70score[3] = 80score[4] = 90▷ 괄호 초기화int[] score = new int[]{50, 60, 70, 80, 90};    // new int[] 생략가능for (int i = 0; i &lt; score.length; i++) {        System.out.printf(\"score[%d] = %d\\n\", i, score[i]);}// consolescore[0] = 50score[1] = 60score[2] = 70score[3] = 80score[4] = 90  주의    int[] score = {50, 60, 70, 80, 90};        이 방식을 두 줄로 나눠쓰면 에러    int[] score;score = {50, 60, 70, 80, 90}    // 에러      ",
+        "url": "/5cornerstoneJava2"
+    }
+    ,
+    
+    "5cornerstonejava1": {
+        "title": "Ch5-1~3. 배열",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter5. 배열  Ch5 - 1. 배열이란?  Ch5 - 2. 배열의 선언과 생성  Ch5 - 3. 배열의 인덱스Ch5 - 1. 배열이란?▶ 배열이란?▷ 배열은 같은 타입의 여러변수를 하나의 묶음으로 다루는 것▶ 변수와 배열 - 5명의 성적을 저장할 공간▷ 변수int score1, score2, score3, score4, score5; ▷ 배열int[] score = new int[5]    // int[] × 5 : 5개 저장공간 생성Ch5 - 2. 배열의 선언과 생성▶ 배열의 선언이란?▷ 배열을 다루기 위한 참조변수의 선언▶ 배열의 선언방법▷ ① 타입[] 변수이름;int[] score;▷ ② 타입 변수이름[];int score[];▶ 배열의 생성▷ 참조변수와 배열의 연결▶ 배열의 생성 방법▷ ① 배열의 선언int[] score;▷ ② 배열의 생성score = new int[5];참조변수를 통해서 배열을 다룰 수 있다!▶ 배열의 선언과 생성▷ 배열의 선언과 생성을 한 번에int[] score;    // 배열의 선언score = new int[5]; // 배열의 생성int[] score = new int[5];   // 배열의 선언과 생성을 한 번에Ch5 - 3. 배열의 인덱스▶ 배열의 인덱스란?▷ 배열의 각 요소(저장공간)에 자동으로 붙는 번호(일련 번호)▷ 인덱스의 범위는 ‘0’부터 ‘배열길이 -1’까지(0부터 시작하니까 -1)▶ 배열의 인덱스 사용 방법▷ 변수 사용방법과 같음int[] score = new int[5];score[3] = 100;int value = score[3];▶ 실습int[] score = new int[5];score[3] = 100;System.out.println(\"score[0] = \" + score[0]);System.out.println(\"score[1] = \" + score[1]);System.out.println(\"score[2] = \" + score[2]);System.out.println(\"score[3] = \" + score[3]);System.out.println(\"score[4] = \" + score[4]);int value = score[3];System.out.println(\"value = \" + value);// consolescore[0] = 0score[1] = 0score[2] = 0score[3] = 100score[4] = 0value = 100",
+        "url": "/5cornerstoneJava1"
+    }
+    ,
+    
     "4cornerstonejava8": {
         "title": "Ch4-20~24. break문",
             "author": "JungRan-Baek",
