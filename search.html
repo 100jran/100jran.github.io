@@ -190,6 +190,177 @@ into the {body} of the default.hbs template -->
 <script>
     window.store = {
     
+    "6cornerstonejava19": {
+        "title": "Ch6-38~41. 초기화",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter6. 객체지향 프로그래밍Ⅰ  Ch6 - 38. 변수의 초기화  Ch6 - 39. 멤버변수의 초기화  Ch6 - 40. 멤버변수의 초기화 예제1  Ch6 - 41. 멤버변수의 초기화 예제2Ch6 - 38. 변수의 초기화▶ 지역변수(lv)▷ 사용 전 반드시 수동 초기화 해야 함▷ 멤버변수(iv, cv)는 자동 초기화 됨class InitTest{    int x; // iv, 자동 초기화, x = 0    int y = x; // iv, y = x = 0    void method1() {        int i; // lv, 자동 초기화 안됨        int j = i; // lv, j = i = ?, 자동 초기화× → 어떤 값 들어있는 지 모름    }}Ch6 - 39. 멤버변수의 초기화▶ 멤버변수란?▷ iv와 cv▶ 자동 초기화▶ 간단 초기화▷ 명시적 초기화 : =class Car {    int door = 4; // 기본형 변수의 초기화    Engine e = new Engine(); // 참조형 변수의 초기화}▶ 복잡 초기화▷ 초기화 블럭 : {}, static {}  인스턴스(iv) 초기화 블럭 : {} → 거의 사용하지 않음, 생성자로 사용  클래스(cv) 초기화 블럭 : static {}▷ 생성자  인스턴스(iv) 초기화 블럭    ▶ 멤버변수의 초기화 시점    ▷ 클래스 변수 초기화 시점 : 클래스가 처음 로딩될 때, 단 한번    ▷ 인스턴스 변수 초기화 시점 : 인스턴스가 생성될 때마다        ▶ 멤버변수의 초기화 순서    ▷ cv → iv    ▷ 자동 → 간단 → 복잡  Ch6 - 40. 멤버변수의 초기화 예제1▶ 간단 초기화, 복잡 초기화class StaticBlockTest {    static int[] arr = new int[10]; // 간단 초기화, 명시적 초기화    static { // 복잡 초기화 : 배열 arr을 난수로 채움        for(int i = 0; i &lt; arr.length; i++) {            arr[i] = (int)(Math.random() * 10) + 1;                }    }}Ch6 - 41. 멤버변수의 초기화 예제2▶ 간단 초기화, 복잡 초기화, 초기화 순서class InintTest {\t\tstatic int cv = 1; // 명시적 초기화\tint iv = 1; // 명시적 초기화\t\tstatic { cv = 2; } // 클래스 초기화 블럭\t{ iv = 2; } // 인스턴스 초기화 블럭\t\tInintTest() { // 생성자\t\tiv = 3;\t}}",
+        "url": "/6cornerstoneJava19"
+    }
+    ,
+    
+    "6cornerstonejava18": {
+        "title": "Ch6-36~37. this",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter6. 객체지향 프로그래밍Ⅰ  Ch6 - 36. 생성자에서 다른 생성자 호출하기 : this()  Ch6 - 37. 객체 자신을 가리키는 참조변수 : thisCh6 - 36. 생성자에서 다른 생성자 호출하기 : this()▶ 생성자 this()▷ 생성자에서 다른 생성자 호출 할 때 사용▷ 다른 생성자 호출 시, 첫 줄에서만 사용 가능▷ 코드의 중복제거를 위해 생성자끼리 호출Ch6 - 37. 객체 자신을 가리키는 참조변수 : this▶ 참조변수 this란?▷ this() 생성자 ≠ 참조변수 this▷ 인스턴스 자신을 가리키는 참조변수▷ 인스턴스 메서드(생성자 포함)에서 사용가능▷ 지역변수(lv)와 인스턴스 변수(iv)를 구별할 때 사용▶ 참조변수 this와 생성자 this()",
+        "url": "/6cornerstoneJava18"
+    }
+    ,
+    
+    "6cornerstonejava17": {
+        "title": "Ch6-32~35. constructor",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter6. 객체지향 프로그래밍Ⅰ  Ch6 - 32. 생성자(constructor)  Ch6 - 33. 기본 생성자  Ch6 - 34. 매개변수가 있는 생성자  Ch6 - 35. 매개변수가 있는 생성자 예제Ch6 - 32. 생성자(constructor)▶ 생성자(constructor)란?▷ 인스턴스가 생성될 때마다 호출되는 인스턴스 초기화 메서드▷ 인스턴스 = 객체(iv 묶음) 그래서 iv 초기화 메서드▷ 인스턴스 생성 시 수행 할 작업(iv 초기화)에 사용Time t = new Time();t.hour = 12;t.minute = 34;t.second = 56;이걸 한 줄로 할 수 있음 : 생성자 사용Time t = new Time(12, 34, 56);  // 생성자를 추가해 주면, 생성자 호출해서 사용 가능즉 생성자란?iv 초기화를 편리하게 하기 위한 메서드▶ 생성자 작성 규칙▷ 생성자 이름 =  클래스 이름▷ 리턴값 없음 : 항상 반환값이 없기 때문▷ void 안 붙임▷ 모든 클래스는 반드시 하나 이상의 생성자를 가짐▷ 기본 생성자 : 컴파일러가 생성자가 하나도 없을 때 생성 해 줌클래스이름(타입 변수명, 타입 변수명, ...) {    // 인스턴스 생성시 수행 될 코드,    // 주로 인스턴스 변수의 초기화 코드를 적음}▶ 생성자 오버로딩class Card() {    Card() { // 매개변수 없는 생성자        // 인스턴스 초기화 작업    }        Card(String kind, int number) { // 매개변수 있는 생성자        // 인스턴스 초기화 작업    }}Ch6 - 33. 기본 생성자▶ 기본 생성자란?▷ 매개변수가 없는 생성자▷ 생성자가 하나도 없을 때만, 컴파일러가 자동 추가클래스이름() { } // 기본 생성자Point() { } // 직접 작성, Point 클래스의 기본 생성자▷ 생성자는 자동 추가보다 직접 추가로 반드시 넣어 주기class Data_1 {Data_1() {} // 기본 생성자\tint value;}class Data_2 {Data_2() {} // 기본 생성자\tint value;\tData_2(int x) {   // 매개변수가 있는 생성자.\t\tvalue = x;\t}}class Ex6_11 {    public static void main(String[] args) {    Data_1 d1 = new Data_1();        // compile error발생, The constructor Data_2() is undefined    // Data_2() {} 기본 생성자 추가    Data_2 d2 = new Data_2();    }}Ch6 - 34. 매개변수가 있는 생성자▶ 기본 생성자와 매개변수가 있는 생성자class Car {    String color;    String gearType;    int door;        Car() {} // 기본 생성자    Car(String c, String g, int d) { // 매개변수가 있는 생성자        color = c;        gearType = g;        door = d;        }}Ch6 - 35. 매개변수가 있는 생성자 예제▶ iv 초기화를 매개변수가 있는 생성자로▷ iv 초기화Car c = new Car();c.color = \"white\";c.gearType = \"auto\";c.door = 4;▷ iv 초기화 : 매개변수가 있는 생성자class Car {    String color;    String gearType;    int door;        Car() {} // 기본 생성자    Car(String c, String g, int d) { // 매개변수가 있는 생성자        color = c;        gearType = g;        door = d;        }        Car c = new Car(\"white\", \"auto\", 4); // iv 초기화}",
+        "url": "/6cornerstoneJava17"
+    }
+    ,
+    
+    "6cornerstonejava16": {
+        "title": "Ch6-30~31. overloading",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter6. 객체지향 프로그래밍Ⅰ  Ch6 - 30. 오버로딩(overloading)  Ch6 - 31. 오버로딩(overloading) 예제Ch6 - 30. 오버로딩(overloading)▶ 오버로딩(overloading)이란?▷ 한 클래스 안에 같은 이름의 메서드를 여러 개 정의하는 것▷ 일반적으로, 메서드 : 메서드 이름 = 1 : 1▷ 오버로딩은, 메서드 : 메서드 이름 = n : 1void println()void println(boolean x)void println(char x)void println(char[] x)void println(double x)void println(float x)void println(int x)void println(long x)void println(object x)void println(String x)오버로딩 지원 시, 매개변수를 통해 메서드를 알아 봄▶ 오버로딩(overloading)이 성립하기 위한 조건▷ 메서드 이름이 같아야 함▷ 매개변수의 개수 또는 타입이 달라야 함▷ 반환 타입은 영향 없음long add(int a, long b) { return a+b; }long add(long a, int b) { return a+b; }▶ 오버로딩(overloading)이 아닌 경우▷ 매개변수의 이름만 다른 경우int add(int a, int b) { return a + b; }int add(int x, int y) { return x + y; }▷ 반환 타입만 다른 경우int add(int a, int b) { return a + b; }long add(int a, int b) { return (long)(a + b); }▷ ambiguous(모호한)add(3, 3);  // 두 개의 add 모두 반응, (3, 3L) → 첫번 째 add 반응long add(int a, long b) { return a+b; }long add(long a, int b) { return a+b; }▶ 메서드 이름▷ add, println, round, random : 대부분 동사 → 작업▷ 메서드 이름이 같다 = 하는 작업이 같다Ch6 - 31. 오버로딩(overloading) 예제▶ 오버로딩의 올바른 예▷ 매개변수는 다르지만 같은 의미의 기능 수행class Hello {\tpublic static void main(String[] args) {\t\t\t\tPlus p = new Plus();\t\t\t\tSystem.out.println(\"int a, int b = \" + p.add(10, 10));\t\tSystem.out.println(\"long a, int b = \" + p.add(10, 10L));\t\tSystem.out.println(\"int a, long b = \" + p.add(10L, 10));\t\tSystem.out.println(\"long a, long b = \" + p.add(10L, 10L));\t\t\t\tint[] a = {100, 200, 400};\t\tSystem.out.println(\"int[] a = \" + p.add(a));\t}}class Plus {\tlong add(int a, int b) {\t\treturn a + b;\t}\t\tlong add(long a, int b) {\t\treturn a + b;\t}\t\tlong add(int a, long b) {\t\treturn a + b;\t}\t\tlong add(long a, long b) {\t\treturn a + b;\t}\t\tint add(int[] a) {\t\tint result = 0;\t\t\tfor(int i = 0; i &lt; a.length; i++) {\t\t\t\tresult += a[i];\t\t\t}\t\treturn result;\t}}// consoleint a, int b = 20long a, int b = 20int a, long b = 20long a, long b = 20int[] a = 700",
+        "url": "/6cornerstoneJava16"
+    }
+    ,
+    
+    "6cornerstonejava15": {
+        "title": "Ch6-26~29. static",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter6. 객체지향 프로그래밍Ⅰ  Ch6 - 26. static 메서드와 인스턴스 메서드  Ch6 - 27. static 메서드와 인스턴스 메서드 예제  Ch6 - 28. static을 언제 붙여야 할까?  Ch6 - 29. 메서드 간 호출과 참조Ch6 - 26. static 메서드와 인스턴스 메서드▶ 인스턴스 변수(iv)의 사용 여부▷ iv 사용 = 인스턴스 메서드▷ iv 미사용 = static(클래스) 메서드▶ static 메서드란?▷ = 클래스 메서드▷ 메서드 앞에 static 붙은 것▷ 객체 생성 없이 클래스 이름.메서드 이름()으로 호출Math.random()Math.round()// 객체 생성 없이 사용▷ 인스턴스 멤버(iv,im)와 관련없는 작업을 하는 메서드▷ 메서드 내, 인스턴스 변수(iv) 사용 불가▶ 인스턴스 메서드란?▷ 메서드 앞에 static 붙지 않은 것▷ 인스턴스 생성 후, 참조변수.메서드 이름()으로 호출▷ 인스턴스 멤버(iv, im)와 관련 된 작업을 하는 메서드▷ 메서드 내, 인스턴스 변수(iv) 사용 가능Ch6 - 27. static 메서드와 인스턴스 메서드 예제▶ static 메서드와 인스턴스 메서드 생성▶ static 메서드와 인스턴스 메서드 호출Ch6 - 28. static을 언제 붙여야 할까?▶ static을 언제 붙여야 할까? - 변수▷ 속성(멤버 변수) 중에서 공통 속성에 static을 붙임class Card {    // 개별 속성 : iv    String sign; // 기호    int number; // 숫자    // 공통 속성 : cv    static int width = 100; // 폭;    static int height = 230; // 높이;}▶ static을 언제 붙여야 할까? - 메서드▷ 인스턴스 멤버(iv, im)을 사용하지 않는 메서드에 static을 붙임class Hello {\t\tlong a, b;\t\tlong add() { return a + b; }   // a, b = 인스턴스 변수\tstatic long add(long a, long b) { return a + b;\t}   // a, b = 지역 변수}Ch6 - 29. 메서드 간 호출과 참조▶ static 메서드는 인스턴스 변수(iv)를 사용 불가▶ static 메서드는 인스턴스 메서드(im)를 사용 불가▶ static 메서드는 static 메서드 호출가능?▷ 네▶ static 메서드는 인스턴스 변수 사용가능?▷ 아니요▶ static 메서드는 인스턴스 메서드 호출가능?▷ 아니요▶ 왜 static 메서드는 인스턴스 멤버를 사용할 수 없는가?▷ static 메서드는 객체 생성없이 항상 사용가능, 그래서 객체(iv)가 없을 수도 있어서",
+        "url": "/6cornerstoneJava15"
+    }
+    ,
+    
+    "6cornerstonejava14": {
+        "title": "Ch6-24~25. 참조형",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter6. 객체지향 프로그래밍Ⅰ  Ch6 - 24. 참조형 매개변수  Ch6 - 25. 참조형 반환타입Ch6 - 24. 참조형 매개변수▶ 참조형 매개변수▷ read &amp; write▷ 변수의 값을 읽기 가능▷ 변경 가능▶ 기본형 매개변수▷ read only▷ 변수의 값을 읽기만 가능▷ 변경 불가▶ 실습▷ 참조형 매개변수Ch6 - 25. 참조형 반환타입▶ 참조형 반환타입이란?▷ 객체의 주소를 반환▶ 실습▷ 참조형 반환타입  static 메서드 객체 생성 없이 호출가능  같은 클래스 내 참조 변수 생략 가능",
+        "url": "/6cornerstoneJava14"
+    }
+    ,
+    
+    "6cornerstonejava13": {
+        "title": "Ch6-23. 기본형",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter6. 객체지향 프로그래밍Ⅰ  Ch6 - 23. 기본형 매개변수Ch6 - 23. 기본형 매개변수▶ 기본형 매개변수▷ read only▷ 변수의 값을 읽기만 가능▷ 변경 불가▶ 참조형 매개변수▷ read &amp; write▷ 변수의 값을 읽기 가능▷ 변경 가능▶ 실습▷ 기본형 매개변수",
+        "url": "/6cornerstoneJava13"
+    }
+    ,
+    
+    "6cornerstonejava12": {
+        "title": "Ch6-22. call stack",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter6. 객체지향 프로그래밍Ⅰ  Ch6 - 22. 호출 스택(call stack)Ch6 - 22. 호출 스택(call stack)▶ 스택(stack)이란?▷ 밑이 막힌 상자, 위로 차곡차곡 쌓임▶ 호출 스택(call stack)이란?▷ 메서드 수행에 필요한 메모리가 제공되는 공간▷ 메서드가 호출되면, 호출 스택에 메로리 할당▷ 종료 시, 해제아래 있는 메서드가 위의 메서드를 호출맨 위의 메서드 하나만 실행 중, 나머지는 대기 중",
+        "url": "/6cornerstoneJava12"
+    }
+    ,
+    
+    "6cornerstonejava11": {
+        "title": "Ch6-20~21. return",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter6. 객체지향 프로그래밍Ⅰ  Ch6 - 20. return문  Ch6 - 21. 반환값Ch6 - 20. return문▶ return문이란?▷ 실행 중인 메서드를 종료하고 호출한 곳으로 되돌아 감  반환 타입 : void → return 생략가능      void printGugudan(int dan) {      if (!(2 &lt;= dan &amp;&amp; dan &lt;= 9))          return; // dan의 값이 2 ~ 9가 아닌 경우, 호출한 곳으로 그냥 되돌아 감              for (int i = 1; i &lt; 10; i++) {          System.out.printf(\"%d x %d = %d\", dan, i, i * dan);      }      return; // 생략가능  }        반환 타입 : void가 아닌 경우 → return 생략불가      int multi(int x, int y) {      int result = x * y;              return result;  // 생략불가  }      int max(int a, int b) {      if (a &gt; b) return a;    // 참 : return문 실행, 거짓 : return문 없음 → 에러      else return b;  // 에러 안나도록 return문이 언제나 실행 될 수 있게 작성  }      Ch6 - 21. 반환값▶ 반환값이란?▷ return 옆에 써 주는 값▷ 반환 타입이 void가 아닐 때,▷ 반환 타입 = 반환값 타입 = 반환값을 담는 변수 타입",
+        "url": "/6cornerstoneJava11"
+    }
+    ,
+    
+    "6cornerstonejava10": {
+        "title": "Ch6-17~19. 메서드의 실행",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter6. 객체지향 프로그래밍Ⅰ  Ch6 - 17. 메서드의 호출  Ch6 - 18. 메서드의 실행 흐름  Ch6 - 19. 메서드의 실행 흐름 예제Ch6 - 17. 메서드의 호출▶ 메서드 call▷ 메서드를 불러서 일 시키는 역할▷ 메서드 호출 방법메서드이름(작업에 필요한 값1, 값2, ...);  // 값 없을 땐 () 빈칸으로 호출  voidprint99danAll();을 console에 뿌리고 끝저장하지 않음    print99danAll(); //  void print99danAll();        intadd(3, 5)의 결과값 int 8을result에 저장    int add(int x, int y) {  int result = x + y;          return result;}  int result = add(3, 5);      ▶ 매개변수(parameter)▷ 호출과 메서드 사이, 매개체 역할▶ 실습▷ 사칙연산 클래스 + 메서드를 만들고, 호출하여 사용class Hochul {\tpublic static void main(String[] args) {\t\t\t\tSachickYounsan sy = new SachickYounsan();\t\tlong addResult = sy.add(5, 2);\t\tlong subResult = sy.sub(5, 2);\t\tlong multiResult = sy.multi(5, 2);\t\tlong divResult = sy.div(5, 2);\t\t\t\tSystem.out.printf(\"+ = %d\\n\", addResult);\t\tSystem.out.printf(\"- = %d\\n\", subResult);\t\tSystem.out.printf(\"× = %d\\n\", multiResult);\t\tSystem.out.printf(\"÷ = %d\\n\", divResult);\t}}class SachickYounsan {\tlong add(long a, long b) { return a + b; }\tlong sub(long a, long b) { return a - b; }\tlong multi(long a, long b) { return a * b; }\tlong div(long a, long b) { return a / b; }}// console+ = 7- = 3× = 10÷ = 2▷ 두 값을 받아서 둘 중 큰 값을 반환하는 메서드 작성class Hochul {\t\tpublic static void main(String[] args) {\t\t\t\tMax m = new Max();\t\tlong maxResult = m.max(7, 9);\t\t\t\tSystem.out.printf(\"MAX = %d\\n\", maxResult);\t}}class Max {\tlong max(long a, long b) { \t\t\t\treturn a &gt; b ? a : b;\t\t//\t\tif (a &gt; b) result = a;//\t\telse result = b;//\t\treturn result; \t}}// consoleMAX = 9Ch6 - 18. 메서드의 실행 흐름▶ 객체 생성▶ main 메서드에서 메서드 호출▷ 입력한 값이 매개 변수로 복사 대입 즉 입력▶ 호출 된 메서드 문장 실행▷ return문을 만나면 main 메서드로 복귀▶ 복귀 후 main 메서드의 나머지 문장 실행Ch6 - 19. 메서드의 실행 흐름 예제▶ 객체 생성Max m = new Max();▶ main 메서드에서 메서드 호출▷ 입력한 값이 매개 변수로 복사 대입 즉 입력long maxResult = m.max(7, 9);▶ 호출 된 메서드 문장 실행▷ return문을 만나면 main 메서드로 복귀class Max {\tlong max(long a, long b) { \t\t\t\treturn a &gt; b ? a : b;\t}}▶ 복귀 후 main 메서드의 나머지 문장 실행public static void main(String[] args) {        Max m = new Max();    long maxResult = m.max(7, 9);        System.out.printf(\"MAX = %d\\n\", maxResult);}// consoleMAX = 9",
+        "url": "/6cornerstoneJava10"
+    }
+    ,
+    
+    "6cornerstonejava9": {
+        "title": "Ch6-14~16. 메서드",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter6. 객체지향 프로그래밍Ⅰ  Ch6 - 14. 메서드란?  Ch6 - 15. 메서드의 선언부  Ch6 - 16. 메서드의 구현부Ch6 - 14. 메서드란?▶ (1) 메서드란?▷ 작업 단위로!!▷ 문장들을 {}로 묶어놓은 것  코드 중복      public static void main(String[] args) {              // 배열 초기화      for (int i = 0; i &lt; 10; i++) {          numArr[i] = (int)(Math.random() + 10);      }          // 배열 출력      for (int i = 0; i &lt; 10; i++) {          System.out.printf(\"%d\", numArr[i]);      }  ...      // 배열 출력 : 코드 중복      for (int i = 0; i &lt; 10; i++) {          System.out.printf(\"%d\", numArr[i]);      }  }        코드 중복 : 메서드로 해결    // 배열 출력 작업 담당 메서드 : 이름 printArr static void printArr(int[] numArr) {     for (int i = 0; i &lt; 10; i++) {         System.out.printf(\"%d\", numArr[i]);     } }    public static void main(String[] args) {             // 배열 초기화     for (int i = 0; i &lt; 10; i++) {         numArr[i] = (int)(Math.random() + 10);     }         // 배열 출력 : 메서드 호출     pirntArr(numArr); ...     // 배열 출력 : 메서드 호출     pirntArr(numArr);     } }      ▶ (2) 메서드란?▷ 값(입력)을 받아서 처리하고, 결과를 반환(출력)▶ 메서드 ≒ 함수▷ 메서드 : 객체지향개념에서 함수를 지칭하는 말  클래스에 종속적 : 반드시 클래스 안에서만▷ 함수  클래스에 독립적 : 어디서든▶ 메서드의 장점▷ 코드의 중복 제거▷ 코드의 관리 용이▷ 코드를 재사용 가능▷ 코드의 간결화▶ 메서드의 작성▷ 반복적으로 수행되는 여러 문장을 메서드로 작성▷ 하나의 메서드는 한 가지 기능만 수행하도록 작성Ch6 - 15. 메서드의 선언부▶ 메서드 = 선언부 + 구현부Ch6 - 16. 메서드의 구현부▶ 지역 변수(lv)▷ 메서드 내(메서드 영역), 선언된 변수▷ 매개 변수(입력)도 지역 변수",
+        "url": "/6cornerstoneJava9"
+    }
+    ,
+    
+    "6cornerstonejava8": {
+        "title": "Ch6-12~13. 변수",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter6. 객체지향 프로그래밍Ⅰ  Ch6 - 12. 클래스 변수와 인스턴스 변수  Ch6 - 13. 클래스 변수와 인스턴스 변수 예제Ch6 - 12. 클래스 변수와 인스턴스 변수▶ 클래스 변수와 인스턴스 변수의 차이점▷ 공통 속성 : 클래스 변수(cv)▷ 개별 속성 : 인스턴스 변수(iv)class Card {    // 개별 속성 : iv    String sign; // 기호    int number; // 숫자        // 공통 속성 : cv    static int width = 100; // 폭;    static int height = 230; // 높이;}▶ 클래스 변수와 인스턴스 변수의 사용 방법▷ 객체 생성Card c = new Card();▷ 객체 사용  인스턴스 변수(iv)      c.kind = \"HEART\";  c.number = 5;        클래스 변수(cv)      Card.width = 200;  Card.height = 300;      Ch6 - 13. 클래스 변수와 인스턴스 변수 예제▶ 카드의 공통 속성(cv), 개별 속성(iv) 활용▷ 코드class Ex6_3 {\tpublic static void main(String args[]) {\t\tSystem.out.println(\"Card.width = \" + Card.width);\t\tSystem.out.println(\"Card.height = \" + Card.height);\t\tCard c1 = new Card();\t\tc1.kind = \"Heart\";\t\tc1.number = 7;\t\tCard c2 = new Card();\t\tc2.kind = \"Spade\";\t\tc2.number = 4;\t\tSystem.out.println(\"c1은 \" + c1.kind + \", \" + c1.number + \"이며, 크기는 (\" + c1.width + \", \" + c1.height + \")\");\t\tSystem.out.println(\"c2는 \" + c2.kind + \", \" + c2.number + \"이며, 크기는 (\" + c2.width + \", \" + c2.height + \")\");\t\tSystem.out.println(\"c1의 width와 height를 각각 50, 80으로 변경합니다.\");\t\tCard.width = 50;\t\tCard.height = 80;\t\tSystem.out.println(\"c1은 \" + c1.kind + \", \" + c1.number + \"이며, 크기는 (\" + c1.width + \", \" + c1.height + \")\");\t\tSystem.out.println(\"c2는 \" + c2.kind + \", \" + c2.number + \"이며, 크기는 (\" + c2.width + \", \" + c2.height + \")\");\t}}class Card {String kind;int number;static int width = 100;static int height = 250;}// consoleCard.width = 100Card.height = 250c1은 Heart, 7이며, 크기는 (100, 250)c2는 Spade, 4이며, 크기는 (100, 250)c1의 width와 height를 각각 50, 80으로 변경합니다.c1은 Heart, 7이며, 크기는 (50, 80)c2는 Spade, 4이며, 크기는 (50, 80)▷ 그림 그려보며 cv, iv 생각하기",
+        "url": "/6cornerstoneJava8"
+    }
+    ,
+    
+    "6cornerstonejava7": {
+        "title": "Ch6-11. 변수의 종류",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter6. 객체지향 프로그래밍Ⅰ  Ch6 - 11. 선언위치에 따른 변수의 종류Ch6 - 11.선언위치에 따른 변수의 종류▶ 변수의 종류는 선언위치에 따라 3가지로 분류▷ 변수의 타입 ≠ 변수의 종류▷ 클래스 영역 : iv, cv▷ 메서드 영역 : lv▶ 클래스 영역▷ 클래스 영역 내에서는 변수 선언, 메서드 선언 등 선언문만 가능class Class { ← 클래스 시작int iv;static int cv; // static iv = cv} ← 클래스 끝▶ 메서드 영역▷ lv의 범위(scope)는 보통 메서드 내clas Class {       void method() { ← 메서드 시작        int lv = 0;    } ← 메서드 끝}",
+        "url": "/6cornerstoneJava7"
+    }
+    ,
+    
+    "6cornerstonejava6": {
+        "title": "Ch6-9~10. 클래스란?",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter6. 객체지향 프로그래밍Ⅰ  Ch6 - 9. 클래스의 정의(1) : 데이터와 함수의 결합  Ch6 - 10. 클래스의 정의(2) : 사용자 정의 타입Ch6 - 9. 클래스의 정의(1) : 데이터와 함수의 결합▶ 클래스란?▷ 설계도▷ 데이터 + 함수Ch6 - 10. 클래스의 정의(2) : 사용자 정의 타입▶ 클래스란?▷ 설계도▷ 데이터 + 함수▷ 사용자 정의 타입 : 원하는 타입을 직접 만듦▶ 비객체지향과 객체지향 - 생성▷ 비객체지향 - 변수  시간 관련 변수 필요      int hour;  int minute;  int second;        시간 관련 변수가 많이 필요      int hour1, hour2, hour3;  int minute1, minute2, minute3;  int second1, second2, second3;        변수를 배열로 저장      int [] hour = new int [3];  int [] minute = new int [3];  int [] second = new int [3];      ▷ 객체지향 - 클래스class Time {    int hour;    int minute;    int second;}  시간 관련 변수가 필요? - 객체 생성      Time t = new Time();        시간 관련 변수가 많이 필요? - 객체 많이 생성      Time t1 = new Time();  Time t2 = new Time();  Time t3 = new Time();        객체 배열로 저장    Time[] t = new Time[3];t[0] = new Time();t[1] = new Time();t[2] = new Time();      ▶ 비객체지향과 객체지향 - 사용  12시 34분 56초 저장▷ 비객체지향int hour = 12;int minute = 34;int second = 56;▷ 객체지향Time t = new Time();t.hour = 12;t.minute = 34;t.second = 56;",
+        "url": "/6cornerstoneJava6"
+    }
+    ,
+    
+    "6cornerstonejava5": {
+        "title": "Ch6-8. 객체배열",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter6. 객체지향 프로그래밍Ⅰ  Ch6 - 8. 객체 배열Ch6 - 8. 객체 배열▶ 객체 배열이란?▷ 객체 배열 == 참조변수 배열▶ 객체 배열 생성 과정▷ 객체 타입의 참조변수 배열 생성Tv Tv1, Tv2, Tv3; == Tv[] tvArr = new Tv[3];Tv[] tvArr = new Tv[3]; // length가 3인 Tv타입의 참조변수 배열▷ 배열의 각 요소에 생성한 객체를 저장tvArr[0] = new Tv();tvArr[1] = new Tv();tvArr[2] = new Tv();생성 ~ 초기값 저장 : 한 번에 하는 법Tv[] tvArr = { new Tv(), new Tv(), new Tv() };",
+        "url": "/6cornerstoneJava5"
+    }
+    ,
+    
+    "6cornerstonejava4": {
+        "title": "Ch6-6~7. 객체 생성·사용",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter6. 객체지향 프로그래밍Ⅰ  Ch6 - 6. 객체의 생성과 사용  Ch6 - 7. 객체의 생성과 사용 예제Ch6 - 6. 객체의 생성과 사용▶ 객체의 생성▷ 변수의 생성클래스명 변수명;변수명 = new 클래스명();Tv t;   // 참조변수t - 리모콘t = new Tv();   // 참조변수t(리모콘)와 Tv(제품) 연결▶ 객체의 사용▷ 메서드의 사용① 클래스(설계도) 작성class Tv {String color;boolean power;int channel;    void power()      { }void channelUp()  { channel++; }  void channelDown(){ channel--; }② 객체(제품) 생성Tv t;t = new Tv();  t(리모콘) 타입 == 객체 타입 TvTv t;  참조변수t(리모콘)가 있어야만 객체 사용가능  참조변수t(리모콘)와 객체는 연결하여 사용t = new Tv();③ 객체(제품) 사용 : t(리모콘)으로 접근t.channel = 7;t.channelDown();Ch6 - 7. 객체의 생성과 사용 예제▶ 리모콘t : 1개, 객체 : Tvclass Tv {\tString color;\tboolean power;\tint channel;\tvoid power() {\t\tpower = !power;\t}\tvoid channelUp() {\t\tchannel++;\t}\tvoid channelDown() {\t\tchannel--;\t}}class Act {\tpublic static void main(String[] args) {\t\tTv t;\t\tt = new Tv();\t\tt.channel = 7;\t\tt.channelDown();\t\tSystem.out.println(\"현재 채널 : \" + t.channel);\t}}// console현재 채널 : 6▶ 리모콘t : 2개, 객체 : Tvclass Act {\tpublic static void main(String[] args) {\t\tTv t1 = new Tv();\t\tTv t2 = new Tv();\t\tt1.channel = 8;\t\tt1.channelDown();\t\t\t\tt2.channel = 100;\t\tt2.channelUp();\t\t\t\tSystem.out.println(\"t1 현재 채널 : \" + t1.channel);\t\tSystem.out.println(\"t2 현재 채널 : \" + t2.channel);\t}}// consolet1 현재 채널 : 7t2 현재 채널 : 101t1 = t2;System.out.println(\"t1 현재 채널 : \" + t1.channel);System.out.println(\"t2 현재 채널 : \" + t2.channel);// consolet1 현재 채널 : 101t2 현재 채널 : 101",
+        "url": "/6cornerstoneJava4"
+    }
+    ,
+    
+    "6cornerstonejava3": {
+        "title": "Ch6-5. .java → 多.class...",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter6. 객체지향 프로그래밍Ⅰ  Ch6 - 5. 하나의 소스파일에 여러 클래스 작성Ch6 - 5. 하나의 소스파일에 여러 클래스 작성▶ 하나의 소스파일에 여러 클래스 작성하는 방법▷ 하나의 소스파일에는 하나의 클래스만 작성하는 것이 바람직!▷ 하나의 소스파일에 여러 클래스 작성하는 규칙이 있음▶ 실습▷ 하나의 소스파일에 여러 클래스 작성▷ 이름.java == 이름.class 일치해야 실행▷ 수동으로 실행파일 설정",
+        "url": "/6cornerstoneJava3"
+    }
+    ,
+    
+    "6cornerstonejava2": {
+        "title": "Ch6-2~4. 객체",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter6. 객체지향 프로그래밍Ⅰ  Ch6 - 2. 클래스와 객체  Ch6 - 3. 객체의 구성요소 : 속성과 기능  Ch6 - 4. 객체와 인스턴스Ch6 - 2. 클래스와 객체▶ 클래스의 정의▷ 클래스란 객체를 정의해 놓은 것▶ 클래스의 용도▷ 클래스는 객체를 생성하는데 사용▶ 객체의 정의▷ 실제로 존재하는 것, 사물 또는 개념▶ 객체의 용도▷ 객체가 가지고 있는 기능과 속성에 따라 다름Ch6 - 3. 객체의 구성요소 : 속성과 기능▶ 객체 = 속성(변수) + 기능(메서드)▷ 속성(변수)      속성  크기, 길이, 높이, 색상, 볼륨, 채널 등         변수      class Tv {  String color;  boolean power;  int channel;  }          ▷ 기능(메서드)      기능켜기, 끄기, 볼륨 높이기, 볼륨 낮추기, 채널 변경 등         메서드      class Tv {  void power()      { power = !power; }  void channelUp()  { channel++; }    void channelDown(){ channel--; }  }          class Tv는 TV(제품)의 설계도Ch6 - 4. 객체와 인스턴스▶ 객체▷ 모든 인스턴스를 대표하는 일반적 용어▶ 인스턴스▷ 특정 클래스로부터 생성된 객체ex. class Tv로 부터 만들어진 객체(제품) = Tv인스턴스객체 ≒ 인스턴스▶ 인스턴스화▷ 클래스를 만들었으면 따로 객체를 생성해야 클래스 사용 가능▷ 설계도 → 제품▷ 클래스 → 인스턴스(객체)▶ 정리▷ 클래스가 왜 필요?  객체를 생성하기 위해▷ 객체가 왜 필요?  객체를 사용하기 위해▷ 객체를 사용한다는 것은?  객체가 가진 속성과 기능을 사용",
+        "url": "/6cornerstoneJava2"
+    }
+    ,
+    
+    "6cornerstonejava1": {
+        "title": "Ch6-1. 객체지향 언어",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter6. 객체지향 프로그래밍Ⅰ  Ch6 - 1. 객체지향 언어Ch6 - 1. 객체지향 언어▶ 객체지향 언어가 나오기까지▷ 80년 초 소프트웨어의 위기 : 빠른 변화를 못 쫓아감▷ 해결책으로 객체지향 언어를 도입▷ 절차적 → 객체지향▷ 객체지향  코드의 재사용성이 높음  유지보수가 용이 : 빠른 변화에 대한 대처 능력 향상  중복 코드 제거▶ 객체지향 언어▷ 프로그래밍 언어 + 객체지향 개념(규칙)▷ 객체지향 개념(Object Oriented Programming)이란?  캡슐화  상속  추상화  다형성",
+        "url": "/6cornerstoneJava1"
+    }
+    ,
+    
     "5cornerstonejava11": {
         "title": "Ch5-24. Arrays",
             "author": "JungRan-Baek",
@@ -200,7 +371,7 @@ into the {body} of the default.hbs template -->
     ,
     
     "5cornerstonejava10": {
-        "title": "Ch5-21~23. 예제",
+        "title": "Ch5-21~23. 2차원 배열 예제",
             "author": "JungRan-Baek",
             "category": "",
             "content": "자바의 정석 기초편0. 목차  Chapter5. 배열  Ch5 - 21. 2차원 배열의 초기화 예제1  Ch5 - 22. 2차원 배열의 초기화 예제2  Ch5 - 23. 2차원 배열의 초기화 예제3Ch5 - 21. 2차원 배열의 초기화 예제1▶ 2차원 배열의 모든 값 더하기▷ 변수 sum에 더한 값 저장▷ 2차원 배열의 값을 모두 꺼내려면, 이중 for문 이용int[][] score = {                {100, 100, 100}                , {20, 20, 20}                , {30, 30, 30}                , {40, 40, 40}                  };int sum = 0;for (int i = 0; i &lt; score.length; i++) {    for (int j = 0; j &lt; score[i].length; j++) {        System.out.printf(\"score[%d][%d] = %d\\n\", i, j, score[i][j]);                sum += score[i][j];    }    System.out.println(\"---\");}System.out.println(\"sum = \" + sum);// consolescore[0][0] = 100score[0][1] = 100score[0][2] = 100---score[1][0] = 20score[1][1] = 20score[1][2] = 20---score[2][0] = 30score[2][1] = 30score[2][2] = 30---score[3][0] = 40score[3][1] = 40score[3][2] = 40---sum = 570Ch5 - 22. 2차원 배열의 초기화 예제2▶ 국, 영, 수 성적의 총점과 평균값 구하기▷ 번호별 국, 영, 수 성적 총점 구하기▷ 번호별 국, 영, 수 성적 평균 구하기int[][] score = {                {100, 100, 100}                , {20, 20, 20}                , {30, 30, 30}                , {40, 40, 40}                  };\t\tint sum = 0;for (int i = 0; i &lt; score.length; i++) {    System.out.println(\"번호 \" + (i + 1));    System.out.printf(\"%s %s %s\\n\", \"국어\", \"수학\", \"영어\");        for (int j = 0; j &lt; score[i].length; j++) {        System.out.printf(\"%3d \", score[i][j]);                sum += score[i][j];    }    System.out.printf(\"\\n총점 %d\", sum);    System.out.printf(\"\\n평균 %f\", sum/(float)score[i].length);    System.out.printf(\"\\n---\\n\");}System.out.println(\"전체 총점 = \" + sum);// console번호 1국어 수학 영어100 100 100 총점 300평균 100.000000---번호 2국어 수학 영어 20  20  20 총점 360평균 120.000000---번호 3국어 수학 영어 30  30  30 총점 450평균 150.000000---번호 4국어 수학 영어 40  40  40 총점 570평균 190.000000---전체 총점 = 570Ch5 - 23. 2차원 배열의 초기화 예제3▶ 퀴즈▷ 배열의 인덱스 이용String[][] question = { { \"cup\", \"컵\" }, { \"integer\", \"정수\" }, { \"cat\", \"고양이\" }, { \"angel\", \"천사\" } };Scanner scanner = new Scanner(System.in);for (int i = 0; i &lt; question.length; i++) {    System.out.printf(\"Q%d. %s의 뜻은? \\n&gt; \", (i + 1), question[i][0]);    String inputString = scanner.nextLine();        if (inputString.equals(question[i][1])) {        System.out.printf(\"정답!\\n\\n\");    } else {        System.out.println(\"오답!\");        System.out.printf(\"정답은 %s\\n\\n\", question[i][1]);    }}// consoleQ1. cup의 뜻은?&gt; cup오답!정답은 컵Q2. integer의 뜻은?&gt; 정수정답!Q3. cat의 뜻은?&gt; 고양이정답!Q4. angel의 뜻은?&gt; 1004오답!정답은 천사",
@@ -245,7 +416,7 @@ into the {body} of the default.hbs template -->
     ,
     
     "5cornerstonejava5": {
-        "title": "Ch5-10~11. 섞기",
+        "title": "Ch5-10~11. 배열 섞기",
             "author": "JungRan-Baek",
             "category": "",
             "content": "자바의 정석 기초편0. 목차  Chapter5. 배열  Ch5 - 10. 배열의 활용(3) 섞기(shuffle)  Ch5 - 11. 배열의 활용(4) 로또 번호 만들기Ch5 - 10. 배열의 활용(3) 섞기(shuffle)▶ 섞기?▷ 배열의 요소의 순서를 반복해서 바꿈▶ 숫자 섞기▷ numArr[0] ↔ numArr[random] : 100번 반복int numArr[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};System.out.println(Arrays.toString(numArr));for (int i = 0; i &lt; 100; i++) {        int random = (int)(Math.random() * 10);    int tmp = numArr[0];    numArr[0] = numArr[random];    numArr[random] = tmp;}System.out.println(Arrays.toString(numArr));// console[0, 1, 2, 3, 4, 5, 6, 7, 8, 9][5, 0, 3, 6, 2, 4, 1, 8, 9, 7]  계산과정      [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]      0번째 반복  numArr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]  random = 2      numArr[0] = 0 → tmp에 저장  numArr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]  tmp = 0      numArr[2(random)] = 2 → numArr[0] = 2에 붙여넣기  numArr = [2, 1, 2, 3, 4, 5, 6, 7, 8, 9]  random = 2      tmp = 0를 → numArr[2(random)]에 저장  numArr = [2, 1, 0, 3, 4, 5, 6, 7, 8, 9]  tmp = 0      1번째 반복  numArr = [2, 1, 0, 3, 4, 5, 6, 7, 8, 9]  random = 5      numArr[0] = 2 → tmp에 저장  numArr = [2, 1, 0, 3, 4, 5, 6, 7, 8, 9]  tmp = 2      numArr[5(random)] = 5 → numArr[0] = 5에 붙여넣기  numArr = [5, 1, 0, 3, 4, 5, 6, 7, 8, 9]  random = 5      tmp = 2를 → numArr[5(random)]에 저장  numArr = [5, 1, 0, 3, 4, 2, 6, 7, 8, 9]  tmp = 2      ...          98번째 반복  numArr = [0, 7, 3, 6, 2, 4, 1, 8, 9, 5]  random = 1      numArr[0] = 0 → tmp에 저장  numArr = [0, 7, 3, 6, 2, 4, 1, 8, 9, 5]  tmp = 0      numArr[1(random)] = 7 → numArr[0] = 7에 붙여넣기  numArr = [7, 7, 3, 6, 2, 4, 1, 8, 9, 5]  random = 1      tmp = 0를 → numArr[1(random)]에 저장  numArr = [7, 0, 3, 6, 2, 4, 1, 8, 9, 5]  tmp = 0      99번째 반복  numArr = [7, 0, 3, 6, 2, 4, 1, 8, 9, 5]  random = 9      numArr[0] = 7 → tmp에 저장  numArr = [7, 0, 3, 6, 2, 4, 1, 8, 9, 5]  tmp = 7      numArr[9(random)] = 5 → numArr[0] = 5에 붙여넣기  numArr = [5, 0, 3, 6, 2, 4, 1, 8, 9, 5]  random = 9      tmp = 7를 → numArr[9(random)]에 저장  numArr = [5, 0, 3, 6, 2, 4, 1, 8, 9, 7]  tmp = 7      [5, 0, 3, 6, 2, 4, 1, 8, 9, 7]      ▷ numArr[0] ↔ numArr[random] : numArr.length 만큼 반복int numArr[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};System.out.println(\"최초. \" + Arrays.toString(numArr));    for (int i = 0; i &lt; numArr.length; i++) {        int random = (int)(Math.random() * 10);    int tmp = numArr[i];    numArr[0] = numArr[random];    numArr[random] = tmp;    System.out.println(i + \"번째 섞기. \" + Arrays.toString(numArr));}System.out.println(\"최종. \" + Arrays.toString(numArr));// console최초. [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]0번째 섞기. [9, 1, 2, 3, 4, 5, 6, 7, 8, 0]1번째 섞기. [6, 1, 2, 3, 4, 5, 1, 7, 8, 0]2번째 섞기. [2, 1, 2, 3, 4, 5, 1, 7, 8, 0]3번째 섞기. [8, 1, 2, 3, 4, 5, 1, 7, 3, 0]4번째 섞기. [4, 1, 2, 3, 4, 5, 1, 7, 3, 0]5번째 섞기. [1, 5, 2, 3, 4, 5, 1, 7, 3, 0]6번째 섞기. [5, 1, 2, 3, 4, 5, 1, 7, 3, 0]7번째 섞기. [7, 1, 2, 3, 4, 5, 1, 7, 3, 0]8번째 섞기. [1, 1, 2, 3, 4, 5, 3, 7, 3, 0]9번째 섞기. [4, 1, 2, 3, 0, 5, 3, 7, 3, 0]최종. [4, 1, 2, 3, 0, 5, 3, 7, 3, 0]Ch5 - 11. 배열의 활용(4) 로또 번호 만들기▶ 로또 번호 만들기▷ 배열 45개에 값 넣기int rotto[] = new int[45];for (int i = 0; i &lt; rotto.length; i++) {rotto[i] = i + 1;System.out.printf(\"[%d]\", rotto[i]);}// console[1][2][3][4][5][6][7][8][9][10]...[40][41][42][43][44][45]▷ 6번 섞기int rotto[] = new int[45];for (int i = 0; i &lt; rotto.length; i++) {    rotto[i] = i + 1;}for (int j = 0; j &lt; 6; j++) {        int random = (int)(Math.random() * 45);    int tmp = rotto[j];    rotto[j] = rotto[random];    rotto[random] = tmp;    System.out.println(Arrays.toString(rotto));}// console[44, 2, 3, 4, 5, 6, 7, 8, 9, 10, ... 42, 43, 1, 45][44, 6, 3, 4, 5, 2, 7, 8, 9, 10, ... 42, 43, 1, 45][44, 6, 27, 4, 5, 2, 7, 8, 9, 10, ... 42, 43, 1, 45][44, 6, 27, 18, 5, 2, 7, 8, 9, 10, ... 42, 43, 1, 45][44, 6, 27, 18, 25, 2, 7, 8, 9, 10, ... 42, 43, 1, 45][44, 6, 27, 18, 25, 35, 7, 8, 9, 10, ... 42, 43, 1, 45]▷ 6개 당청번호 출력int rotto[] = new int[45];for (int i = 0; i &lt; rotto.length; i++) {    rotto[i] = i + 1;}for (int j = 0; j &lt; 6; j++) {        int random = (int)(Math.random() * 45);    int tmp = rotto[j];    rotto[j] = rotto[random];    rotto[random] = tmp;}for (int t = 0; t &lt; 6; t++) {        System.out.printf(\"[%d]\", rotto[t]);}// console[7][6][4][44][19][23]",
@@ -254,7 +425,7 @@ into the {body} of the default.hbs template -->
     ,
     
     "5cornerstonejava4": {
-        "title": "Ch5-8~9. 총합·평균",
+        "title": "Ch5-8~9. 배열 총합·평균",
             "author": "JungRan-Baek",
             "category": "",
             "content": "자바의 정석 기초편0. 목차  Chapter5. 배열  Ch5 - 8. 배열의 활용(1) 총합과 평균  Ch5 - 9. 배열의 활용(2) 최대값과 최소값Ch5 - 8. 배열의 활용(1) 총합과 평균▶ 총합과 평균?▷ 배열의 모든 요소를 더해서 총합과 평균을 구함▶ 총합구하기int sum = 0;int[] iArr = { 1, 2, 3, 4, 100, -8 };for (int i = 0; i &lt; iArr.length; i++) {        System.out.printf(\"%d + %d = \", sum, iArr[i]);    sum += iArr[i];    System.out.printf(\"%d\\n\", sum);}System.out.printf(\"\\ntotal sum &gt; %d\", sum);// console0 + 1 = 11 + 2 = 33 + 3 = 66 + 4 = 1010 + 100 = 110110 + -8 = 102total sum &gt; 102▶ 평균구하기▷ 총합 ÷ 배열의 길이▷ 정확한 평균을 위해 float로 형변환int sum = 0;float average = 0f;int[] iArr = { 100, 50, 90, 80 };for (int i = 0; i &lt; iArr.length; i++) {        System.out.printf(\"%d + %d = \", sum, iArr[i]);    sum += iArr[i];    System.out.printf(\"%d\\n\", sum);}average = sum / (float)iArr.length;System.out.printf(\"\\n%d ÷ %f = %f\\n\", sum, (float)iArr.length, average);System.out.printf(\"\\ntotal sum &gt; %d\\n\", sum);System.out.printf(\"average &gt; %f\", average);// console0 + 100 = 100100 + 50 = 150150 + 90 = 240240 + 80 = 320320 ÷ 4.000000 = 80.000000total sum &gt; 320average &gt; 80.000000Ch5 - 9. 배열의 활용(2) 최대값과 최소값▶ 최대값과 최소값?▷ 배열의 요소 중에서 제일 큰 값과 제일 작은 값을 찾음int[] score = {77, 88, 33, 44, 222};int max = score[0];int min = score[0];for (int i = 1; i &lt; score.length; i++) {    if (score[i] &gt; max) {                System.out.println(\"max\");        System.out.printf(\"%d &gt; %d : %b\\n\", score[i], max, score[i] &gt; max);                max = score[i];        System.out.printf(\"max = %d\\n\\n\", max);    } else if (score[i] &lt; min) {        System.out.println(\"min\");        System.out.printf(\"%d &lt; %d : %b\\n\", score[i], min, score[i] &lt; min);        min = score[i];                System.out.printf(\"min = %d\\n\\n\", min);    }}System.out.println(\"max = \" + max);System.out.println(\"min = \" + min);// consolemax88 &gt; 77 : truemax = 88min33 &lt; 77 : truemin = 33max222 &gt; 88 : truemax = 222max = 222min = 33  score[i] &gt; max : true면 max(if문)  score[i] &gt; max : false면 min(else if문)",
@@ -263,7 +434,7 @@ into the {body} of the default.hbs template -->
     ,
     
     "5cornerstonejava3": {
-        "title": "Ch5-6~7. 출력",
+        "title": "Ch5-6~7. 배열 출력",
             "author": "JungRan-Baek",
             "category": "",
             "content": "자바의 정석 기초편0. 목차  Chapter5. 배열  Ch5 - 6. 배열의 출력  Ch5 - 7. 배열의 출력 예제Ch5 - 6. 배열의 출력▶ 배열에 저장된 모든 값을 출력하려면?int[] iArr = {100, 95, 80, 70, 60};▷ System.out.println으로 출력  [I@7637f22이런 문자열 출력[I : int 배열7637f22 : 배열의 주소(?)  뒤 숫자는 배열마다 다 다르게 나옴System.out.println(iArr);// console[I@7637f22  예외 : char타입은 System.out.println으로 출력가능      char[] chArr = {'a', 'b', 'c', 'd'};      System.out.println(chArr);      // console  abcd      ▷ for문으로 출력모든 배열의 요소 출력int[] iArr = {100, 95, 80, 70, 60};for (int i = 0; i &lt; iArr.length; i++) {        System.out.printf(\"iArr[%d] = %d\\n\", i, iArr[i]);}// consoleiArr[0] = 100iArr[1] = 95iArr[2] = 80iArr[3] = 70iArr[4] = 60▷ Arrays.toString으로 출력Arrays.toString(배열이름)   // 배열을 to Stringint[] iArr = {100, 95, 80, 70, 60};System.out.printf(Arrays.toString(iArr));// console[100, 95, 80, 70, 60]Ch5 - 7. 배열의 출력 예제▶ 1 ~ 10의 숫자를 순서대로 배열에 넣기▷ for문int[] iArr = new int[10];for (int i = 0; i &lt; iArr.length; i++) {    iArr[i] = i + 1;    System.out.println(iArr[i]);}// console12345678910▶ 1 ~ 10의 숫자를 랜덤으로 배열에 넣기▷ Math.random(), for문for (int i = 0; i &lt; iArr.length; i++) {\t\t\t    iArr[i] = (int)(Math.random() * 10) + 1;    System.out.println(iArr[i]);}// console10167594912▶ 배열의 선언 시 저장한 값을 출력▷ Arrays.toString()int[] iArr = { 1, 2, 3, 4, 100, -8 };System.out.println(Arrays.toString(iArr));// console[1, 2, 3, 4, 100, -8]",
@@ -272,7 +443,7 @@ into the {body} of the default.hbs template -->
     ,
     
     "5cornerstonejava2": {
-        "title": "Ch5-4~5. 초기화",
+        "title": "Ch5-4~5. 배열 초기화",
             "author": "JungRan-Baek",
             "category": "",
             "content": "자바의 정석 기초편0. 목차  Chapter5. 배열  Ch5 - 4. 배열의 길이(배열이름.length)  Ch5 - 5. 배열의 초기화Ch5 - 4. 배열의 길이(배열이름.length)▶  배열의 길이란?▷ 배열의 길이는 배열이름.length를 통해 알아낼 수 있음▷ 배열은 한 번 생성하면 실행하는 동안 그 길이를 바꿀 수 없음int[] arr = new int[5];int tmp = arr.length;   // arr.length = 5, tmp = 5System.out.println(tmp);// console5▷ 그래서 배열이름.length = 배열의 길이(int형 상수)int[] score = new int[6];for (int i = 0; i &lt; score.length; i++) {    System.out.println(score[i]);}for (int i = 0; i &lt; score.length; i++)배열의 길이인 6을 찍어주지 않고 score.length를 찍음int[] score = new int[6];에서 int[5]로 변경그럼 자동으로 for문 조건식은 5로 변경굳이 바꿔주지 않아도 됨변경에 유리▶  실습int[] arr = new int[5];    for (int i = 0; i &lt; arr.length; i++) {        System.out.println(\"arr.length[\" + i + \"] = \" + arr[i]);    }    // consolearr.length[0] = 0arr.length[1] = 0arr.length[2] = 0arr.length[3] = 0arr.length[4] = 0Ch5 - 5. 배열의 초기화▶ 배열의 초기화▷ 배열의 각 요소에 처음으로 값을 저장하는 것▷ 배열은 기본적으로 초기화가 됨int i;  // i = 0으로 초기화▶ 배열의 초기화 방법▷ 변수에 값 넣듯 하나씩 초기화int[] score = new int[5];score[0] = 50;score[1] = 60;score[2] = 70;score[3] = 80;score[4] = 90;▷ 반복문 초기화int[] score = new int[5];for (int i = 0; i &lt; score.length; i++) {    System.out.printf(\"score[%d] = \", i);    System.out.println((i * 10) + 50);}// consolescore[0] = 50score[1] = 60score[2] = 70score[3] = 80score[4] = 90▷ 괄호 초기화int[] score = new int[]{50, 60, 70, 80, 90};    // new int[] 생략가능for (int i = 0; i &lt; score.length; i++) {        System.out.printf(\"score[%d] = %d\\n\", i, score[i]);}// consolescore[0] = 50score[1] = 60score[2] = 70score[3] = 80score[4] = 90  주의    int[] score = {50, 60, 70, 80, 90};        이 방식을 두 줄로 나눠쓰면 에러    int[] score;score = {50, 60, 70, 80, 90}    // 에러      ",
@@ -362,7 +533,7 @@ into the {body} of the default.hbs template -->
     ,
     
     "3cornerstonejava9": {
-        "title": "Ch3-17~19. 조건",
+        "title": "Ch3-17~19. 조건 연산자",
             "author": "JungRan-Baek",
             "category": "",
             "content": "자바의 정석 기초편0. 목차  Chapter3. 연산자  Ch3 - 17. 조건 연산자 ? :  Ch3 - 18. 대입 연산자 =  Ch3 - 19. 복합 대입 연산자 +=Ch3 - 17. 조건 연산자 ? :▶ 조건 연산자란?▷ 피연산자가 3개▷ 조건식의 결과에 따라 연산결과를 달리함  조건식 결과 = true 일 때      int x = 5, y = 3;      boolean b = x &gt; y;  int result = (x &gt; y) ? x : y;      System.out.println(b);  System.out.println(result);      // console  true  5   // 조건식이 true일 때, 결과값은 x        조건식 결과 = false 일 때    int x = 3, y = 5;          boolean b = x &gt; y;int result = (x &gt; y) ? x : y;  System.out.println(b);System.out.println(result);  // consolefalse5   // 조건식이 flase일 때, 결과값은 y        result = (x &gt; y) ? x : y; → if문으로 작성하면?    if (x &gt;  y)  result = x;else {  result = y;}   // if문은 길다        간단한 if문은 삼항 연산자로!  Ch3 - 18. 대입 연산자 =▶ 대입 연산자란?▷ 오른쪽 피연산자를 왼쪽 피연산자에 저장 후 저장된 값을 반환▷ 모든 연산자는 결과값을 반환▷ 연산방향 : ←▶ lvalue와 rvalue▷ lvalue : 대입 연산자의 왼쪽 피연산자      lvalue는 저장공간변수, 배열… 저장공간만 lvalue가 될 수 있음        lvalue가 저장공간이 아닐 시 에러발생상수, 정수… 저장공간이 아닌 lvalue는 모두 에러    int i = 0;  3 = i + 3;  // 에러, 3 ≠ 저장공간i + 3 = i;  // 에러, i + 3 = 0 + 3 = 3 ≠ 저장공간  final int MAX = 3;  // 변수 앞 final = 상수 ≠ 저장공간MAX = 10; // 에러, MAX = 상수 ≠ 저장공간      ▷ rvalue : 대입 연산자의 오른쪽 피연산자Ch3 - 18. 복합 대입 연산자 +=▶ 복합 대입 연산자란?▷ 대입 연산자와 다른 연산자를 하나로 축약▶ 예시▷ i += 3;  i = i + 3;▷ i -= 3;  i = i - 3;▷ i *= 3;  i = i * 3;▷ i /= 3;  i = i / 3;▷ i %= 3;  i = i % 3;▷ i «= 3;  i = i &lt;&lt; 3;▷ i »= 3;  i = i &gt;&gt; 3;▷ i &amp;= 3;  i = i &amp; 3;▷ i ^= 3;  i = i ^ 3;▷ i |= 3;  i = i | 3;▷ i *= 10 + 3;  피연산자가 2개인 경우 괄호 쳐 주기!  i = i * (10 + 3);",
@@ -371,7 +542,7 @@ into the {body} of the default.hbs template -->
     ,
     
     "3cornerstonejava8": {
-        "title": "Ch3-15~16. 논리",
+        "title": "Ch3-15~16. 논리 연산자",
             "author": "JungRan-Baek",
             "category": "",
             "content": "자바의 정석 기초편0. 목차  Chapter3. 연산자  Ch3 - 15. 논리 연산자 &amp;&amp; || !  Ch3 - 16. 논리 부정 연산자 !Ch3 - 15. 논리 연산자 &amp;&amp; || !▶ 논리 연산자 &amp;&amp; ||란?▷ 조건식을 연결할 때 사용하는 연산자▷ ||(or)   : 피연산자 중 어느 하나가 true면, true!▷ &amp;&amp;(and)  : 피연산자 모두 true가 되면, true!▶ 실습▷ x는 10보다 크고, 20보다 작다  10 &lt; x &lt; 20 // 이런식의 표기는 허용X  논리 연산자를 사용해야 함  ① 10 &lt; x &amp;&amp; x &lt; 20  ② x &gt; 10 &amp;&amp; x &lt; 20  ①, ② 중 하나로 표기▷ x는 10보다 크고, 20보다 작다i는 2의 배수 또는, 3의 배수이다      2의 배수 = i ÷ 2 → 나머지 03의 배수 = i ÷ 3 → 나머지 0    i%2==0 || i%3==0      int i = 8;              System.out.println(i%2==0 || i%3==0);      // console  ture        계산과정  i%2==0 || i%3==0  → 8%2==0 || 8%3==0  → 0==0   || 2==0  → true   || false  → true▷ i는 2의 배수 또는, 3의 배수지만, 6의 배수는 아니다  (i%2==0 || i%3==0) &amp;&amp; 6%0!=0  우선순위 : || &gt; &amp;&amp; → 괄호를 사용하여 우선순위 잡아주기▷ 문자 ch는 숫자(‘0’ ~ ‘9’)이다  '0' &lt;= ch &lt;= '9'  '0' &lt;= ch &amp;&amp; ch &lt;= '9'char ch = '5';System.out.println('0' &lt;= ch &amp;&amp; ch &lt;= '9');// consoletrue  계산과정  '0' &lt;= ch &amp;&amp; ch &lt;= '9'  → 48 &lt;= '5' &amp;&amp; '5' &lt;= 57  → 48 &lt;= 53  &amp;&amp; 53 &lt;= 57  → true▷ 문자 ch는 대문자 또는 소문자이다  'a' &lt;= ch &lt;= 'z'          || 'A' &lt;= ch &lt;= 'Z''a' &lt;= ch &amp;&amp; ch &lt;= 'z'    || 'A' &lt;= ch &amp;&amp; ch &lt;= 'Z' ('a' &lt;= ch &amp;&amp; ch &lt;= 'z')  || ('A' &lt;= ch &amp;&amp; ch &lt;= 'Z')Ch3 - 16. 논리 부정 연산자 !▶ 논리 부정 연산자란?▷ true를 flase로, flase는 true로 바꿈  x = ture  !x = false▷ 논리 부정 연산자 : 대입 연산자, 단항 연산자  단항 연산자의 연산방향 : ←boolean b = true;System.out.println(!b);System.out.println(!!b);// consolefalsetrue▷ 문자 ch는 소문자가 아니다  문자 ch는 소문자다  'a' &lt;= ch &lt;= 'z'  'a' &lt;= ch &amp;&amp; ch &lt;= 'z'  아니다(문자 ch는 소문자다)  !('a' &lt;= ch &amp;&amp; ch &lt;= 'z')",
@@ -380,7 +551,7 @@ into the {body} of the default.hbs template -->
     ,
     
     "3cornerstonejava7": {
-        "title": "Ch3-13~14. 비교",
+        "title": "Ch3-13~14. 비교 연산자",
             "author": "JungRan-Baek",
             "category": "",
             "content": "자바의 정석 기초편0. 목차  Chapter3. 연산자  Ch3 - 13. 비교 연산자  Ch3 - 14. 문자열의 비교Ch3 - 13. 비교 연산자▶  &gt;  &lt;  &gt;=  &lt;=  ==  !=▷ 두 피연산자를 비교해서 ture 또는 false를 반환▶ 연산자의 종류와 연산결과▷ 대소비교▷ 등가비교▶ 실습▷ char : &gt;char ch1 = 'A', ch2 = 'B';System.out.println(ch1 &gt; ch2);// consolefalse  계산과정          char : int 보다 작은 타입  char → int 자동 형변환      ch1 &gt; ch2  'A' = 65, 'B' = 66  'A' &gt; 'B'  65 &gt; 66 false!      Ch3 - 14. 문자열의 비교▶ 문자열을 비교할 때는?▷ 문자열 비교에는 == 대신 equals()를 사용  문자열 비교 : == 사용가능String str1 = \"abc\";String str2 = \"abc\";System.out.println(str1 == str2);System.out.println(str1.equals(str2));// consoletruetrue  문자열 비교 : == 사용불가String str1 = new String(\"abc\");String str2 = new String(\"abc\");System.out.println(str1 == str2);System.out.println(str1.equals(str2));// consolefalsetrue",
@@ -416,7 +587,7 @@ into the {body} of the default.hbs template -->
     ,
     
     "3cornerstonejava3": {
-        "title": "Ch3-5~6. 증감",
+        "title": "Ch3-5~6. 증감 연산자",
             "author": "JungRan-Baek",
             "category": "",
             "content": "자바의 정석 기초편0. 목차  Chapter3. 연산자  Ch3 - 5. 증감 연산자 ++와 –  Ch3 - 6. 부호 연산자Ch3 - 5. 증감 연산자 ++와 –▶ 증가 연산자(++)▷ 피연산자의 값을 1 증가 시킴▶ 감소 연산자(–)▷ 피연산자의 값을 1 감소 시킴▶ 전위형 후위형▷ 전위형? 후위형?▷ 증감 연산자가 독립적으로 사용된 경우, 전위형과 후위형의 차이 없음int i = 1;\t\tSystem.out.println(i++);System.out.println(++i);// console22▷ 전위형 j = ++i;int i = 1, j = 0;++i;    // ① 전위형은 자기 먼저 더하기, i = 1 + 1 = 2j = i;  // ② 더한 걸 대입, j = 2        System.out.println(j);// console2▷ 후위형 j = i++;int i = 1, j = 0;j = i;  // ① 후위형은 먼저 대입, j = 1i++;    // ② j와 별개로 i만 더해져 있음, i = 2        System.out.println(j);  // j는? 더해진 i를 모름, 더하기 전의 i인 1을 출력// console1Ch3 - 6. 부호 연산자▶ 단항 연산자 - +▷ - : 피연산자의 부호를 반대로 변경▷ + : 아무런 일도 일어나지 않음(실제 사용안함)▶ 실습int i = -10;i = -i;System.out.println(i);// console10",
@@ -425,7 +596,7 @@ into the {body} of the default.hbs template -->
     ,
     
     "3cornerstonejava2": {
-        "title": "Ch3-3~4. 순위와 규칙",
+        "title": "Ch3-3~4. 연산자 순위·규칙",
             "author": "JungRan-Baek",
             "category": "",
             "content": "자바의 정석 기초편0. 목차  Chapter3. 연산자  Ch3 - 3. 연산자의 우선순위  Ch3 - 4. 연산자의 결합규칙Ch3 - 3. 연산자의 우선순위▶ 연산자의 우선순위란?▷ 하나의 식(expression)에 연산자가 둘 이상 있을 때,     어떤 연산을 먼저 수행할지를 자동 결정하는 것▷ () : 수동결정▷ 그러나 계속 수동결정을 통해 우선순위를 줄 순 없음▷ 우선순위를 상식적으로 생각Ch3 - 4. 연산자의 결합규칙▶ 결합규칙이란?▷ 우선순위가 같은 연산자가 있을 때,     어떤 것을 먼저 연산할 것인가?▷ 대입·단항 연산자 = 왼쪽 ← 오른쪽▷ 대입·단항 연산자 외 모든 연산자 = 왼쪽 → 오른쪽&lt;연산자의 우선순위와 결합법칙 결론 3가지&gt;1. 산술 &gt; 비교 &gt; 논리 &gt; 대입2. 단항 &gt; 이항 &gt; 삼항3. 왼쪽 -&gt; 오른쪽(단항·대입 연산자 제외)",
@@ -434,7 +605,7 @@ into the {body} of the default.hbs template -->
     ,
     
     "3cornerstonejava1": {
-        "title": "Ch3-1~2. 종류",
+        "title": "Ch3-1~2. 연산자 종류",
             "author": "JungRan-Baek",
             "category": "",
             "content": "자바의 정석 기초편0. 목차  Chapter3. 연산자  Ch3 - 1. 연산자와 피연산자  Ch3 - 2. 연산자의 종류Ch3 - 1. 연산자와 피연산자▶ 연산자란?▷ 연산을 수행하는 기호 : + - × ÷▶ 피연산자란?▷ 연산자의 연산 수행 대상모든 연산자는 연산결과를 반환한다int x = 5;\t\tSystem.out.println(4 * x + 3);  // 4 * 5 + 3 → 20 + 3// console23  // 연산결과Ch3 - 2. 연산자의 종류▶ 산술 연산자▷ + - * / : 사칙 연산▷ % : 나머지 연산▶ 비교 연산자▷ &gt; &lt; : 큼 작음▷ &gt;= &lt;= : 크거나 같음 작거나 같음▷ == != : 같음 다름▶ 논리 연산자▷ &amp;&amp; : and(둘 다)x &gt; 3 &amp;&amp; x &lt; 5 // x는 3보다 크고 5보다 작다▷ || : or(둘 중 하나)x &gt; 3 || x &lt; 5 // x는 3보다 크거나 5보다 작다▷ ! : not!(x &gt; 3) // x는 3보다 작거나 같다▶ 대입 연산자▷ = : 우변의 값을 좌변에 저장result = x + y▶ 기타 연산자▷ (type) : 형변환 연산자▷ ?: : 삼항 연산자▷ instanceof : instanceof 연산자",
@@ -506,7 +677,7 @@ into the {body} of the default.hbs template -->
     ,
     
     "2cornerstonejava12": {
-        "title": "Ch2-7~8. 문자와 문자열",
+        "title": "Ch2-7~8. 문자·문자열",
             "author": "JungRan-Baek",
             "category": "",
             "content": "자바의 정석 기초편0. 목차  Chapter2. 변수  Ch2 - 7. 문자 리터럴과 문자열 리터럴  Ch2 - 8. 문자열 결합Ch2 - 7. 문자 리터럴과 문자열 리터럴▶ 문자▷ char ch = 'A';▷ char ch = 'AB';   // 에러▷ char ch = ''; // 에러▶ 문자열▷ String s = \"AB\";▷ String s1 = \"AB\";  String은 자바에서 제공하는 클래스  클래스를 사용하기 위해서는 new 연산자를 통해 객체생성 해야함String s2 = new String(\"AB\");  그러나 String은 자주 사용하는 클래스 임으로 생략가능▷ String s = \"\";    // 빈 문자열▷ String s1 = \"A\" + \"B\" // 문자열 결합 = \"AB\"Ch2 - 8. 문자열 결합▶ 문자열 + anytype▷ 빈 문자열 + 숫자 = 숫자 → 문자열\"\" + 7 → \"\" + \"7\" → \"7\"(문자열)▷ 빈 문자열 + 숫자 + 숫자= 숫자 → 문자열\"\" + 7 + 7 → \"7\" + 7 → \"7\" + \"7\" → \"77\"(문자열)▷ 숫자 + 숫자 + 빈 문자열 = 숫자 → 문자열7 + 7 + \"\" → 14 + \"\" → \"14\" + \"\" → \"14\"(문자열)문자열 + anytype → 문자열anytype + 문자열 → 문자열▶ 실습int i = 'A';    // 문자코드 A의 값인 65가 출력 System.out.println(i);// console65String string = \"\";String str2 = \"ABCD\";String str3 = \"123\";String str4 = str2 + str3;System.out.println(str4);// consoleABCD123System.out.println(\"\" + 7 + 7);System.out.println(7 + 7 + \"\");// console7714",
@@ -515,7 +686,7 @@ into the {body} of the default.hbs template -->
     ,
     
     "2cornerstonejava11": {
-        "title": "Ch2-6. 접미사, 접두사",
+        "title": "Ch2-6. 접미사·접두사",
             "author": "JungRan-Baek",
             "category": "",
             "content": "자바의 정석 기초편0. 목차  Chapter2. 변수  Ch2 - 6. 리터럴의 타입과 접미사Ch2 - 6. 리터럴의 타입과 접미사▶ 정리0x-참고▶ 예시▷ boolean power = true;▷ char ch = 'A';▷ String str = \"ABC\";▷ byte b = 127;▷ long l = 10000000000L▷ float f = 3.14f▷ float f = 100f▷ int hex = 0x100;▷ short s = 32767;▷ double d = 3.14d▶ 10.▷ 10.0▶ .10▷ 0.10▶ 10f▷ 10.0f▶ 3.14e3f▷ 3.140.0f▶ 1e1▷ 10.0",
@@ -524,7 +695,7 @@ into the {body} of the default.hbs template -->
     ,
     
     "2cornerstonejava10": {
-        "title": "Ch2-5. 변수, 상수, 리터럴",
+        "title": "Ch2-5. 변수·상수·리터럴",
             "author": "JungRan-Baek",
             "category": "",
             "content": "자바의 정석 기초편0. 목차  Chapter2. 변수  Ch2 - 5. 변수, 상수, 리터럴Ch2 - 5. 변수, 상수, 리터럴▶ 변수(variable) - 변경가능▷ 하나의 값을 저장하기 위한 공간▶ 상수(constant) - 변경불가▷ 한 번만 값을 저장할 수 있는 변수▶ 리터럴(literal)▷ 그 자체로 값을 의미하는 것int score = 100;score = 200;final int MAX = 100; // MAX는 상수MAX = 200; // 에러char ch = 'A';String str = \"abc\";▶ 상수 / 변수 / 리터럴 구분",
@@ -533,7 +704,7 @@ into the {body} of the default.hbs template -->
     ,
     
     "2cornerstonejava9": {
-        "title": "Ch2-4. 변수의 타입",
+        "title": "Ch2-4. 변수 타입",
             "author": "JungRan-Baek",
             "category": "",
             "content": "자바의 정석 기초편0. 목차  Chapter2. 변수  Ch2 - 4. 변수의 타입Ch2 - 4. 변수의 타입▶ 변수의 타입▷ 변수의 타입은 저장할 값의 타입에 의해 결정int age = 25;   // int(정수타입) --일치-- 25(정수) → 변수선언int age = 3.14; // int(정수타입) --불일치-- 3.14(실수) → 변수선언불가 ▷ 저장할 값의 타입과 일치하는 타입으로 변수 선언char ch = '가';    // char(문자타입) --일치-- 가(문자) → 변수선언double pi = 3.14; // double(실수타입) --일치-- 3.14(실수) → 변수선언▶ 값의 타입▷ 값 - 변수의 타입(기본형 Primitive type)  문자 - char(문자)  숫자          정수 - byte, short, int,long(20억이 넘는 정수는 long으로)      실수 - float(오차없이 7자리), double(15자리)        논리 - boolean(true와 false를 저장)",
@@ -542,7 +713,7 @@ into the {body} of the default.hbs template -->
     ,
     
     "2cornerstonejava8": {
-        "title": "Ch2-3. 변수의 선언과 저장",
+        "title": "Ch2-3. 변수 선언·저장",
             "author": "JungRan-Baek",
             "category": "",
             "content": "자바의 정석 기초편0. 목차  Chapter2. 변수  Ch2 - 3. 변수의 선언과 저장Ch2 - 3. 변수의 선언과 저장▶ 변수(variable)란?▷ 하나의 값을 저장할 수 있는 메모리 공간▶ 변수의 선언▷ 변수의 선언 이유  값(data)을 저장할 공간을 마련하기 위해▷ 변수의 선언 방법  변수타입 변수이름;    int age; // 정수(int)타입의 변수 age를 선언          ▶ 변수에 값 저장하기▷ 변수에 값 저장하기 (‘=’은 등호 X 대입 O)int age; // 정수(int)타입의 변수 age를 선언age = 25; // 변수 age에 25를 저장 / age에 25를 대입int age = 25; // 위의 두 줄을 한 줄로 선언▷ 변수의 초기화 - 변수에 처음으로 값을 저장int x = 0; // 변수 x 선언 후, 0 으로 초기화int y = 5; // 변수 y 선언 후, 5 로 초기화int x = 0, y = 5; // 위으 두 줄을 한 줄로 선언▷ 변수의 종류 - 간략  클래스 변수  인스턴스 변수  지역 변수※ 지역 변수는 읽기 전에 꼭 초기화 해 주어야 함!▶ 변수의 값 읽어오기▷ 변수의 값이 필요한 곳에 변수의 이름을 작성int year = 0, age = 14;year = age + 2000;// year = 14 + 2000;// year = 2014;age = age + 1;// age = 14 + 1;// age = 15;System.out.println(age);// System.out.println(15);// 15가 화면에 출력▶ 실습int x = 4, y = 2;System.out.println(x + y);System.out.println(x - y);System.out.println(x * y);System.out.println(x / y);6282",
@@ -560,7 +731,7 @@ into the {body} of the default.hbs template -->
     ,
     
     "cornerstonejava6": {
-        "title": "Ch1-17~19. 가져오기, 내보내기",
+        "title": "Ch1-17~19. 가져오기·내보내기",
             "author": "JungRan-Baek",
             "category": "",
             "content": "자바의 정석 기초편0. 목차  Chapter1. 자바를 시작하기 전에  Ch1 - 17. 깃허브에서 전체파일 다운  Ch1 - 18. 이클립스로 소스파일 가져오기  Ch1 - 19. 이클립스에서 소스파일 내보내기Ch1 - 17. 깃허브에서 전체파일 다운▶ 깃허브 &gt; 검색창 &gt; javajungsuk_basicCh1 - 18. 이클립스로 소스파일 가져오기▶ import 하기Ch1 - 19. 이클립스에서 소스파일 내보내기▶ export 하기▷ ch4 파일만 빼내기",
@@ -596,7 +767,7 @@ into the {body} of the default.hbs template -->
     ,
     
     "cornerstonejava2": {
-        "title": "Ch1-5~7. JDK?",
+        "title": "Ch1-5~7. JDK",
             "author": "JungRan-Baek",
             "category": "",
             "content": "자바의 정석 기초편0. 목차  Chapter1. 자바를 시작하기 전에  Ch1 - 5. JDK 설치  Ch1 - 6. JDK 설정  Ch1 - 7. 자바 API 문서 설치Ch1 - 5. JDK 설치▶ JDK = Java Development KitCh1 - 6. JDK 설정Ch1 - 7. 자바 API 문서 설치▶ Java API란?▷ Java로 프로그램을 만드는데 필요한 주요기능을 미리 만들어 둔 것▶ Java API 문서란?▷ Java API가 제공하는 기능에 대한 상세정보 제공 - .html▶ Java API 문서 설치▶ Java API 문서 사용법",
@@ -605,7 +776,7 @@ into the {body} of the default.hbs template -->
     ,
     
     "cornerstonejava": {
-        "title": "Ch1-1~4. JVM?",
+        "title": "Ch1-1~4. 자바",
             "author": "JungRan-Baek",
             "category": "",
             "content": "자바의 정석 기초편0. 목차  Chapter1. 자바를 시작하기 전에  Ch1 - 1. 자바란?  Ch1 - 2. 자바의 역사  Ch1 - 3. 자바의 특징  Ch1 - 4. 자바 가상머신(JVM)Ch1 - 1. 자바란?▶ 자바란?▷ 프로그래밍 언어▷ 애플리케이션을 만드는데 사용▷ 실행환경(JRE) + 개발도구(JDK) + 라이브러리(API)▶ 자바의 쓰임?▷ 애플리케이션 - PC, 웹, 모바일(안드로이드)▷ 빅데이터▷ 게임 ···등Ch1 - 2. 자바의 역사▶ 자바 버전▷ JDK 1.0 (1996)▷ JDK 1.1 (1996)▷ J2SE 1.2 (1998)  J2SE : 스탠다드  J2ME : 마이크로(소형기계)  J2EE : 엔터프라이즈(대기업)▷ J2SE 1.3 (2000)▷ J2SE 1.4 (2002)▷ J2SE 5.0 (2004)▷ JAVA SE 6 (2006)▷ JAVA SE 7 (2011)▷ JAVA SE 8 (2014)▷ JAVA SE 9 (2017)▷ JAVA SE 10 (2018)▷ JAVA SE 11 (2018)▷ JAVA SE 12 (2019)▷ JAVA SE 13 (2019)안정성을 중요시 여기던 JAVA최신버전을 반영하기 위해 업데이트 주기가 짧아짐Ch1 - 3. 자바의 특징▷ 객체지향 언어▷ 자동 메모리 관리 - Garbage Collection(GC)▷ 멀티 쓰레드 지원▷ 풍부한 라이브러리로 쉽게 개발가능▷ 운영체제에 독립적 - JVM관련Ch1 - 4. 자바 가상머신(JVM)JVM 설명",
