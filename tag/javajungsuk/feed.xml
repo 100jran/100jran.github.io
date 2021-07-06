@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://100jran.github.io/tag/javajungsuk/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://100jran.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-07-06T19:35:17+09:00</updated>
+  <updated>2021-07-06T21:28:34+09:00</updated>
   <id>https://100jran.github.io/tag/javajungsuk/feed.xml</id>
 
   
@@ -93,16 +93,16 @@
 &lt;h6 id=&quot;-생성자&quot;&gt;▷ 생성자&lt;/h6&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;인스턴스(iv) 초기화 블럭&lt;/strong&gt;
-&lt;br /&gt;
-    &lt;h3 id=&quot;-멤버변수의-초기화-시점&quot;&gt;▶ 멤버변수의 초기화 시점&lt;/h3&gt;
-    &lt;h6 id=&quot;-클래스-변수-초기화-시점--클래스가-처음-로딩될-때-단-한번&quot;&gt;▷ 클래스 변수 초기화 시점 : 클래스가 처음 로딩될 때, 단 한번&lt;/h6&gt;
-    &lt;h6 id=&quot;-인스턴스-변수-초기화-시점--인스턴스가-생성될-때마다&quot;&gt;▷ 인스턴스 변수 초기화 시점 : 인스턴스가 생성될 때마다&lt;/h6&gt;
-    &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-    &lt;h3 id=&quot;-멤버변수의-초기화-순서&quot;&gt;▶ 멤버변수의 초기화 순서&lt;/h3&gt;
-    &lt;h6 id=&quot;-cv--iv&quot;&gt;▷ cv → iv&lt;/h6&gt;
-    &lt;h6 id=&quot;-자동--간단--복잡&quot;&gt;▷ 자동 → 간단 → 복잡&lt;/h6&gt;
-  &lt;/li&gt;
+&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h3 id=&quot;-멤버변수의-초기화-시점&quot;&gt;▶ 멤버변수의 초기화 시점&lt;/h3&gt;
+&lt;h6 id=&quot;-클래스-변수-초기화-시점--클래스가-처음-로딩될-때-단-한번&quot;&gt;▷ 클래스 변수 초기화 시점 : 클래스가 처음 로딩될 때, 단 한번&lt;/h6&gt;
+&lt;h6 id=&quot;-인스턴스-변수-초기화-시점--인스턴스가-생성될-때마다&quot;&gt;▷ 인스턴스 변수 초기화 시점 : 인스턴스가 생성될 때마다&lt;/h6&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-멤버변수의-초기화-순서&quot;&gt;▶ 멤버변수의 초기화 순서&lt;/h3&gt;
+&lt;h6 id=&quot;-cv--iv&quot;&gt;▷ cv → iv&lt;/h6&gt;
+&lt;h6 id=&quot;-자동--간단--복잡&quot;&gt;▷ 자동 → 간단 → 복잡&lt;/h6&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 3&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 
