@@ -190,6 +190,222 @@ into the {body} of the default.hbs template -->
 <script>
     window.store = {
     
+    "7cornerstonejava24": {
+        "title": "Ch7-51~52. 익명 클래스",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter7. 객체지향 프로그래밍Ⅱ  Ch7 - 51. 익명 클래스  Ch7 - 52. 익명 클래스 예제Ch7 - 51. 익명 클래스▶ 익명 클래스(anonymous class)란?▷ 이름이 없는 일회용 클래스▷ 정의와 생성을 동시에// 클래스 정의class Name extends Object{ }// 객체 생성Name name = new Name();그런데 이름이 없다면?// 클래스 정의class ? extends Object{ }// 객체 생성? name = new ?();조상의 이름을 대신 적어 줌// 정의 + 생성new Object {    // 멤버 선언}▶ 익명 클래스(anonymous class)의 선언 방법▷ 방법1 : 조상 클래스 이름 빌리기new 조상 클래스 이름 {    // 멤버 선언}▷ 방법2 : 구현 인터페이스 이름 빌리기new 구현 인터페이스 이름 {    // 멤버 선언}Ch7 - 52. 익명 클래스 예제▶ AWJ(java의 윈도우 프로그래밍) 코드를 익명 클래스로 변경▷ EventHandler는 일회성 클래스class Test {\tpublic static void main(String[] args) {\t\tButton button = new Button(\"Start\");\t\tbutton.addActionListener(new EventHandler()); // 객체 생성\t}}class EventHandler implements ActionListener { // 클래스 정의    public void actionPerformed(ActionEvent e) {        System.out.println(\"ActionEvent coourred!\");    }}▷ 익명 클래스로 줄여주기",
+        "url": "/7cornerstoneJava24"
+    }
+    ,
+    
+    "7cornerstonejava23": {
+        "title": "Ch7-45~50. 내부 클래스",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter7. 객체지향 프로그래밍Ⅱ  Ch7 - 45. 내부 클래스의 제어자와 접근성  Ch7 - 46. 내부 클래스의 제어자와 접근성 예제1  Ch7 - 47. 내부 클래스의 제어자와 접근성 예제2  Ch7 - 48. 내부 클래스의 제어자와 접근성 예제3  Ch7 - 49. 내부 클래스의 제어자와 접근성 예제4  Ch7 - 50. 내부 클래스의 제어자와 접근성 예제5Ch7 - 45. 내부 클래스의 제어자와 접근성▶ 클래스 앞 제어자▷ 일반적 클래스 앞 제어자 : (default), public 2개만 가능▷ 내부 클래스 앞 제어자 : (default), public, private, protected 4개 다 가능▷ 내부 클래스 ≒ 변수Ch7 - 46. 내부 클래스의 제어자와 접근성 예제1▶ static 멤버를 가질 수 있는 건 static 클래스 뿐!▷ staitc 멤버는 객체 생성없이 사용 가능한 것▷ static 클래스는 객체 생성 안해도 됨▷ iv → cv 사용 가능▷ iv ← cv 사용 불가class Outer {\tclass InstanceInner {\t\tint iv = 100;\t\tstatic int cv = 100; // ERROR! 인스턴스에서 static변수 → 선언 불가!\t\tfinal static int CONST = 100; // final static = 상수 → 선언 가능\t}\tstatic class StaticInner {\t\tint iv = 200;\t\tstatic int cv = 200; // static에서 static변수 → 선언 가능\t}\tvoid method() {\t\tclass LocalInner {\t\t\tint iv = 300;\t\t\tstatic int cv = 300; // ERROR! Local에서 static변수 → 선언 불가!\t\t\tfinal static int CONST = 300; // final static = 상수 → 선언 가능\t\t}\t}}▷ final static은 상수, 변수X → static 클래스 아니어도 사용 가능▷ final static 상수는 객체 생성 없이 바로 호출도 가능  System.out.println(InstanceInner.CONST);  System.out.println(StaticInner.cv);  System.out.println(LocalInner.cv);          지역 내부 클래스는 method 안에서만 사용 가능!      Ch7 - 47. 내부 클래스의 제어자와 접근성 예제2▶ static 메서드에서 instance 직접 사용 불가!▷ iv → cv 사용 가능▷ iv ← cv 사용 불가▷ 같은 원리로 static에서 instance 직접 사용 불가!class Outer {\tclass InstanceInner { }\tstatic class StaticInner { }\tInstanceInner iv = new InstanceInner();\tstatic StaticInner cv = new StaticInner();\t\tstatic void staticMethod() {\t\tInstanceInner obj1 = new InstanceInner(); // ERROR! static 메서드 안에서 instance 직접 접근 불가\t\tStaticInner obj2 = new StaticInner();\t}\t\tvoid instanceMethod() {\t\tInstanceInner obj1 = new InstanceInner();\t\tStaticInner obj2 = new StaticInner(); // instance 메서드에서는 static 사용 가능\t\tLocalInner lv = LocalInner(); // ERROR! 지역 내부 클래스는 메서드 안에서만\t}\t\tvoid method() {\t\tclass LocalInner {\t\t\tLocalInner lv = new LocalInner();\t\t}\t}}Ch7 - 48. 내부 클래스의 제어자와 접근성 예제3▶ 내부 클래스 private 사용 가능!▷ private : 같은 클래스만 사용가능▷ 내부 클래스 : 같은 클래스 안에 있는 다른 클래스▷ 내부 클래스도 같은 클래스class Outer {\tprivate int outerIv = 0;\tstatic int outerCv = 0;\tclass InstanceInner {\t\tint iv = outerIv; // 외부 클래스의 private 사용 가능\t\tint cv = outerCv;\t}\tstatic class StaticInner {\t\tint siv = outerIv; // ERROR! static → 인스턴스 멤버 접근 불가\t\tstatic int scv = outerCv;\t}}▶ 지역 내부 클래스에서는 변수 사용 불가, 상수만 접근 가능▷ 상수 : final int▷ JDK1.8 부터는 final 생략가능int lv = 0;int LV = 0; // final int lv = 0;  겉보기에 똑같음  어떻게 구분?  값이 바뀌지 않으면 상수로 간주▷ 상수만 접근 가능한 이유는 상수는 constant pool이란 곳에서 따로 관리  method는 자기 할 거 다 하면 없어짐  근데 상수는 constant pool가면 있음class Outer {\tvoid method() {\t\tint lv = 0;\t\tfinal int LV = 0;\t\t\t\tclass LocalInner {\t\t\tint iv = outerIv;\t\t\tint cv = outerCv;\t\t\t\t\t\tint lv = lv; // 원래는 ERROR! 외부 클래스 지역변수는 상수만 접근 가능, JDK1.8부터는 에러 아님\t\t\tint lV = LV;\t\t}\t}}  method보다 method 안에 있는 내부 클래스의 객체가 더 오래 살 수도 있음          method는 자기 할 거 다하면 없어져서      Ch7 - 49. 내부 클래스의 제어자와 접근성 예제4▶ 인스턴스 사용하려면, 외부 클래스 인스턴스 먼저 생성!▷ 인스턴스 사용하려면? 외부 클래스 인스턴스 생성 → 내부 클래스 인스턴스 생성▷ static은? 외부 클래스 인스턴스 생성 안해도 됨, 바로 내부 클래스 인스턴스 생성  단, 생성 시 외부 클래스 이름.내부 클래스 이름 = new 외부 클래스 이름.내부 클래스 이름class Outer {  class InstanceInner {    int iv = 100;  }    static class StaticInner {    int iv = 200;    static int cv = 300;  }    void method() {    class LocalInner {      int iv = 400;    }  }}class Test {  public static void main(String[] args) {  Outer o = new Outer(); // 외부 클래스의 인스턴스 먼저 생성  Outer.InstanceInner oi = o.new InstanceInner(); // 인스턴스 클래스의 인스턴스 생성 가능    Outer.StaticInner s = new Outer.StaticInner(); // static 내부 클래스는 외부 클래스 인스턴스를 먼저 생성 안해도 됨  }}Ch7 - 50. 내부 클래스의 제어자와 접근성 예제5▶ 변수의 위치 파악▷ 외부 클래스의 iv▷ 내부 클래스의 iv▷ lvclass Outer {\tint value = 10; // 외부 클래스의 iv\tclass Inner {\t\tint value = 20; // 내부 클래스의 iv\t\tvoid method() {\t\t\tint value = 30; // lv\t\t\tSystem.out.println(\"value : \" + value); // 가장 가까운 value\t\t\tSystem.out.println(\"this.value : \" + this.value); // 내부 클래스의 iv\t\t\tSystem.out.println(\"Outer.this.value : \" + Outer.this.value); // 외부 클래스의 iv\t\t}\t}}class Test {\tpublic static void main(String[] args) {\t\tOuter o = new Outer(); // 외부 클래스의 인스턴스 먼저 생성\t\tOuter.Inner inner = o.new Inner(); // 인스턴스 클래스의 인스턴스 생성 가능\t\tinner.method();\t}}// consolevalue : 30this.value : 20Outer.this.value : 10",
+        "url": "/7cornerstoneJava23"
+    }
+    ,
+    
+    "7cornerstonejava22": {
+        "title": "Ch7-42~44. 내부 클래스",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter7. 객체지향 프로그래밍Ⅱ  Ch7 - 42. 내부 클래스  Ch7 - 43. 내부 클래스의 종류와 특징  Ch7 - 44. 내부 클래스의 선언Ch7 - 42. 내부 클래스▶ 내부 클래스란?▷ 클래스 안의 클래스  일반적 클래스      class A {      ...  }      class B {      ...  }        내부 클래스      class A { // B의 외부 클래스      ...      class B { // A의 내부 클래스      ...      }  }      ▶ 내부 클래스의 장점▷ 내부 클래스에서 외부 클래스의 멤버들을 쉽게 접근 가능▷ 코드의 복잡성을 감소 시킴(캡슐화)▶ 실습▷ 일반적 클래스 B에서 A의 멤버 i를 사용class A {\tint i = 100;}class B {\tvoid method() {\t\tA a = new A();\t\tSystem.out.println(a.i);\t}}▷ 내부 클래스 B에서 A의 멤버 i를 사용class A {\tint i = 100;\t\tclass B {\t\tvoid method() {\t\t\tSystem.out.println(i); // A a = new A(); 객체 생성 필요X\t\t}\t}}Ch7 - 43. 내부 클래스의 종류와 특징▶ 변수의 종류▷ iv▷ cv▷ lv▶ 내부 클래스의 종류▷ 인스턴스 내부 클래스 ≒ iv▷ 스태틱 내부 클래스 ≒ cv▷ 지역 클래스 ≒ lv▷ 익명 클래스 : 클래스의 선언과 객체의 생성을 동시에 하는 이름 없는 클래스(일회용)Ch7 - 44. 내부 클래스의 선언▶ 인스턴스 내부 클래스▷ ≒ ivclass Outer {  class InstanceInner {    ...  }}▶ 스태틱 내부 클래스▷ ≒ cv(static + iv)class Outer {  static class StaticInner {    ...  }}▶ 지역 내부 클래스▷ ≒ lvclass Outer {  void method() {    class LocalInner {      ...    }  }}",
+        "url": "/7cornerstoneJava22"
+    }
+    ,
+    
+    "7cornerstonejava21": {
+        "title": "Ch7-40~41. 메서드",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter7. 객체지향 프로그래밍Ⅱ  Ch7 - 40. 디폴트 메서드와 static 메서드  Ch7 - 41. 디폴트 메서드와 static 메서드 예제Ch7 - 40. 디폴트 메서드와 static 메서드▶ 인터페이스의 디폴트 메서드와 static 메서드▷ 인터페이스는 추상 메서드만 가질 수 있었음▷ 인터페이스에 디폴트 메서드와 static 메서드는 JDK1.8부터 추가 된 기능▶ 디폴트 메서드(default method)▷ 인터페이스에 새로운 메서드(추상 메서드)를 추가하기 어려움▷ 해결책 : 디폴트 메서드Ch7 - 41. 디폴트 메서드와 static 메서드 예제▶ 인터페이스에 디폴트 메서드가 생기면?▷ boolean isfinished(); : 추상 메서드를 인터페이스에 선언하면 생기는 일?▷ default boolean isfinished() {} : 디폴트 메서드를 인터페이스에 선언하면 생기는 일?",
+        "url": "/7cornerstoneJava21"
+    }
+    ,
+    
+    "7cornerstonejava20": {
+        "title": "Ch7-39. 인터페이스 장점",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter7. 객체지향 프로그래밍Ⅱ  Ch7 - 39. 인터페이스 장점Ch7 - 39. 인터페이스 장점▶ 인터페이스(interface)의 장점▷ interface : inter(~사이) + face(얼굴)▷ 두 대상(객체) 간의 연결, 대화, 소통을 돕는 ‘중간 역할’▷ 변경에 유리 : 선언(껍데기)과 구현(알맹이) 분리 가능  인터페이스 덕분에 C가 변경 되어도 A는 바뀌지 않아도 됨 : 느슨한 결합▷ 개발 시간을 단축▷ 표준화 가능▷ 서로 관계없는 클래스들을 관계를 맺어줄 수 있음▶ 실습▷ 인터페이스 사용하지 않고 클래스 A가 클래스 B를 사용class A {\tpublic void method(B b) {\t\tb.method();\t}}class B {\tpublic void method() {\t\tSystem.out.println(\"method B\");\t}}class Test { \tpublic static void main(String[] args) {\t\tA a = new A();\t\ta.method(new B());\t} }// consolemethod B▷ 인터페이스 사용하지 않고 클래스 A가 클래스 C를 사용▷ 어디가 달라졌나?class A {\tpublic void method(C c) { // 매개변수 C로 변경\t\tc.method();\t}}class B {\tpublic void method() {\t\tSystem.out.println(\"method B\");\t}}class C { // 클래스 C 생성\tpublic void method() {\t\tSystem.out.println(\"method C\");\t}}class Test { \tpublic static void main(String[] args) {\t\tA a = new A();\t\ta.method(new C()); // 클래스 C 객체 생성 해 주기\t} }// consolemethod C▷ 인터페이스 사용하여 클래스 A가 클래스 B를 사용class A {\tpublic void method(I i) { // 매개변수 : I를 구현한 애들만 와라\t\ti.method();\t}}interface I { // 메서드 선언부만 있음\tvoid method();}class B implements I { // I implements\tpublic void method() { // 구현부 완성\t\tSystem.out.println(\"I구현 : 클래스B'method\");\t}}class Test { \tpublic static void main(String[] args) {\t\tA a = new A();\t\ta.method(new B());\t} }// consoelI구현 : 클래스B'method▷ 인터페이스 사용하여 클래스 A가 클래스 C를 사용▷ 어디가 달라졌나?package baek;class A {\tpublic void method(I i) {\t\ti.method();\t}}interface I {\tvoid method();}class B implements I {\tpublic void method() {\t\tSystem.out.println(\"I구현 : 클래스B'method\");\t}}class C implements I { // 여기\tpublic void method() {\t\tSystem.out.println(\"I구현 : 클래스C'method\");\t}}class Test { \tpublic static void main(String[] args) {\t\tA a = new A();\t\ta.method(new C()); // 여기\t} }// consoleI구현 : 클래스C'method클래스 A에서 매개변수 일일이 바꿔주지 않아도 됨",
+        "url": "/7cornerstoneJava20"
+    }
+    ,
+    
+    "7cornerstonejava19": {
+        "title": "Ch7-38. 인터페이스 → 다형성",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter7. 객체지향 프로그래밍Ⅱ  Ch7 - 38. 인터페이스를 이용한 다형성Ch7 - 38. 인터페이스를 이용한 다형성▶ 인터페이스도 다형성 형성이 가능한가?▷ 가능▷ 인터페이스도 구현 클래스의 반만 부모▶ 인터페이스 타입 매개변수▷ 인터페이스 구현한 클래스의 객체만 가능▶ 인터페이스 리턴타입▷ 인터페이스를 메서드의 리턴타입으로 지정 가능▶ 실습▷ 추상 클래스 Unitabstract class Unit {\tint x, y;\tabstract void move(int x, int y);\tvoid stop() { System.out.println(\"stop\"); }}▷ interface Fightableinterface Fightable {\tvoid move(int x, int y);\tvoid attack(Fightable f);}▷ 클래스 Fighter : Unint 상속, Fightable 구현class Fighter extends Unit implements Fightable {\tpublic void move(int x, int y) { // public 안쓰면 에러!\t\tSystem.out.printf(\"(%d, %d) 이동\\n\", x, y);\t}\tpublic void attack(Fightable f) { // public 안쓰면 에러!\t\tSystem.out.println(f + \"를 공격\");\t}}  public 미작성 시, 에러나는 이유 :  오버라이딩 규칙 때문  오버라이딩 규칙 : 조상 접근제어자 &lt;= 자손 접근제어자  조상 : interface Fightable → 모든 메서드가 추상 메서드(public abstract 생략)      interface Fightable {      void move(int x, int y); // public abstract 생략      void attack(Fightable f); // public abstract 생략  }        자손 : default는 조상 접근제어자 public보다 작음, 그래서 public 생략 불가      public void move(int x, int y) { }  public void attack(Fightable f) { }      ▷ 클래스 Fighter : 리턴 타입이 Fightable인 getFightable 메서드Fightable getFightable() { // 리턴 타입 Fightable  Fightable f = new Fighter();  return (Fightable)f; // 리턴 타입 Fightable과 일치시키기 위해 형변환, 자동 형변환 가능}▷ 실행class FighterTest {\tpublic static void main(String[] args) {\t\tFighter f = new Fighter();\t\tf.move(100, 200);\t\tf.attack(new Fighter()); // Fighter f2 = new Fighter(); → f.attack(f2);\t\t    Fightable f2 = f.getFightable(); // getFightable 리턴 타입 Fightable과 일치시켜 호출\t}}▷ 실행 불가 경우Fightable f = new Fighter();Unit u = new Fighter();f.move(100, 200);f.attack(new Fighter());f.stop(); // 실행 불가, Fightable애 stop없음u.move(100, 200);u.stop();u.attack(new Fighter()); // 실행 불가, Unit에 attack없음",
+        "url": "/7cornerstoneJava19"
+    }
+    ,
+    
+    "7cornerstonejava18": {
+        "title": "Ch7-35~37. 인터페이스",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter7. 객체지향 프로그래밍Ⅱ  Ch7 - 35. 인터페이스  Ch7 - 36. 인터페이스 상속  Ch7 - 37. 인터페이스 구현Ch7 - 35. 인터페이스▶ 인터페이스(interface)란?▷ 대부분 추상 메서드의 집합▷ 구현된 것이 전혀 없는 설계도▷ 껍데기▷ 모든 멤버가 public▶ 인터페이스(interface)의 특징▷ 변수 iv, cv 불가▷ 상수 가능▷ 예외없이 모든 상수는 public static final → public static final 생략 가능▷ 추상 메서드 가능▷ 예외없이 모든 메서드는 public abstract → public abstract 생략 가능interface 인터페이스 이름 {    public static final 타입 상수 이름 =  값;    public abstract 메서드 이름(매개변수 목록);}interface PlayingCard {    public static final int SPADE = 4;    final int DIAMOND = 3;    static int HEART = 2;    int CLOVER = 1; // public static final int CLOVER = 1;        public abstract String getCardNumber();    String getCardKind(); // public abstract String getCardKind();}▶ 추상 클래스 vs 인터페이스▷ 추상 클래스 : 추상 메서드, 생성자, iv를 가진 일반 클래스▷ 인터페이스 : 추상 메서드만 가진 클래스 → 생성자, iv, cv… 안됨Ch7 - 36. 인터페이스 상속▶ 인터페이스 상속은?▷ 인터페이스의 조상은 인터페이스만 가능▷ Object가 최고 조상 아님▷ 다중 상속이 가능(조상이 여러 개)▷ 다중 상속의 문제점 : 충돌▷ 추상 메서드는 충돌해도 문제 없음 → 구현부가 없기 때문, 내용 충돌 없음interface Fightable extends Movable, Attackable { }abstract class Unit {    abstract void unit();}interface Movable { void move(int x, int y); }interface Attackable { void attack(Unit u); }Ch7 - 37. 인터페이스 구현▶ 인터페이스 구현이란?▷ 인터페이스에 정의된 추상 메서드를 완성하는 것▷ 인터페이스 = 추상 메서드의 집합 = 미완성 설계도▷ 완성을 시켜야 사용이 가능함▷ 추상 클래스는 extends를 통해 상속받아 완성 시킴▷ 인터페이스는 implements를 통해 상속받아 완성 시킴▷ 구현 : 인터페이스에 정의 된 추상 메서드의 구현부{}를 모두 작성하는 것class 클래스 이름 implements 인터페이스 이름 {    // 인터페이스에 정의 된 추상 메서드에 구현부{} 모두 작성 }  Fighter 클래스는 Fightable 인터페이스를 구현했다      interface Fightable {      void move(int x, int y);      void attrack(Unit u);  }      class Fighter implements Fightable {      void move(int x, int y) { }      void attrack(Unit u) { }  }      ▷ 일부만 구현하는 경우, 클래스 앞에 abstract를 붙여야 함abstract class Fighter implements Fightable {    public void move(int x, int y) { }}",
+        "url": "/7cornerstoneJava18"
+    }
+    ,
+    
+    "7cornerstonejava17": {
+        "title": "Ch7-33~34. 추상 클래스 작성",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter7. 객체지향 프로그래밍Ⅱ  Ch7 - 33. 추상 클래스의 작성  Ch7 - 34. 추상 클래스의 작성 예제Ch7 - 33. 추상 클래스의 작성▶ 추상 클래스 작성 방법▷ 여러 클래스에 공통적으로 사용될 수 있는 추상 클래스를▷ 바로 작성하거나▷ 기존 클래스의 공통 부분을 뽑아서 추상 클래스를 생성▶ 추상 클래스의 장점▷ 추상화 ↔ 구체화▷ 불명확 ↔ 명확▷ 때론 불명확하고 애매한 게 장점일 때가 있음▷ 추상화 된 코드 : 유연성↑, 변경에 유리GregofianCalendar cal = new GregofianCal(); // 구체적Calendar cal = Calendar.getInstance(); // 추상적, Calendar는 추상 클래스Ch7 - 34. 추상 클래스의 작성 예제▶ 공통 부분 추상 클래스로 작성abstract class Unit {\tint x, y;\tabstract void move(int x, int y);\tvoid stop() { }}class Marine extends Unit {Marine() { }\tvoid move(int x, int y) { System.out.printf(\"Marine [%d, %d] move\\n\", x, y); }\tvoid stimPack() { }}class Tank extends Unit {Tank() { }\tvoid move(int x, int y) { System.out.printf(\"Tank [%d, %d] move\\n\", x, y); }\tvoid changeMode() { }}class Dropship extends Unit {Dropship() { }\tvoid move(int x, int y) { System.out.printf(\"Dropship [%d, %d] move\\n\", x, y); }\tvoid load() { }\tvoid unload() { }}class Test {Test() { }\tpublic static void main(String[] args) {\t\tUnit[] group = { new Marine(), new Marine(), new Dropship() };\t\t\t\tfor (int i = 0; i &lt; group.length; i++) {\t\t\tgroup[i].move(100, 200);\t\t}\t}}// consoleMarine [100, 200] moveMarine [100, 200] moveDropship [100, 200] move",
+        "url": "/7cornerstoneJava17"
+    }
+    ,
+    
+    "7cornerstonejava16": {
+        "title": "Ch7-31~32. 추상 클래스",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter7. 객체지향 프로그래밍Ⅱ  Ch7 - 31. 추상 클래스  Ch7 - 32. 추상 메서드Ch7 - 31. 추상 클래스▶ 추상 클래스(abstract class)란?▷ 미완성 설계도▷ 미완성 메서드를 갖고 있는 클래스  추상 메서드          구현부{}가 없는 미완성 메서드      abstract를 붙임abstract void play(int pos);        추상 클래스 : 추상 메서드를 갖고 있는 클래스      abstract class Player {      abstract void play(int pos);  }      ▷ 다른 클래스 작성에 도움을 주기 위한 것▷ 인스턴스 생성 불가  추상 클래스 = 미완성 설계도 → 제품 설계 불가      Player p = new Player(); // 에러! 추상 클래스의 인스턴스 생성 불가      ▷ 상속을 통해 추상 메서드 완성시킨 후, 인스턴스 생성 가능class AudioPlayer extends Player { // 미완성 설계도를 상속 → 완성 설계도    void play(int pos) { } // 추상 메서드 구현, 구현부{}를 만들어 줌    void stop() { } // 추상 메서드 구현}AudioPlayer ap = new AudioPlayer(); // 인스턴스 생성 가능Ch7 - 32. 추상 메서드▶ 추상 메서드(abstract method)란?▷ 미완선 메서드▷ 구현부{}가 없는 메서드abstract 리턴타입 메서드 이름();▶ 상속을 받았지만, 추상 메서드가 유지되는 경우▷ 자손마다 다르게 구현 될 것으로 예상하는 경우abstract class Player { // // 추상 클래스\tabstract void play(int pos); // 추상 메서드\tabstract void stop(); // 추상 메서드}class AudioPlayer extends Player { // 추상 클래스 상속 → 완전한 클래스로 생성 된 자손  void play(int pos) { } // 추상 메서드 구현  void stop() { } // 추상 메서드 구현}abstract class AbstractPlayer extends Player { // 추상 클래스 상속 → 완전한 클래스?? : nope! 미완성 클래스 그래서 abstract 붙임  abstract void play(int pos) { } // 상속받은 추상 클래스의 추상메서드 2개 중 하나만 구현 → 미완성 클래스가 됨}▶ 추상 메서드 호출 가능▷ 호출 시, 선언부만 필요abstract class Player {\tboolean pause; // 추상 클래스 내 iv, 일시정지\tint currentPos; // 추상 클래스 내 iv, 현재 paly 위치\t\tPlayer() { // 추상 클래스도 생성자有\t\tpause = false;\t\tcurrentPos = 0;\t}\t\tabstract void play(int pos); // pos에서 play!\tabstract void stop(); // stop!\tvoid play() { // 인스턴스 메서드\t\tplay(currentPos); // 추상 메서드 호출\t}}  인스턴스 메서드 사용법          클래스 객체 생성      추상 클래스를 객체 생성하려면 상속 해야 함        추상 메서드 사용법          자손 객체가 추상 클래스 상속      자손 객체가 구현부{} 생성        인스턴스 메서드나 추상 메서드나 객체 생성 필요  그러나 추상 클래스에서는 객체 생성이 불가  결론 : 인스턴스 메서드 play에 있는 추상 메서드 play(currentPos)를 사용하려면?          추상 클래스를 온전히 상속 받는 자손 생성      자손 클래스에서 조상 클래스의 모든 메서드의 구현부{} 생성      자손 클래스 객체 생성      객체.Play(currentPos) 호출하여 사용      dvdPlayer든 어떤 Player든 간에 abstract는 꼭 해야만 하는 것을 의미▶ 실습▷ 추상 클래스 상속, 구현부{} 만들기, 객체 생성, 추상 메서드 호출abstract class Player {\tabstract void play(int pos);\tabstract void stop();}class AudioPlayer extends Player {\tvoid play(int pos) { System.out.println(pos + \"'부터 시작\"); }\tvoid stop() { System.out.println(\"stop\"); }}class Test {\tpublic static void main(String[] args) {\t\tAudioPlayer ap = new AudioPlayer();\t\tap.play(100);\t\tap.stop();\t}}// console100'부터 시작stop▷ 객체 생성할 때, 실제 생성되는 객체 = AudioPlayer▷ 리모콘은 AudioPlayer, Player 둘 중 아무거나 상관 없음AudioPlayer ap = new AudioPlayer();Player ap = new AudioPlayer(); // 다형성",
+        "url": "/7cornerstoneJava16"
+    }
+    ,
+    
+    "7cornerstonejava15": {
+        "title": "Ch7-29~30. 객체 → 배열",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter7. 객체지향 프로그래밍Ⅱ  Ch7 - 29. 여러 종류의 객체를 배열로 다루기  Ch7 - 30. 여러 종류의 객체를 배열로 다루기 예제Ch7 - 29. 여러 종류의 객체를 배열로 다루기▶ 다형성의 장점▷ 다형적 매개변수▷ 하나의 배열에 여러 종류의 객체 저장  보통 하나의 배열은 같은 타입만 저장 가능  다형성을 이용하면, 조상 타입의 배열에 자손들의 객체 여러 개 저장 가능Ch7 - 30. 여러 종류의 객체를 배열로 다루기 예제▶ 장바구니 기능 : 구매한 총 금액, 구매한 상품▷ 모든 제품의 조상 Product p로 다형적 매개변수 생성▷ 배열 cart에 다형적 매개변수로 받은 객체를 저장▷ 배열 하나로 여러 가지 객체 이용 가능package baek;public class Product2 {Product2() {}\tint price;\tint point;\t\tProduct2(int price) {\t\tthis.price = price;\t\tpoint = (int) (price / 10.0);\t}}class Tv extends Product2 {Tv() { super(100); }\tpublic String toString() { return \"TV\";\t}}class Computer extends Product2 {Computer() { super(200); }\tpublic String toString() { return \"Computer\"; }}class Buyer {Buyer() {}\tint myMoney = 400;\tint myPoint = 0;\t\tProduct2[] cart = new Product2[10];\tint i = 0;\tvoid buy(Product2 p) {\t\tif (myMoney &lt; p.price) {\t\t\tSystem.out.println(\"잔액이 부족합니다.\");\t\t\treturn;\t\t} else {\t\t\tmyMoney -= p.price;\t\t\tmyPoint += p.point;\t\t\t\t\t\tcart[i++] = p;\t\t\t\t\t\tSystem.out.printf(\"[%s] 구매\\n\", p);\t\t}\t}\t\tvoid cartIn() {\t\tint sum = 0;\t\tString itemList = \"\";\t\t\t\tfor (int i = 0; i &lt; cart.length; i++) {\t\t\tif (cart[i] == null) { break; }\t\t\telse {\t\t\t\tsum += cart[i].price;\t\t\t\titemList += \"[\" + cart[i].toString() + \"] \";\t\t\t}\t\t}\t\tSystem.out.printf(\"총 금액 : %d만원\\n\", sum);\t\tSystem.out.printf(\"선택한 제품 : %s\\n\", itemList);\t}}class Act {public static void main(String[] args) {Buyer b = new Buyer();\t\tb.buy(new Tv());\t\tb.buy(new Computer());\t\tb.cartIn();\t\t\t\tSystem.out.printf(\"잔액은 %d만원 입니다.\\n\", b.myMoney);\t\tSystem.out.printf(\"잔여 포인트는 %d점 입니다.\\n\", b.myPoint);\t}}// console[TV] 구매[Computer] 구매총 금액 : 300만원선택한 제품 : [TV] [Computer]잔액은 100만원 입니다.잔여 포인트는 30점 입니다.",
+        "url": "/7cornerstoneJava15"
+    }
+    ,
+    
+    "7cornerstonejava14": {
+        "title": "Ch7-27~28. 매개변수 다형성",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter7. 객체지향 프로그래밍Ⅱ  Ch7 - 27. 매개변수의 다형성  Ch7 - 28. 매개변수의 다형성 예제Ch7 - 27. 매개변수의 다형성▶ 다형성의 장점▷ 다형적 매개변수▷ 하나의 배열로 여러 종류의 객체 다루기▶ 다형성 정리▷ Tv t = new SmartTv(); : 조상 = new 자손();▷ 참조변수의 형변환(리모콘 바꾸기) : 사용가능한 멤버개수 조절▷ instanceof 연산자 : 형변환 가능여부 확인▶ 매개변수의 다형성이란?▷ 참조형 매개변수는 메서드 호출 시,▷ 자신과 같은 타입 또는 자손타입의 인스턴스를 넘겨줄 수 있음Ch7 - 28. 매개변수의 다형성 예제▶ 제품과 구매자 관리▷ 제품▷ 제품마다 buy 메서드에 오버라이딩하여 구매자 관리오버라이딩 → 코드 중복 발생▷ 제품들의 조상인 Product 클래스를▷ 다형적 매개변수로 받아 하나의 메서드로 구매자 관리▶ 예제 클론 코딩▷ class Product  price  point(price의 10%)      public class Product {      int price;      int point;          Product() {      }          Product(int price) {          this.price = price;          point = (int) (price / 10.0);      }  }      ▷ class Tv  Product 상속  super로 price 호출 = 100  Object의 toString으로 return “TV”    class Tv extends Product {      Tv() {        super(100);    }      public String toString() {        return \"TV\";    }}      ▷ class Computer  Product 상속  super로 price 호출 = 200  Object의 toString으로 return “Computer”    class Computer extends Product {      Computer() {        super(200);    }      public String toString() {        return \"Computer\";    }}      ▷ class Buyer  myMoney, myPoint  제품 price가 myMoney보다 작을 시, 잔액 부족 메세지 출력  myMoney에서 price차감  myPoint에서 point증가    class Buyer {    Buyer() { }      int myMoney = 400;    int myPoint = 0;      void buy(Product p) {        if (myMoney &lt; p.price) {            System.out.println(\"잔액이 부족합니다.\");            return;        } else {            myMoney -= p.price;            myPoint += p.point;            System.out.println(p + \" 구매를 선택\");        }    }}      ▷ class Act  Buyer 객체 생성  b.buy(new Tv()); = Product p = new Tv; = b.buy(p);    class Act {    public static void main(String[] args) {        Buyer b = new Buyer();                  b.buy(new Tv());        b.buy(new Computer());                  System.out.printf(\"잔액은 %d만원 입니다.\\n\", b.myMoney);        System.out.printf(\"잔여 포인트는 %d점 입니다.\", b.myPoint);    }}  // consoleTV 구매를 선택Computer 구매를 선택잔액은 100만원 입니다.잔여 포인트는 30점 입니다.      ",
+        "url": "/7cornerstoneJava14"
+    }
+    ,
+    
+    "7cornerstonejava13": {
+        "title": "Ch7-26. instatnceof",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter7. 객체지향 프로그래밍Ⅱ  Ch7 - 26. instatnceof 연산자Ch7 - 26. instatnceof 연산자▶ instatnceof 연산자란?▷ 참조변수의 형변환(조상·자손) 가능여부 확인에 사용▷ 가능하면, ture반환▷ 형변환 전 반드시 instanceof로 확인!!public class Car {\tString color;\tint door;\tvoid drive() {\t\tSystem.out.println(\"drive\");\t}\t\tvoid stop() {\t\tSystem.out.println(\"stop!\");\t}}class FireEngine extends Car {    void water() {    System.out.println(\"water\");    }}class Ambulance extends Car {    void hospital() {    System.out.println(\"hospital\");    }}public class CarTest {\tvoid doWork(Car c) { // Car 또는 Car의 모든 자손 가능 : new Car{}, new FireEngine(); new Ambulance(); \t\tif (c instanceof FireEngine) {\t\t\tSystem.out.println(c instanceof FireEngine); // 형변환 가능한지 확인 : c가 FireEngine의 자손이냐? true면 다음으로\t\t\tFireEngine fe = (FireEngine) c; // 형변환 \t\t\tfe.water();\t\t}\t}}FireEngine fe = new FireEngine();System.out.println(fe instanceof Object); // trueSystem.out.println(fe instanceof Car); // trueSystem.out.println(fe instanceof FireEngine); // trueObject obj = (Object)fe; // okCar car = (Car)fe; // ok",
+        "url": "/7cornerstoneJava13"
+    }
+    ,
+    
+    "7cornerstonejava12": {
+        "title": "Ch7-24~25. 참조변수 형변환",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter7. 객체지향 프로그래밍Ⅱ  Ch7 - 24. 참조변수의 형변환  Ch7 - 25. 참조변수의 형변환 예제Ch7 - 24. 참조변수의 형변환▶ 참조변수의 형변환이란?▷ 결론 : 사용할 수 있는 멤버의 개수를 조절하는 것  기본형의 형변환 : 값이 달라짐(int)3.6 = 3  참조변수의 형변환 : 멤버의 개수가 달라짐, 값은 달라지지 않음▷ 조상 자손 관계일 때만 서로 형변환 가능Ch7 - 25. 참조변수의 형변환 예제▶ 에러가 발생하는 이유는? - 1public static void main(String[] args) {    Car car = null;    FireEngine fe = new FireEngine();    FireEngine fe2 = null;    fe.water();    car = (Car)fe;        car.water(); // 컴파일 에러        fe2 = (FireEngine)car;    fe2.water();}▷ Car타입의 참조변수는 water()를 호출 할 수 없음▷ Car타입의 리모콘은 water()기능을 사용할 수 없음▶ 에러가 발생하는 이유는? - 2public static void main(String[] args) {    Car c = new Car();    FireEngine fe = (FireEngine)c; // 형변환 실행 에러    fe.water(); // 컴파일은 통과}// consoleException in thread \"main\" java.lang.ClassCastException: class baek.Car cannot be cast to class baek.FireEngine (baek.Car and baek.FireEngine are in unnamed module of loader 'app')\tat baek.CarTest.main(Car.java:39)▷ 실제 생성된 Car인스턴스에 애초에 water()가 없음",
+        "url": "/7cornerstoneJava12"
+    }
+    ,
+    
+    "7cornerstonejava11": {
+        "title": "Ch7-23. 다형성",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter7. 객체지향 프로그래밍Ⅱ  Ch7 - 23. 다형성Ch7 - 23. 다형성▶ 다형성(polymorphism)란?▷ 여러 가지 형태를 가질 수 있는 능력▷ 조상 타입 참조변수로 자손 타입 객체를 다루는 것▷ 객체와 참조변수의 타입이 일치할 때와 일치하지 않을 때의 차이?      객체 = 참조변수 타입        객체 ≠ 참조변수 타입  ▷ 자손 타입의 참조변수로 조상 타입의 객체를 가리킬 수 없다!Tv t = new SamrtTv(); = OK!SamrtTv s = Tv(); = ERROR!      Tv t = new SamrtTv(); = OK!        SamrtTv s = Tv(); = ERROR!  ▶ Q&amp;A▷ Q. 참조변수의 타입은 인스턴스의 타입과 반드시 일치?  A. No! 보통은 일치하나, 불일치일 때도 있음(불일치 = 다형성)Tv t = new SamrtTv()▷ Q. 참조변수가 조상 타입일 때와 자손 타입일 때의 차이?  A. 참조변수로 사용할 수 있는 멤버의 개수가 다름▷ Q. 자손 타입의 잠조변수로 조상 타입의 객체를 가리키기 가능?  A. No!",
+        "url": "/7cornerstoneJava11"
+    }
+    ,
+    
+    "7cornerstonejava10": {
+        "title": "Ch7-22. 캡슐화",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter7. 객체지향 프로그래밍Ⅱ  Ch7 - 22. 캡슐화와 접근제어자Ch7 - 22. 캡슐화와 접근제어자▶ 접근제어자를 사용하는 이유?▷ 외부로부터 데이터를 보호(캡슐화)하기 위해서public class Time {\tpublic int hour; // 범위 : 0 ~ 23\tpublic int minute; // 범위 : 0 ~ 59\tpublic int second; // 범위 : 0 ~ 59}class TimeTest {\tpublic static void main(String[] args) {\t\tTime time = new Time();\t\ttime.hour = 100; // 범위 초과 방지 못함\t}}▷ 외부에는 불필요한, 내부적으로만 사용되는, 부분을 감추기 위해서  접근제어자의 범위는 좁은 게 좋음  필요 시 점점 넓혀가는 게 좋음▶ 실습▷ 조건문 기능 분리  메서드 추출 : alt + shift + Mpackage baek;public class Time {\tprivate int hour;\tprivate int minute;\tprivate int second;\tpublic void setHour(int hour) {\t\tif (isNotValidHour(hour)) return;\t\tthis.hour = hour;\t}\t// 매개변수로 넘겨진 hour가 유효한지 확인해서 알려주는 메서드, 내부에서만 사용 private\tprivate boolean isNotValidHour(int hour) {\t\treturn hour &lt; 0 || hour &gt; 23;\t}\t\tpublic int getHour() { return hour; }}class TimeTest {\t\tpublic static void main(String[] args) {\t\tTime time = new Time();\t\ttime.setHour(20);\t\tSystem.out.println(time.getHour());\t}}",
+        "url": "/7cornerstoneJava10"
+    }
+    ,
+    
+    "7cornerstonejava9": {
+        "title": "Ch7-21. 접근제어자",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter7. 객체지향 프로그래밍Ⅱ  Ch7 - 21. 접근제어자Ch7 - 21. 접근제어자▶ 접근제어자(access modifier) 4가지▷ private  같은 클래스 내에서만 접근 가능▷ (default)  같은 패키지 내에서만 접근 가능▷ protected  같은 패키지 내 + 다른 패키지의 자손 클래스 내에서 접근 가능▷ public  접근 제한 없음, 모두 접근 가능▶ class 앞 : public, (default)▷ publicpublic class AccessModifierTest { }▷ (default)class AccessModifierTest { }▶ iv 앞 : private, (default), protected, public▷ privateprivate int iv;▷ (default)int iv;▷ protectedpublic protected int iv;▷ publicpublic int iv;▶ cv 앞 : private, (default), protected, public▷ privateprivate static int cv;▷ (default)static int cv;▷ protectedprotected static int cv;▷ publicpublic static int cv;▶ 실습▷ 같은 클래스package baek;class Prent {\tprivate int prv;\tint dft;\tprotected int prt;\tpublic int pub;\t\tvoid members() {\t\tSystem.out.println(\"prv\" + prv); // ok\t\tSystem.out.println(\"dft\" + dft); // ok\t\tSystem.out.println(\"prt\" + prt); // ok\t\tSystem.out.println(\"pub\" + pub); // ok\t}}▷ 다른 클래스package baek;class Different1 {\tvoid members() {\t\tPrent p = new Prent();\t\tSystem.out.println(\"prv\" + p.prv); // error, private : 다른 클래스 사용X\t\tSystem.out.println(\"dft\" + p.dft); // ok\t\tSystem.out.println(\"prt\" + p.prt); // ok\t\tSystem.out.println(\"pub\" + p.pub); // ok\t}}▷ 다른 패키지 + 상속  다른 패키지에서 상속받으려면 조상 클래스가 public 이어야 함  default class는 같은 패키지 내에서만 상속 가능  class Prent → public class Prent  class Diffrent2 extends baek.Prent  상속 받은 뒤 ctrl + shift + o 자동 import 해 주기package baek2;import baek.Prent;class Different2 extends baek.Prent {\tvoid members() {\t\tSystem.out.println(\"prv\" + prv); // error, private : 같은 클래스만\t\tSystem.out.println(\"dft\" + dft); // error, defalut : 같은 패키지만\t\tSystem.out.println(\"prt\" + prt); // ok, protected : 같은 패키지만 + 다른 패키지 자손은 가능\t\tSystem.out.println(\"pub\" + pub); // ok\t}}▷ 다른 패키지package baek2;import baek.Prent;class Different3 {\tvoid members() {\t\tPrent p = new Prent();\t\tSystem.out.println(\"prv\" + p.prv); // error, private : 같은 클래스만\t\tSystem.out.println(\"dft\" + p.dft); // error, defalut : 같은 패키지만\t\tSystem.out.println(\"prt\" + p.prt); // error, protected : 같은 패키지만 + 다른 패키지 자손은 가능\t\tSystem.out.println(\"pub\" + p.pub); // ok\t}}▷ 정리 그림",
+        "url": "/7cornerstoneJava9"
+    }
+    ,
+    
+    "7cornerstonejava8": {
+        "title": "Ch7-17~20. 제어자",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter7. 객체지향 프로그래밍Ⅱ  Ch7 - 17. 제어자  Ch7 - 18. static : 클래스의, 공통적인  Ch7 - 19. final :  마지막의, 변경될 수 없는  Ch7 - 20. abstract : 추상의, 미완성의Ch7 - 17. 제어자▶ 제어자(modifier)란?▷ 클래스와 클래스의 멤버(멤버 변수·메서드)에 부가적인 의미 부여▷ 마치 명사를 꾸며주는 형용사 같은 역할▷ 하나의 대상에 여러 제어자를 같이 사용 가능▷ 접근 제어자는 하나만▶ 접근제어자▷ public, protected, (default), private▷ 4개 중 하나만 붙일 수 있음▷ (default)는 아무것도 붙이지 않는 것을 의미▶ 그 외 제어자▷ static, final, abstract, native, transient, synchroniaed, volatile, strictfppublic class ModifierTest {    public static final int WIDTH = 200; // 접근 제어자는 보통 제일 왼쪽에}Ch7 - 18. static : 클래스의, 공통적인▶ static + 멤버변수▷ static + iv = cv▷ cv는 인스턴스를 생성하지 않아도 사용 가능▷ 클래스가 메모리에 로드될 때 생성▶ static 메서드▷ static 메서드는 인스턴스를 생성 없이 호출 가능▷ static 메서드 내에서는 인스턴스 멤버(iv, im) 직접 사용 불가class StaticTest {\tstatic int width = 200; // cv(static 변수), 대입 연산자 = 간단한·명시적 초기화\tstatic int geight = 120; // cv(static 변수)\tstatic { // 클래스 초기화 블럭 static { }\t\t// cv(static 변수)의 복잡한 초기화 수행\t}\t\tstatic int max(int a, int b) { // 클래스 메서드(static 메서드) : iv 사용 불가\t\treturn a &gt; b ? a : b;\t}}Ch7 - 19. abstract : 추상의, 미완성의▶ final + 클래스▷ 변경 불가 클래스▷ 확장 불가 클래스▷ final 클래스는 다른 클래스의 조상 불가  대표적인 final 클래스          String : 보안 때문      Math : 모두 static 메서드 집합이기 때문      ▶ final + 메서드▷ 변경 불가 메서드▷ final 메서드는 오버라이딩으로 재정의 불가▶ final + 멤버·지역 변수▷ final + 멤버·지역 변수는 값을 변경할 수 없는 상수가 됨final class FinalTest { // 다른 클래스 조상 불가\tfinal int MAX_SIZE = 10; // 값 변경 불가 멤버 변수(상수)\t\tfinal void getMaxSize() { // 오버라이딩 불가 메서드\t\tfinal int LV = MAX_SIZE; // 값 변경 불가 지역 변수(상수)\t\treturn MAX_SIZE;\t}}Ch7 - 20. abstract : 추상의, 미완성의▶ abstract + 클래스▷ 미완성 클래스 : 미완성 설계도 → 제품 생성 불가 → 즉, 객체 생성 불가AbstractTest a = new AbstractTest();▷ 추상 클래스를 상속받아 완전한 클래스(구상 클래스)를 만들면, 객체 생성 가능▷ 추상 메서드가 있으면 무조건 추상 클래스▷ 클래스 내, 추상 메서드가 선언되어 있음을 의미▶ abstract + 메서드▷ 미완성 메서드▷ 선언부만 작성하고 구현부는 작성하지 않은 추상 메서드임을 알림abstract class AbstractTest { // 추상 클래스(추상 메서드를 포함한 클래스)abstract void move(); // 추상 메서드(구현부{}가 없는 메서드)}",
+        "url": "/7cornerstoneJava8"
+    }
+    ,
+    
+    "7cornerstonejava7": {
+        "title": "Ch7-15~16. import문",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter7. 객체지향 프로그래밍Ⅱ  Ch7 - 15. import문  Ch7 - 16. static import문Ch7 - 15. import문▶ import문이란?▷ 클래스를 사용할 때 패키지 이름을 생략할 수 있음▷ 컴파일러에게 클래스가 속한 패키지를 알려줌▷ 이클립스 자동 import 단축키 : ctrl + shift + o▷ java.lang 패키지(기본 패키지)의 클래스는 import하지 않고도 사용 가능  String, Object, System. Thread…  import java.lang.*; // *은 java.lang의 모든 클래스 의미 생략가능▶ import문 선언 방법▷ 방법 1▷ ctrl + shift + o → 방법 1로 선언import 패키지 이름. 클래스 이름;▷ 방법 2import 패키지 이름.*;▷ import문은 패키지 문과 클래스 선언의 사이에 선언package com.codechobo.book; // 패키지 선언import java.util.Date; // import문class ImportTest { // 클래스 정의\tDate date = new Date();}▷ import문은 컴파일 시 처리 → 프로그램의 성능에 영향 없음▷ *이 붙었다고 다 같은 건 아님▷ 패키지 두 개가 같은 이름의 클래스를 가질 때,import문에 사용하는 패키지 이름 붙여주기import java. sql*; // java.sql.Date 존재import java. util*; // java.util.Date 존재pobic class ImportTest {    publid static void main(String[] args) {        java.util.Date today = new java.util.Date(); // sql.Date 아니고 util.Date 사용인 걸 알 수 있음         }}Ch7 - 16. static import문▶ static import문이란?▷ static 멤버를 사용할 때, 클래스 이름을 생략할 수 있게 해 줌▷ 클래스 이름을 생략하여, 코드를 짧게 만들어 줌",
+        "url": "/7cornerstoneJava7"
+    }
+    ,
+    
+    "7cornerstonejava6": {
+        "title": "Ch7-12~14. 패키지",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter7. 객체지향 프로그래밍Ⅱ  Ch7 - 12. 패키지  Ch7 - 13. 패키지의 선언  Ch7 - 14. class pathCh7 - 12. 패키지▶ 패키지(package)란?▷ 서로 관련된 클래스의 묶음▷ JAVA8 기준 약 4000개의 클래스가 존재▷ 이 많은 클래스들을 작은 단위로 나누어 저장하기 위해 패키지 사용▷ 클래스는 클래스 파일(*.class), 패키지는 폴더▷ 하위 패키지는 하위 폴더▷ 클래스의 실제 이름(full name)은 패키지를 포함▷ String의 실제 이름 = java.lang.String▷ rt.jar는 클래스들을 압축한 파일(JDK설치경로\\jre\\lib에 위치)  rt = runtime 실행 중을 의미  jar 파일 = 클래스 파일을 묶어 놓은 것  JAVA9 부터 rt.jar 없어짐  → module 개념의 도입으로 rt.jar 같이 큰 파일은 module 단위로 놓음Ch7 - 13. 패키지의 선언▶ 패키지의 선언이란?▷ 패키지는 소스파일의 첫 번째 문장으로 단 한번 선언▷ 같은 소스파일의 클래스들은 모두 같은 패키지에 속하게 됨▷ 패키지 선언이 없으면 이름없는(unnamed) 패키지에 속함 : default package▶ cmd에서 패키지 명으로 코드 실행하기package com.codechobo.book; // 패키지 선언public class PackageTest {\tpublic static void main(String[] args) {\t\tSystem.out.println(\"Hello World!\");\t}}▷ package com.codechobo.book;뜻  com &gt; codechobo &gt; book 안에 있다는 뜻▷ cmd에서 패키지 실행▷ cd 패키지가 있는 경로를 찾아서 실행▷ 매번 패키지 경로를 설정하지 않는 방법 =  class path를 이용Ch7 - 14. class path▶ class path란?▷ 클래스 파일(*.class)의 위치를 알려주는 경로(path)▷ 환경변수 class path로 관리  환경변수 : OS에서 관리하는 것▷ 경로 간 구분자는 ‘;’을 사용▷ class path(환경변수)에 패키지 루트를 등록해 주어야 함▶ cmd에서 패키지 경로 입력 없이 패키지 명으로 코드 실행▷ 환경변수 등록▷ class path 확인  set class path▷ class path 추가  set class path 기존 설정 경로 입력 + 세미콜론; + 추가 경로 입력",
+        "url": "/7cornerstoneJava6"
+    }
+    ,
+    
+    "7cornerstonejava5": {
+        "title": "Ch7-10~11. super",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter7. 객체지향 프로그래밍Ⅱ  Ch7 - 10. 참조변수 super  Ch7 - 11. super() - 조상의 생성자Ch7 - 10. 참조변수 super▶ 참조변수 super란?▷ super ≒ this▷ this : lv와 iv 구별▷ super : 조상 멤버와 자신 멤버 구별▷ 객체 자신을 가리키는 참조변수▷ 인스턴스 메서드(생성자) 내에서만 존재▷ static 메서드 내에서는 사용 불가▶ 실습▷ 부모와 자식 모두 x를 가진 경우class Act {\tpublic static void main(String[] args) {\t\t\t\tChild c = new Child();\t\tc.method();\t}}class Parent {\tint x = 10;}class Child extends Parent {\tint x = 20;\t\tvoid method() {\t\t\t\tSystem.out.println(\"x = \" + x); // 가까운 쪽의 x, 바로 위의 int x = 20;\t\tSystem.out.println(\"this.x = \" + this.x);\t\tSystem.out.println(\"super.x = \" + super.x);\t}}// consolex = 20this.x = 20super.x = 10▷ 부모만 x를 가진 경우class Act {\t\tpublic static void main(String[] args) {\t\t\t\tChild c = new Child();\t\tc.method();\t}}class Parent {\tint x = 10;}class Child extends Parent {\t\tvoid method() {\t\t\t\tSystem.out.println(\"x = \" + x); // Prent의 int x = 10;\t\tSystem.out.println(\"this.x = \" + this.x);\t\tSystem.out.println(\"super.x = \" + super.x);\t}}// consolex = 10this.x = 10super.x = 10Ch7 - 11. super() - 조상의 생성자▶ 조상의 생성자 super()란?▷ 참조변수 super ≠ 조상의 생성자 super()▷ 조상의 생성자 super()는 생성자this와 같음▷ 조상의 생성자를 호출할 때 사용▷ 생성자와 초기와 블럭은 상속 불가▷ 조상의 멤버는 조상의 생성자를 호출해서 초기화▷ 생성자의 첫 줄에 반드시 다른 생성자를 호출▷ 그렇지 않으면 컴파일러가 생성자의 첫 줄에 super();를 삽입▶ 실습▷ 왜 에러가 났을까?class Point {\tint x;\tint y;\t\tPoint(int x, int y) {\t\tthis.x = x;\t\tthis.y = y;\t}\t\tString getLocation() {\t\treturn \"x : \" + x + \"y : \" + y;\t}}class Point3D extends Point {\tint z;\t\tPoint3D(int x, int y, int z) {\t\tthis.x = x;\t\tthis.y = y;\t\tthis.z = z;\t}\t\tString getLocation() {\t\treturn \"x : \" + x + \"y : \" + y + \"z : \" + z;\t}}class PointTest {\tpublic static void main(String[] args) {\t\tPoint3D point3d = new Point3D(1, 2, 3);\t}}// consoleException in thread \"main\" java.lang.Error: Unresolved compilation problem: Implicit super constructor Point() is undefined. Must explicitly invoke another constructorat baek_ch02.Point3D.&lt;init&gt;(Point.java:20)at baek_ch02.PointTest.main(Point.java:33)▷ 기본 생성자 Point() {}의 부재 때문▷ 에러 수정",
+        "url": "/7cornerstoneJava5"
+    }
+    ,
+    
+    "7cornerstonejava4": {
+        "title": "Ch7-7~9. 오버라이딩",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter7. 객체지향 프로그래밍Ⅱ  Ch7 - 7. 오버라이딩  Ch7 - 8. 오버라이딩의 조건  Ch7 - 9. 오버로딩 vs. 오버라이딩Ch7 - 7. 오버라이딩▶ 오버라이딩(overriding)이란?▷ overriding : v. 덮어쓰다▷ 상속받은 조상의 메서드를 자신에 맞게 변경하는 것class Point {    int x;    int y;    String getLocation() {        return \"x : \" + x + \", y : \" + y;    }}class Point3D extends Point {    int z;    String getLocation() { // 조상의 String getLocation()을 오버라이딩        return \"x : \" + x + \", y : \" + y + \" z : \" + z; // 선언부 변경불가, 구현부 변경가능    }}▶ Object 클래스의 toString()을 오버라이딩▷ p.toString()class Point {    int x;    int y;    public String toString() {        return \"x : \" + x + \", y : \" + y;    }}class OverrideTest {\t\tpublic static void main(String[] args) {\t\t\t\tPoint p = new Point();\t\t\t\tSystem.out.println(p.toString());\t}}// consolex : 0, y : 0▷ p만 넣어도 toString() 출력class OverrideTest {\t\tpublic static void main(String[] args) {\t\t\t\tPoint p = new Point();\t\t\t\tSystem.out.println(p);\t}}// consolex : 0, y : 0▷ 매개변수가 있는 생성자를 이용하여 x, y 출력class Point {    int x;    int y;    Point(int x, int y) {    \tthis.x = x;    \tthis.y = y;    }        public String toString() {        return \"x : \" + x + \", y : \" + y;    }}class OverrideTest {\t\tpublic static void main(String[] args) {\t\t\t\tPoint p = new Point(5, 9);\t\t\t\tSystem.out.println(p);\t}}// consolex : 5, y : 9Ch7 - 8. 오버라이딩의 조건▶ 오버라이딩의 조건 3가지▷ 선언부가 조상 클래스의 메서드와 일치해야 함  선언부의 반환 타입, 메서드 이름, 매개변수 목록 모두 일치해야 함▷ 접근 제어자를 조상 클래스의 메서드보다 좁은 범위로 변경할 수 없음  접근 제어자 : public, protected, private, defalt▷ 예외는 조상 클래스의 메서드보다 많이 선언할 수 없음Ch7 - 9. 오버로딩 vs. 오버라이딩오버로딩과 오버라이딩은 이름만 비슷할 뿐 전혀 관계 없음▶ 오버로딩(overloading)▷ 기존에 없는 이름이 같은 새로운 메서드를 정의하는 것(new)▷ 상속과 관계無▶ 오버라이딩(overriding)▷ 상속받은 메서드의 내용을 변경하는 것(change, modify)▷ 상속과 관계有class Parent {    void parentMethod() { }}class Child extends Parent {    void parentMethod() { } // 오버라이딩    void parentMethod(int i) { } // 오버로딩        void childMethod() { } // 메서드 정의    void childMethod(int i) { } // 오버로딩    void childMethod() { } // 에러, 중복 정의}",
+        "url": "/7cornerstoneJava4"
+    }
+    ,
+    
+    "7cornerstonejava3": {
+        "title": "Ch7-5~6. object 클래스",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter7. 객체지향 프로그래밍Ⅱ  Ch7 - 5. 단일 상속  Ch7 - 6. object 클래스 : 모든 클래스의 조상Ch7 - 5. 단일 상속(single ingeritance)▶ 단일 상속이란?▷ java는 단일 상속만 허용class TvDVD extends Tv, DVD { // 에러, 다중 상속 불가    // ...}▷ 비중이 높은 클래스 하나만 상속관계로, 나머지는 포함관계로 함package baek_ch02;class Tv {\t\tboolean power;\tint channel;\t\tvoid power()\t{ power = !power; }\tvoid channelUp()\t{ ++channel; }\tvoid channelDown()\t{ --channel; }}class DVD {\tboolean power;\t\tvoid power() { power = !power; }\tvoid play() {  }\tvoid stop() {  }\tvoid rew() {  }\tvoid ff() {  }}class TvDVD extends Tv { // Tv는 상속\tDVD dvd = new DVD(); // DVD는 포함\t\tvoid play() {\t\tdvd.play();\t}\t\tvoid stop() {\t\tdvd.stop();\t}\t\tvoid rew() {\t\tdvd.rew();\t}\t\tvoid ff() {\t\tdvd.ff();\t}}Ch7 - 6. object 클래스 : 모든 클래스의 조상▶ object 클래스란?▷ 부모가 없는 클래스는 자동적으로 Object 클래스를 상속받게 됨▷ 모든 클래스는 Object 클래스에 정의된 11개의 메서드를 상속 받음  toString(), equals(Object obj), hashCode(), …  객체 home은 자동으로 최고 조상 Object 클래스를 상속 받음  그래서 home 객체에서 Object에 있는 toString() 사용 가능      class Home { }      class Act {          public static void main(String[] args) {              Home home = new Home();              System.out.println(home.toString());      }  }      ",
+        "url": "/7cornerstoneJava3"
+    }
+    ,
+    
+    "7cornerstonejava2": {
+        "title": "Ch7-2~3. 포함",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter7. 객체지향 프로그래밍Ⅱ  Ch7 - 3. 클래스 간의 관계 - 포함관계  Ch7 - 4. 클래스 간의 관계 결정하기Ch7 - 3. 클래스 간의 관계 - 포함관계▶ 포함(composite)이란?▷ 클래스의 멤버로 참조변수를 선언하는 것▷ 작은 단위의 클래스를 만들고, 이들을 조합하여 클래스를 만듦class Car {  Engine e = new Engine(); // 엔진  Door[] d = new Door[4]; // 문, 문의 개수를 넷으로 가정하고 배열로 처리}엔진이나 도어 클래스를 만들어 포함시켜 사용함으로 복잡도↓▶ 원을 그리는 두가지 방법▷ 클래스만 사용class Circle {    int x;    int y;    int r;}  객체로 만들었을 때      Circle c = new Circle();          ▷ 포함 사용class point {    int x;    int y;}class Circle {    point c = new Pint();    int r;}  객체로 만들었을 때      Circle c = new Circle();          ▶ 실습▷ 상속으로 원의 중심과 반지름 출력class point {\tint x;\tint y;}class Circle extends point {\tint r;}class Act {\t\tpublic static void main(String[] args) {\t\tCircle c = new Circle();\t\t\t\tc.x = 1;\t\tc.y = 2;\t\tc.r = 3;\t\t\t\tSystem.out.printf(\"원의 중심 : (%d, %d)\\n\", c.x, c.y);\t\tSystem.out.printf(\"반지름 : %dcm\" ,c.r);\t}}// console원의 중심 : (1, 2)반지름 : 3cm▷ 포함으로 원의 중심과 반지름 출력class point {\tint x;\tint y;}class Circle {\tPoint p = new Point();\tint r;}class Act {\t\tpublic static void main(String[] args) {\t\tCircle c = new Circle();\t\t\t\tc.p.x = 1;\t\tc.p.y = 2;\t\tc.r = 3;\t\t\t\tSystem.out.printf(\"원의 중심 : (%d, %d)\\n\", c.p.x, c.p.y);\t\tSystem.out.printf(\"반지름 : %dcm\" ,c.r);\t}}// console원의 중심 : (1, 2)반지름 : 3cmCh7 - 4. 클래스 간의 관계 결정하기▶ 상속관계▷ A는 B이다(is)▶ 포함관계▷ A는 B를 가지고 있다(has)  원은 점이다 : X  원은 점을 가지고 있다 : O → 포함    class Circle {Point c = new Point();int r;}       90%는 포함관계로 사용, 상속은 제약이 많기 때문에 꼭 필요할 때만 사용",
+        "url": "/7cornerstoneJava2"
+    }
+    ,
+    
+    "7cornerstonejava1": {
+        "title": "Ch7-1~2. 상속",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter7. 객체지향 프로그래밍Ⅱ  Ch7 - 1. 상속  Ch7 - 2. 상속 예제Ch7 - 1. 상속▶ 상속(inheritance)이란?▷ 기존의 클래스로 새로운 클래스를 작성▷ 코드의 재사용▷ 두 클래스를 부모와 자식으로 관계를 맺어 주는 것▶ 상속 작성 방법class 자식클래스 extends 부모클래스 {    //  ...}class Prent { }class Chind extends Prent {    // ...}▶ 상속 : 부모와 조상 그리고 자식▷ 자손은 조상(부모의 부모)의 모든 멤버를 상속 받음▷ 생성자, 초기화 블럭 제외 후 상속▷ 자손의 멤버 개수는 조상보다 적을 수 없음▷ 자손의 멤버 개수 &gt;= 조상// 부모 : 자신 멤버 1개class Prent {     int age;}// 자식 : 자신 멤버 0개 + 상속 멤버 1개 &gt;= 부모 멤버 1개class Child extends Parent { }▷ 자손의 변경은 조상에 영향을 미치지 않음// 부모 : 자신 멤버 1개class Prent {     int age;}// 자식 : 자신 멤버 1개 + 상속 멤버 1개class Child extends Parent {    void plya() {        System.out.println(\"Play!\");    }}Ch7 - 2. 상속 예제▶ 2차원 좌표의 한 점 : (x, y)class Point {    int x;    int y;}▶ 3차원 좌표의 한 점 : (x, y, z)▷ Point 클래스와 관계없는 클래스 : 부모 클래스의 변경과 관계 없음class Point3D {    int x;    int y;    int z;}  객체로 만들었을 때 모양      Point3D p = new Point3D();          ▷ Point 클래스를 상속 : 부모 클래스의 변경과 관계 있음class Point3D extends Point {    int z;}  객체로 만들었을 때 모양      Point3D p = new Point3D();          ",
+        "url": "/7cornerstoneJava1"
+    }
+    ,
+    
     "6cornerstonejava19": {
         "title": "Ch6-38~41. 초기화",
             "author": "JungRan-Baek",
