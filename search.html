@@ -190,6 +190,69 @@ into the {body} of the default.hbs template -->
 <script>
     window.store = {
     
+    "8cornerstonejava7": {
+        "title": "Ch8-18. 연결된 예외",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter8. 예외처리  Ch8 - 18. 연결된 예외(chained exception)Ch8 - 18. 연결된 예외(chained exception)▶ 연결된 예외(chained exception)란?▷ 한 예외가 다른 예외를 발생시킬 수 있음▷ 예외A가 예외B를 발생 시키면, A는 B의 원인 예외(cause exception)Throwable initCause(Throwable 예외A) // 지정한 예외를 원인 예외로 등록Throwable getCause() // 원인 예외를 반환▶ Throwable?▷ Throwable은 Exception이라 생각하고 사용public class Throwable implements Serializable {\tprivate Throwable cause = this; // 객체 자신(this)을 원인 예외로 등록\t\tpublic synchronized Throwable initCouse(Throwable cause) {\t\tthis.cause = cause; // cause를 원인 예외로 등록 \t\treturn this;\t}}▶ 예시▷ 원인 예외 때문에 만들어진 연결된 예외▶ 연결된 예외를 사용하는 이유?▷ 여러 예외를 하나로 묶어 다루기 위해▷ checked예외를 unchecked예외로 변경 할 때▷ 즉 필수 처리를 선택 처리로 변경할 때▷ 보통 예외 선언을 하는 건 checked예외 = Exception자손 = 예외 필수 처리      checked예외일 때        unchecked예외일 때  연결된 예외 → 겉으로 봤을 땐 unchecked예외인 것 처럼 보이게 함",
+        "url": "/8cornerstoneJava7"
+    }
+    ,
+    
+    "8cornerstonejava6": {
+        "title": "Ch8-15~17. 사용자 정의 예외",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter8. 예외처리  Ch8 - 15. 사용자 정의 예외 만들기  Ch8 - 16. 사용자 정의 예외 만들기 예제  Ch8 - 17. 예외 되던지기(exception re-throwing)Ch8 - 15. 사용자 정의 예외 만들기▶ 사용자 정의 예외란?▷ 직접 예외 클래스를 정의하는 것 → 상속을 이용하여▷ 조상은 Exception과 RuntimeException 중에서 선택  Exception 클래스 + 자손들          사용자가 발생시키는 예외      checked 예외 : 예외 처리 필수 → try-catch문 필수        RuntimeException 클래스 + 자손들          프로그래머가 발생시키는 예외      unchecked 예외 : 예외 처리 선택      Ch8 - 16. 사용자 정의 예외 만들기 예제class MyException extends Exception { // Exception이 조상 : 필수 처리 → try-catch문 필수  MyException(String msg) { // 문자열을 매개변수로 받는 생성자    super(msg); // 조상 Exception의 생성자 호출  }}Ch8 - 17. 예외 되던지기(exception re-throwing)▶ 예외 되던지기(exception re-throwing)란?▷ 예외를 처리한 후 다시 예외를 발생▷ 호출한 메서드와 호출 된 메서드 양쪽에서 예외 처리 : 예외 분담 처리",
+        "url": "/8cornerstoneJava6"
+    }
+    ,
+    
+    "8cornerstonejava5": {
+        "title": "Ch8-11~14. 메서드 예외",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter8. 예외처리  Ch8 - 11. 메서드에 예외 선언하기  Ch8 - 12. 메서드에 예외 선언하기 예제1  Ch8 - 13. 메서드에 예외 선언하기 예제2  Ch8 - 14. finally블럭Ch8 - 11. 메서드에 예외 선언하기▶ 예외를 처리하는 방법 3가지▷ try-catch문 : 예외 직접 처리▷ 예외 선언 : 사실상 예외 처리X, 예외를 호출한 쪽에 예외 떠넘기기/알리기▷ 은폐 : 조용히 덮기, try-catch문에서 catch문에 아무것도 넣지 않음▶ 예외 처리 방법 3가지 中 예외 선언▷ throw  vs  throws  예외를 발생시키는 키워드 throw  예외를 선언하는 키워드 throws▶ JAVA APICh8 - 12. 메서드에 예외 선언하기 예제1▶ try-catch문이 어디에도 없을 때 - 예외 처리X▷ 예외를 떠넘기다 떠넘기다 처리를 하지 못해서▷ main에서 JVM까지 예외가 떠넘겨짐▷ JVM에서는 예외 발생 당시의 호출 스택을 보여줌▷ JVM에서 예외 처리가 된 건 아님▷ 폭탄 돌리기하다가 → … → JVM까지 간 것 뿐Ch8 - 13. 메서드에 예외 선언하기 예제2▶ try-catch문이 main에 있을 때 - 예외 처리O▷ 예외 선언으로 인해 main으로 돌아왔는데▷ try-catch문 有▷ 예외 해결Ch8 - 14. finally블럭▶ finally블럭이란?▷ 예외 발생여부와 관계없이 수행되어야 하는 코드를 넣음▷ try-catch문의 맨 마지막에 위치해야 함try {    // 예외 발생 가능성 있는 문장} catch (Exception e) {    // 예외 처리 문장} finally {    // 에러 발생 여부 관계X → 수행되어야 하는 문장}",
+        "url": "/8cornerstoneJava5"
+    }
+    ,
+    
+    "8cornerstonejava4": {
+        "title": "Ch8-9~10. 예외 발생시키기",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter8. 예외처리  Ch8 - 9. 예외 발생시키기  Ch8 - 10. checked예외, unchecked예외Ch8 - 9. 예외 발생시키기▶ 예외를 발생시키는 방법▷ 연산자 new를 이용하여 발생시키려는 예외 클래스의 객체 생성Exception e = new Exception(\"고의적 예외 발생\");▷ 키워드 throw를 이용하여 예외 발생throw e;▷ 예외 객체 생성 + throw 한 번에 하는 방법throw new Exception(\"고의적 예외 발생\");Ch8 - 10. checked예외, unchecked예외▶ checked예외란?▷ 컴파일러가 예외 처리 여부를 체크▷ 예외 처리 필수▶ unchecked예외▷ 컴파일러가 예외 처리 여부를 체크X▷ 예외 처리 선택▷ try-catch문으로 해결class Ex8_8 {\tpublic static void main(String[] args) {\t\ttry {\t\t\tthrow new RuntimeException();\t\t} catch (Exception e) {\t\t\tSystem.out.println(\"에러 해결\");\t\t}\t}}// console에러 해결",
+        "url": "/8cornerstoneJava4"
+    }
+    ,
+    
+    "8cornerstonejava3": {
+        "title": "Ch8-7~8. 멀티 catch블럭",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter8. 예외처리  Ch8 - 7. printStackTrace()와 getMessage()  Ch8 - 8. 멀티 catch블럭Ch8 - 7. printStackTrace()와 getMessage()class Ex8_5 {\tpublic static void main(String args[]) {\t\tSystem.out.println(1);\t\t\t\t\tSystem.out.println(2);\t\ttry {\t\t\tSystem.out.println(3);\t\t\tSystem.out.println(0/0); // 예외발생!!!\t\t\tSystem.out.println(4);   // 실행X\t\t} catch (ArithmeticException ae)\t{\t\t\tae.printStackTrace();\t\t\tSystem.out.println(\"예외메시지 : \" + ae.getMessage());\t\t}\t// try-catch의 끝\t\tSystem.out.println(6);\t}\t// main메서드의 끝}// console123java.lang.ArithmeticException: / by zero\tat Ex8_5.main(Ex8_5.java:8)예외메시지 : / by zero6▶ printStackTrace() 메서드란?▷ 예외 발생 시, 호출 스택에 있는 메서드의 정보와 예외 메세지를 화면에 출력java.lang.ArithmeticException: / by zero\tat Ex8_5.main(Ex8_5.java:8)▶ getMessage() 메서드란?▷ 발생한 예외 클래스의 인스턴스에 저장된 메세지를 getby zeroCh8 - 8. 멀티 catch블럭▶ 멀티 catch블럭이란?▷ 내용이 같은 catch블럭을 하나로 합친 것▷ JDK1.7부터▶ 주의▷ 부모 자식 관계는 멀티 catch블럭 사용 → 에러  부모-자식 멀티 catch블럭 = ERROR      class ExceptionA extends ExceptionB e { }      try {       ...  } catch (ExceptionA | ExceptionB e) { // ERROR!      e.printStackTrace();  }        부모만 catch블럭 = OK      class ExceptionA extends ExceptionB e { }      try {       ...  } catch (ExceptionA e) { // OK      e.printStackTrace();  }      ▷ 멀티 catch블럭에서 공통 멤버만 사용가능",
+        "url": "/8cornerstoneJava3"
+    }
+    ,
+    
+    "8cornerstonejava2": {
+        "title": "Ch8-4~6. 예외 처리",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter8. 예외처리  Ch8 - 4. 예외 처리하기 : try-catch문  Ch8 - 5. try-catch문에서의 흐름  Ch8 - 6. 예외의 발생과 catch블럭Ch8 - 4. 예외 처리하기 : try-catch문▶ try-catch문이란?▷ 예외를 처리하기 위해 만들어 놓은 구문▷ {} 생략 불가try {    // 예외 발생 가능성이 있는 문장 작성} catch (Exception1 e1) {    // Exception1 발생했을 경우, 처리 문장 작성  } catch (Exception2 e2) {    // Exception2 발생했을 경우, 처리 문장 작성  } catch (Exception3 e3) {    // Exception3 발생했을 경우, 처리 문장 작성  }Ch8 - 5. try-catch문에서의 흐름▶ try블럭 내에서 예외가 발생한 경우▷ 발생한 예외가 일치하는 catch블럭이 있는지 확인▷ 일치하는 catch블럭 찾음→ 해당 catch블럭 내의 문장을 수행→ 전체 try-catch문을 빠져나감→ 다음 문장 계속적 수행▷ 일치하는 catch블럭 못 찾음→ 예외 처리 불가→ 프로그램 종료▶ try블럭 내에서 예외가 발생하지 않은 경우▷ catch블럭을 거치지 않고▷ 전체 try-catch문을 빠져나가▷ 계속적 수행Ch8 - 6. 예외의 발생과 catch블럭▶ 다양한 예외 발생▷ ArithmeticException▷ Exception▷ IndexOutOfBoundsException",
+        "url": "/8cornerstoneJava2"
+    }
+    ,
+    
+    "8cornerstonejava1": {
+        "title": "Ch8-1~3. 프로그램 오류",
+            "author": "JungRan-Baek",
+            "category": "",
+            "content": "자바의 정석 기초편0. 목차  Chapter8. 예외처리  Ch8 - 1. 프로그램 오류  Ch8 - 2. 예외 클래스의 계층구조  Ch8 - 3. Exception과 RuntimeExceptionCh8 - 1. 프로그램 오류▶ 프로그램 오류의 종류 3가지▷ 컴파일 에러(compile-time error) : 컴파일 할 때 발생하는 에러▷ 런타임 에러(runtime error) : 실행 할 때 발생하는 에러▷ 논리적 에러(logical error) : 작성 의도와 다르게 동작하는 에러▶ 컴파일 에러(compile-time error) : 컴파일 할 때 발생하는 에러▷ 컴파일러가 하는 일  구문체크  번역  최적화 : 간단한 계산식 계산  생략된 코드 추가▶ 런타임 에러(runtime error) : 실행 할 때 발생하는 에러▷ 컴파일 시 모든 에러를 다 잡아주지 않음▷ 에러(error) : 심각한 오류▷ 예외(exception) : 다소 미약한 오류에러는 어쩔 수 없지만, 예외는 처리하자!▷ 예외처리(exception handling)의 정의: 프로그램 실행 시 발생할 수 있는 예외의 발생에 대비한 코드 작성▷ 예외처리(exception handling)의 목적: 프로그램의 비정상 종료를 막고, 정상적인 실행 상태를 유지▶ 논리적 에러(logical error) : 작성 의도와 다르게 동작하는 에러▷ 컴파일 에러 = 실행이 안됨▷ 런타임 에러 = 실행이 다 되지 않고 프로그램 종료▷ 논리적 에러 = 프로그램이 다 실행 됨 그러나 생각했던 대로 실행이 안됨  예를 들어, 게임을 하다가 폭탄이 날아오면 터져야 함  하지만 폭탄이 터지지 않는 경우 = 논리적 에러Ch8 - 2. 예외 클래스의 계층구조▶ 상속계층도▷ 미약한 오류와 심각한 오류Ch8 - 3. Exception과 RuntimeException▶ Exception 클래스 + 자손들▷ 사용자의 실수와 같은 외적 요인에 의해 발생하는 예외▶ RuntimeException 클래스 + 자손들▷ 프로그래머의 실수로 발생하는 예외",
+        "url": "/8cornerstoneJava1"
+    }
+    ,
+    
     "7cornerstonejava24": {
         "title": "Ch7-51~52. 익명 클래스",
             "author": "JungRan-Baek",

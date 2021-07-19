@@ -1,4 +1,480 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://100jran.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://100jran.github.io/" rel="alternate" type="text/html" /><updated>2021-07-15T18:12:08+09:00</updated><id>https://100jran.github.io/</id><title type="html">100’Log</title><entry><title type="html">Ch7-51~52. 익명 클래스</title><link href="https://100jran.github.io/7cornerstoneJava24" rel="alternate" type="text/html" title="Ch7-51~52. 익명 클래스" /><published>2021-06-15T09:00:23+09:00</published><updated>2021-06-15T09:00:23+09:00</updated><id>https://100jran.github.io/7cornerstoneJava24</id><content type="html" xml:base="https://100jran.github.io/7cornerstoneJava24">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="https://100jran.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://100jran.github.io/" rel="alternate" type="text/html" /><updated>2021-07-19T21:43:46+09:00</updated><id>https://100jran.github.io/</id><title type="html">100’Log</title><entry><title type="html">Ch8-18. 연결된 예외</title><link href="https://100jran.github.io/8cornerstoneJava7" rel="alternate" type="text/html" title="Ch8-18. 연결된 예외" /><published>2021-06-16T09:00:06+09:00</published><updated>2021-06-16T09:00:06+09:00</updated><id>https://100jran.github.io/8cornerstoneJava7</id><content type="html" xml:base="https://100jran.github.io/8cornerstoneJava7">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;0-목차&quot;&gt;0. 목차&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;chapter8-예외처리&quot;&gt;&lt;span style=&quot;color:orangered&quot;&gt;Chapter8. 예외처리&lt;/span&gt;&lt;br /&gt;&lt;/h2&gt;
+  &lt;h4 id=&quot;ch8---18-연결된-예외chained-exception&quot;&gt;Ch8 - 18. &lt;a href=&quot;#Verse 1&quot;&gt;연결된 예외(chained exception)&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch8---18-연결된-예외chained-exception-1&quot;&gt;Ch8 - 18. 연결된 예외(chained exception)&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;-연결된-예외chained-exception란&quot;&gt;▶ 연결된 예외(chained exception)란?&lt;/h3&gt;
+&lt;h6 id=&quot;-한-예외가-다른-예외를-발생시킬-수-있음&quot;&gt;▷ 한 예외가 다른 예외를 발생시킬 수 있음&lt;/h6&gt;
+&lt;h6 id=&quot;-예외a가-예외b를-발생-시키면-a는-b의-원인-예외cause-exception&quot;&gt;▷ 예외A가 예외B를 발생 시키면, A는 B의 원인 예외(cause exception)&lt;/h6&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Throwable&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initCause&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Throwable&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;예외&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 지정한 예외를 원인 예외로 등록&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Throwable&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getCause&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 원인 예외를 반환&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;-throwable&quot;&gt;▶ Throwable?&lt;/h3&gt;
+&lt;h6 id=&quot;-throwable은-exception이라-생각하고-사용&quot;&gt;▷ Throwable은 Exception이라 생각하고 사용&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava7/img.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Throwable&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Serializable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Throwable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cause&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 객체 자신(this)을 원인 예외로 등록&lt;/span&gt;
+	
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;synchronized&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Throwable&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initCouse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Throwable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cause&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;cause&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cause&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// cause를 원인 예외로 등록 &lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;-예시&quot;&gt;▶ 예시&lt;/h3&gt;
+&lt;h6 id=&quot;-원인-예외-때문에-만들어진-연결된-예외&quot;&gt;▷ 원인 예외 때문에 만들어진 연결된 예외&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava7/img_1.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;-연결된-예외를-사용하는-이유&quot;&gt;▶ 연결된 예외를 사용하는 이유?&lt;/h3&gt;
+&lt;h6 id=&quot;-여러-예외를-하나로-묶어-다루기-위해&quot;&gt;▷ 여러 예외를 하나로 묶어 다루기 위해&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava7/img_2.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;-checked예외를-unchecked예외로-변경-할-때&quot;&gt;▷ checked예외를 unchecked예외로 변경 할 때&lt;/h6&gt;
+&lt;h6 id=&quot;-즉-필수-처리를-선택-처리로-변경할-때&quot;&gt;▷ 즉 필수 처리를 선택 처리로 변경할 때&lt;/h6&gt;
+&lt;h6 id=&quot;-보통-예외-선언을-하는-건-checked예외--exception자손--예외-필수-처리&quot;&gt;▷ 보통 예외 선언을 하는 건 checked예외 = Exception자손 = 예외 필수 처리&lt;/h6&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;checked예외일 때&lt;/strong&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava7/img_3.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;unchecked예외일 때&lt;/strong&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava7/img_4.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;연결된-예외--겉으로-봤을-땐-unchecked예외인-것-처럼-보이게-함&quot;&gt;연결된 예외 → 겉으로 봤을 땐 unchecked예외인 것 처럼 보이게 함&lt;/h3&gt;</content><author><name>JungRan-Baek</name></author><category term="javajungsuk" /><summary type="html">자바의 정석 기초편</summary></entry><entry><title type="html">Ch8-15~17. 사용자 정의 예외</title><link href="https://100jran.github.io/8cornerstoneJava6" rel="alternate" type="text/html" title="Ch8-15~17. 사용자 정의 예외" /><published>2021-06-16T09:00:05+09:00</published><updated>2021-06-16T09:00:05+09:00</updated><id>https://100jran.github.io/8cornerstoneJava6</id><content type="html" xml:base="https://100jran.github.io/8cornerstoneJava6">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;0-목차&quot;&gt;0. 목차&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;chapter8-예외처리&quot;&gt;&lt;span style=&quot;color:orangered&quot;&gt;Chapter8. 예외처리&lt;/span&gt;&lt;br /&gt;&lt;/h2&gt;
+  &lt;h4 id=&quot;ch8---15-사용자-정의-예외-만들기&quot;&gt;Ch8 - 15. &lt;a href=&quot;#Verse 1&quot;&gt;사용자 정의 예외 만들기&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;ch8---16-사용자-정의-예외-만들기-예제&quot;&gt;Ch8 - 16. &lt;a href=&quot;#Verse 2&quot;&gt;사용자 정의 예외 만들기 예제&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;ch8---17-예외-되던지기exception-re-throwing&quot;&gt;Ch8 - 17. &lt;a href=&quot;#Verse 3&quot;&gt;예외 되던지기(exception re-throwing)&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;ch8---15-사용자-정의-예외-만들기-1&quot;&gt;Ch8 - 15. 사용자 정의 예외 만들기&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;-사용자-정의-예외란&quot;&gt;▶ 사용자 정의 예외란?&lt;/h3&gt;
+&lt;h6 id=&quot;-직접-예외-클래스를-정의하는-것--상속을-이용하여&quot;&gt;▷ 직접 예외 클래스를 정의하는 것 → 상속을 이용하여&lt;/h6&gt;
+&lt;h6 id=&quot;-조상은-exception과-runtimeexception-중에서-선택&quot;&gt;▷ &lt;a href=&quot;https://100jran.github.io/8cornerstoneJava1#Verse 3&quot;&gt;조상은 Exception과 RuntimeException 중에서 선택&lt;/a&gt;&lt;/h6&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Exception 클래스 + 자손들&lt;/strong&gt;&lt;br /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;사용자&lt;/strong&gt;가 발생시키는 예외&lt;br /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;checked&lt;/strong&gt; 예외 : 예외 처리 &lt;strong&gt;필수&lt;/strong&gt; → &lt;strong&gt;try-catch문&lt;/strong&gt; 필수&lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;RuntimeException 클래스 + 자손들&lt;/strong&gt;&lt;br /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;프로그래머가&lt;/strong&gt; 발생시키는 예외&lt;br /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;unchecked&lt;/strong&gt; 예외 : 예외 처리 &lt;strong&gt;선택&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 2&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;ch8---16-사용자-정의-예외-만들기-예제-1&quot;&gt;Ch8 - 16. 사용자 정의 예외 만들기 예제&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyException&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Exception이 조상 : 필수 처리 → try-catch문 필수&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;MyException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 문자열을 매개변수로 받는 생성자&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 조상 Exception의 생성자 호출&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 3&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;ch8---17-예외-되던지기exception-re-throwing-1&quot;&gt;Ch8 - 17. 예외 되던지기(exception re-throwing)&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;-예외-되던지기exception-re-throwing란&quot;&gt;▶ 예외 되던지기(exception re-throwing)란?&lt;/h3&gt;
+&lt;h6 id=&quot;-예외를-처리한-후-다시-예외를-발생&quot;&gt;▷ 예외를 처리한 후 다시 예외를 발생&lt;/h6&gt;
+&lt;h6 id=&quot;-호출한-메서드와-호출-된-메서드-양쪽에서-예외-처리--예외-분담-처리&quot;&gt;▷ 호출한 메서드와 호출 된 메서드 양쪽에서 예외 처리 : 예외 분담 처리&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava6/img.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava6/img_1.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name>JungRan-Baek</name></author><category term="javajungsuk" /><summary type="html">자바의 정석 기초편</summary></entry><entry><title type="html">Ch8-11~14. 메서드 예외</title><link href="https://100jran.github.io/8cornerstoneJava5" rel="alternate" type="text/html" title="Ch8-11~14. 메서드 예외" /><published>2021-06-16T09:00:04+09:00</published><updated>2021-06-16T09:00:04+09:00</updated><id>https://100jran.github.io/8cornerstoneJava5</id><content type="html" xml:base="https://100jran.github.io/8cornerstoneJava5">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;0-목차&quot;&gt;0. 목차&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;chapter8-예외처리&quot;&gt;&lt;span style=&quot;color:orangered&quot;&gt;Chapter8. 예외처리&lt;/span&gt;&lt;br /&gt;&lt;/h2&gt;
+  &lt;h4 id=&quot;ch8---11-메서드에-예외-선언하기&quot;&gt;Ch8 - 11. &lt;a href=&quot;#Verse 1&quot;&gt;메서드에 예외 선언하기&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;ch8---12-메서드에-예외-선언하기-예제1&quot;&gt;Ch8 - 12. &lt;a href=&quot;#Verse 2&quot;&gt;메서드에 예외 선언하기 예제1&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;ch8---13-메서드에-예외-선언하기-예제2&quot;&gt;Ch8 - 13. &lt;a href=&quot;#Verse 3&quot;&gt;메서드에 예외 선언하기 예제2&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;ch8---14-finally블럭&quot;&gt;Ch8 - 14. &lt;a href=&quot;#Verse 4&quot;&gt;finally블럭&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch8---11-메서드에-예외-선언하기-1&quot;&gt;Ch8 - 11. 메서드에 예외 선언하기&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;-예외를-처리하는-방법-3가지&quot;&gt;▶ 예외를 처리하는 방법 3가지&lt;/h3&gt;
+&lt;h6 id=&quot;-try-catch문--예외-직접-처리&quot;&gt;▷ try-catch문 : 예외 직접 처리&lt;/h6&gt;
+&lt;h6 id=&quot;-예외-선언--사실상-예외-처리x-예외를-호출한-쪽에-예외-떠넘기기알리기&quot;&gt;▷ 예외 선언 : 사실상 예외 처리X, 예외를 호출한 쪽에 예외 떠넘기기/알리기&lt;/h6&gt;
+&lt;h6 id=&quot;-은폐--조용히-덮기-try-catch문에서-catch문에-아무것도-넣지-않음&quot;&gt;▷ 은폐 : 조용히 덮기, try-catch문에서 catch문에 아무것도 넣지 않음&lt;/h6&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-예외-처리-방법-3가지-中-예외-선언&quot;&gt;▶ 예외 처리 방법 3가지 中 예외 선언&lt;/h3&gt;
+&lt;h6 id=&quot;-throw--vs--throws&quot;&gt;▷ &lt;em&gt;throw&lt;/em&gt;  vs  &lt;em&gt;throws&lt;/em&gt;&lt;/h6&gt;
+&lt;ul&gt;
+  &lt;li&gt;예외를 &lt;strong&gt;발생&lt;/strong&gt;시키는 키워드 &lt;strong&gt;throw&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;예외를 &lt;strong&gt;선언&lt;/strong&gt;하는 키워드 &lt;strong&gt;throws&lt;/strong&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava5/img.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava5/img_1.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;-java-api&quot;&gt;▶ JAVA API&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava5/img_2.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 2&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch8---12-메서드에-예외-선언하기-예제1-1&quot;&gt;Ch8 - 12. 메서드에 예외 선언하기 예제1&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;-try-catch문이-어디에도-없을-때---예외-처리x&quot;&gt;▶ try-catch문이 어디에도 없을 때 - 예외 처리X&lt;/h3&gt;
+&lt;h6 id=&quot;-예외를-떠넘기다-떠넘기다-처리를-하지-못해서&quot;&gt;▷ 예외를 떠넘기다 떠넘기다 처리를 하지 못해서&lt;/h6&gt;
+&lt;h6 id=&quot;-main에서-jvm까지-예외가-떠넘겨짐&quot;&gt;▷ main에서 JVM까지 예외가 떠넘겨짐&lt;/h6&gt;
+&lt;h6 id=&quot;-jvm에서는-예외-발생-당시의-호출-스택을-보여줌&quot;&gt;▷ JVM에서는 예외 발생 당시의 호출 스택을 보여줌&lt;/h6&gt;
+&lt;h6 id=&quot;-jvm에서-예외-처리가-된-건-아님&quot;&gt;▷ JVM에서 예외 처리가 된 건 아님&lt;/h6&gt;
+&lt;h6 id=&quot;-폭탄-돌리기하다가----jvm까지-간-것-뿐&quot;&gt;▷ 폭탄 돌리기하다가 → … → JVM까지 간 것 뿐&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava5/img_3.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 3&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch8---13-메서드에-예외-선언하기-예제2-1&quot;&gt;Ch8 - 13. 메서드에 예외 선언하기 예제2&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;-try-catch문이-main에-있을-때---예외-처리o&quot;&gt;▶ try-catch문이 main에 있을 때 - 예외 처리O&lt;/h3&gt;
+&lt;h6 id=&quot;-예외-선언으로-인해-main으로-돌아왔는데&quot;&gt;▷ 예외 선언으로 인해 main으로 돌아왔는데&lt;/h6&gt;
+&lt;h6 id=&quot;-try-catch문-有&quot;&gt;▷ try-catch문 有&lt;/h6&gt;
+&lt;h6 id=&quot;-예외-해결&quot;&gt;▷ 예외 해결&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava5/img_4.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 4&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch8---14-finally블럭-1&quot;&gt;Ch8 - 14. finally블럭&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;-finally블럭이란&quot;&gt;▶ finally블럭이란?&lt;/h3&gt;
+&lt;h6 id=&quot;-예외-발생여부와-관계없이-수행되어야-하는-코드를-넣음&quot;&gt;▷ 예외 발생여부와 관계없이 수행되어야 하는 코드를 넣음&lt;/h6&gt;
+&lt;h6 id=&quot;-try-catch문의-맨-마지막에-위치해야-함&quot;&gt;▷ try-catch문의 맨 마지막에 위치해야 함&lt;/h6&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 예외 발생 가능성 있는 문장&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 예외 처리 문장&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;finally&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 에러 발생 여부 관계X → 수행되어야 하는 문장&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava5/img_5.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name>JungRan-Baek</name></author><category term="javajungsuk" /><summary type="html">자바의 정석 기초편</summary></entry><entry><title type="html">Ch8-9~10. 예외 발생시키기</title><link href="https://100jran.github.io/8cornerstoneJava4" rel="alternate" type="text/html" title="Ch8-9~10. 예외 발생시키기" /><published>2021-06-16T09:00:03+09:00</published><updated>2021-06-16T09:00:03+09:00</updated><id>https://100jran.github.io/8cornerstoneJava4</id><content type="html" xml:base="https://100jran.github.io/8cornerstoneJava4">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;0-목차&quot;&gt;0. 목차&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;chapter8-예외처리&quot;&gt;&lt;span style=&quot;color:orangered&quot;&gt;Chapter8. 예외처리&lt;/span&gt;&lt;br /&gt;&lt;/h2&gt;
+  &lt;h4 id=&quot;ch8---9-예외-발생시키기&quot;&gt;Ch8 - 9. &lt;a href=&quot;#Verse 1&quot;&gt;예외 발생시키기&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;ch8---10-checked예외-unchecked예외&quot;&gt;Ch8 - 10. &lt;a href=&quot;#Verse 2&quot;&gt;checked예외, unchecked예외&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch8---9-예외-발생시키기-1&quot;&gt;Ch8 - 9. 예외 발생시키기&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;-예외를-발생시키는-방법&quot;&gt;▶ 예외를 발생시키는 방법&lt;/h3&gt;
+&lt;h6 id=&quot;-연산자-new를-이용하여-발생시키려는-예외-클래스의-객체-생성&quot;&gt;▷ 연산자 new를 이용하여 발생시키려는 예외 클래스의 객체 생성&lt;/h6&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Exception e = new Exception(&quot;고의적 예외 발생&quot;);&lt;/code&gt;&lt;/p&gt;
+&lt;h6 id=&quot;-키워드-throw를-이용하여-예외-발생&quot;&gt;▷ 키워드 throw를 이용하여 예외 발생&lt;/h6&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;throw e;&lt;/code&gt;&lt;/p&gt;
+&lt;h6 id=&quot;-예외-객체-생성--throw-한-번에-하는-방법&quot;&gt;▷ 예외 객체 생성 + throw 한 번에 하는 방법&lt;/h6&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;throw new Exception(&quot;고의적 예외 발생&quot;);&lt;/code&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava4/img.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 2&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch8---10-checked예외-unchecked예외-1&quot;&gt;Ch8 - 10. checked예외, unchecked예외&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava4/img_1.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;-checked예외란&quot;&gt;▶ checked예외란?&lt;/h3&gt;
+&lt;h6 id=&quot;-컴파일러가-예외-처리-여부를-체크&quot;&gt;▷ 컴파일러가 예외 처리 여부를 체크&lt;/h6&gt;
+&lt;h6 id=&quot;-예외-처리-필수&quot;&gt;▷ 예외 처리 필수&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava4/img_2.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-unchecked예외&quot;&gt;▶ unchecked예외&lt;/h3&gt;
+&lt;h6 id=&quot;-컴파일러가-예외-처리-여부를-체크x&quot;&gt;▷ 컴파일러가 예외 처리 여부를 체크X&lt;/h6&gt;
+&lt;h6 id=&quot;-예외-처리-선택&quot;&gt;▷ 예외 처리 선택&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava4/img_3.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;-try-catch문으로-해결&quot;&gt;▷ try-catch문으로 해결&lt;/h6&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Ex8_8&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;RuntimeException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;에러 해결&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// console&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;에러&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;해결&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>JungRan-Baek</name></author><category term="javajungsuk" /><summary type="html">자바의 정석 기초편</summary></entry><entry><title type="html">Ch8-7~8. 멀티 catch블럭</title><link href="https://100jran.github.io/8cornerstoneJava3" rel="alternate" type="text/html" title="Ch8-7~8. 멀티 catch블럭" /><published>2021-06-16T09:00:02+09:00</published><updated>2021-06-16T09:00:02+09:00</updated><id>https://100jran.github.io/8cornerstoneJava3</id><content type="html" xml:base="https://100jran.github.io/8cornerstoneJava3">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;0-목차&quot;&gt;0. 목차&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;chapter8-예외처리&quot;&gt;&lt;span style=&quot;color:orangered&quot;&gt;Chapter8. 예외처리&lt;/span&gt;&lt;br /&gt;&lt;/h2&gt;
+  &lt;h4 id=&quot;ch8---7-printstacktrace와-getmessage&quot;&gt;Ch8 - 7. &lt;a href=&quot;#Verse 1&quot;&gt;printStackTrace()와 getMessage()&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;ch8---8-멀티-catch블럭&quot;&gt;Ch8 - 8. &lt;a href=&quot;#Verse 2&quot;&gt;멀티 catch블럭&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;ch8---7-printstacktrace와-getmessage-1&quot;&gt;Ch8 - 7. printStackTrace()와 getMessage()&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava3/img.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Ex8_5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;			
+		&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+		&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+			&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 예외발생!!!&lt;/span&gt;
+			&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;// 실행X&lt;/span&gt;
+		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ArithmeticException&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ae&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;	&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;n&quot;&gt;ae&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printStackTrace&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+			&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;예외메시지 : &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ae&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;// try-catch의 끝&lt;/span&gt;
+
+		&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;// main메서드의 끝&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// console&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ArithmeticException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;zero&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;at&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Ex8_5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Ex8_5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;예외메시지&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;zero&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;-printstacktrace-메서드란&quot;&gt;▶ printStackTrace() 메서드란?&lt;/h3&gt;
+&lt;h6 id=&quot;-예외-발생-시-호출-스택에-있는-메서드의-정보와-예외-메세지를-화면에-출력&quot;&gt;▷ 예외 발생 시, 호출 스택에 있는 메서드의 정보와 예외 메세지를 화면에 출력&lt;/h6&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ArithmeticException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;zero&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;at&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Ex8_5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Ex8_5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-getmessage-메서드란&quot;&gt;▶ getMessage() 메서드란?&lt;/h3&gt;
+&lt;h6 id=&quot;-발생한-예외-클래스의-인스턴스에-저장된-메세지를-get&quot;&gt;▷ 발생한 예외 클래스의 인스턴스에 저장된 메세지를 get&lt;/h6&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;zero&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 2&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;ch8---8-멀티-catch블럭-1&quot;&gt;Ch8 - 8. 멀티 catch블럭&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;-멀티-catch블럭이란&quot;&gt;▶ 멀티 catch블럭이란?&lt;/h3&gt;
+&lt;h6 id=&quot;-내용이-같은-catch블럭을-하나로-합친-것&quot;&gt;▷ 내용이 같은 catch블럭을 하나로 합친 것&lt;/h6&gt;
+&lt;h6 id=&quot;-jdk17부터&quot;&gt;▷ JDK1.7부터&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava3/img_1.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;-주의&quot;&gt;▶ 주의&lt;/h3&gt;
+&lt;h6 id=&quot;-부모-자식-관계는-멀티-catch블럭-사용--에러&quot;&gt;▷ 부모 자식 관계는 멀티 catch블럭 사용 → 에러&lt;/h6&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;부모-자식 멀티 catch블럭 = ERROR&lt;/strong&gt;&lt;br /&gt;
+    &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ExceptionA&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ExceptionB&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    
+  &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; 
+      &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ExceptionA&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ExceptionB&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// ERROR!&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printStackTrace&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;부모만 catch블럭 = OK&lt;/strong&gt;&lt;br /&gt;
+    &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ExceptionA&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ExceptionB&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    
+  &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; 
+      &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ExceptionA&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// OK&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printStackTrace&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;-멀티-catch블럭에서-공통-멤버만-사용가능&quot;&gt;▷ 멀티 catch블럭에서 공통 멤버만 사용가능&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava3/img_2.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name>JungRan-Baek</name></author><category term="javajungsuk" /><summary type="html">자바의 정석 기초편</summary></entry><entry><title type="html">Ch8-4~6. 예외 처리</title><link href="https://100jran.github.io/8cornerstoneJava2" rel="alternate" type="text/html" title="Ch8-4~6. 예외 처리" /><published>2021-06-16T09:00:01+09:00</published><updated>2021-06-16T09:00:01+09:00</updated><id>https://100jran.github.io/8cornerstoneJava2</id><content type="html" xml:base="https://100jran.github.io/8cornerstoneJava2">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;0-목차&quot;&gt;0. 목차&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;chapter8-예외처리&quot;&gt;&lt;span style=&quot;color:orangered&quot;&gt;Chapter8. 예외처리&lt;/span&gt;&lt;br /&gt;&lt;/h2&gt;
+  &lt;h4 id=&quot;ch8---4-예외-처리하기--try-catch문&quot;&gt;Ch8 - 4. &lt;a href=&quot;#Verse 1&quot;&gt;예외 처리하기 : try-catch문&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;ch8---5-try-catch문에서의-흐름&quot;&gt;Ch8 - 5. &lt;a href=&quot;#Verse 2&quot;&gt;try-catch문에서의 흐름&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;ch8---6-예외의-발생과-catch블럭&quot;&gt;Ch8 - 6. &lt;a href=&quot;#Verse 3&quot;&gt;예외의 발생과 catch블럭&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch8---4-예외-처리하기--try-catch문-1&quot;&gt;Ch8 - 4. 예외 처리하기 : try-catch문&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;-try-catch문이란&quot;&gt;▶ try-catch문이란?&lt;/h3&gt;
+&lt;h6 id=&quot;-예외를-처리하기-위해-만들어-놓은-구문&quot;&gt;▷ 예외를 처리하기 위해 만들어 놓은 구문&lt;/h6&gt;
+&lt;h6 id=&quot;--생략-불가&quot;&gt;▷ {} 생략 불가&lt;/h6&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 예외 발생 가능성이 있는 문장 작성&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Exception1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Exception1 발생했을 경우, 처리 문장 작성  &lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Exception2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Exception2 발생했을 경우, 처리 문장 작성  &lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Exception3&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Exception3 발생했을 경우, 처리 문장 작성  &lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 2&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch8---5-try-catch문에서의-흐름-1&quot;&gt;Ch8 - 5. try-catch문에서의 흐름&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;-try블럭-내에서-예외가-발생한-경우&quot;&gt;▶ try블럭 내에서 예외가 발생한 경우&lt;/h3&gt;
+&lt;h6 id=&quot;-발생한-예외가-일치하는-catch블럭이-있는지-확인&quot;&gt;▷ 발생한 예외가 일치하는 catch블럭이 있는지 확인&lt;/h6&gt;
+&lt;h6 id=&quot;-일치하는-catch블럭-찾음&quot;&gt;▷ 일치하는 catch블럭 찾음&lt;/h6&gt;
+&lt;p&gt;→ &lt;strong&gt;해당 catch블럭&lt;/strong&gt; 내의 문장을 &lt;strong&gt;수행&lt;/strong&gt;&lt;br /&gt;
+→ 전체 &lt;strong&gt;try-catch문을 빠져나감&lt;/strong&gt;&lt;br /&gt;
+→ &lt;strong&gt;다음 문장 계속적 수행&lt;/strong&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h6 id=&quot;-일치하는-catch블럭-못-찾음&quot;&gt;▷ 일치하는 catch블럭 못 찾음&lt;/h6&gt;
+&lt;p&gt;→ &lt;strong&gt;예외 처리 불가&lt;/strong&gt;&lt;br /&gt;
+→ &lt;strong&gt;프로그램 종료&lt;/strong&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava2/img_1.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;-try블럭-내에서-예외가-발생하지-않은-경우&quot;&gt;▶ try블럭 내에서 예외가 발생하지 않은 경우&lt;/h3&gt;
+&lt;h6 id=&quot;-catch블럭을-거치지-않고&quot;&gt;▷ catch블럭을 거치지 않고&lt;/h6&gt;
+&lt;h6 id=&quot;-전체-try-catch문을-빠져나가&quot;&gt;▷ 전체 try-catch문을 빠져나가&lt;/h6&gt;
+&lt;h6 id=&quot;-계속적-수행&quot;&gt;▷ 계속적 수행&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava2/img.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 3&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch8---6-예외의-발생과-catch블럭-1&quot;&gt;Ch8 - 6. 예외의 발생과 catch블럭&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;-다양한-예외-발생&quot;&gt;▶ 다양한 예외 발생&lt;/h3&gt;
+&lt;h6 id=&quot;-arithmeticexception&quot;&gt;▷ ArithmeticException&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava2/img_2.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;-exception&quot;&gt;▷ Exception&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava2/img_3.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;-indexoutofboundsexception&quot;&gt;▷ IndexOutOfBoundsException&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava2/img_4.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name>JungRan-Baek</name></author><category term="javajungsuk" /><summary type="html">자바의 정석 기초편</summary></entry><entry><title type="html">Ch8-1~3. 프로그램 오류</title><link href="https://100jran.github.io/8cornerstoneJava1" rel="alternate" type="text/html" title="Ch8-1~3. 프로그램 오류" /><published>2021-06-16T09:00:00+09:00</published><updated>2021-06-16T09:00:00+09:00</updated><id>https://100jran.github.io/8cornerstoneJava1</id><content type="html" xml:base="https://100jran.github.io/8cornerstoneJava1">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;0-목차&quot;&gt;0. 목차&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;chapter8-예외처리&quot;&gt;&lt;span style=&quot;color:orangered&quot;&gt;Chapter8. 예외처리&lt;/span&gt;&lt;br /&gt;&lt;/h2&gt;
+  &lt;h4 id=&quot;ch8---1-프로그램-오류&quot;&gt;Ch8 - 1. &lt;a href=&quot;#Verse 1&quot;&gt;프로그램 오류&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;ch8---2-예외-클래스의-계층구조&quot;&gt;Ch8 - 2. &lt;a href=&quot;#Verse 2&quot;&gt;예외 클래스의 계층구조&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+  &lt;h4 id=&quot;ch8---3-exception과-runtimeexception&quot;&gt;Ch8 - 3. &lt;a href=&quot;#Verse 3&quot;&gt;Exception과 RuntimeException&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch8---1-프로그램-오류-1&quot;&gt;Ch8 - 1. 프로그램 오류&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;-프로그램-오류의-종류-3가지&quot;&gt;▶ 프로그램 오류의 종류 3가지&lt;/h3&gt;
+&lt;h6 id=&quot;-컴파일-에러compile-time-error--컴파일-할-때-발생하는-에러&quot;&gt;▷ 컴파일 에러(compile-time error) : 컴파일 할 때 발생하는 에러&lt;/h6&gt;
+&lt;h6 id=&quot;-런타임-에러runtime-error--실행-할-때-발생하는-에러&quot;&gt;▷ 런타임 에러(runtime error) : 실행 할 때 발생하는 에러&lt;/h6&gt;
+&lt;h6 id=&quot;-논리적-에러logical-error--작성-의도와-다르게-동작하는-에러&quot;&gt;▷ 논리적 에러(logical error) : 작성 의도와 다르게 동작하는 에러&lt;/h6&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;-컴파일-에러compile-time-error--컴파일-할-때-발생하는-에러-1&quot;&gt;▶ 컴파일 에러(compile-time error) : 컴파일 할 때 발생하는 에러&lt;/h3&gt;
+&lt;h6 id=&quot;-컴파일러가-하는-일&quot;&gt;▷ 컴파일러가 하는 일&lt;/h6&gt;
+&lt;ul&gt;
+  &lt;li&gt;구문체크&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;번역&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;최적화 : 간단한 계산식 계산&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;생략된 코드 추가&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava1/img.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava1/img_1.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;-런타임-에러runtime-error--실행-할-때-발생하는-에러-1&quot;&gt;▶ 런타임 에러(runtime error) : 실행 할 때 발생하는 에러&lt;/h3&gt;
+&lt;h6 id=&quot;-컴파일-시-모든-에러를-다-잡아주지-않음&quot;&gt;▷ 컴파일 시 모든 에러를 다 잡아주지 않음&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava1/img_2.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava1/img_3.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;-에러error--심각한-오류&quot;&gt;▷ 에러(error) : 심각한 오류&lt;/h6&gt;
+&lt;h6 id=&quot;-예외exception--다소-미약한-오류&quot;&gt;▷ 예외(exception) : 다소 미약한 오류&lt;/h6&gt;
+&lt;h3 id=&quot;에러는-어쩔-수-없지만-예외는-처리하자&quot;&gt;에러는 어쩔 수 없지만, 예외는 처리하자!&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h6 id=&quot;-예외처리exception-handling의-정의&quot;&gt;▷ 예외처리(exception handling)의 정의&lt;/h6&gt;
+&lt;p&gt;: 프로그램 실행 시 발생할 수 있는 &lt;strong&gt;예외의 발생에 대비한 코드 작성&lt;/strong&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h6 id=&quot;-예외처리exception-handling의-목적&quot;&gt;▷ 예외처리(exception handling)의 목적&lt;/h6&gt;
+&lt;p&gt;: 프로그램의 비정상 종료를 막고, &lt;strong&gt;정상적인 실행 상태를 유지&lt;/strong&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;-논리적-에러logical-error--작성-의도와-다르게-동작하는-에러-1&quot;&gt;▶ 논리적 에러(logical error) : 작성 의도와 다르게 동작하는 에러&lt;/h3&gt;
+&lt;h6 id=&quot;-컴파일-에러--실행이-안됨&quot;&gt;▷ 컴파일 에러 = 실행이 안됨&lt;/h6&gt;
+&lt;h6 id=&quot;-런타임-에러--실행이-다-되지-않고-프로그램-종료&quot;&gt;▷ 런타임 에러 = 실행이 다 되지 않고 프로그램 종료&lt;/h6&gt;
+&lt;h6 id=&quot;-논리적-에러--프로그램이-다-실행-됨-그러나-생각했던-대로-실행이-안됨&quot;&gt;▷ 논리적 에러 = 프로그램이 다 실행 됨 그러나 생각했던 대로 실행이 안됨&lt;/h6&gt;
+&lt;ul&gt;
+  &lt;li&gt;예를 들어, 게임을 하다가 폭탄이 날아오면 터져야 함&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;하지만 폭탄이 터지지 않는 경우 = 논리적 에러&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 2&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch8---2-예외-클래스의-계층구조-1&quot;&gt;Ch8 - 2. 예외 클래스의 계층구조&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;-상속계층도&quot;&gt;▶ 상속계층도&lt;/h3&gt;
+&lt;h6 id=&quot;-미약한-오류와-심각한-오류&quot;&gt;▷ 미약한 오류와 심각한 오류&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava1/img_4.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 3&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;ch8---3-exception과-runtimeexception-1&quot;&gt;Ch8 - 3. Exception과 RuntimeException&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;-exception-클래스--자손들&quot;&gt;▶ Exception 클래스 + 자손들&lt;/h3&gt;
+&lt;h6 id=&quot;-사용자의-실수와-같은-외적-요인에-의해-발생하는-예외&quot;&gt;▷ 사용자의 실수와 같은 외적 요인에 의해 발생하는 예외&lt;/h6&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;-runtimeexception-클래스--자손들&quot;&gt;▶ RuntimeException 클래스 + 자손들&lt;/h3&gt;
+&lt;h6 id=&quot;-프로그래머의-실수로-발생하는-예외&quot;&gt;▷ 프로그래머의 실수로 발생하는 예외&lt;/h6&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-16-8cornerstoneJava1/img_5.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name>JungRan-Baek</name></author><category term="javajungsuk" /><summary type="html">자바의 정석 기초편</summary></entry><entry><title type="html">Ch7-51~52. 익명 클래스</title><link href="https://100jran.github.io/7cornerstoneJava24" rel="alternate" type="text/html" title="Ch7-51~52. 익명 클래스" /><published>2021-06-15T09:00:23+09:00</published><updated>2021-06-15T09:00:23+09:00</updated><id>https://100jran.github.io/7cornerstoneJava24</id><content type="html" xml:base="https://100jran.github.io/7cornerstoneJava24">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;0-목차&quot;&gt;0. 목차&lt;/h1&gt;
 &lt;hr /&gt;
@@ -436,767 +912,4 @@
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>JungRan-Baek</name></author><category term="javajungsuk" /><summary type="html">자바의 정석 기초편</summary></entry><entry><title type="html">Ch7-40~41. 메서드</title><link href="https://100jran.github.io/7cornerstoneJava21" rel="alternate" type="text/html" title="Ch7-40~41. 메서드" /><published>2021-06-15T09:00:20+09:00</published><updated>2021-06-15T09:00:20+09:00</updated><id>https://100jran.github.io/7cornerstoneJava21</id><content type="html" xml:base="https://100jran.github.io/7cornerstoneJava21">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;0-목차&quot;&gt;0. 목차&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;h2 id=&quot;chapter7-객체지향-프로그래밍ⅱ&quot;&gt;&lt;span style=&quot;color:orangered&quot;&gt;Chapter7. 객체지향 프로그래밍Ⅱ&lt;/span&gt;&lt;br /&gt;&lt;/h2&gt;
-  &lt;h4 id=&quot;ch7---40-디폴트-메서드와-static-메서드&quot;&gt;Ch7 - 40. &lt;a href=&quot;#Verse 1&quot;&gt;디폴트 메서드와 static 메서드&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
-  &lt;h4 id=&quot;ch7---41-디폴트-메서드와-static-메서드-예제&quot;&gt;Ch7 - 41. &lt;a href=&quot;#Verse 2&quot;&gt;디폴트 메서드와 static 메서드 예제&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h1 id=&quot;ch7---40-디폴트-메서드와-static-메서드-1&quot;&gt;Ch7 - 40. 디폴트 메서드와 static 메서드&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;h3 id=&quot;-인터페이스의-디폴트-메서드와-static-메서드&quot;&gt;▶ 인터페이스의 디폴트 메서드와 static 메서드&lt;/h3&gt;
-&lt;h6 id=&quot;-인터페이스는-추상-메서드만-가질-수-있었음&quot;&gt;▷ 인터페이스는 추상 메서드만 가질 수 있었음&lt;/h6&gt;
-&lt;h6 id=&quot;-인터페이스에-디폴트-메서드와-static-메서드는-jdk18부터-추가-된-기능&quot;&gt;▷ 인터페이스에 디폴트 메서드와 static 메서드는 JDK1.8부터 추가 된 기능&lt;/h6&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;-디폴트-메서드default-method&quot;&gt;▶ 디폴트 메서드(default method)&lt;/h3&gt;
-&lt;h6 id=&quot;-인터페이스에-새로운-메서드추상-메서드를-추가하기-어려움&quot;&gt;▷ 인터페이스에 새로운 메서드(추상 메서드)를 추가하기 어려움&lt;/h6&gt;
-&lt;h6 id=&quot;-해결책--디폴트-메서드&quot;&gt;▷ 해결책 : 디폴트 메서드&lt;/h6&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 2&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h1 id=&quot;ch7---41-디폴트-메서드와-static-메서드-예제-1&quot;&gt;Ch7 - 41. 디폴트 메서드와 static 메서드 예제&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;h3 id=&quot;-인터페이스에-디폴트-메서드가-생기면&quot;&gt;▶ 인터페이스에 디폴트 메서드가 생기면?&lt;/h3&gt;
-&lt;h6 id=&quot;-boolean-isfinished--추상-메서드를-인터페이스에-선언하면-생기는-일&quot;&gt;▷ &lt;code class=&quot;highlighter-rouge&quot;&gt;boolean isfinished();&lt;/code&gt; : 추상 메서드를 인터페이스에 선언하면 생기는 일?&lt;/h6&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava21/img.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava21/img_1.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava21/img_2.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h6 id=&quot;-default-boolean-isfinished---디폴트-메서드를-인터페이스에-선언하면-생기는-일&quot;&gt;▷ &lt;code class=&quot;highlighter-rouge&quot;&gt;default boolean isfinished() {}&lt;/code&gt; : 디폴트 메서드를 인터페이스에 선언하면 생기는 일?&lt;/h6&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava21/img_3.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava21/img_4.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name>JungRan-Baek</name></author><category term="javajungsuk" /><summary type="html">자바의 정석 기초편</summary></entry><entry><title type="html">Ch7-39. 인터페이스 장점</title><link href="https://100jran.github.io/7cornerstoneJava20" rel="alternate" type="text/html" title="Ch7-39. 인터페이스 장점" /><published>2021-06-15T09:00:19+09:00</published><updated>2021-06-15T09:00:19+09:00</updated><id>https://100jran.github.io/7cornerstoneJava20</id><content type="html" xml:base="https://100jran.github.io/7cornerstoneJava20">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;0-목차&quot;&gt;0. 목차&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;h2 id=&quot;chapter7-객체지향-프로그래밍ⅱ&quot;&gt;&lt;span style=&quot;color:orangered&quot;&gt;Chapter7. 객체지향 프로그래밍Ⅱ&lt;/span&gt;&lt;br /&gt;&lt;/h2&gt;
-  &lt;h4 id=&quot;ch7---39-인터페이스-장점&quot;&gt;Ch7 - 39. &lt;a href=&quot;#Verse 1&quot;&gt;인터페이스 장점&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h1 id=&quot;ch7---39-인터페이스-장점-1&quot;&gt;Ch7 - 39. 인터페이스 장점&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;h3 id=&quot;-인터페이스interface의-장점&quot;&gt;▶ 인터페이스(interface)의 장점&lt;/h3&gt;
-&lt;h6 id=&quot;-interface--inter사이--face얼굴&quot;&gt;▷ interface : inter(~사이) + face(얼굴)&lt;/h6&gt;
-&lt;h6 id=&quot;-두-대상객체-간의-연결-대화-소통을-돕는-중간-역할&quot;&gt;▷ 두 대상(객체) 간의 연결, 대화, 소통을 돕는 ‘중간 역할’&lt;/h6&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava20/img.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h6 id=&quot;-변경에-유리--선언껍데기과-구현알맹이-분리-가능&quot;&gt;▷ 변경에 유리 : 선언(껍데기)과 구현(알맹이) 분리 가능&lt;/h6&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava20/img_1.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;인터페이스 덕분에 C가 변경 되어도 A는 바뀌지 않아도 됨 : 느슨한 결합&lt;/strong&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava20/img_2.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h6 id=&quot;-개발-시간을-단축&quot;&gt;▷ 개발 시간을 단축&lt;/h6&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava20/img_3.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h6 id=&quot;-표준화-가능&quot;&gt;▷ 표준화 가능&lt;/h6&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava20/img_4.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava20/img_5.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava20/img_6.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava20/img_7.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava20/img_8.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava20/img_9.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h6 id=&quot;-서로-관계없는-클래스들을-관계를-맺어줄-수-있음&quot;&gt;▷ 서로 관계없는 클래스들을 관계를 맺어줄 수 있음&lt;/h6&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava20/img_10.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava20/img_11.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava20/img_12.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava20/img_13.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava20/img_14.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;-실습&quot;&gt;▶ 실습&lt;/h3&gt;
-&lt;h6 id=&quot;-인터페이스-사용하지-않고-클래스-a가-클래스-b를-사용&quot;&gt;▷ 인터페이스 사용하지 않고 클래스 A가 클래스 B를 사용&lt;/h6&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;method B&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; 
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; 
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// console&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;method&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h6 id=&quot;-인터페이스-사용하지-않고-클래스-a가-클래스-c를-사용&quot;&gt;▷ 인터페이스 사용하지 않고 클래스 A가 클래스 C를 사용&lt;/h6&gt;
-&lt;h6 id=&quot;-어디가-달라졌나&quot;&gt;▷ 어디가 달라졌나?&lt;/h6&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 매개변수 C로 변경&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;method B&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 클래스 C 생성&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;method C&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; 
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 클래스 C 객체 생성 해 주기&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; 
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// console&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;method&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h6 id=&quot;-인터페이스-사용하여-클래스-a가-클래스-b를-사용&quot;&gt;▷ 인터페이스 사용하여 클래스 A가 클래스 B를 사용&lt;/h6&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;I&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 매개변수 : I를 구현한 애들만 와라&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;I&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 메서드 선언부만 있음&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;I&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// I implements&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 구현부 완성&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;I구현 : 클래스B'method&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; 
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; 
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// consoel&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;I&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;구현&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;클래스&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;method&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h6 id=&quot;-인터페이스-사용하여-클래스-a가-클래스-c를-사용&quot;&gt;▷ 인터페이스 사용하여 클래스 A가 클래스 C를 사용&lt;/h6&gt;
-&lt;h6 id=&quot;-어디가-달라졌나-1&quot;&gt;▷ 어디가 달라졌나?&lt;/h6&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;baek&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;I&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;I&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;B&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;I&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;I구현 : 클래스B'method&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;I&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 여기&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;I구현 : 클래스C'method&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; 
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 여기&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; 
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// console&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;I&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;구현&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;클래스&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;method&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;클래스-a에서-매개변수-일일이-바꿔주지-않아도-됨&quot;&gt;클래스 A에서 매개변수 일일이 바꿔주지 않아도 됨&lt;/h3&gt;</content><author><name>JungRan-Baek</name></author><category term="javajungsuk" /><summary type="html">자바의 정석 기초편</summary></entry><entry><title type="html">Ch7-38. 인터페이스 → 다형성</title><link href="https://100jran.github.io/7cornerstoneJava19" rel="alternate" type="text/html" title="Ch7-38. 인터페이스 → 다형성" /><published>2021-06-15T09:00:18+09:00</published><updated>2021-06-15T09:00:18+09:00</updated><id>https://100jran.github.io/7cornerstoneJava19</id><content type="html" xml:base="https://100jran.github.io/7cornerstoneJava19">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;0-목차&quot;&gt;0. 목차&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;h2 id=&quot;chapter7-객체지향-프로그래밍ⅱ&quot;&gt;&lt;span style=&quot;color:orangered&quot;&gt;Chapter7. 객체지향 프로그래밍Ⅱ&lt;/span&gt;&lt;br /&gt;&lt;/h2&gt;
-  &lt;h4 id=&quot;ch7---38-인터페이스를-이용한-다형성&quot;&gt;Ch7 - 38. &lt;a href=&quot;#Verse 1&quot;&gt;인터페이스를 이용한 다형성&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h1 id=&quot;ch7---38-인터페이스를-이용한-다형성-1&quot;&gt;Ch7 - 38. 인터페이스를 이용한 다형성&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;h3 id=&quot;-인터페이스도-다형성-형성이-가능한가&quot;&gt;▶ 인터페이스도 다형성 형성이 가능한가?&lt;/h3&gt;
-&lt;h6 id=&quot;-가능&quot;&gt;▷ 가능&lt;/h6&gt;
-&lt;h6 id=&quot;-인터페이스도-구현-클래스의-반만-부모&quot;&gt;▷ 인터페이스도 구현 클래스의 반만 부모&lt;/h6&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava19/img.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava19/img_1.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;-인터페이스-타입-매개변수&quot;&gt;▶ 인터페이스 타입 매개변수&lt;/h3&gt;
-&lt;h6 id=&quot;-인터페이스-구현한-클래스의-객체만-가능&quot;&gt;▷ 인터페이스 구현한 클래스의 객체만 가능&lt;/h6&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava19/img_2.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;-인터페이스-리턴타입&quot;&gt;▶ 인터페이스 리턴타입&lt;/h3&gt;
-&lt;h6 id=&quot;-인터페이스를-메서드의-리턴타입으로-지정-가능&quot;&gt;▷ 인터페이스를 메서드의 리턴타입으로 지정 가능&lt;/h6&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava19/img_3.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;-실습&quot;&gt;▶ 실습&lt;/h3&gt;
-&lt;h6 id=&quot;-추상-클래스-unit&quot;&gt;▷ 추상 클래스 Unit&lt;/h6&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Unit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;move&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stop&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h6 id=&quot;-interface-fightable&quot;&gt;▷ interface Fightable&lt;/h6&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Fightable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;move&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;attack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Fightable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h6 id=&quot;-클래스-fighter--unint-상속-fightable-구현&quot;&gt;▷ 클래스 Fighter : Unint 상속, Fightable 구현&lt;/h6&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Fighter&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Unit&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fightable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;move&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// public 안쓰면 에러!&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;(%d, %d) 이동\n&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;attack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Fightable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// public 안쓰면 에러!&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;를 공격&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;public 미작성 시, 에러나는 이유 :  오버라이딩 규칙 때문&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;오버라이딩 규칙&lt;/strong&gt; : &lt;strong&gt;조상&lt;/strong&gt; 접근제어자 &lt;strong&gt;&amp;lt;=&lt;/strong&gt; &lt;strong&gt;자손&lt;/strong&gt; 접근제어자&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;조상&lt;/strong&gt; : &lt;strong&gt;interface&lt;/strong&gt; Fightable → 모든 메서드가 &lt;strong&gt;추상 메서드&lt;/strong&gt;(&lt;strong&gt;public abstract 생략&lt;/strong&gt;)&lt;br /&gt;
-    &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Fightable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;move&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// public abstract 생략&lt;/span&gt;
-      &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;attack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Fightable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// public abstract 생략&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;자손&lt;/strong&gt; : &lt;strong&gt;default는 조상 접근제어자 public보다 작음, 그래서 public 생략 불가&lt;/strong&gt;&lt;br /&gt;
-    &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;move&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;attack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Fightable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h6 id=&quot;-클래스-fighter--리턴-타입이-fightable인-getfightable-메서드&quot;&gt;▷ 클래스 Fighter : 리턴 타입이 Fightable인 getFightable 메서드&lt;/h6&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Fightable&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getFightable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 리턴 타입 Fightable&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;Fightable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fighter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Fightable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 리턴 타입 Fightable과 일치시키기 위해 형변환, 자동 형변환 가능&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h6 id=&quot;-실행&quot;&gt;▷ 실행&lt;/h6&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;FighterTest&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;Fighter&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fighter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;move&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;attack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fighter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Fighter f2 = new Fighter(); → f.attack(f2);&lt;/span&gt;
-	
-	    &lt;span class=&quot;n&quot;&gt;Fightable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getFightable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// getFightable 리턴 타입 Fightable과 일치시켜 호출&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h6 id=&quot;-실행-불가-경우&quot;&gt;▷ 실행 불가 경우&lt;/h6&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Fightable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fighter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Unit&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fighter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;move&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;attack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fighter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 실행 불가, Fightable애 stop없음&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;move&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;attack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fighter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 실행 불가, Unit에 attack없음&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>JungRan-Baek</name></author><category term="javajungsuk" /><summary type="html">자바의 정석 기초편</summary></entry><entry><title type="html">Ch7-35~37. 인터페이스</title><link href="https://100jran.github.io/7cornerstoneJava18" rel="alternate" type="text/html" title="Ch7-35~37. 인터페이스" /><published>2021-06-15T09:00:17+09:00</published><updated>2021-06-15T09:00:17+09:00</updated><id>https://100jran.github.io/7cornerstoneJava18</id><content type="html" xml:base="https://100jran.github.io/7cornerstoneJava18">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;0-목차&quot;&gt;0. 목차&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;h2 id=&quot;chapter7-객체지향-프로그래밍ⅱ&quot;&gt;&lt;span style=&quot;color:orangered&quot;&gt;Chapter7. 객체지향 프로그래밍Ⅱ&lt;/span&gt;&lt;br /&gt;&lt;/h2&gt;
-  &lt;h4 id=&quot;ch7---35-인터페이스&quot;&gt;Ch7 - 35. &lt;a href=&quot;#Verse 1&quot;&gt;인터페이스&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
-  &lt;h4 id=&quot;ch7---36-인터페이스-상속&quot;&gt;Ch7 - 36. &lt;a href=&quot;#Verse 2&quot;&gt;인터페이스 상속&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
-  &lt;h4 id=&quot;ch7---37-인터페이스-구현&quot;&gt;Ch7 - 37. &lt;a href=&quot;#Verse 3&quot;&gt;인터페이스 구현&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h1 id=&quot;ch7---35-인터페이스-1&quot;&gt;Ch7 - 35. 인터페이스&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;h3 id=&quot;-인터페이스interface란&quot;&gt;▶ 인터페이스(interface)란?&lt;/h3&gt;
-&lt;h6 id=&quot;-대부분-추상-메서드의-집합&quot;&gt;▷ 대부분 추상 메서드의 집합&lt;/h6&gt;
-&lt;h6 id=&quot;-구현된-것이-전혀-없는-설계도&quot;&gt;▷ 구현된 것이 전혀 없는 설계도&lt;/h6&gt;
-&lt;h6 id=&quot;-껍데기&quot;&gt;▷ 껍데기&lt;/h6&gt;
-&lt;h6 id=&quot;-모든-멤버가-public&quot;&gt;▷ 모든 멤버가 public&lt;/h6&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava18/img.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;-인터페이스interface의-특징&quot;&gt;▶ 인터페이스(interface)의 특징&lt;/h3&gt;
-&lt;h6 id=&quot;-변수-iv-cv-불가&quot;&gt;▷ 변수 iv, cv 불가&lt;/h6&gt;
-&lt;h6 id=&quot;-상수-가능&quot;&gt;▷ 상수 가능&lt;/h6&gt;
-&lt;h6 id=&quot;-예외없이-모든-상수는-public-static-final--public-static-final-생략-가능&quot;&gt;▷ 예외없이 모든 상수는 &lt;code class=&quot;highlighter-rouge&quot;&gt;public static final&lt;/code&gt; → &lt;code class=&quot;highlighter-rouge&quot;&gt;public static final&lt;/code&gt; 생략 가능&lt;/h6&gt;
-&lt;h6 id=&quot;-추상-메서드-가능&quot;&gt;▷ 추상 메서드 가능&lt;/h6&gt;
-&lt;h6 id=&quot;-예외없이-모든-메서드는-public-abstract--public-abstract-생략-가능&quot;&gt;▷ 예외없이 모든 메서드는 &lt;code class=&quot;highlighter-rouge&quot;&gt;public abstract&lt;/code&gt; → &lt;code class=&quot;highlighter-rouge&quot;&gt;public abstract&lt;/code&gt; 생략 가능&lt;/h6&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;인터페이스&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;이름&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nc&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;타입&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;상수&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;이름&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;err&quot;&gt;값&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;메서드&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;이름&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;매개변수&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;목록&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;PlayingCard&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SPADE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DIAMOND&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HEART&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CLOVER&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// public static final int CLOVER = 1;&lt;/span&gt;
-    
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getCardNumber&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getCardKind&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// public abstract String getCardKind();&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;-추상-클래스-vs-인터페이스&quot;&gt;▶ 추상 클래스 vs 인터페이스&lt;/h3&gt;
-&lt;h6 id=&quot;-추상-클래스--추상-메서드-생성자-iv를-가진-일반-클래스&quot;&gt;▷ 추상 클래스 : 추상 메서드, 생성자, iv를 가진 일반 클래스&lt;/h6&gt;
-&lt;h6 id=&quot;-인터페이스--추상-메서드만-가진-클래스--생성자-iv-cv-안됨&quot;&gt;▷ 인터페이스 : 추상 메서드만 가진 클래스 → 생성자, iv, cv… 안됨&lt;/h6&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava18/img_1.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 2&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h1 id=&quot;ch7---36-인터페이스-상속-1&quot;&gt;Ch7 - 36. 인터페이스 상속&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;h3 id=&quot;-인터페이스-상속은&quot;&gt;▶ 인터페이스 상속은?&lt;/h3&gt;
-&lt;h6 id=&quot;-인터페이스의-조상은-인터페이스만-가능&quot;&gt;▷ 인터페이스의 조상은 인터페이스만 가능&lt;/h6&gt;
-&lt;h6 id=&quot;-object가-최고-조상-아님&quot;&gt;▷ Object가 최고 조상 아님&lt;/h6&gt;
-&lt;h6 id=&quot;-다중-상속이-가능조상이-여러-개&quot;&gt;▷ 다중 상속이 가능(조상이 여러 개)&lt;/h6&gt;
-&lt;h6 id=&quot;-다중-상속의-문제점--충돌&quot;&gt;▷ 다중 상속의 문제점 : 충돌&lt;/h6&gt;
-&lt;h6 id=&quot;-추상-메서드는-충돌해도-문제-없음--구현부가-없기-때문-내용-충돌-없음&quot;&gt;▷ 추상 메서드는 충돌해도 문제 없음 → 구현부가 없기 때문, 내용 충돌 없음&lt;/h6&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Fightable&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Movable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Attackable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Unit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;unit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Movable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;move&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Attackable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;attack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Unit&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 3&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h1 id=&quot;ch7---37-인터페이스-구현-1&quot;&gt;Ch7 - 37. 인터페이스 구현&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;h3 id=&quot;-인터페이스-구현이란&quot;&gt;▶ 인터페이스 구현이란?&lt;/h3&gt;
-&lt;h6 id=&quot;-인터페이스에-정의된-추상-메서드를-완성하는-것&quot;&gt;▷ 인터페이스에 정의된 추상 메서드를 완성하는 것&lt;/h6&gt;
-&lt;h6 id=&quot;-인터페이스--추상-메서드의-집합--미완성-설계도&quot;&gt;▷ 인터페이스 = 추상 메서드의 집합 = 미완성 설계도&lt;/h6&gt;
-&lt;h6 id=&quot;-완성을-시켜야-사용이-가능함&quot;&gt;▷ 완성을 시켜야 사용이 가능함&lt;/h6&gt;
-&lt;h6 id=&quot;-추상-클래스는-extends를-통해-상속받아-완성-시킴&quot;&gt;▷ 추상 클래스는 &lt;code class=&quot;highlighter-rouge&quot;&gt;extends&lt;/code&gt;를 통해 상속받아 완성 시킴&lt;/h6&gt;
-&lt;h6 id=&quot;-인터페이스는-implements를-통해-상속받아-완성-시킴&quot;&gt;▷ 인터페이스는 &lt;code class=&quot;highlighter-rouge&quot;&gt;implements&lt;/code&gt;를 통해 상속받아 완성 시킴&lt;/h6&gt;
-&lt;h6 id=&quot;-구현--인터페이스에-정의-된-추상-메서드의-구현부를-모두-작성하는-것&quot;&gt;▷ 구현 : 인터페이스에 정의 된 추상 메서드의 구현부{}를 모두 작성하는 것&lt;/h6&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;클래스&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;이름&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;인터페이스&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;이름&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// 인터페이스에 정의 된 추상 메서드에 구현부{} 모두 작성 &lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Fighter 클래스는 Fightable 인터페이스를 구현했다&lt;/strong&gt;&lt;br /&gt;
-    &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Fightable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;move&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;attrack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Unit&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    
-  &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Fighter&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fightable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;move&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-      &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;attrack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Unit&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h6 id=&quot;-일부만-구현하는-경우-클래스-앞에-abstract를-붙여야-함&quot;&gt;▷ 일부만 구현하는 경우, 클래스 앞에 &lt;code class=&quot;highlighter-rouge&quot;&gt;abstract&lt;/code&gt;를 붙여야 함&lt;/h6&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Fighter&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fightable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;move&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>JungRan-Baek</name></author><category term="javajungsuk" /><summary type="html">자바의 정석 기초편</summary></entry><entry><title type="html">Ch7-33~34. 추상 클래스 작성</title><link href="https://100jran.github.io/7cornerstoneJava17" rel="alternate" type="text/html" title="Ch7-33~34. 추상 클래스 작성" /><published>2021-06-15T09:00:16+09:00</published><updated>2021-06-15T09:00:16+09:00</updated><id>https://100jran.github.io/7cornerstoneJava17</id><content type="html" xml:base="https://100jran.github.io/7cornerstoneJava17">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;0-목차&quot;&gt;0. 목차&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;h2 id=&quot;chapter7-객체지향-프로그래밍ⅱ&quot;&gt;&lt;span style=&quot;color:orangered&quot;&gt;Chapter7. 객체지향 프로그래밍Ⅱ&lt;/span&gt;&lt;br /&gt;&lt;/h2&gt;
-  &lt;h4 id=&quot;ch7---33-추상-클래스의-작성&quot;&gt;Ch7 - 33. &lt;a href=&quot;#Verse 1&quot;&gt;추상 클래스의 작성&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
-  &lt;h4 id=&quot;ch7---34-추상-클래스의-작성-예제&quot;&gt;Ch7 - 34. &lt;a href=&quot;#Verse 2&quot;&gt;추상 클래스의 작성 예제&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h1 id=&quot;ch7---33-추상-클래스의-작성-1&quot;&gt;Ch7 - 33. 추상 클래스의 작성&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;h3 id=&quot;-추상-클래스-작성-방법&quot;&gt;▶ 추상 클래스 작성 방법&lt;/h3&gt;
-&lt;h6 id=&quot;-여러-클래스에-공통적으로-사용될-수-있는-추상-클래스를&quot;&gt;▷ 여러 클래스에 공통적으로 사용될 수 있는 추상 클래스를&lt;/h6&gt;
-&lt;h6 id=&quot;-바로-작성하거나&quot;&gt;▷ 바로 작성하거나&lt;/h6&gt;
-&lt;h6 id=&quot;-기존-클래스의-공통-부분을-뽑아서-추상-클래스를-생성&quot;&gt;▷ 기존 클래스의 공통 부분을 뽑아서 추상 클래스를 생성&lt;/h6&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava17/img.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;-추상-클래스의-장점&quot;&gt;▶ 추상 클래스의 장점&lt;/h3&gt;
-&lt;h6 id=&quot;-추상화--구체화&quot;&gt;▷ 추상화 ↔ 구체화&lt;/h6&gt;
-&lt;h6 id=&quot;-불명확--명확&quot;&gt;▷ 불명확 ↔ 명확&lt;/h6&gt;
-&lt;h6 id=&quot;-때론-불명확하고-애매한-게-장점일-때가-있음&quot;&gt;▷ 때론 불명확하고 애매한 게 장점일 때가 있음&lt;/h6&gt;
-&lt;h6 id=&quot;-추상화-된-코드--유연성-변경에-유리&quot;&gt;▷ 추상화 된 코드 : 유연성↑, 변경에 유리&lt;/h6&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;GregofianCalendar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GregofianCal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 구체적&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Calendar&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Calendar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 추상적, Calendar는 추상 클래스&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 2&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h1 id=&quot;ch7---34-추상-클래스의-작성-예제-1&quot;&gt;Ch7 - 34. 추상 클래스의 작성 예제&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;h3 id=&quot;-공통-부분-추상-클래스로-작성&quot;&gt;▶ 공통 부분 추상 클래스로 작성&lt;/h3&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Unit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;move&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Marine&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Unit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Marine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-	&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;move&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Marine [%d, %d] move\n&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;stimPack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Tank&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Unit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Tank&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-	&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;move&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Tank [%d, %d] move\n&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;changeMode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Dropship&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Unit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Dropship&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-	&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;move&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Dropship [%d, %d] move\n&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;unload&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;Unit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Marine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Marine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dropship&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;
-		
-		&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-			&lt;span class=&quot;n&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;move&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// console&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Marine&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;move&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Marine&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;move&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Dropship&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;move&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava17/img_1.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava17/img_2.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name>JungRan-Baek</name></author><category term="javajungsuk" /><summary type="html">자바의 정석 기초편</summary></entry><entry><title type="html">Ch7-31~32. 추상 클래스</title><link href="https://100jran.github.io/7cornerstoneJava16" rel="alternate" type="text/html" title="Ch7-31~32. 추상 클래스" /><published>2021-06-15T09:00:15+09:00</published><updated>2021-06-15T09:00:15+09:00</updated><id>https://100jran.github.io/7cornerstoneJava16</id><content type="html" xml:base="https://100jran.github.io/7cornerstoneJava16">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;0-목차&quot;&gt;0. 목차&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;h2 id=&quot;chapter7-객체지향-프로그래밍ⅱ&quot;&gt;&lt;span style=&quot;color:orangered&quot;&gt;Chapter7. 객체지향 프로그래밍Ⅱ&lt;/span&gt;&lt;br /&gt;&lt;/h2&gt;
-  &lt;h4 id=&quot;ch7---31-추상-클래스&quot;&gt;Ch7 - 31. &lt;a href=&quot;#Verse 1&quot;&gt;추상 클래스&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
-  &lt;h4 id=&quot;ch7---32-추상-메서드&quot;&gt;Ch7 - 32. &lt;a href=&quot;#Verse 2&quot;&gt;추상 메서드&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h1 id=&quot;ch7---31-추상-클래스-1&quot;&gt;Ch7 - 31. 추상 클래스&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;h3 id=&quot;-추상-클래스abstract-class란&quot;&gt;▶ 추상 클래스(abstract class)란?&lt;/h3&gt;
-&lt;h6 id=&quot;-미완성-설계도&quot;&gt;▷ 미완성 설계도&lt;/h6&gt;
-&lt;h6 id=&quot;-미완성-메서드를-갖고-있는-클래스&quot;&gt;▷ 미완성 메서드를 갖고 있는 클래스&lt;/h6&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;추상 메서드&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;구현부{}가 없는 미완성 메서드&lt;br /&gt;&lt;/li&gt;
-      &lt;li&gt;abstract를 붙임&lt;br /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;abstract void play(int pos);&lt;/code&gt;&lt;br /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;추상 클래스&lt;/strong&gt; : 추상 메서드를 갖고 있는 클래스&lt;br /&gt;
-    &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Player&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;play&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h6 id=&quot;-다른-클래스-작성에-도움을-주기-위한-것&quot;&gt;▷ 다른 클래스 작성에 도움을 주기 위한 것&lt;/h6&gt;
-&lt;h6 id=&quot;-인스턴스-생성-불가&quot;&gt;▷ 인스턴스 생성 불가&lt;/h6&gt;
-&lt;ul&gt;
-  &lt;li&gt;추상 클래스 = 미완성 설계도 → 제품 설계 불가&lt;br /&gt;
-    &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;n&quot;&gt;Player&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Player&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 에러! 추상 클래스의 인스턴스 생성 불가&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h6 id=&quot;-상속을-통해-추상-메서드-완성시킨-후-인스턴스-생성-가능&quot;&gt;▷ 상속을 통해 추상 메서드 완성시킨 후, 인스턴스 생성 가능&lt;/h6&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AudioPlayer&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Player&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 미완성 설계도를 상속 → 완성 설계도&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;play&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 추상 메서드 구현, 구현부{}를 만들어 줌&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 추상 메서드 구현&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;AudioPlayer&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ap&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AudioPlayer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 인스턴스 생성 가능&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 2&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h1 id=&quot;ch7---32-추상-메서드-1&quot;&gt;Ch7 - 32. 추상 메서드&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;h3 id=&quot;-추상-메서드abstract-method란&quot;&gt;▶ 추상 메서드(abstract method)란?&lt;/h3&gt;
-&lt;h6 id=&quot;-미완선-메서드&quot;&gt;▷ 미완선 메서드&lt;/h6&gt;
-&lt;h6 id=&quot;-구현부가-없는-메서드&quot;&gt;▷ 구현부{}가 없는 메서드&lt;/h6&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;abstract 리턴타입 메서드 이름();&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&quot;-상속을-받았지만-추상-메서드가-유지되는-경우&quot;&gt;▶ 상속을 받았지만, 추상 메서드가 유지되는 경우&lt;/h3&gt;
-&lt;h6 id=&quot;-자손마다-다르게-구현-될-것으로-예상하는-경우&quot;&gt;▷ 자손마다 다르게 구현 될 것으로 예상하는 경우&lt;/h6&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Player&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// // 추상 클래스&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;play&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 추상 메서드&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 추상 메서드&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AudioPlayer&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Player&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 추상 클래스 상속 → 완전한 클래스로 생성 된 자손&lt;/span&gt;
-  &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;play&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 추상 메서드 구현&lt;/span&gt;
-  &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 추상 메서드 구현&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AbstractPlayer&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Player&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 추상 클래스 상속 → 완전한 클래스?? : nope! 미완성 클래스 그래서 abstract 붙임&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;play&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 상속받은 추상 클래스의 추상메서드 2개 중 하나만 구현 → 미완성 클래스가 됨&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;-추상-메서드-호출-가능&quot;&gt;▶ 추상 메서드 호출 가능&lt;/h3&gt;
-&lt;h6 id=&quot;-호출-시-선언부만-필요&quot;&gt;▷ 호출 시, 선언부만 필요&lt;/h6&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Player&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pause&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 추상 클래스 내 iv, 일시정지&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currentPos&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 추상 클래스 내 iv, 현재 paly 위치&lt;/span&gt;
-	
-	&lt;span class=&quot;n&quot;&gt;Player&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 추상 클래스도 생성자有&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;pause&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;currentPos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-	
-	&lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;play&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// pos에서 play!&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// stop!&lt;/span&gt;
-
-	&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;play&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 인스턴스 메서드&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;play&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;currentPos&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 추상 메서드 호출&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;인스턴스 메서드 사용법&lt;/strong&gt;&lt;br /&gt;
-    &lt;ul&gt;
-      &lt;li&gt;클래스 객체 생성&lt;br /&gt;&lt;/li&gt;
-      &lt;li&gt;추상 클래스를 객체 생성하려면 &lt;strong&gt;상속&lt;/strong&gt; 해야 함&lt;br /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;추상 메서드 사용법&lt;/strong&gt;&lt;br /&gt;
-    &lt;ul&gt;
-      &lt;li&gt;자손 객체가 추상 클래스 상속&lt;br /&gt;&lt;/li&gt;
-      &lt;li&gt;자손 객체가 구현부{} 생성&lt;br /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;인스턴스 메서드나 추상 메서드나 객체 생성 필요&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;그러나 추상 클래스에서는 &lt;strong&gt;객체&lt;/strong&gt; 생성이 불가&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;결론 : 인스턴스 메서드 &lt;code class=&quot;highlighter-rouge&quot;&gt;play&lt;/code&gt;에 있는 추상 메서드 &lt;code class=&quot;highlighter-rouge&quot;&gt;play(currentPos)&lt;/code&gt;를 사용하려면?&lt;/strong&gt;&lt;br /&gt;
-    &lt;ol&gt;
-      &lt;li&gt;추상 클래스를 온전히 &lt;strong&gt;상속&lt;/strong&gt; 받는 자손 생성&lt;br /&gt;&lt;/li&gt;
-      &lt;li&gt;자손 클래스에서 조상 클래스의 모든 메서드의 &lt;strong&gt;구현부{}&lt;/strong&gt; 생성&lt;br /&gt;&lt;/li&gt;
-      &lt;li&gt;자손 클래스 &lt;strong&gt;객체&lt;/strong&gt; 생성&lt;br /&gt;&lt;/li&gt;
-      &lt;li&gt;객체.Play(currentPos) &lt;strong&gt;호출&lt;/strong&gt;하여 사용&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;dvdplayer든-어떤-player든-간에-abstract는-꼭-해야만-하는-것을-의미&quot;&gt;dvdPlayer든 어떤 Player든 간에 abstract는 꼭 해야만 하는 것을 의미&lt;/h3&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h3 id=&quot;-실습&quot;&gt;▶ 실습&lt;/h3&gt;
-&lt;h6 id=&quot;-추상-클래스-상속-구현부-만들기-객체-생성-추상-메서드-호출&quot;&gt;▷ 추상 클래스 상속, 구현부{} 만들기, 객체 생성, 추상 메서드 호출&lt;/h6&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Player&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;play&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AudioPlayer&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Player&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;play&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;'부터 시작&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stop&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;AudioPlayer&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ap&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AudioPlayer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;ap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;play&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;ap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// console&lt;/span&gt;
-&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'부터&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;시작&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;stop&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h6 id=&quot;-객체-생성할-때-실제-생성되는-객체--audioplayer&quot;&gt;▷ 객체 생성할 때, &lt;code class=&quot;highlighter-rouge&quot;&gt;실제 생성되는 객체 = AudioPlayer&lt;/code&gt;&lt;/h6&gt;
-&lt;h6 id=&quot;-리모콘은-audioplayer-player-둘-중-아무거나-상관-없음&quot;&gt;▷ 리모콘은 &lt;code class=&quot;highlighter-rouge&quot;&gt;AudioPlayer&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;Player&lt;/code&gt; 둘 중 아무거나 상관 없음&lt;/h6&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;AudioPlayer&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ap&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AudioPlayer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Player&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ap&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AudioPlayer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 다형성&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>JungRan-Baek</name></author><category term="javajungsuk" /><summary type="html">자바의 정석 기초편</summary></entry><entry><title type="html">Ch7-29~30. 객체 → 배열</title><link href="https://100jran.github.io/7cornerstoneJava15" rel="alternate" type="text/html" title="Ch7-29~30. 객체 → 배열" /><published>2021-06-15T09:00:14+09:00</published><updated>2021-06-15T09:00:14+09:00</updated><id>https://100jran.github.io/7cornerstoneJava15</id><content type="html" xml:base="https://100jran.github.io/7cornerstoneJava15">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;0-목차&quot;&gt;0. 목차&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;h2 id=&quot;chapter7-객체지향-프로그래밍ⅱ&quot;&gt;&lt;span style=&quot;color:orangered&quot;&gt;Chapter7. 객체지향 프로그래밍Ⅱ&lt;/span&gt;&lt;br /&gt;&lt;/h2&gt;
-  &lt;h4 id=&quot;ch7---29-여러-종류의-객체를-배열로-다루기&quot;&gt;Ch7 - 29. &lt;a href=&quot;#Verse 1&quot;&gt;여러 종류의 객체를 배열로 다루기&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
-  &lt;h4 id=&quot;ch7---30-여러-종류의-객체를-배열로-다루기-예제&quot;&gt;Ch7 - 30. &lt;a href=&quot;#Verse 2&quot;&gt;여러 종류의 객체를 배열로 다루기 예제&lt;/a&gt;&lt;br /&gt;&lt;/h4&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;ch7---29-여러-종류의-객체를-배열로-다루기-1&quot;&gt;Ch7 - 29. 여러 종류의 객체를 배열로 다루기&lt;/h2&gt;
-&lt;hr /&gt;
-&lt;h3 id=&quot;-다형성의-장점&quot;&gt;▶ 다형성의 장점&lt;/h3&gt;
-&lt;h6 id=&quot;-다형적-매개변수&quot;&gt;▷ 다형적 매개변수&lt;/h6&gt;
-&lt;h6 id=&quot;-하나의-배열에-여러-종류의-객체-저장&quot;&gt;▷ 하나의 배열에 여러 종류의 객체 저장&lt;/h6&gt;
-&lt;ul&gt;
-  &lt;li&gt;보통 하나의 배열은 같은 타입만 저장 가능&lt;br /&gt;&lt;/li&gt;
-  &lt;li&gt;다형성을 이용하면, 조상 타입의 배열에 자손들의 객체 여러 개 저장 가능&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava15/img.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 2&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;h2 id=&quot;ch7---30-여러-종류의-객체를-배열로-다루기-예제-1&quot;&gt;Ch7 - 30. 여러 종류의 객체를 배열로 다루기 예제&lt;/h2&gt;
-&lt;hr /&gt;
-&lt;h3 id=&quot;-장바구니-기능--구매한-총-금액-구매한-상품&quot;&gt;▶ 장바구니 기능 : 구매한 총 금액, 구매한 상품&lt;/h3&gt;
-&lt;h6 id=&quot;-모든-제품의-조상-product-p로-다형적-매개변수-생성&quot;&gt;▷ 모든 제품의 조상 Product p로 다형적 매개변수 생성&lt;/h6&gt;
-&lt;h6 id=&quot;-배열-cart에-다형적-매개변수로-받은-객체를-저장&quot;&gt;▷ 배열 cart에 다형적 매개변수로 받은 객체를 저장&lt;/h6&gt;
-&lt;h6 id=&quot;-배열-하나로-여러-가지-객체-이용-가능&quot;&gt;▷ 배열 하나로 여러 가지 객체 이용 가능&lt;/h6&gt;
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;baek&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Product2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Product2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt;
-
-	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;point&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-	
-	&lt;span class=&quot;n&quot;&gt;Product2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;price&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;point&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;price&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;10.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Tv&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Product2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Tv&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;TV&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Computer&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Product2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Computer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Computer&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Buyer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Buyer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt;
-
-	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myMoney&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myPoint&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-	
-	&lt;span class=&quot;n&quot;&gt;Product2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cart&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Product2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
-	&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-	&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;buy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Product2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myMoney&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-			&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;잔액이 부족합니다.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-			&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-			&lt;span class=&quot;n&quot;&gt;myMoney&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-			&lt;span class=&quot;n&quot;&gt;myPoint&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;point&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-			
-			&lt;span class=&quot;n&quot;&gt;cart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-			
-			&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;[%s] 구매\n&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-	
-	&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;cartIn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;itemList&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-		
-		&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-			&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-			&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-				&lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-				&lt;span class=&quot;n&quot;&gt;itemList&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;[&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;] &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-			&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;총 금액 : %d만원\n&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;선택한 제품 : %s\n&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;itemList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Act&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Buyer&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Buyer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-		&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;buy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Tv&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;buy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Computer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;cartIn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-		
-		&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;잔액은 %d만원 입니다.\n&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;myMoney&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;잔여 포인트는 %d점 입니다.\n&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;myPoint&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// console&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TV&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;구매&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Computer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;구매&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;총&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;금액&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;만원&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;선택한&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;제품&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TV&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Computer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;잔액은&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;만원&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;입니다&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;잔여&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;포인트는&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;점&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;입니다&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-15-7cornerstoneJava15/img_1.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;</content><author><name>JungRan-Baek</name></author><category term="javajungsuk" /><summary type="html">자바의 정석 기초편</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>JungRan-Baek</name></author><category term="javajungsuk" /><summary type="html">자바의 정석 기초편</summary></entry></feed>
