@@ -1,0 +1,1882 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>Ch11-7~11. ArrayList</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+    <!-- syntax.css 추가 -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+    <!-- 웹폰트 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="" />
+    <link rel="shortcut icon" href="https://100jran.github.io/assets/built/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://100jran.github.io/11cornerstoneJava3" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="100'Log" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ch11-7~11. ArrayList" />
+    <meta property="og:description" content="자바의 정석 기초편 0. 목차 Chapter11. 컬렉션 프레임웍 Ch11 - 7. ArrayList Ch11 - 8. ArrayList의 메서드 Ch11 - 9. ArrayList 예제 Ch11 - 10. ArrayList에 저장 된 객체의 삭제 과정 Ch11 - 11. Java API 소스보기 Ch11 - 7. ArrayList ▶ ArrayList란? ▷ List 인터페이스를 구현 ▷ 이름에 List" />
+    <meta property="og:url" content="https://100jran.github.io/11cornerstoneJava3" />
+    <meta property="og:image" content="https://100jran.github.io/assets/built/images/thecornerstoneofjavaCh11.jpg" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2021-06-19T09:00:02+09:00" />
+    <meta property="article:modified_time" content="2021-06-19T09:00:02+09:00" />
+    <meta property="article:tag" content="Javajungsuk" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ch11-7~11. ArrayList" />
+    <meta name="twitter:description" content="자바의 정석 기초편 0. 목차 Chapter11. 컬렉션 프레임웍 Ch11 - 7. ArrayList Ch11 - 8. ArrayList의 메서드 Ch11 - 9. ArrayList 예제 Ch11 - 10. ArrayList에 저장 된 객체의 삭제 과정 Ch11 - 11. Java API 소스보기 Ch11 - 7. ArrayList ▶ ArrayList란? ▷ List 인터페이스를 구현 ▷ 이름에 List" />
+    <meta name="twitter:url" content="https://100jran.github.io/" />
+    <meta name="twitter:image" content="https://100jran.github.io/assets/built/images/thecornerstoneofjavaCh11.jpg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="100'Log" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Javajungsuk" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "100'Log",
+        "logo": "https://100jran.github.io/"
+    },
+    "url": "https://100jran.github.io/11cornerstoneJava3",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://100jran.github.io/assets/built/images/thecornerstoneofjavaCh11.jpg",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://100jran.github.io/11cornerstoneJava3"
+    },
+    "description": "자바의 정석 기초편 0. 목차 Chapter11. 컬렉션 프레임웍 Ch11 - 7. ArrayList Ch11 - 8. ArrayList의 메서드 Ch11 - 9. ArrayList 예제 Ch11 - 10. ArrayList에 저장 된 객체의 삭제 과정 Ch11 - 11. Java API 소스보기 Ch11 - 7. ArrayList ▶ ArrayList란? ▷ List 인터페이스를 구현 ▷ 이름에 List"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="Ch11-7~11. ArrayList" href="/feed.xml" />
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://100jran.github.io/">100'Log</a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <!-- about
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    -->
+    <!--
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/java/">java</a></li>
+    -->
+    <!-- javascript
+    <li class="nav-python" role="menuitem"><a href="/tag/javaScript/">javaScript</a></li>
+    -->
+    <!--
+    <li class="nav-python" role="menuitem"><a href="/tag/java practice/">java practice</a></li>
+    -->
+    <!-- til
+    <li class="nav-python" role="menuitem"><a href="/tag/til/">til</a></li>
+    -->
+    <li class="nav-archive" role="menuitem">
+        <a href="/archive.html">Posts</a>
+    </li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/author_archive.html">Tag</a>
+    </li>
+  </ul>
+
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Search</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-javajungsuk post tag-javajungsuk ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="19 June 2021">19 June 2021</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/javajungsuk/'>JAVAJUNGSUK</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">Ch11-7~11. ArrayList</h1>
+            </header>
+
+            <!-- 포스팅 했을 때 상단 이미지
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/thecornerstoneofjavaCh11.jpg)">
+            </figure>
+            
+             -->
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <p><a href="https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp">자바의 정석 기초편</a></p>
+
+<h1 id="0-목차">0. 목차</h1>
+<hr />
+<p><br /></p>
+<blockquote>
+  <h2 id="chapter11-컬렉션-프레임웍"><span style="color:orangered">Chapter11. 컬렉션 프레임웍</span><br /></h2>
+  <h4 id="ch11---7-arraylist">Ch11 - 7. <a href="#Verse 1">ArrayList</a><br /></h4>
+  <h4 id="ch11---8-arraylist의-메서드">Ch11 - 8. <a href="#Verse 2">ArrayList의 메서드</a><br /></h4>
+  <h4 id="ch11---9-arraylist-예제">Ch11 - 9. <a href="#Verse 3">ArrayList 예제</a><br /></h4>
+  <h4 id="ch11---10-arraylist에-저장-된-객체의-삭제-과정">Ch11 - 10. <a href="#Verse 4">ArrayList에 저장 된 객체의 삭제 과정</a><br /></h4>
+  <h4 id="ch11---11-java-api-소스보기">Ch11 - 11. <a href="#Verse 5">Java API 소스보기</a><br /></h4>
+</blockquote>
+
+<p><br /><a id="Verse 1"></a></p>
+
+<p><br /></p>
+<h2 id="ch11---7-arraylist-1">Ch11 - 7. ArrayList</h2>
+<hr />
+<h3 id="-arraylist란">▶ ArrayList란?</h3>
+<h6 id="-list-인터페이스를-구현">▷ List 인터페이스를 구현</h6>
+<h6 id="-이름에-list-붙어-있는-것--list-인터페이스-구현">▷ 이름에 List 붙어 있는 것 → List 인터페이스 구현</h6>
+<h6 id="-저장-순서-유지-중복-허용">▷ 저장 순서 유지, 중복 허용</h6>
+<h6 id="-객체데이터의-저장-공간으로-배열-사용배열-기반">▷ 객체(데이터)의 저장 공간으로 배열 사용(배열 기반)</h6>
+<h6 id="-arraylist는-기존의-vector를-개선한-것으로-구현-원리와-기능은-동일">▷ ArrayList는 기존의 Vector를 개선한 것으로 구현 원리와 기능은 동일</h6>
+<p><img src="assets/built/postsImages/TheCornerstoneOfJava/2021-06-19-11cornerstoneJava3/img.png" width="80%" align="left" /><br /></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vector</span> <span class="kd">extends</span> <span class="n">AbstractList</span> <span class="kd">implements</span> <span class="n">List</span><span class="o">,</span> <span class="n">RandomAccess</span><span class="o">,</span> <span class="n">Cloneable</span><span class="o">,</span> <span class="n">java</span><span class="o">.</span><span class="na">io</span><span class="o">.</span><span class="na">Serializable</span> <span class="o">{</span>
+	<span class="o">...</span>
+	<span class="kd">protected</span> <span class="n">Object</span><span class="o">[]</span> <span class="n">elementDataObjects</span><span class="o">;</span> <span class="c1">// 객체 배열, Object[] : 모든 종류의 객체 저장 가능 → 다형성</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="-arraylist-vs-vector">▶ ArrayList vs Vector</h3>
+<h6 id="-arraylist--동기화x">▷ ArrayList : 동기화X</h6>
+<h6 id="-vector--동기화o">▷ Vector : 동기화O</h6>
+
+<p><br /><a id="Verse 2"></a></p>
+
+<p><br /></p>
+<h2 id="ch11---8-arraylist의-메서드-1">Ch11 - 8. ArrayList의 메서드</h2>
+<hr />
+<h3 id="-arraylist의-메서드">▶ ArrayList의 메서드</h3>
+<h6 id="-생성자">▷ 생성자</h6>
+<p><img src="assets/built/postsImages/TheCornerstoneOfJava/2021-06-19-11cornerstoneJava3/img_1.png" width="80%" align="left" /><br /></p>
+
+<h6 id="-추가">▷ 추가</h6>
+<p><img src="assets/built/postsImages/TheCornerstoneOfJava/2021-06-19-11cornerstoneJava3/img_2.png" width="80%" align="left" /><br /></p>
+
+<h6 id="-삭제">▷ 삭제</h6>
+<p><img src="assets/built/postsImages/TheCornerstoneOfJava/2021-06-19-11cornerstoneJava3/img_3.png" width="80%" align="left" /><br /></p>
+
+<h6 id="-검색">▷ 검색</h6>
+<p><img src="assets/built/postsImages/TheCornerstoneOfJava/2021-06-19-11cornerstoneJava3/img_4.png" width="80%" align="left" /><br /></p>
+
+<h6 id="-기타">▷ 기타</h6>
+<p><img src="assets/built/postsImages/TheCornerstoneOfJava/2021-06-19-11cornerstoneJava3/img_5.png" width="80%" align="left" /><br /></p>
+
+<p><br /><a id="Verse 3"></a></p>
+
+<p><br /></p>
+<h2 id="ch11---9-arraylist-예제-1">Ch11 - 9. ArrayList 예제</h2>
+<hr />
+<h3 id="-add">▶ add()</h3>
+<h6 id="-capacity가-10인-arraylist-생성">▷ capacity가 10인 ArrayList 생성</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ArrayList</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span>
+</code></pre></div></div>
+
+<h6 id="-arraylist에-5-4-3-2-1-0-넣기">▷ ArrayList에 5, 4, 3, 2, 1, 0 넣기</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span>
+<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">4</span><span class="o">);</span>
+<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">3</span><span class="o">);</span>
+<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+</code></pre></div></div>
+<ul>
+  <li><code class="highlighter-rouge">ArrayList</code> : <code class="highlighter-rouge">객체</code>만 저장가능<br /></li>
+  <li>5, 4, 3, 2, 1, 0 : <code class="highlighter-rouge">기본형 int</code><br /></li>
+  <li>5, 4, 3, 2, 1, 0 : <code class="highlighter-rouge">autoboxing</code> <em>덕분에 가능</em><br /></li>
+  <li><code class="highlighter-rouge">list.add(5); -autoboxing→ list.add(new Integer(5));</code><br /></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>list [5, 4, 3, 2, 1, 0]
+</code></pre></div></div>
+
+<p><img src="assets/built/postsImages/TheCornerstoneOfJava/2021-06-19-11cornerstoneJava3/img_6.png" width="100%" align="left" /><br />
+<br /></p>
+
+<h3 id="-sublist">▶ subList()</h3>
+<h6 id="-새로운-arraylist에-list1--list3에-있는-내용-담기">▷ 새로운 ArrayList에 list[1] ~ list[3]에 있는 내용 담기</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ArrayList</span> <span class="n">list2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">(</span><span class="n">list</span><span class="o">.</span><span class="na">subList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">4</span><span class="o">));</span>
+
+<span class="c1">// 두 줄로 풀어쓰면</span>
+<span class="n">List</span> <span class="n">sub</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">subList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">4</span><span class="o">);</span> <span class="c1">// sub[4, 3, 2]는 읽기만 가능</span>
+<span class="n">ArrayList</span> <span class="n">list2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">(</span><span class="n">sub</span><span class="o">);</span> <span class="c1">// sub[4, 3, 2]와 같은 내용의 ArrayList 생성</span>
+</code></pre></div></div>
+<ul>
+  <li><code class="highlighter-rouge">1, 4 : 1 ≤ 범위 &lt; 4 : 1 ~ 3</code><br /></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>list2 = [4, 3, 2]
+</code></pre></div></div>
+
+<p><img src="assets/built/postsImages/TheCornerstoneOfJava/2021-06-19-11cornerstoneJava3/img_7.png" width="100%" align="left" /><br />
+<br /></p>
+
+<h3 id="-sort">▶ sort()</h3>
+<h6 id="-list-list2를-오름차순으로-정렬">▷ list, list2를 오름차순으로 정렬</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Collections</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+<span class="n">Collections</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">list2</span><span class="o">);</span>
+</code></pre></div></div>
+<ul>
+  <li>Collection ≠ Collentions<br /></li>
+  <li>Collection : 인터페이스 ≠ Collentions : 유틸 클래스<br /></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>list [0, 1, 2, 3, 4, 5]
+list2 [2, 3, 4]
+</code></pre></div></div>
+<p><br /></p>
+
+<h3 id="-containsall">▶ containsAll()</h3>
+<h6 id="-list-list2의-요소가-다-들어있니">▷ list! list2의 요소가 다 들어있니?</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">boolean</span> <span class="n">ask</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">containsAll</span><span class="o">(</span><span class="n">list2</span><span class="o">);</span>
+
+<span class="c1">// console</span>
+<span class="kc">true</span> <span class="c1">// 응, 다 들어있어,,</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h3 id="-add-1">▶ add()</h3>
+<h6 id="-list2에-b-c-추가">▷ list2에 “B”, “C” 추가</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">list2</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"B"</span><span class="o">);</span>
+<span class="n">list2</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"C"</span><span class="o">);</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">list2</span> <span class="o">[</span><span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="n">B</span><span class="o">,</span> <span class="n">C</span><span class="o">]</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h3 id="-add-2">▶ add()</h3>
+<h6 id="-list23에-a-추가">▷ list2[3]에 “A” 추가</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">list2</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="s">"A"</span><span class="o">);</span>
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>list2 [2, 3, 4, A, B, C]
+</code></pre></div></div>
+<p><img src="assets/built/postsImages/TheCornerstoneOfJava/2021-06-19-11cornerstoneJava3/img_8.png" width="100%" align="left" /><br />
+<br /></p>
+
+<h3 id="-set">▶ set()</h3>
+<h6 id="-list23에-a--aa">▷ list2[3]에 “A” → “AA”</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">list2</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="s">"AA"</span><span class="o">);</span>
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>list2 [2, 3, 4, AA, B, C]
+</code></pre></div></div>
+<p><br /></p>
+
+<h3 id="-add-3">▶ add()</h3>
+<h6 id="-list0에-1-추가">▷ list[0]에 “1” 추가</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="s">"1"</span><span class="o">);</span>
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>list [1, 0, 1, 2, 3, 4, 5]
+</code></pre></div></div>
+<ul>
+  <li><em>뭐가 “1”이고, 뭐가 1인지 모르겠음</em><br />
+<br /></li>
+</ul>
+
+<h3 id="-indexof">▶ indexOf()</h3>
+<h6 id="-list에-1이-어디에-들어있니">▷ list에 “1”이 어디에 들어있니?</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">indexOfAsk</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">indexOf</span><span class="o">(</span><span class="s">"1"</span><span class="o">);</span>
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"1" = list[0]
+</code></pre></div></div>
+
+<h6 id="-list에-1은-어디에-들어있니">▷ list에 1은 어디에 들어있니?</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">indexOfAsk</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">indexOf</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1 = list[2]
+</code></pre></div></div>
+<p><br /></p>
+
+<h3 id="-remove">▶ remove()</h3>
+<h6 id="-list0에-1-삭제">▷ list[0]에 “1” 삭제</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">list</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>list [0, 1, 2, 3, 4, 5]
+</code></pre></div></div>
+
+<h6 id="-list에-1-삭제">▷ list에 1 삭제</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">list</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="k">new</span> <span class="n">Integer</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>list [0, 2, 3, 4, 5]
+</code></pre></div></div>
+
+<h6 id="-remove1-vs-removenew-integer1">▷ <code class="highlighter-rouge">remove(1)</code> vs <code class="highlighter-rouge">remove(new Integer(1))</code></h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">list</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+</code></pre></div></div>
+<p><img src="assets/built/postsImages/TheCornerstoneOfJava/2021-06-19-11cornerstoneJava3/img_9.png" width="100%" align="left" /><br /></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">list</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="k">new</span> <span class="n">Integer</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+</code></pre></div></div>
+<p><img src="assets/built/postsImages/TheCornerstoneOfJava/2021-06-19-11cornerstoneJava3/img_10.png" width="100%" align="left" /><br />
+<br /></p>
+
+<h3 id="-retainall">▶ retainAll()</h3>
+<h6 id="-list에서-list2와-겹치는-부분-외-모두-삭제">▷ list에서 list2와 겹치는 부분 외 모두 삭제</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">list</span><span class="o">.</span><span class="na">retainAll</span><span class="o">(</span><span class="n">list2</span><span class="o">);</span>
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>list [0, 1, 2, 3, 4, 5] -retainAll→ list2 [2, 3, 4, AA, B, C]
+
+list [2, 3, 4]
+</code></pre></div></div>
+<p><br /></p>
+
+<h3 id="-size-contains-remove">▶ size(), contains(), remove()</h3>
+<h6 id="-list에서-list2와-겹치는-부분-삭제">▷ list에서 list2와 겹치는 부분 삭제</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">--)</span> <span class="o">{</span>
+
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"list2 "</span> <span class="o">+</span> <span class="n">list2</span> <span class="o">+</span> <span class="s">" → "</span> <span class="o">+</span> <span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">)</span> <span class="o">+</span> <span class="s">"?"</span><span class="o">);</span>
+    
+    <span class="k">if</span> <span class="o">(</span><span class="n">list2</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">)))</span> <span class="o">{</span>
+    
+        <span class="kt">int</span> <span class="n">find2</span> <span class="o">=</span> <span class="n">list2</span><span class="o">.</span><span class="na">indexOf</span><span class="o">(</span><span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
+        <span class="n">list2</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">find2</span><span class="o">,</span> <span class="s">"☆"</span> <span class="o">+</span> <span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">" → "</span> <span class="o">+</span> <span class="n">list2</span><span class="o">);</span>
+        <span class="n">list2</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">find2</span><span class="o">,</span> <span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
+        
+        <span class="kt">int</span> <span class="n">find</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">indexOf</span><span class="o">(</span><span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
+        <span class="n">Object</span> <span class="n">j</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+        <span class="n">list</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">find</span><span class="o">,</span> <span class="s">"★"</span> <span class="o">+</span> <span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
+        
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"list "</span> <span class="o">+</span> <span class="n">list</span> <span class="o">+</span> <span class="s">"-remove-"</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="s">"→ "</span><span class="o">);</span>
+        <span class="n">list</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">" → not_found"</span><span class="o">);</span>
+    
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"\n\n"</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"∴ list "</span> <span class="o">+</span> <span class="n">list</span><span class="o">);</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// console</span>
+
+<span class="n">list2</span> <span class="o">[</span><span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="n">AA</span><span class="o">,</span> <span class="n">B</span><span class="o">,</span> <span class="n">C</span><span class="o">]</span> <span class="err">→</span> <span class="mi">5</span><span class="o">?</span> <span class="err">→</span> <span class="n">not_found</span>
+
+<span class="n">list2</span> <span class="o">[</span><span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="n">AA</span><span class="o">,</span> <span class="n">B</span><span class="o">,</span> <span class="n">C</span><span class="o">]</span> <span class="err">→</span> <span class="mi">4</span><span class="o">?</span> <span class="err">→</span> <span class="o">[</span><span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="err">☆</span><span class="mi">4</span><span class="o">,</span> <span class="n">AA</span><span class="o">,</span> <span class="n">B</span><span class="o">,</span> <span class="n">C</span><span class="o">]</span>
+<span class="n">list</span> <span class="o">[</span><span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="err">★</span><span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">]-</span><span class="n">remove</span><span class="o">-</span><span class="mi">4</span><span class="err">→</span> <span class="o">[</span><span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">5</span><span class="o">]</span>
+
+<span class="n">list2</span> <span class="o">[</span><span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="n">AA</span><span class="o">,</span> <span class="n">B</span><span class="o">,</span> <span class="n">C</span><span class="o">]</span> <span class="err">→</span> <span class="mi">3</span><span class="o">?</span> <span class="err">→</span> <span class="o">[</span><span class="mi">2</span><span class="o">,</span> <span class="err">☆</span><span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="n">AA</span><span class="o">,</span> <span class="n">B</span><span class="o">,</span> <span class="n">C</span><span class="o">]</span>
+<span class="n">list</span> <span class="o">[</span><span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="err">★</span><span class="mi">3</span><span class="o">,</span> <span class="mi">5</span><span class="o">]-</span><span class="n">remove</span><span class="o">-</span><span class="mi">3</span><span class="err">→</span> <span class="o">[</span><span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">5</span><span class="o">]</span>
+
+<span class="n">list2</span> <span class="o">[</span><span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="n">AA</span><span class="o">,</span> <span class="n">B</span><span class="o">,</span> <span class="n">C</span><span class="o">]</span> <span class="err">→</span> <span class="mi">2</span><span class="o">?</span> <span class="err">→</span> <span class="o">[</span><span class="err">☆</span><span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="n">AA</span><span class="o">,</span> <span class="n">B</span><span class="o">,</span> <span class="n">C</span><span class="o">]</span>
+<span class="n">list</span> <span class="o">[</span><span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="err">★</span><span class="mi">2</span><span class="o">,</span> <span class="mi">5</span><span class="o">]-</span><span class="n">remove</span><span class="o">-</span><span class="mi">2</span><span class="err">→</span> <span class="o">[</span><span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">5</span><span class="o">]</span>
+
+<span class="n">list2</span> <span class="o">[</span><span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="n">AA</span><span class="o">,</span> <span class="n">B</span><span class="o">,</span> <span class="n">C</span><span class="o">]</span> <span class="err">→</span> <span class="mi">1</span><span class="o">?</span> <span class="err">→</span> <span class="n">not_found</span>
+
+<span class="n">list2</span> <span class="o">[</span><span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="n">AA</span><span class="o">,</span> <span class="n">B</span><span class="o">,</span> <span class="n">C</span><span class="o">]</span> <span class="err">→</span> <span class="mi">0</span><span class="o">?</span> <span class="err">→</span> <span class="n">not_found</span>
+
+<span class="err">∴</span> <span class="n">list</span> <span class="o">[</span><span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">5</span><span class="o">]</span>
+</code></pre></div></div>
+
+<p><br /><a id="Verse 4"></a></p>
+
+<p><br /></p>
+<h2 id="ch11---10-arraylist에-저장-된-객체의-삭제-과정-1">Ch11 - 10. ArrayList에 저장 된 객체의 삭제 과정</h2>
+<hr />
+<h3 id="-arraylist에-저장-된-data2를-삭제하는-과정">▶ ArrayList에 저장 된 <code class="highlighter-rouge">data[2]</code>를 삭제하는 과정</h3>
+<h6 id="-삭제-호출">▷ 삭제 호출</h6>
+<ul>
+  <li><code class="highlighter-rouge">list.remove(2);</code><br /></li>
+</ul>
+
+<h6 id="-삭제-할-데이터의-next-data를-한-칸씩-위로-복사">▷ 삭제 할 데이터의 next data를 한 칸씩 위로 복사</h6>
+<h6 id="-마지막-데이터를-삭제하는-경우-복사-필요-없음">▷ 마지막 데이터를 삭제하는 경우, 복사 필요 없음</h6>
+<ul>
+  <li><code class="highlighter-rouge">System.arraycopy(data, 3, data, 2, 2);</code><br /></li>
+  <li><code class="highlighter-rouge">data[3]에서 data[2]로 2개의 데이터 복사</code><br /></li>
+</ul>
+
+<h6 id="-삭제-할-데이터를-next-data를-복사-해-덮어쓰기">▷ 삭제 할 데이터를 next data를 복사 해 덮어쓰기</h6>
+<h6 id="-데이터가-모두-한-칸씩-이동덮어쓰기-완료">▷ 데이터가 모두 한 칸씩 이동(덮어쓰기 완료)</h6>
+<h6 id="-마지막-데이터중복는-null">▷ 마지막 데이터(중복)는 null</h6>
+<ul>
+  <li><code class="highlighter-rouge">data[size - 1] = null;</code><br />
+  <em>size - 1 : 마지막 데이터</em><br /></li>
+</ul>
+
+<h6 id="-데이터가-삭제되어-데이터의-개수가-줄어듦--size-감소">▷ 데이터가 삭제되어 데이터의 개수가 줄어듦 : size 감소</h6>
+<ul>
+  <li><code class="highlighter-rouge">size--;</code><br />
+<img src="assets/built/postsImages/TheCornerstoneOfJava/2021-06-19-11cornerstoneJava3/img_11.png" width="100%" align="left" /><br /></li>
+</ul>
+
+<p><br /></p>
+<h3 id="-arraylist에-저장-된-첫-번째-객체-부터-삭제하는-경우">▶ ArrayList에 저장 된 첫 번째 객체 부터 삭제하는 경우</h3>
+<h6 id="-배열-복사-발생">▷ 배열 복사 발생</h6>
+<h6 id="-복사된-게-남아서-완전히-삭제-안-됨">▷ 복사된 게 남아서 완전히 삭제 안 됨</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span>
+    <span class="n">list</span><span class="o">.</span><span class="na">remoeve</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+</code></pre></div></div>
+<p><img src="assets/built/postsImages/TheCornerstoneOfJava/2021-06-19-11cornerstoneJava3/img_12.png" width="100%" align="left" /><br /></p>
+
+<p><br /></p>
+<h3 id="-arraylist에-저장-된-마지막-객체-부터-삭제하는-경우">▶ ArrayList에 저장 된 마지막 객체 부터 삭제하는 경우</h3>
+<h6 id="-배열-복사-발생x">▷ 배열 복사 발생X</h6>
+<h6 id="-완전히-삭제-됨">▷ 완전히 삭제 됨</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">size</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">--)</span>
+    <span class="n">list</span><span class="o">.</span><span class="na">remoeve</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+</code></pre></div></div>
+<p><img src="assets/built/postsImages/TheCornerstoneOfJava/2021-06-19-11cornerstoneJava3/img_13.png" width="100%" align="left" /><br /></p>
+
+<p><br /><a id="Verse 5"></a></p>
+
+<p><br /></p>
+<h2 id="ch11---11-java-api-소스보기-1">Ch11 - 11. Java API 소스보기</h2>
+<hr />
+<h3 id="-java-api-소스보는-방법">▶ Java API 소스보는 방법</h3>
+<h6 id="-폴더">▷ 폴더</h6>
+<p><img src="assets/built/postsImages/TheCornerstoneOfJava/2021-06-19-11cornerstoneJava3/img_14.png" width="100%" align="left" /><br /></p>
+
+<h6 id="-이클립스">▷ 이클립스</h6>
+<p><img src="assets/built/postsImages/TheCornerstoneOfJava/2021-06-19-11cornerstoneJava3/img_15.png" width="100%" align="left" /><br /></p>
+
+                </div>
+            </section>
+
+            <!-- Email subscribe form at the bottom of the page
+            
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Subscribe to 100'Log</h3>
+                    <p>Get the latest posts delivered right to your inbox</p>
+                    <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+
+                </section>
+            
+             -->
+
+            <footer class="post-full-footer">
+                <!-- Everything inside the #author tags pulls data from the author -->
+                <!-- #author-->
+                
+                    
+                        <section class="author-card">
+                            
+                                <img class="author-profile-image" src="/assets/built/images/author-logo.png" alt="JungRan-Baek" />
+                            
+                            <section class="author-card-content">
+                                <h4 class="author-card-name"><a href="/author/JungRan-Baek">JungRan-Baek</a></h4>
+                                
+                                    <p></p>
+                                
+                            </section>
+                        </section>
+                        <div class="post-full-footer-right">
+                            <a class="author-card-button" href="/author/JungRan-Baek">Read More</a>
+                        </div>
+                    
+                
+                <!-- /author  -->
+            </footer>
+
+            <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                        var disqus_config = function () {
+                            this.page.url = 'https://100jran.github.io/11cornerstoneJava3';
+                            this.page.identifier = '/11cornerstoneJava3';
+                            this.page.title = 'Ch11-7~11. ArrayList';
+                        };
+                        (function() {
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://100jran-github-io.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                </section>
+            
+
+        </article>
+
+    </div>
+</main>
+
+<!-- Links to Previous/Next posts -->
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+                
+                
+                
+                
+                    <article class="read-next-card"
+                        
+                            style="background-image: url(/assets/built/images/back.jpg)"
+                        
+                    >
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash; 100'Log &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title"><a href="/tag/javajungsuk/">Javajungsuk</a></h3>
+                            
+                        </header>
+                        <div class="read-next-divider">cd<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/11cornerstoneJava16">Ch11-52~56. Collections</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/11cornerstoneJava15">Ch11-48~51. HashMap</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/11cornerstoneJava14">Ch11-46~47. HashMap</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/tag/javajungsuk/">
+                                
+                                    See all 127 posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
+            
+
+            <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/11cornerstoneJava4">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/thecornerstoneofjavaCh11.jpg)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/11cornerstoneJava4">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Javajungsuk</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">Ch11-12~14. LinkedList</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p></p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/author-logo.png" alt="JungRan-Baek" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/JungRan-Baek/">JungRan-Baek</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/11cornerstoneJava2">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/thecornerstoneofjavaCh11.jpg)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/11cornerstoneJava2">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Javajungsuk</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">Ch11-3~6. 인터페이스</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p></p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/author-logo.png" alt="JungRan-Baek" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/JungRan-Baek/">JungRan-Baek</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+        </div>
+    </div>
+</aside>
+
+<!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="https://100jran.github.io/">
+            
+            <span>100'Log</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">Ch11-7~11. ArrayList</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=Ch11-7~11.+ArrayList&amp;url=https://100jran.github.io11cornerstoneJava3"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://100jran.github.io11cornerstoneJava3"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://100jran.github.io/">100'Log</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    
+                    
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email search modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                <h1 class="subscribe-overlay-title">Search 100'Log</h1>
+                <p class="subscribe-overlay-description">
+                    lunr.js를 이용한 posts 검색 </p>
+                <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+
+            </div>
+        </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>
