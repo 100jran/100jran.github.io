@@ -1,0 +1,1948 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>Ch12-27~33. @</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+    <!-- syntax.css 추가 -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+    <!-- 웹폰트 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="" />
+    <link rel="shortcut icon" href="https://100jran.github.io/assets/built/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://100jran.github.io/12cornerstoneJava11" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="100'Log" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ch12-27~33. @" />
+    <meta property="og:description" content="자바의 정석 기초편 0. 목차 Chapter12. 지네릭스, 열거형, 애너테이션 Ch12 - 27. @FunctionalInteface Ch12 - 28. @SuppressWarnings Ch11 - 29. 메타 애너테이션 Ch11 - 30. @Target Ch11 - 31. @Retention Ch11 - 32. @Documented, @Inherited Ch11 - 33. @Repeatable Ch12 - 27. @FunctionalInteface ▶ @FunctionalInteface란? ▷ 함수형 인터페이스에 붙이면, 컴파일러가" />
+    <meta property="og:url" content="https://100jran.github.io/12cornerstoneJava11" />
+    <meta property="og:image" content="https://100jran.github.io/assets/built/images/thecornerstoneofjavaCh12.jpg" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2021-06-20T09:00:10+09:00" />
+    <meta property="article:modified_time" content="2021-06-20T09:00:10+09:00" />
+    <meta property="article:tag" content="Javajungsuk" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ch12-27~33. @" />
+    <meta name="twitter:description" content="자바의 정석 기초편 0. 목차 Chapter12. 지네릭스, 열거형, 애너테이션 Ch12 - 27. @FunctionalInteface Ch12 - 28. @SuppressWarnings Ch11 - 29. 메타 애너테이션 Ch11 - 30. @Target Ch11 - 31. @Retention Ch11 - 32. @Documented, @Inherited Ch11 - 33. @Repeatable Ch12 - 27. @FunctionalInteface ▶ @FunctionalInteface란? ▷ 함수형 인터페이스에 붙이면, 컴파일러가" />
+    <meta name="twitter:url" content="https://100jran.github.io/" />
+    <meta name="twitter:image" content="https://100jran.github.io/assets/built/images/thecornerstoneofjavaCh12.jpg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="100'Log" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Javajungsuk" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "100'Log",
+        "logo": "https://100jran.github.io/"
+    },
+    "url": "https://100jran.github.io/12cornerstoneJava11",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://100jran.github.io/assets/built/images/thecornerstoneofjavaCh12.jpg",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://100jran.github.io/12cornerstoneJava11"
+    },
+    "description": "자바의 정석 기초편 0. 목차 Chapter12. 지네릭스, 열거형, 애너테이션 Ch12 - 27. @FunctionalInteface Ch12 - 28. @SuppressWarnings Ch11 - 29. 메타 애너테이션 Ch11 - 30. @Target Ch11 - 31. @Retention Ch11 - 32. @Documented, @Inherited Ch11 - 33. @Repeatable Ch12 - 27. @FunctionalInteface ▶ @FunctionalInteface란? ▷ 함수형 인터페이스에 붙이면, 컴파일러가"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="Ch12-27~33. @" href="/feed.xml" />
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://100jran.github.io/">100'Log</a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <!-- about
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    -->
+    <!--
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/java/">java</a></li>
+    -->
+    <!-- javascript
+    <li class="nav-python" role="menuitem"><a href="/tag/javaScript/">javaScript</a></li>
+    -->
+    <!--
+    <li class="nav-python" role="menuitem"><a href="/tag/java practice/">java practice</a></li>
+    -->
+    <!-- til
+    <li class="nav-python" role="menuitem"><a href="/tag/til/">til</a></li>
+    -->
+    <li class="nav-archive" role="menuitem">
+        <a href="/archive.html">Posts</a>
+    </li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/author_archive.html">Tag</a>
+    </li>
+  </ul>
+
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Search</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-javajungsuk post tag-javajungsuk ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="20 June 2021">20 June 2021</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/javajungsuk/'>JAVAJUNGSUK</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">Ch12-27~33. @</h1>
+            </header>
+
+            <!-- 포스팅 했을 때 상단 이미지
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/thecornerstoneofjavaCh12.jpg)">
+            </figure>
+            
+             -->
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <p><a href="https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp">자바의 정석 기초편</a></p>
+
+<h1 id="0-목차">0. 목차</h1>
+<hr />
+<p><br /></p>
+<blockquote>
+  <h2 id="chapter12-지네릭스-열거형-애너테이션"><span style="color:orangered">Chapter12. 지네릭스, 열거형, 애너테이션</span><br /></h2>
+  <h4 id="ch12---27-functionalinteface">Ch12 - 27. <a href="#Verse 1">@FunctionalInteface</a><br /></h4>
+  <h4 id="ch12---28-suppresswarnings">Ch12 - 28. <a href="#Verse 2">@SuppressWarnings</a><br /></h4>
+  <h4 id="ch11---29-메타-애너테이션">Ch11 - 29. <a href="#Verse 3">메타 애너테이션</a><br /></h4>
+  <h4 id="ch11---30-target">Ch11 - 30. <a href="#Verse 4">@Target</a><br /></h4>
+  <h4 id="ch11---31-retention">Ch11 - 31. <a href="#Verse 5">@Retention</a><br /></h4>
+  <h4 id="ch11---32-documented-inherited">Ch11 - 32. <a href="#Verse 6">@Documented, @Inherited</a><br /></h4>
+  <h4 id="ch11---33-repeatable">Ch11 - 33. <a href="#Verse 7">@Repeatable</a><br /></h4>
+</blockquote>
+
+<p><br /><a id="Verse 1"></a></p>
+
+<p><br /></p>
+<h2 id="ch12---27-functionalinteface-1">Ch12 - 27. @FunctionalInteface</h2>
+<hr />
+<h3 id="-functionalinteface란">▶ @FunctionalInteface란?</h3>
+<h6 id="-함수형-인터페이스에-붙이면-컴파일러가-올바르게-작성했는지-체크">▷ 함수형 인터페이스에 붙이면, 컴파일러가 올바르게 작성했는지 체크</h6>
+<h6 id="-컴파일러가-사용하는-애너테이션">▷ 컴파일러가 사용하는 애너테이션</h6>
+<h6 id="-함수형-인터페이스에는-하나의-추상-메서드만-가져야-한다는-제약有">▷ 함수형 인터페이스에는 하나의 추상 메서드만 가져야 한다는 제약有</h6>
+<p><br /></p>
+
+<h3 id="-functionalinteface-사용-예시">▶ @FunctionalInteface 사용 예시</h3>
+<h6 id="-추상-메서드임을-알려주는-기능도-있긴-함">▷ 추상 메서드임을 알려주는 기능도 있긴 함</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@FunctionalInteface</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Runnable</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">();</span> <span class="c1">// 추상 메서드</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h6 id="-함수형-인터페이스에-2개의-추상-메서드를-가졌을-때">▷ 함수형 인터페이스에 2개의 추상 메서드를 가졌을 때</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@FunctionalInteface</span>
+<span class="kd">interface</span> <span class="nc">Testable</span> <span class="o">{</span> <span class="c1">// 에러</span>
+    <span class="kt">void</span> <span class="nf">test</span><span class="o">();</span>
+    <span class="kt">void</span> <span class="nf">check</span><span class="o">();</span> <span class="c1">// check를 만드는 순간 Testable에러, 2개의 추상 메서드 안됨</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a id="Verse 2"></a></p>
+
+<p><br /></p>
+<h2 id="ch12---28-suppresswarnings-1">Ch12 - 28. @SuppressWarnings</h2>
+<hr />
+<h3 id="-suppresswarnings란">▶ @SuppressWarnings란?</h3>
+<h6 id="-컴파일러의-경고-메서지가-나타나지-않게-억제">▷ 컴파일러의 경고 메서지가 나타나지 않게 억제</h6>
+<h6 id="-컴파일러가-사용하는-애너테이션-1">▷ 컴파일러가 사용하는 애너테이션</h6>
+<h6 id="-괄호-안에-억제하고자하는-경고의-종류를-문자열로-지정">▷ 괄호() 안에 억제하고자하는 경고의 종류를 문자열로 지정</h6>
+<p><br /></p>
+
+<h3 id="-suppresswarnings-사용-예시">▶ @SuppressWarnings 사용 예시</h3>
+<h6 id="-컴파일러가-경고--애너테이션--컴파일러에게-그-경고-확인-함-괜찮음">▷ 컴파일러가 경고 → 애너테이션 -컴파일러에게→ 그 경고 확인 함 괜찮음</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@SuppressWarnings</span><span class="o">(</span><span class="s">"unchecked"</span><span class="o">)</span> <span class="c1">// 지네릭스와 관련된 경고를 억제</span>
+<span class="n">ArrayList</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">();</span> <span class="c1">// 원시 타입, 지네릭 타입을 지정하지 않음, list 사용하면 unchecked 경고 발생</span>
+<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">obj</span><span class="o">);</span> <span class="c1">// 여기서 unchecked 경고 발생 -했는데→ 애너테이션 때문에 경고창 안뜸</span>
+</code></pre></div></div>
+
+<h6 id="-둘-이상의-경고를-동시에-억제하려면-괄호-에-문자열로-지정">▷ 둘 이상의 경고를 동시에 억제하려면 괄호({ })에 문자열로 지정</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@SuppressWarnings</span><span class="o">({</span><span class="s">"unchecked"</span><span class="o">,</span> <span class="s">"deprecation"</span><span class="o">,</span> <span class="s">"varargs"</span><span class="o">})</span>
+</code></pre></div></div>
+
+<h6 id="-xlint-옵션으로-컴파일-시-경고-메시지-확인-가능">▷ ‘Xlint’ 옵션으로 컴파일 시, 경고 메시지 확인 가능</h6>
+<h6 id="-괄호-안이-경고-종류">▷ 괄호[] 안이 경고 종류</h6>
+<p><code class="highlighter-rouge">c:\jdk1.8\work\ch12&gt;javac -Xlint AnnotationTest.java</code><br />
+<code class="highlighter-rouge">AnnotationTest.java:15: warning: [rawtypes] found raw type : List</code><br />
+    <code class="highlighter-rouge">public static void sort(List list) {</code><br />
+    <code class="highlighter-rouge">...</code><br />
+<code class="highlighter-rouge">}</code><br /></p>
+<ul>
+  <li><em>rawtypes 경고를 억제하려면?</em><br />
+    <ul>
+      <li><code class="highlighter-rouge">@SuppressWarnings</code>에서 <code class="highlighter-rouge">rawtypes</code> 추가<br />
+<code class="highlighter-rouge">@SuppressWarnings({"unchecked", "deprecation", "varargs", "rawtypes"})</code><br /></li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /><a id="Verse 3"></a></p>
+
+<p><br /></p>
+<h2 id="ch12---29-메타-애너테이션">Ch12 - 29. 메타 애너테이션</h2>
+<hr />
+<h3 id="-메타-애너테이션이란">▶ 메타 애너테이션이란?</h3>
+<h6 id="-애너테이션을-만들-때-사용하는-애너테이션">▷ 애너테이션을 만들 때 사용하는 애너테이션</h6>
+<h6 id="-즉-애너테이션을-위한-애너테이션">▷ 즉, 애너테이션을 위한 애너테이션</h6>
+<h6 id="-메타-애너테이션은-javalangannotaion-패키지에-포함">▷ 메타 애너테이션은 java.lang.annotaion 패키지에 포함</h6>
+<p><br /></p>
+
+<p><br /><a id="Verse 4"></a></p>
+
+<p><br /></p>
+<h2 id="ch12---30-target">Ch12 - 30. @Target</h2>
+<hr />
+<h3 id="-target이란">▶ @Target이란?</h3>
+<h6 id="-애너테이션이-적용가능한-대상을-지정하는데-사용">▷ 애너테이션이 적용가능한 대상을 지정하는데 사용</h6>
+<ul>
+  <li><em>SuppressWarnings의 Code</em><br />
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nd">@Target</span> <span class="o">({</span> <span class="n">TYPE</span><span class="o">,</span> <span class="n">FIELD</span><span class="o">,</span> <span class="n">METHOD</span><span class="o">,</span> <span class="n">PARAMETER</span><span class="o">,</span> <span class="n">CONSTRUCTOR</span><span class="o">,</span> <span class="n">LOCAL_VARIABLE</span> <span class="o">})</span>
+  <span class="nd">@Retention</span> <span class="o">(</span><span class="n">RetentionPolicy</span><span class="o">.</span><span class="na">SOURCE</span><span class="o">)</span>
+  <span class="nd">@public</span> <span class="nd">@interface</span> <span class="n">SuppressWarnings</span> <span class="o">{</span>
+      <span class="n">String</span><span class="o">[]</span> <span class="nf">value</span><span class="o">();</span>
+  <span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="-대상-타입">▶ 대상 타입</h3>
+<h6 id="-annotaion_type">▷ ANNOTAION_TYPE</h6>
+<ul>
+  <li><em>애너테이션</em><br /></li>
+</ul>
+
+<h6 id="-constructor">▷ CONSTRUCTOR</h6>
+<ul>
+  <li><em>생성자</em><br /></li>
+</ul>
+
+<h6 id="-field">▷ FIELD</h6>
+<ul>
+  <li><em>필드(enum상수, 멤버변수-cv, iv)</em><br /></li>
+</ul>
+
+<h6 id="-local_variable">▷ LOCAL_VARIABLE</h6>
+<ul>
+  <li><em>지역변수</em><br /></li>
+</ul>
+
+<h6 id="-method">▷ METHOD</h6>
+<ul>
+  <li><em>메서드</em><br /></li>
+</ul>
+
+<h6 id="-package">▷ PACKAGE</h6>
+<ul>
+  <li><em>패키지</em><br /></li>
+</ul>
+
+<h6 id="-parameter">▷ PARAMETER</h6>
+<ul>
+  <li><em>매개 변수</em><br /></li>
+</ul>
+
+<h6 id="-type">▷ TYPE</h6>
+<ul>
+  <li><em>타입(클래스, 인터페이스, enum)</em><br /></li>
+</ul>
+
+<h6 id="-type_parameter">▷ TYPE_PARAMETER</h6>
+<ul>
+  <li><em>타입 매개 변수(JDK1.8)</em><br /></li>
+</ul>
+
+<h6 id="-type_use">▷ TYPE_USE</h6>
+<ul>
+  <li><em>타입이 사용되는 모든 곳(JDK1.8)</em><br />
+<br /></li>
+</ul>
+
+<h3 id="-target-사용-예시">▶ @Target 사용 예시</h3>
+<h6 id="-myannotation-적용-대상-설정">▷ @MyAnnotation 적용 대상 설정</h6>
+<h6 id="-myannotation-정의">▷ @MyAnnotation 정의</h6>
+<h6 id="-myannotation-사용">▷ @MyAnnotation 사용</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">static</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">annotation</span><span class="o">.</span><span class="na">ElementType</span><span class="o">.*;</span>
+
+<span class="nd">@Target</span> <span class="o">({</span> <span class="n">FIELD</span><span class="o">,</span> <span class="n">TYPE</span><span class="o">,</span> <span class="n">TYPE_USE</span> <span class="o">})</span> <span class="c1">// @MyAnnotation 적용 대상</span>
+<span class="kd">public</span> <span class="nd">@interface</span> <span class="n">MyAnnotation</span> <span class="o">{</span> <span class="o">}</span> <span class="c1">// @MyAnnotation을 정의</span>
+
+<span class="nd">@MyAnnotation</span>
+<span class="kd">class</span> <span class="nc">MyClass</span> <span class="o">{</span> <span class="c1">// @MyAnnotation 적용 대상 : TYPE</span>
+    <span class="nd">@MyAnnotation</span> <span class="c1">// @MyAnnotation 적용 대상 : FIELD</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="o">;</span>
+    
+    <span class="nd">@MyAnnotaion</span> <span class="c1">// @MyAnnotation 적용 대상 : TYPE_USE</span>
+    <span class="n">MyClass</span> <span class="n">mc</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a id="Verse 5"></a></p>
+
+<p><br /></p>
+<h2 id="ch12---31-retention">Ch12 - 31. @Retention</h2>
+<hr />
+<h3 id="-retention이란">▶ @Retention이란?</h3>
+<h6 id="-애너테이션이-유지되는-범위를-지정하는-데-사용">▷ 애너테이션이 유지되는 범위를 지정하는 데 사용</h6>
+<p><br /></p>
+
+<h3 id="-유지-정책">▶ 유지 정책</h3>
+<h6 id="-source">▷ SOURCE</h6>
+<ul>
+  <li><em>소스 파일에만 존재</em><br /></li>
+  <li><em>클래스 파일에는 존재하지 않음</em><br /></li>
+  <li><em><strong>컴파일러에 의해 사용되는 애너테이션의 유지정책</strong></em><br />
+    <ul>
+      <li><em>@Override의 Code</em><br />
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nd">@Target</span><span class="o">(</span><span class="n">ElementType</span><span class="o">.</span><span class="na">METHOD</span><span class="o">)</span>
+  <span class="nd">@Retention</span><span class="o">(</span><span class="n">RetentionPolicy</span><span class="o">.</span><span class="na">SOURCE</span><span class="o">)</span>
+  <span class="kd">public</span> <span class="nd">@interface</span> <span class="n">Override</span> <span class="o">{</span>
+  <span class="o">}</span>
+</code></pre></div>        </div>
+        <ul>
+          <li><code class="highlighter-rouge">SOURCE</code>로 지정 되어있음<br />
+<em><code class="highlighter-rouge">@Override는 컴파일러가 오버라이딩 체크할 때까지만 사용</code></em><br />
+<em><code class="highlighter-rouge">그래서 클래스 파일에는 남아있지 않음</code></em><br /></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h6 id="-runtime">▷ RUNTIME</h6>
+<ul>
+  <li><em>클래스 파일에 존재</em><br /></li>
+  <li><em>실행 시, 사용 가능</em><br /></li>
+  <li><em>실행 시, 사용 가능한 애너테이션의 정책</em><br />
+    <ul>
+      <li><em>@FunctionalInterface Code</em><br />
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nd">@Documented</span>
+  <span class="nd">@Retention</span><span class="o">(</span><span class="n">RetentionPolicy</span><span class="o">.</span><span class="na">RUNTIME</span><span class="o">)</span>
+  <span class="nd">@Target</span><span class="o">(</span><span class="n">ElementType</span><span class="o">.</span><span class="na">TYPE</span><span class="o">)</span>
+  <span class="kd">public</span> <span class="nd">@interface</span> <span class="n">FunctionalInterface</span> <span class="o">{</span> <span class="o">}</span>
+</code></pre></div>        </div>
+        <ul>
+          <li><code class="highlighter-rouge">RUNTIME</code>로 지정 되어있음<br />
+<em><code class="highlighter-rouge">@FunctionalInterface는 실행 시 까지 FunctionalInterface의 작성 확인</code></em><br />
+<em><code class="highlighter-rouge">그래서 클래스 파일에도 살아있음</code></em><br /></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h6 id="-class">▷ CLASS</h6>
+<ul>
+  <li><em>클래스 파일에 존재</em><br /></li>
+  <li><em>실행 시, 사용 불가</em><br /></li>
+  <li><em>기본값</em><br /></li>
+</ul>
+
+<p><br /><a id="Verse 6"></a></p>
+
+<p><br /></p>
+<h2 id="ch12---32-documented-inherited">Ch12 - 32. @Documented, @Inherited</h2>
+<hr />
+<h3 id="-documented란">▶ @Documented란?</h3>
+<h6 id="-애너테이션-정보가-javadoc으로-작성-된-문서에-포함되게-함">▷ 애너테이션 정보가 javadoc으로 작성 된 문서에 포함되게 함</h6>
+<h6 id="-javadoc으로-작성한-문서에-포함시키려면-documented를-붙임">▷ <code class="highlighter-rouge">javadoc</code>으로 작성한 문서에 포함시키려면 <code class="highlighter-rouge">@Documented</code>를 붙임</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Documented</span>
+<span class="nd">@Retention</span><span class="o">(</span><span class="n">RetentionPolicy</span><span class="o">.</span><span class="na">RUNTIME</span><span class="o">)</span>
+<span class="nd">@Target</span><span class="o">(</span><span class="n">ElementType</span><span class="o">.</span><span class="na">TYPE</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nd">@interface</span> <span class="n">FunctionalInterface</span> <span class="o">{</span> <span class="o">}</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h3 id="-inherited">▶ @Inherited</h3>
+<h6 id="-애너테이션이-자손-클래스에-상속되도록-함">▷ 애너테이션이 자손 클래스에 상속되도록 함</h6>
+<h6 id="-애너테이션도-상속-가능">▷ 애너테이션도 상속 가능</h6>
+<p><br /></p>
+
+<h3 id="-inherited-사용-예시">▶ @Inherited 사용 예시</h3>
+<h6 id="-조상이-inherited-붙으면-자손은-붙이지-않아도-붙은-것으로-간주">▷ 조상이 @Inherited 붙으면 자손은 붙이지 않아도 붙은 것으로 간주</h6>
+<h6 id="-inherited-붙은-놈이-상속하는-놈">▷ @Inherited 붙은 놈이 상속하는 놈</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Inherited</span> <span class="c1">// SuperAnno를 상속하는 조상 애너테이션으로 만듦</span>
+<span class="nd">@interface</span> <span class="n">SuperAnno</span> <span class="o">{}</span> <span class="c1">// SuperAnno : 조상 애너테이션</span>
+
+<span class="nd">@SuperAnno</span>
+<span class="kd">class</span> <span class="nc">Parent</span> <span class="o">{}</span>
+
+<span class="kd">class</span> <span class="nc">Child</span> <span class="kd">extends</span> <span class="n">Parent</span> <span class="o">{}</span> <span class="c1">// Child는 애너테이션 없지만 붙은 것으로 인식</span>
+</code></pre></div></div>
+
+<p><br /><a id="Verse 7"></a></p>
+
+<p><br /></p>
+<h2 id="ch12---33-repeatable">Ch12 - 33. @Repeatable</h2>
+<hr />
+<h3 id="-repeatable이란">▶ @Repeatable이란?</h3>
+<h6 id="-반복해서-붙일-수-있는-애너테이션을-정의-할-때-사용jdk18">▷ 반복해서 붙일 수 있는 애너테이션을 정의 할 때 사용(JDK1.8)</h6>
+<p><br /></p>
+
+<h3 id="-repeatable-사용-예시">▶ @Repeatable 사용 예시</h3>
+<h6 id="-반복해서-붙일-수-있는-애너테이션을-정의할-때-사용">▷ 반복해서 붙일 수 있는 애너테이션을 정의할 때 사용</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Repeatable</span><span class="o">(</span><span class="n">ToDos</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="c1">// ToDo 애너테이션을 여러 번 반복하여 사용할 수 있게 함</span>
+<span class="nd">@interface</span> <span class="n">ToDo</span> <span class="o">{</span>
+    <span class="n">String</span> <span class="nf">value</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h6 id="-repeatable이-붙은-애너테이션은-반복-사용-가능">▷ @Repeatable이 붙은 애너테이션은 반복 사용 가능</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@ToDo</span><span class="o">(</span><span class="s">"delete test codes."</span><span class="o">)</span> <span class="c1">// 1번</span>
+<span class="nd">@ToDo</span><span class="o">(</span><span class="s">"override inherited methods"</span><span class="o">)</span> <span class="c1">// 2번</span>
+<span class="kd">class</span> <span class="nc">myClass</span> <span class="o">{</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h6 id="-repeatable인-todo를-하나로-묶을-컨테이너-애너테이션도-정의해야-함">▷ @Repeatable인 @ToDo를 하나로 묶을 컨테이너 애너테이션도 정의해야 함</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@interface</span> <span class="n">ToDos</span> <span class="o">{</span> <span class="c1">// 여러 개의 @ToDo를 담을 컨테이너 애너테이션 ToDos</span>
+    <span class="n">ToDo</span><span class="o">[]</span> <span class="nf">value</span><span class="o">();</span> <span class="c1">// ToDo 애너테이션 배열 타입의 요소를 선언, 이름은 반드시 value!</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+                </div>
+            </section>
+
+            <!-- Email subscribe form at the bottom of the page
+            
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Subscribe to 100'Log</h3>
+                    <p>Get the latest posts delivered right to your inbox</p>
+                    <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+
+                </section>
+            
+             -->
+
+            <footer class="post-full-footer">
+                <!-- Everything inside the #author tags pulls data from the author -->
+                <!-- #author-->
+                
+                    
+                        <section class="author-card">
+                            
+                                <img class="author-profile-image" src="/assets/built/images/author-logo.png" alt="JungRan-Baek" />
+                            
+                            <section class="author-card-content">
+                                <h4 class="author-card-name"><a href="/author/JungRan-Baek">JungRan-Baek</a></h4>
+                                
+                                    <p></p>
+                                
+                            </section>
+                        </section>
+                        <div class="post-full-footer-right">
+                            <a class="author-card-button" href="/author/JungRan-Baek">Read More</a>
+                        </div>
+                    
+                
+                <!-- /author  -->
+            </footer>
+
+            <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                        var disqus_config = function () {
+                            this.page.url = 'https://100jran.github.io/12cornerstoneJava11';
+                            this.page.identifier = '/12cornerstoneJava11';
+                            this.page.title = 'Ch12-27~33. @';
+                        };
+                        (function() {
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://100jran-github-io.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                </section>
+            
+
+        </article>
+
+    </div>
+</main>
+
+<!-- Links to Previous/Next posts -->
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+                
+                
+                
+                
+                    <article class="read-next-card"
+                        
+                            style="background-image: url(/assets/built/images/back.jpg)"
+                        
+                    >
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash; 100'Log &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title"><a href="/tag/javajungsuk/">Javajungsuk</a></h3>
+                            
+                        </header>
+                        <div class="read-next-divider">cd<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/12cornerstoneJava12">Ch12-34~37. 애너테이션</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/12cornerstoneJava10">Ch12-23~26. 애너테이션</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/12cornerstoneJava9">Ch12-21~22. enum 멤버 추가</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/tag/javajungsuk/">
+                                
+                                    See all 139 posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
+            
+
+            <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/12cornerstoneJava12">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/thecornerstoneofjavaCh12.jpg)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/12cornerstoneJava12">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Javajungsuk</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">Ch12-34~37. 애너테이션</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p></p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/author-logo.png" alt="JungRan-Baek" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/JungRan-Baek/">JungRan-Baek</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/12cornerstoneJava10">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/thecornerstoneofjavaCh12.jpg)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/12cornerstoneJava10">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Javajungsuk</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">Ch12-23~26. 애너테이션</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p></p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/author-logo.png" alt="JungRan-Baek" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/JungRan-Baek/">JungRan-Baek</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+        </div>
+    </div>
+</aside>
+
+<!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="https://100jran.github.io/">
+            
+            <span>100'Log</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">Ch12-27~33. @</div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=Ch12-27~33.+%40&amp;url=https://100jran.github.io12cornerstoneJava11"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://100jran.github.io12cornerstoneJava11"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://100jran.github.io/">100'Log</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    
+                    
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email search modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                <h1 class="subscribe-overlay-title">Search 100'Log</h1>
+                <p class="subscribe-overlay-description">
+                    lunr.js를 이용한 posts 검색 </p>
+                <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+
+            </div>
+        </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>
