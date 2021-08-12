@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://100jran.github.io/tag/til/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://100jran.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-08-05T22:35:20+09:00</updated>
+  <updated>2021-08-12T16:15:05+09:00</updated>
   <id>https://100jran.github.io/tag/til/feed.xml</id>
 
   
@@ -28,108 +28,6 @@
   
   
 
-  
-    <entry>
-      <title type="html">eclips 프로젝트와 github 저장소 연결</title>
-      <link href="https://100jran.github.io/case" rel="alternate" type="text/html" title="eclips 프로젝트와 github 저장소 연결" />
-      <published>2021-05-14T20:40:00+09:00</published>
-      <updated>2021-05-14T20:40:00+09:00</updated>
-      <id>https://100jran.github.io/case</id>
-      <content type="html" xml:base="https://100jran.github.io/case">&lt;blockquote&gt;
-  &lt;p&gt;실습&lt;br /&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=mUpuHIt_Zsw&amp;amp;list=PLqaSEyuwXkSopmCFiv0v7seTIRN5rrEtP&quot;&gt;박재성님의 자바 플레이그라운드 - 1&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;0목차&quot;&gt;0.목차&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1.eclips 설치
-2.github와 연결 할 프로젝트 생성
-3.github 저장소 생성
-4.eclips 프로젝트와 github 저장소 연결
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;1eclips-설치&quot;&gt;1.eclips 설치&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;1.java 설치&lt;/strong&gt;&lt;br /&gt;
-  &lt;img src=&quot;assets/built/postsImages/javapractice/2021-02-14-case/3.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-  &lt;img src=&quot;assets/built/postsImages/javapractice/2021-02-14-case/1.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-  &lt;img src=&quot;assets/built/postsImages/javapractice/2021-02-14-case/2.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2.eclips 설치&lt;/strong&gt;&lt;br /&gt;
-  &lt;img src=&quot;assets/built/postsImages/javapractice/2021-02-14-case/4.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-  &lt;img src=&quot;assets/built/postsImages/javapractice/2021-02-14-case/5.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-  &lt;img src=&quot;assets/built/postsImages/javapractice/2021-02-14-case/6.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;eclips와 작업공간은 폴더 하나에 함께 생성&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;3.eclips 기본설정&lt;/strong&gt;&lt;br /&gt;
-  디폴트는 jre만 잡혀있는 상태&lt;br /&gt;
-  jre는 작기 때문에 조금 더 큰 jdk를 잡아주기&lt;br /&gt;
-  &lt;img src=&quot;assets/built/postsImages/javapractice/2021-02-14-case/3.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-  &lt;img src=&quot;assets/built/postsImages/javapractice/2021-02-14-case/7.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;2github와-연결-할-프로젝트-생성&quot;&gt;2.github와 연결 할 프로젝트 생성&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;“Hello World” 출력 프로그램 구현 및 실행
-  &lt;img src=&quot;assets/built/postsImages/javapractice/2021-02-14-case/8.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;3github-저장소-생성&quot;&gt;3.github 저장소 생성&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;“hello-world”라는 github 저장소 생성
-  &lt;img src=&quot;assets/built/postsImages/javapractice/2021-02-14-case/9.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;4eclips-프로젝트와-github-저장소-연결&quot;&gt;4.eclips 프로젝트와 github 저장소 연결&lt;/h1&gt;
-&lt;hr /&gt;
-&lt;p&gt;eclips 프로젝트가 github 저장소까지 가기위해서&lt;br /&gt;
-eclips 저장소도 생성&lt;br /&gt;
-eclips 저장소에 올리기 즉 commit&lt;br /&gt;
-push 하면 eclips 저장소와 github 저장소 동기화&lt;br /&gt;
-eclips에서 github 도착&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/javapractice/2021-02-14-case/10.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/javapractice/2021-02-14-case/11.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/javapractice/2021-02-14-case/12.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/javapractice/2021-02-14-case/13.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/javapractice/2021-02-14-case/14.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;eclips 프로젝트 수정하여 commit and push&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/javapractice/2021-02-14-case/15.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;github에 가서 확인해보기&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/javapractice/2021-02-14-case/16.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/javapractice/2021-02-14-case/17.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/javapractice/2021-02-14-case/18.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;commit한 타임라인이 남아있음&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/javapractice/2021-02-14-case/19.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;타임라인을 통해 원하는 타임의 상황으로 백업이 가능&lt;br /&gt;&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>JungRan-Baek</name>
-        
-        
-      </author>
-
-      
-
-      
-        <category term="til" />
-      
-
-      
-        <summary type="html">실습</summary>
-      
-
-      
-      
-    </entry>
   
     <entry>
       <title type="html">Before Learning Java</title>

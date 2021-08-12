@@ -8,6 +8,156 @@
     
       
       <item>
+        <title>Ch13-34~36. wait(), notify()</title>
+        
+          <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 21 Jun 2021 09:00:09 +0900</pubDate>
+        <link>
+        https://100jran.github.io/13cornerstoneJava10</link>
+        <guid isPermaLink="true">https://100jran.github.io/13cornerstoneJava10</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Ch13-30~33. synchronized</title>
+        
+          <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 21 Jun 2021 09:00:08 +0900</pubDate>
+        <link>
+        https://100jran.github.io/13cornerstoneJava9</link>
+        <guid isPermaLink="true">https://100jran.github.io/13cornerstoneJava9</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Ch13-28~29. join(), yield()</title>
+        
+          <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 21 Jun 2021 09:00:07 +0900</pubDate>
+        <link>
+        https://100jran.github.io/13cornerstoneJava8</link>
+        <guid isPermaLink="true">https://100jran.github.io/13cornerstoneJava8</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Ch13-26~27. suspend()...</title>
+        
+          <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 21 Jun 2021 09:00:06 +0900</pubDate>
+        <link>
+        https://100jran.github.io/13cornerstoneJava7</link>
+        <guid isPermaLink="true">https://100jran.github.io/13cornerstoneJava7</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Ch13-22~25. sleep()</title>
+        
+          <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 21 Jun 2021 09:00:05 +0900</pubDate>
+        <link>
+        https://100jran.github.io/13cornerstoneJava6</link>
+        <guid isPermaLink="true">https://100jran.github.io/13cornerstoneJava6</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Ch13-18~21. daemon thread</title>
+        
+          <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 21 Jun 2021 09:00:04 +0900</pubDate>
+        <link>
+        https://100jran.github.io/13cornerstoneJava5</link>
+        <guid isPermaLink="true">https://100jran.github.io/13cornerstoneJava5</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Ch13-14~17. thread group</title>
+        
+          <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 21 Jun 2021 09:00:03 +0900</pubDate>
+        <link>
+        https://100jran.github.io/13cornerstoneJava4</link>
+        <guid isPermaLink="true">https://100jran.github.io/13cornerstoneJava4</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Ch13-7~13. I/O blocking</title>
+        
+          <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 21 Jun 2021 09:00:02 +0900</pubDate>
+        <link>
+        https://100jran.github.io/13cornerstoneJava3</link>
+        <guid isPermaLink="true">https://100jran.github.io/13cornerstoneJava3</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Ch13-3~6. thread</title>
+        
+          <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 21 Jun 2021 09:00:01 +0900</pubDate>
+        <link>
+        https://100jran.github.io/13cornerstoneJava2</link>
+        <guid isPermaLink="true">https://100jran.github.io/13cornerstoneJava2</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Ch13-1~2. process·thread</title>
+        
+          <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 21 Jun 2021 09:00:00 +0900</pubDate>
+        <link>
+        https://100jran.github.io/13cornerstoneJava1</link>
+        <guid isPermaLink="true">https://100jran.github.io/13cornerstoneJava1</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>Ch12-34~37. 애너테이션</title>
         
           <description>&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp&quot;&gt;자바의 정석 기초편&lt;/a&gt;&lt;/p&gt;
@@ -2103,125 +2253,6 @@
         <link>
         https://100jran.github.io/cornerstoneJava</link>
         <guid isPermaLink="true">https://100jran.github.io/cornerstoneJava</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>calculator 2</title>
-        
-          <description>&lt;blockquote&gt;
-  &lt;p&gt;실습&lt;/p&gt;
-&lt;/blockquote&gt;
-
-</description>
-        
-        <pubDate>Mon, 17 May 2021 20:40:00 +0900</pubDate>
-        <link>
-        https://100jran.github.io/calculator2</link>
-        <guid isPermaLink="true">https://100jran.github.io/calculator2</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>calculator 1</title>
-        
-          <description>&lt;blockquote&gt;
-  &lt;p&gt;실습&lt;/p&gt;
-&lt;/blockquote&gt;
-
-</description>
-        
-        <pubDate>Mon, 17 May 2021 20:40:00 +0900</pubDate>
-        <link>
-        https://100jran.github.io/calculator</link>
-        <guid isPermaLink="true">https://100jran.github.io/calculator</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>Calender 2</title>
-        
-          <description>&lt;blockquote&gt;
-  &lt;p&gt;실습&lt;/p&gt;
-&lt;/blockquote&gt;
-
-</description>
-        
-        <pubDate>Sun, 16 May 2021 20:40:00 +0900</pubDate>
-        <link>
-        https://100jran.github.io/calender2</link>
-        <guid isPermaLink="true">https://100jran.github.io/calender2</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>Calender 1</title>
-        
-          <description>&lt;blockquote&gt;
-  &lt;p&gt;실습&lt;/p&gt;
-&lt;/blockquote&gt;
-
-</description>
-        
-        <pubDate>Sun, 16 May 2021 20:40:00 +0900</pubDate>
-        <link>
-        https://100jran.github.io/calender</link>
-        <guid isPermaLink="true">https://100jran.github.io/calender</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>구구단 2</title>
-        
-          <description>&lt;blockquote&gt;
-  &lt;p&gt;실습&lt;br /&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-</description>
-        
-        <pubDate>Sat, 15 May 2021 20:40:00 +0900</pubDate>
-        <link>
-        https://100jran.github.io/gugudan2</link>
-        <guid isPermaLink="true">https://100jran.github.io/gugudan2</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>구구단 1</title>
-        
-          <description>&lt;blockquote&gt;
-  &lt;p&gt;실습&lt;br /&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-</description>
-        
-        <pubDate>Sat, 15 May 2021 20:40:00 +0900</pubDate>
-        <link>
-        https://100jran.github.io/gugudan</link>
-        <guid isPermaLink="true">https://100jran.github.io/gugudan</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>eclips 프로젝트와 github 저장소 연결</title>
-        
-          <description>&lt;blockquote&gt;
-  &lt;p&gt;실습&lt;br /&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-</description>
-        
-        <pubDate>Fri, 14 May 2021 20:40:00 +0900</pubDate>
-        <link>
-        https://100jran.github.io/case</link>
-        <guid isPermaLink="true">https://100jran.github.io/case</guid>
       </item>
       
     
