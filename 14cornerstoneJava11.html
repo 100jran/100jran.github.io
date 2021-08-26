@@ -1,0 +1,2226 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Base Meta -->
+    <!-- dynamically fixing the title for tag/author pages -->
+
+
+
+    <title>Ch14-35~39. Optional< T ></title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+    <!-- syntax.css 추가 -->
+    <link rel="stylesheet" type="text/css" href="/assets/built/syntax.css" />
+    <!-- 웹폰트 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+    <!--[if IE]>
+        <style>
+            p, ol, ul{
+                width: 100%;
+            }
+            blockquote{
+                width: 100%;
+            }
+        </style>
+    <![endif]-->
+    
+    <!-- This tag outputs SEO meta+structured data and other important settings -->
+    <meta name="description" content="" />
+    <link rel="shortcut icon" href="https://100jran.github.io/assets/built/images/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://100jran.github.io/14cornerstoneJava11" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+     <!--title below is coming from _includes/dynamic_title-->
+    <meta property="og:site_name" content="100'Log" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ch14-35~39. Optional< T >" />
+    <meta property="og:description" content="자바의 정석 기초편 0. 목차 Chapter14. 람다와 스트림 Ch14 - 35. Optional&lt; T &gt; Ch14 - 36. Optional&lt; T &gt; 객체 생성하기 Ch14 - 37. Optional&lt; T &gt; 객체의 값 가져오기 Ch14 - 38. OptionalInt·Long·Double Ch14 - 39. Optional&lt; T &gt; 예제 Ch14 - 35. Optional&lt; T &gt; ▶ Optional&lt;T&gt;란?" />
+    <meta property="og:url" content="https://100jran.github.io/14cornerstoneJava11" />
+    <meta property="og:image" content="https://100jran.github.io/assets/built/images/thecornerstoneofjavaCh14.jpg" />
+    <meta property="article:publisher" content="https://www.facebook.com/" />
+    <meta property="article:author" content="https://www.facebook.com/" />
+    <meta property="article:published_time" content="2021-06-22T09:00:10+09:00" />
+    <meta property="article:modified_time" content="2021-06-22T09:00:10+09:00" />
+    <meta property="article:tag" content="Javajungsuk" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ch14-35~39. Optional< T >" />
+    <meta name="twitter:description" content="자바의 정석 기초편 0. 목차 Chapter14. 람다와 스트림 Ch14 - 35. Optional&lt; T &gt; Ch14 - 36. Optional&lt; T &gt; 객체 생성하기 Ch14 - 37. Optional&lt; T &gt; 객체의 값 가져오기 Ch14 - 38. OptionalInt·Long·Double Ch14 - 39. Optional&lt; T &gt; 예제 Ch14 - 35. Optional&lt; T &gt; ▶ Optional&lt;T&gt;란?" />
+    <meta name="twitter:url" content="https://100jran.github.io/" />
+    <meta name="twitter:image" content="https://100jran.github.io/assets/built/images/thecornerstoneofjavaCh14.jpg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="100'Log" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Javajungsuk" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@" />
+    <meta property="og:image:width" content="1400" />
+    <meta property="og:image:height" content="933" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Organization",
+        "name": "100'Log",
+        "logo": "https://100jran.github.io/"
+    },
+    "url": "https://100jran.github.io/14cornerstoneJava11",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://100jran.github.io/assets/built/images/thecornerstoneofjavaCh14.jpg",
+        "width": 2000,
+        "height": 666
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://100jran.github.io/14cornerstoneJava11"
+    },
+    "description": "자바의 정석 기초편 0. 목차 Chapter14. 람다와 스트림 Ch14 - 35. Optional&lt; T &gt; Ch14 - 36. Optional&lt; T &gt; 객체 생성하기 Ch14 - 37. Optional&lt; T &gt; 객체의 값 가져오기 Ch14 - 38. OptionalInt·Long·Double Ch14 - 39. Optional&lt; T &gt; 예제 Ch14 - 35. Optional&lt; T &gt; ▶ Optional&lt;T&gt;란?"
+}
+    </script>
+
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
+    <script type="text/javascript">
+    ghost.init({
+    	clientId: "ghost-frontend",
+    	clientSecret: "f84a07a72b17"
+    });
+    </script> -->
+
+    <meta name="generator" content="Jekyll 3.6.2" />
+    <link rel="alternate" type="application/rss+xml" title="Ch14-35~39. Optional< T >" href="/feed.xml" />
+
+
+</head>
+<body class="post-template">
+
+    <div class="site-wrapper">
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template -->
+
+<header class="site-header outer">
+    <div class="inner">
+        <nav class="site-nav">
+    <div class="site-nav-left">
+        
+            
+                <a class="site-nav-logo" href="https://100jran.github.io/">100'Log</a>
+            
+        
+        
+            <ul class="nav" role="menu">
+    <li class="nav-home" role="menuitem"><a href="/">Home</a></li>
+    <!-- about
+    <li class="nav-about" role="menuitem"><a href="/about/">About</a></li>
+    -->
+    <!--
+    <li class="nav-jekyll" role="menuitem"><a href="/tag/java/">java</a></li>
+    -->
+    <!-- javascript
+    <li class="nav-python" role="menuitem"><a href="/tag/javaScript/">javaScript</a></li>
+    -->
+    <!--
+    <li class="nav-python" role="menuitem"><a href="/tag/java practice/">java practice</a></li>
+    -->
+    <!-- til
+    <li class="nav-python" role="menuitem"><a href="/tag/til/">til</a></li>
+    -->
+    <li class="nav-archive" role="menuitem">
+        <a href="/archive.html">Posts</a>
+    </li>
+    <li class="nav-archive" role="menuitem">
+        <a href="/author_archive.html">Tag</a>
+    </li>
+  </ul>
+
+        
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            
+            
+        </div>
+        
+            <a class="subscribe-button" href="#subscribe">Search</a>
+        
+    </div>
+</nav>
+
+    </div>
+</header>
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+
+        <article class="post-full  tag-javajungsuk post tag-javajungsuk ">
+
+            <header class="post-full-header">
+                <section class="post-full-meta">
+                    <time class="post-full-meta-date" datetime="22 June 2021">22 June 2021</time>
+                    
+                        <span class="date-divider">/</span>
+                        
+                            
+                               <a href='/tag/javajungsuk/'>JAVAJUNGSUK</a>
+                            
+                        
+                    
+                </section>
+                <h1 class="post-full-title">Ch14-35~39. Optional< T ></h1>
+            </header>
+
+            <!-- 포스팅 했을 때 상단 이미지
+            
+            <figure class="post-full-image" style="background-image: url(/assets/built/images/thecornerstoneofjavaCh14.jpg)">
+            </figure>
+            
+             -->
+
+            <section class="post-full-content">
+                <div class="kg-card-markdown">
+                    <p><a href="https://www.youtube.com/playlist?list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3xIp">자바의 정석 기초편</a></p>
+
+<h1 id="0-목차">0. 목차</h1>
+<hr />
+<p><br /></p>
+<blockquote>
+  <h2 id="chapter14-람다와-스트림"><span style="color:orangered">Chapter14. 람다와 스트림</span><br /></h2>
+  <h4 id="ch14---35-optional-t-">Ch14 - 35. <a href="#Verse 1">Optional&lt; T &gt;</a><br /></h4>
+  <h4 id="ch14---36-optional-t--객체-생성하기">Ch14 - 36. <a href="#Verse 2">Optional&lt; T &gt; 객체 생성하기</a><br /></h4>
+  <h4 id="ch14---37-optional-t--객체의-값-가져오기">Ch14 - 37. <a href="#Verse 3">Optional&lt; T &gt; 객체의 값 가져오기</a><br /></h4>
+  <h4 id="ch14---38-optionalintlongdouble">Ch14 - 38. <a href="#Verse 4">OptionalInt·Long·Double</a><br /></h4>
+  <h4 id="ch14---39-optional-t--예제">Ch14 - 39. <a href="#Verse 5">Optional&lt; T &gt; 예제</a><br /></h4>
+</blockquote>
+
+<p><br /><a id="Verse 1"></a></p>
+
+<p><br /></p>
+<h2 id="ch14---35-optional-t--1">Ch14 - 35. Optional&lt; T &gt;</h2>
+<hr />
+<h3 id="-optionalt란">▶ <code class="highlighter-rouge">Optional&lt;T&gt;</code>란?</h3>
+<h6 id="-t타입-객체의-래퍼-클래스">▷ T타입 객체의 래퍼 클래스</h6>
+<ul>
+  <li><em>래퍼 클래스 : <code class="highlighter-rouge">Integer</code>, <code class="highlighter-rouge">Long</code>…같은 클래스</em></li>
+</ul>
+
+<h6 id="-모든-종류의-객체-저장-가능null도-저장-가능">▷ 모든 종류의 객체 저장 가능(<code class="highlighter-rouge">null</code>도 저장 가능)</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">Optional</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">T</span> <span class="n">value</span><span class="o">;</span> <span class="c1">// T타입의 참조 변수</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h3 id="-optionalt과-null">▶ <code class="highlighter-rouge">Optional&lt;T&gt;</code>과 <code class="highlighter-rouge">null</code></h3>
+<h6 id="-간접적으로-null을-다룸으로-nullpointexception의-위험을-감소">▷ 간접적으로 <code class="highlighter-rouge">null</code>을 다룸으로 <code class="highlighter-rouge">NullPointException</code>의 위험을 감소</h6>
+<h6 id="-null-체크-시-if문-필수--코드-증가-불가피--optionalt-코드-간결">▷ null 체크 시, <code class="highlighter-rouge">if문</code> 필수 = 코드 증가 불가피 -<code class="highlighter-rouge">Optional&lt;T&gt;</code>→ 코드 간결</h6>
+<ul>
+  <li><code class="highlighter-rouge">Optional&lt;T&gt;</code> 사용X
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">Object</span> <span class="n">result</span> <span class="o">=</span> <span class="n">getResult</span><span class="o">();</span> <span class="c1">// 반환값 : null or 객체</span>
+    
+  <span class="c1">// 반환값이 null일 때</span>
+  <span class="n">result</span><span class="o">.</span><span class="na">toString</span><span class="o">()</span> <span class="c1">// NullPointExeption 발생</span>
+    
+  <span class="c1">// if문을 사용하여 NullPointExeption 처리 → 코드 증가</span>
+  <span class="k">if</span><span class="o">(</span><span class="n">result</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><img src="assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava11/img.png" width="80%" align="left" /><br /></p>
+
+<ul>
+  <li><code class="highlighter-rouge">Optional&lt;T&gt;</code> 사용O<br />
+<img src="assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava11/img_1.png" width="60%" align="left" /><br /></li>
+</ul>
+
+<p><br /><a id="Verse 2"></a></p>
+
+<p><br /></p>
+<h2 id="ch14---36-optional-t--객체-생성하기-1">Ch14 - 36. Optional&lt; T &gt; 객체 생성하기</h2>
+<hr />
+<h3 id="-optionalt-객체-생성하는-방법">▶ <code class="highlighter-rouge">Optional&lt;T&gt;</code> 객체 생성하는 방법</h3>
+<h6 id="-optionalstring에-abc-넣기">▷ <code class="highlighter-rouge">Optional&lt;String&gt;</code>에 “abc” 넣기</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">"abc"</span><span class="o">;</span>
+<span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">optVal</span> <span class="o">=</span> <span class="n">Optional</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p><img src="assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava11/img_4.png" width="60%" align="left" /><br /></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 위의 두 문장을 줄여 한 문장으로 생성</span>
+<span class="err">▷</span> <span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">optVal</span> <span class="o">=</span> <span class="n">Optional</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">"abc"</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p><img src="assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava11/img_2.png" width="60%" align="left" /><br /></p>
+
+<h6 id="-optionalstring에-null-넣기">▷ <code class="highlighter-rouge">Optional&lt;String&gt;</code>에 <code class="highlighter-rouge">null</code> 넣기</h6>
+<h6 id="-ofnullable-사용하여-넣어야-함">▷ <code class="highlighter-rouge">ofNullable()</code> 사용하여 넣어야 함</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">▷</span> <span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">optVal</span> <span class="o">=</span> <span class="n">Optional</span><span class="o">.</span><span class="na">ofNullable</span><span class="o">(</span><span class="kc">null</span><span class="o">);</span> <span class="c1">// OK</span>
+  <span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">optVal</span> <span class="o">=</span> <span class="n">Optional</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="kc">null</span><span class="o">);</span> <span class="c1">// ERROR!, NullPointException 발생</span>
+</code></pre></div></div>
+
+<p><img src="assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava11/img_3.png" width="60%" align="left" /><br /></p>
+
+<p><br /></p>
+<h3 id="-null-대신-optionalt-객체-사용하기">▶ <code class="highlighter-rouge">null</code> 대신 <code class="highlighter-rouge">Optional&lt;T&gt;</code> 객체 사용하기</h3>
+<h6 id="-null-초기화는-되긴-되지만-바람직하지-않음">▷ <code class="highlighter-rouge">null</code> 초기화는 되긴 되지만 바람직하지 않음</h6>
+<p><del><code class="highlighter-rouge">Optional&lt;String&gt; optVal = null;</code></del><br /></p>
+
+<h6 id="-빈-객체로-초기화-하기">▷ 빈 객체로 초기화 하기!</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">optVal</span> <span class="o">=</span> <span class="n">Optional</span><span class="o">.&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="n">empty</span><span class="o">();</span>
+</code></pre></div></div>
+
+<ul>
+  <li><em>iv를 <code class="highlighter-rouge">null</code> 대신 <code class="highlighter-rouge">""</code>로 초기화 한 것처럼</em><br />
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ObjArr</span> <span class="o">=</span> <span class="n">newObject</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span> <span class="c1">// GOOD!</span>
+<span class="n">OjbArr</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span> <span class="c1">// BAD!</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><br /><a id="Verse 3"></a></p>
+
+<p><br /></p>
+<h2 id="ch14---37-optional-t--객체의-값-가져오기-1">Ch14 - 37. Optional&lt; T &gt; 객체의 값 가져오기</h2>
+<hr />
+<h3 id="-optionalt-객체의-값-가져오기--get">▶ <code class="highlighter-rouge">Optional&lt;T&gt;</code> 객체의 값 가져오기 : <code class="highlighter-rouge">get()</code></h3>
+<h6 id="-optval에-저장-된-값을-반환">▷ optVal에 저장 된 값을 반환</h6>
+<h6 id="-optval에-저장-된-값이-null일-때-예외-발생">▷ optVal에 저장 된 값이 <code class="highlighter-rouge">null</code>일 때, 예외 발생</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">optVal</span> <span class="o">=</span> <span class="n">Optional</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">"abc"</span><span class="o">);</span>
+
+<span class="n">String</span> <span class="n">str1</span> <span class="o">=</span> <span class="n">opVal</span><span class="o">.</span><span class="na">get</span><span class="o">();</span> <span class="c1">// "abc" 반환</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h3 id="-optionalt-객체의-값-가져오기--orelse">▶ <code class="highlighter-rouge">Optional&lt;T&gt;</code> 객체의 값 가져오기 : <code class="highlighter-rouge">orElse()</code></h3>
+<h6 id="-optval에-저장-된-값이-null일-때-를-반환">▷ optVal에 저장 된 값이 <code class="highlighter-rouge">null</code>일 때, <code class="highlighter-rouge">""</code>를 반환</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">optVal</span> <span class="o">=</span> <span class="n">Optional</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">"abc"</span><span class="o">);</span>
+
+<span class="n">String</span> <span class="n">str2</span> <span class="o">=</span> <span class="n">opVal</span><span class="o">.</span><span class="na">orElse</span><span class="o">();</span> <span class="c1">// "abc" 반환</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h3 id="-optionalt-객체의-값-가져오기--orelseget">▶ <code class="highlighter-rouge">Optional&lt;T&gt;</code> 객체의 값 가져오기 : <code class="highlighter-rouge">orElseGet()</code></h3>
+<h6 id="-람다식-사용-가능">▷ 람다식 사용 가능</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">optVal</span> <span class="o">=</span> <span class="n">Optional</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">"abc"</span><span class="o">);</span>
+
+<span class="n">String</span> <span class="n">str2</span> <span class="o">=</span> <span class="n">opVal</span><span class="o">.</span><span class="na">orElseGet</span><span class="o">(</span><span class="nl">String:</span><span class="o">:</span><span class="k">new</span><span class="o">);</span> <span class="c1">// 메서드 참조</span>
+</code></pre></div></div>
+
+<ul>
+  <li><em><code class="highlighter-rouge">orElseGet()</code> 선언부 메서드</em><br />
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">T</span> <span class="nf">orElseGet</span><span class="o">(</span><span class="n">Supplier</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">T</span><span class="o">&gt;</span> <span class="n">other</span><span class="o">)</span>
+</code></pre></div>    </div>
+    <p><br /></p>
+  </li>
+</ul>
+
+<h3 id="-optionalt-객체의-값-가져오기--orelsethrow">▶ <code class="highlighter-rouge">Optional&lt;T&gt;</code> 객체의 값 가져오기 : <code class="highlighter-rouge">orElseThrow()</code></h3>
+<h6 id="-예외-종류-지정-가능">▷ 예외 종류 지정 가능</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">T</span> <span class="nf">orElseThrow</span><span class="o">(</span><span class="n">Supplier</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">X</span><span class="o">&gt;</span> <span class="n">exceptionSupplier</span><span class="o">)</span>
+</code></pre></div></div>
+
+<h6 id="-optval에-저장-된-값이-null일-때-예외-발생-1">▷ optVal에 저장 된 값이 <code class="highlighter-rouge">null</code>일 때, 예외 발생</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">optVal</span> <span class="o">=</span> <span class="n">Optional</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">"abc"</span><span class="o">);</span>
+
+<span class="n">String</span> <span class="n">str2</span> <span class="o">=</span> <span class="n">opVal</span><span class="o">.</span><span class="na">orElseThrow</span><span class="o">(</span><span class="nl">NullPointerCexception:</span><span class="o">:</span><span class="k">new</span><span class="o">);</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h3 id="-optionalt-객체의-값-가져오기--ispresent">▶ <code class="highlighter-rouge">Optional&lt;T&gt;</code> 객체의 값 가져오기 : <code class="highlighter-rouge">isPresent()</code></h3>
+<h6 id="-optional-객체의-값이-null-이면-false-아니면-true-반환">▷ <code class="highlighter-rouge">Optional</code> 객체의 값이 <code class="highlighter-rouge">null</code> 이면 <code class="highlighter-rouge">false</code>, 아니면 <code class="highlighter-rouge">true</code> 반환</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span><span class="o">(</span><span class="n">Optional</span><span class="o">.</span><span class="na">ofNullable</span><span class="o">(</span><span class="n">str</span><span class="o">).</span><span class="na">isPresent</span><span class="o">())</span> <span class="o">{</span> <span class="c1">// if(str != null)</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="c1">// 위 두줄을 한 줄로 변경</span>
+<span class="n">Optional</span><span class="o">.</span><span class="na">ofNullable</span><span class="o">(</span><span class="n">str</span><span class="o">).</span><span class="na">ifPresent</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li><em><code class="highlighter-rouge">isPresent(Consumer)</code>가 <code class="highlighter-rouge">null</code>이면 아무 일도 하지 않음</em><br /></li>
+  <li><em><code class="highlighter-rouge">isPresent(Consumer)</code>가 <code class="highlighter-rouge">null</code>이 아닐 때만 작업 수행</em><br /></li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="-실습">▶ 실습</h3>
+<h6 id="-배열-초기화--null--bad">▷ 배열 초기화 : <code class="highlighter-rouge">null</code> → BAD</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"arr.length : "</span> <span class="o">+</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>
+
+<span class="c1">// console</span>
+<span class="c1">// NullPointerException 발생</span>
+<span class="n">Exception</span> <span class="n">in</span> <span class="n">thread</span> <span class="s">"main"</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">NullPointerException</span><span class="o">:</span> <span class="n">Cannot</span> <span class="n">read</span> <span class="n">the</span> <span class="n">array</span> <span class="n">length</span> <span class="n">because</span> <span class="s">"arr"</span> <span class="n">is</span> <span class="kc">null</span>
+	<span class="n">at</span> <span class="n">baek</span><span class="o">.</span><span class="na">Play3</span><span class="o">.</span><span class="na">main</span><span class="o">(</span><span class="n">Play3</span><span class="o">.</span><span class="na">java</span><span class="o">:</span><span class="mi">12</span><span class="o">)</span>
+</code></pre></div></div>
+
+<h6 id="-배열-초기화--new-int0--good">▷ 배열 초기화 : <code class="highlighter-rouge">new int[0];</code> → GOOD</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"arr.length : "</span> <span class="o">+</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>
+
+<span class="c1">// console</span>
+<span class="n">arr</span><span class="o">.</span><span class="na">length</span> <span class="o">:</span> <span class="mi">0</span>
+</code></pre></div></div>
+
+<h6 id="-optionalstring-초기화--null--bad">▷ <code class="highlighter-rouge">Optional&lt;String&gt;</code> 초기화 : <code class="highlighter-rouge">null</code> → BAD</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">opt</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"opt : "</span> <span class="o">+</span> <span class="n">opt</span><span class="o">);</span>
+
+<span class="c1">// console</span>
+<span class="kc">null</span>
+</code></pre></div></div>
+
+<h6 id="-optionalstring-초기화--optionalempty--good">▷ <code class="highlighter-rouge">Optional&lt;String&gt;</code> 초기화 : <code class="highlighter-rouge">Optional.empty</code> → GOOD</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">opt</span> <span class="o">=</span> <span class="n">Optional</span><span class="o">.</span><span class="na">empty</span><span class="o">();</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"opt : "</span> <span class="o">+</span> <span class="n">opt</span><span class="o">);</span>
+
+<span class="c1">// console</span>
+<span class="n">opt</span> <span class="o">:</span> <span class="n">Optional</span><span class="o">.</span><span class="na">empty</span>
+</code></pre></div></div>
+
+<h6 id="-optionalstring-입력--optionalof">▷ <code class="highlighter-rouge">Optional&lt;String&gt;</code> 입력 : <code class="highlighter-rouge">Optional.of</code></h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">opt</span> <span class="o">=</span> <span class="n">Optional</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">"abc"</span><span class="o">);</span>
+</code></pre></div></div>
+
+<h6 id="-빈-문자열--string에-optget-넣기">▷ 빈 문자열  String에 <code class="highlighter-rouge">opt.get()</code> 넣기</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+
+<span class="n">str</span> <span class="o">=</span> <span class="n">opt</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+
+<span class="c1">// console</span>
+<span class="c1">// NoSuchElementException 발생 : 아무것도 안들어 있다는 것</span>
+<span class="n">Exception</span> <span class="n">in</span> <span class="n">thread</span> <span class="s">"main"</span> <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">NoSuchElementException</span><span class="o">:</span> <span class="n">No</span> <span class="n">value</span> <span class="n">present</span>
+	<span class="n">at</span> <span class="n">java</span><span class="o">.</span><span class="na">base</span><span class="o">/</span><span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">Optional</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">Optional</span><span class="o">.</span><span class="na">java</span><span class="o">:</span><span class="mi">141</span><span class="o">)</span>
+	<span class="n">at</span> <span class="n">baek</span><span class="o">.</span><span class="na">Play3</span><span class="o">.</span><span class="na">main</span><span class="o">(</span><span class="n">Play3</span><span class="o">.</span><span class="na">java</span><span class="o">:</span><span class="mi">19</span><span class="o">)</span>
+</code></pre></div></div>
+
+<h6 id="-nosuchelementexception-발생--try-catch문-작성">▷ <code class="highlighter-rouge">NoSuchElementException</code> 발생 : try-catch문 작성</h6>
+<h6 id="-try-catch문--optget에서-예외-발생하면-로-초기화-시킴">▷ try-catch문 : <code class="highlighter-rouge">opt.get();</code>에서 예외 발생하면 <code class="highlighter-rouge">""</code>로 초기화 시킴</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+
+<span class="k">try</span> <span class="o">{</span>
+  <span class="n">str</span> <span class="o">=</span> <span class="n">opt</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">str</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"str : "</span> <span class="o">+</span> <span class="n">str</span><span class="o">);</span>
+
+<span class="c1">// console</span>
+<span class="n">str</span> <span class="o">:</span> <span class="c1">// 빈 문자열 들어있어서 아무것도 안 나옴</span>
+</code></pre></div></div>
+
+<h6 id="-코드가-너무-길어짐">▷ 코드가 너무 길어짐</h6>
+<h6 id="-한-문장으로-해결-가능--orelse">▷ 한 문장으로 해결 가능 : <code class="highlighter-rouge">orElse()</code></h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+
+<span class="n">str</span> <span class="o">=</span> <span class="n">opt</span><span class="o">.</span><span class="na">orElse</span><span class="o">(</span><span class="s">"EMPTY"</span><span class="o">);</span> <span class="c1">// Optional에 저장 된 값이 null이면 "EMPTY" 반환</span>
+
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"str : "</span> <span class="o">+</span> <span class="n">str</span><span class="o">);</span>
+
+<span class="c1">// console</span>
+<span class="n">str</span> <span class="o">:</span> <span class="n">EMPTY</span>
+</code></pre></div></div>
+
+<ul>
+  <li><em><code class="highlighter-rouge">orElse()</code> Code</em><br />
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="n">T</span> <span class="nf">orElse</span><span class="o">(</span><span class="n">T</span> <span class="n">other</span><span class="o">)</span> <span class="o">{</span>
+<span class="k">return</span> <span class="n">value</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">?</span> <span class="n">value</span> <span class="o">:</span> <span class="n">other</span><span class="o">;</span> <span class="c1">// null에 대한 설정이 이미 들어가 있음, 이런 거 때문에 코드가 간결</span>
+<span class="o">}</span> 
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h6 id="-람다식--orelseget">▷ 람다식 : <code class="highlighter-rouge">orElseGet()</code></h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+
+<span class="n">str</span> <span class="o">=</span> <span class="n">opt</span><span class="o">.</span><span class="na">orElseGet</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="n">String</span><span class="o">());</span> <span class="c1">// 람다식</span>
+<span class="n">str</span> <span class="o">=</span> <span class="n">opt</span><span class="o">.</span><span class="na">orElseGet</span><span class="o">(</span><span class="nl">String:</span><span class="o">:</span><span class="k">new</span><span class="o">);</span> <span class="c1">// 메서드 참조</span>
+
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"str : "</span> <span class="o">+</span> <span class="n">str</span><span class="o">);</span>
+
+<span class="c1">// console</span>
+<span class="n">str</span> <span class="o">:</span>
+</code></pre></div></div>
+
+<p><br /><a id="Verse 4"></a></p>
+
+<p><br /></p>
+<h2 id="ch14---38-optionalintlongdouble-1">Ch14 - 38. OptionalInt·Long·Double</h2>
+<hr />
+<h3 id="-optionalintoptionallongoptionaldouble란">▶ OptionalInt·OptionalLong·OptionalDouble란?</h3>
+<h6 id="-기본형-값을-감싸는-래퍼-클래스">▷ 기본형 값을 감싸는 래퍼 클래스</h6>
+<h6 id="-optional-보다-성능이-좋아서-사용">▷ Optional<T> 보다 성능이 좋아서 사용</T></h6>
+<ul>
+  <li><code class="highlighter-rouge">Optional&lt;T&gt;</code> : <strong>참조형</strong><br /></li>
+  <li><code class="highlighter-rouge">OptionalInt·Long·Double</code> : <strong>기본형</strong><br />
+    <ul>
+      <li><em><code class="highlighter-rouge">OptionalInt</code> Code</em><br />
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">OptionalInt</span> <span class="o">{</span>
+<span class="o">...</span>
+<span class="kd">private</span> <span class="kd">final</span> <span class="kt">boolean</span> <span class="n">isPresent</span><span class="o">;</span> <span class="c1">// 값이 저장되어 있으면 true</span>
+<span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">value</span><span class="o">;</span> <span class="c1">// int 타입의 변수</span>
+<span class="o">}</span>
+</code></pre></div>        </div>
+        <p><br /></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="-optionalintlongdouble-값-가져오기">▶ OptionalInt·Long·Double 값 가져오기</h3>
+<h6 id="-optional-클래스--optionalt">▷ Optional 클래스 : <code class="highlighter-rouge">Optional&lt;T&gt;</code></h6>
+<ul>
+  <li><strong>값 반환 메서드 :</strong> <code class="highlighter-rouge">T get()</code></li>
+</ul>
+
+<p><br /></p>
+<h6 id="-optional-클래스--optionalint">▷ Optional 클래스 : <code class="highlighter-rouge">OptionalInt</code></h6>
+<ul>
+  <li><strong>값 반환 메서드 :</strong> <code class="highlighter-rouge">int getAsInt()</code></li>
+</ul>
+
+<p><br /></p>
+<h6 id="-optional-클래스--optionallong">▷ Optional 클래스 : <code class="highlighter-rouge">OptionalLong</code></h6>
+<ul>
+  <li><strong>값 반환 메서드 :</strong> <code class="highlighter-rouge">long getAsLong()</code></li>
+</ul>
+
+<p><br /></p>
+<h6 id="-optional-클래스--optionadouble">▷ Optional 클래스 : <code class="highlighter-rouge">OptionaDouble</code></h6>
+<ul>
+  <li><strong>값 반환 메서드 :</strong> <code class="highlighter-rouge">double getAsDouble()</code>
+<br /><br /><br /></li>
+</ul>
+
+<h3 id="-ispresent">▶ <code class="highlighter-rouge">isPresent()</code></h3>
+<h6 id="-빈-optional-객체-비교">▷ 빈 <code class="highlighter-rouge">Optional</code> 객체 비교</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">OptionalInt</span> <span class="n">opt</span> <span class="o">=</span> <span class="n">OptionalInt</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+<span class="n">OptionalInt</span> <span class="n">opt2</span> <span class="o">=</span> <span class="n">OptionalInt</span><span class="o">.</span><span class="na">empty</span><span class="o">();</span>
+</code></pre></div></div>
+<p><em><strong>둘 다 <code class="highlighter-rouge">value = 0;</code> 무엇으로 구분 가능?</strong></em><br />
+ → <code class="highlighter-rouge">isPresent()</code><br /></p>
+
+<h6 id="-ispresent로-구분하기">▷ <code class="highlighter-rouge">isPresent()</code>로 구분하기</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">opt</span><span class="o">.</span><span class="na">isPresent</span><span class="o">());</span> <span class="c1">// true, '0'이 들어있으니까</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">opt2</span><span class="o">.</span><span class="na">isPresent</span><span class="o">());</span> <span class="c1">// false, 아무것도 안 들어있음</span>
+</code></pre></div></div>
+
+<h6 id="-equals로-비교하기">▷ <code class="highlighter-rouge">equals()</code>로 비교하기</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">opt</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">opt2</span><span class="o">));</span> <span class="c1">// false</span>
+</code></pre></div></div>
+
+<p><br /><a id="Verse 5"></a></p>
+
+<p><br /></p>
+<h2 id="ch14---39-optional-t--예제-1">Ch14 - 39. Optional&lt; T &gt; 예제</h2>
+<hr />
+<h3 id="-optinalt도-map-사용-가능">▶ <code class="highlighter-rouge">Optinal&lt;T&gt;</code>도 <code class="highlighter-rouge">map()</code> 사용 가능</h3>
+<h6 id="-optinalstring-생성">▷ <code class="highlighter-rouge">Optinal&lt;String&gt;</code> 생성</h6>
+<h6 id="-optinalstring--map-optinalstring">▷ <code class="highlighter-rouge">Optinal&lt;String&gt;</code> <em><code class="highlighter-rouge">-map()→</code></em> <code class="highlighter-rouge">Optinal&lt;String&gt;</code></h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">optStr</span> <span class="o">=</span> <span class="n">Optional</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">"abcde"</span><span class="o">);</span>
+<span class="n">Optional</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">optInt</span> <span class="o">=</span> <span class="n">optStr</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="nl">String:</span><span class="o">:</span><span class="n">length</span><span class="o">);</span>
+
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"optStr : "</span> <span class="o">+</span> <span class="n">optStr</span><span class="o">.</span><span class="na">get</span><span class="o">());</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"optInt : "</span> <span class="o">+</span> <span class="n">optInt</span><span class="o">.</span><span class="na">get</span><span class="o">());</span>
+
+<span class="c1">// console</span>
+<span class="n">optStr</span> <span class="o">:</span> <span class="n">abcde</span>
+<span class="n">optInt</span> <span class="o">:</span> <span class="mi">5</span> <span class="c1">// abcde = 5</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h3 id="-optionalof">▶ <code class="highlighter-rouge">Optional.of("")</code></h3>
+<h6 id="-int-result1에-optionalof로-123-넣기">▷ <code class="highlighter-rouge">int result1</code>에 <code class="highlighter-rouge">Optional.of()</code>로 <code class="highlighter-rouge">"123"</code> 넣기</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">result1</span> <span class="o">=</span> <span class="n">Optional</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">"123"</span><span class="o">)</span>
+<span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="n">x</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="c1">// true, 123 = 3 &gt; 0</span>
+<span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="nl">Integer:</span><span class="o">:</span><span class="n">parseInt</span><span class="o">).</span><span class="na">get</span><span class="o">();</span> <span class="c1">// "123" → 123</span>
+
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"result1 : "</span> <span class="o">+</span> <span class="n">result1</span><span class="o">);</span>
+
+<span class="c1">// console</span>
+<span class="n">result1</span> <span class="o">:</span> <span class="mi">123</span>
+</code></pre></div></div>
+
+<h6 id="-int-result2에-optionalof로--넣기">▷ <code class="highlighter-rouge">int result2</code>에 <code class="highlighter-rouge">Optional.of()</code>로 <code class="highlighter-rouge">""</code> 넣기</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">result2</span> <span class="o">=</span> <span class="n">Optional</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">""</span><span class="o">)</span>
+<span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="n">x</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="c1">// false, "" = 0</span>
+<span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="nl">Integer:</span><span class="o">:</span><span class="n">parseInt</span><span class="o">).</span><span class="na">orElse</span><span class="o">(-</span><span class="mi">1</span><span class="o">);</span> <span class="c1">// "" 일 때, -1 출력</span>
+
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"result2 : "</span> <span class="o">+</span> <span class="n">result2</span><span class="o">);</span>
+
+<span class="c1">// console</span>
+<span class="n">result2</span> <span class="o">:</span> <span class="o">-</span><span class="mi">1</span>
+</code></pre></div></div>
+
+<h6 id="-optional에-값이-있으면-x를-result3으로-출력">▷ <code class="highlighter-rouge">Optional</code>에 값이 있으면 <code class="highlighter-rouge">x</code>를 <code class="highlighter-rouge">result3</code>으로 출력</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Optional</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">"456"</span><span class="o">)</span> <span class="c1">// Opthional에 "456" 입력</span>
+<span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="nl">Integer:</span><span class="o">:</span><span class="n">parseInt</span><span class="o">)</span> <span class="c1">// "456" → 456</span>
+<span class="o">.</span><span class="na">ifPresent</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"result3 : %d%n"</span><span class="o">,</span><span class="n">x</span><span class="o">));</span> <span class="c1">// true → 작업 수행 → result3 출력</span>
+
+<span class="c1">// console</span>
+<span class="n">result3</span> <span class="o">:</span> <span class="mi">456</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h3 id="-optionalintof0-vs-optionalintempty">▶ <code class="highlighter-rouge">OptionalInt.of(0);</code> vs <code class="highlighter-rouge">OptionalInt.empty();</code></h3>
+<h6 id="-optionalintof0-vs-optionalintempty-생성">▷ <code class="highlighter-rouge">OptionalInt.of(0);</code> vs <code class="highlighter-rouge">OptionalInt.empty();</code> 생성</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">OptionalInt</span> <span class="n">optInt1</span>  <span class="o">=</span> <span class="n">OptionalInt</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span> <span class="c1">// 0을 저장</span>
+<span class="n">OptionalInt</span> <span class="n">optInt2</span>  <span class="o">=</span> <span class="n">OptionalInt</span><span class="o">.</span><span class="na">empty</span><span class="o">();</span> <span class="c1">// 빈 객체를 생성</span>
+</code></pre></div></div>
+
+<h6 id="--ispresent">▷  isPresent()</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">optInt1</span><span class="o">.</span><span class="na">isPresent</span><span class="o">());</span> <span class="c1">// true</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">optInt2</span><span class="o">.</span><span class="na">isPresent</span><span class="o">());</span> <span class="c1">// false</span>
+</code></pre></div></div>
+
+<h6 id="-getasint">▷ getAsInt()</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">optInt1</span><span class="o">.</span><span class="na">getAsInt</span><span class="o">());</span> <span class="c1">// 0</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">optInt2</span><span class="o">.</span><span class="na">getAsInt</span><span class="o">());</span> <span class="c1">// NoSuchElementException</span>
+</code></pre></div></div>
+
+<h6 id="--equals">▷  equals()</h6>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"optInt1 : "</span> <span class="o">+</span> <span class="n">optInt1</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"optInt2 : "</span> <span class="o">+</span> <span class="n">optInt2</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"optInt1.equals(optInt2)? "</span> <span class="o">+</span> <span class="n">optInt1</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">optInt2</span><span class="o">));</span>
+
+<span class="c1">// console</span>
+<span class="n">optInt1</span> <span class="o">:</span> <span class="n">OptionalInt</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span>
+<span class="n">optInt2</span> <span class="o">:</span> <span class="n">OptionalInt</span><span class="o">.</span><span class="na">empty</span>
+<span class="n">optInt1</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">optInt2</span><span class="o">)?</span> <span class="kc">false</span>
+</code></pre></div></div>
+
+
+                </div>
+            </section>
+
+            <!-- Email subscribe form at the bottom of the page
+            
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">Subscribe to 100'Log</h3>
+                    <p>Get the latest posts delivered right to your inbox</p>
+                    <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+
+                </section>
+            
+             -->
+
+            <footer class="post-full-footer">
+                <!-- Everything inside the #author tags pulls data from the author -->
+                <!-- #author-->
+                
+                    
+                        <section class="author-card">
+                            
+                                <img class="author-profile-image" src="/assets/built/images/author-logo.png" alt="JungRan-Baek" />
+                            
+                            <section class="author-card-content">
+                                <h4 class="author-card-name"><a href="/author/JungRan-Baek">JungRan-Baek</a></h4>
+                                
+                                    <p></p>
+                                
+                            </section>
+                        </section>
+                        <div class="post-full-footer-right">
+                            <a class="author-card-button" href="/author/JungRan-Baek">Read More</a>
+                        </div>
+                    
+                
+                <!-- /author  -->
+            </footer>
+
+            <!-- If you use Disqus comments, just uncomment this block.
+            The only thing you need to change is "test-apkdzgmqhj" - which
+            should be replaced with your own Disqus site-id. -->
+            
+                <section class="post-full-comments">
+                    <div id="disqus_thread"></div>
+                    <script>
+                        var disqus_config = function () {
+                            this.page.url = 'https://100jran.github.io/14cornerstoneJava11';
+                            this.page.identifier = '/14cornerstoneJava11';
+                            this.page.title = 'Ch14-35~39. Optional< T >';
+                        };
+                        (function() {
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://100jran-github-io.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                </section>
+            
+
+        </article>
+
+    </div>
+</main>
+
+<!-- Links to Previous/Next posts -->
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+                
+                
+                
+                
+                    <article class="read-next-card"
+                        
+                            style="background-image: url(/assets/built/images/back.jpg)"
+                        
+                    >
+                        <header class="read-next-card-header">
+                            <small class="read-next-card-header-sitetitle">&mdash; 100'Log &mdash;</small>
+                            
+                                <h3 class="read-next-card-header-title"><a href="/tag/javajungsuk/">Javajungsuk</a></h3>
+                            
+                        </header>
+                        <div class="read-next-divider">cd<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+</div>
+                        <div class="read-next-card-content">
+                            <ul>
+                                
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/14cornerstoneJava14">Ch14-50~55. 스트림 그룹화...</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/14cornerstoneJava13">Ch14-45~49. collect()...</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                            <li><a href="/14cornerstoneJava12">Ch14-40~44. 스트림 최종연산</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
+                                        
+                                        
+                                    
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                                  
+                                
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="/tag/javajungsuk/">
+                                
+                                    See all 163 posts  →
+                                
+                            </a>
+                        </footer>
+                    </article>
+                
+            
+
+            <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/14cornerstoneJava12">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/thecornerstoneofjavaCh14.jpg)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/14cornerstoneJava12">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Javajungsuk</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">Ch14-40~44. 스트림 최종연산</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p></p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/author-logo.png" alt="JungRan-Baek" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/JungRan-Baek/">JungRan-Baek</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+            <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/14cornerstoneJava10">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/thecornerstoneofjavaCh14.jpg)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/14cornerstoneJava10">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Javajungsuk</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">Ch14-30~34. 스트림 중간연산</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p></p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/author-logo.png" alt="JungRan-Baek" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/JungRan-Baek/">JungRan-Baek</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
+            
+
+        </div>
+    </div>
+</aside>
+
+<!-- Floating header which appears on-scroll, included from includes/floating-header.hbs -->
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="https://100jran.github.io/">
+            
+            <span>100'Log</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">Ch14-35~39. Optional< T ></div>
+    <div class="floating-header-share">
+        <div class="floating-header-share-label">Share this <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M7.5 15.5V4a1.5 1.5 0 1 1 3 0v4.5h2a1 1 0 0 1 1 1h2a1 1 0 0 1 1 1H18a1.5 1.5 0 0 1 1.5 1.5v3.099c0 .929-.13 1.854-.385 2.748L17.5 23.5h-9c-1.5-2-5.417-8.673-5.417-8.673a1.2 1.2 0 0 1 1.76-1.605L7.5 15.5zm6-6v2m-3-3.5v3.5m6-1v2"/>
+</svg>
+</div>
+        <a class="floating-header-share-tw" href="https://twitter.com/share?text=Ch14-35~39.+Optional%3C+T+%3E&amp;url=https://100jran.github.io14cornerstoneJava11"
+            onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+
+        </a>
+        <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://100jran.github.io14cornerstoneJava11"
+            onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+
+        </a>
+    </div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
+
+
+<!-- /post -->
+
+<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
+
+
+        <!-- Previous/next page links - displayed on every page -->
+        
+
+        <!-- The footer at the very bottom of the screen -->
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="https://100jran.github.io/">100'Log</a> &copy; 2021</section>
+                <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> &
+                    <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> using
+                    <a href="https://github.com/jekyller/jasper2" target="_blank" rel="noopener">Jasper2</a></section>
+                <nav class="site-footer-nav">
+                    <a href="/">Latest Posts</a>
+                    
+                    
+                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- The big email search modal content -->
+    
+        <div id="subscribe" class="subscribe-overlay">
+            <a class="subscribe-overlay-close" href="#"></a>
+            <div class="subscribe-overlay-content">
+                
+                <h1 class="subscribe-overlay-title">Search 100'Log</h1>
+                <p class="subscribe-overlay-description">
+                    lunr.js를 이용한 posts 검색 </p>
+                <span id="searchform" method="post" action="/subscribe/" class="">
+    <input class="confirm" type="hidden" name="confirm"  />
+    <input class="location" type="hidden" name="location"  />
+    <input class="referrer" type="hidden" name="referrer"  />
+
+    <div class="form-group">
+        <input class="subscribe-email" onkeyup="myFunc()"
+               id="searchtext" type="text" name="searchtext"
+               placeholder="Search..." />
+    </div>
+    <script type="text/javascript">
+        function myFunc() {
+            if(event.keyCode == 13) {
+                var url = encodeURIComponent($("#searchtext").val());
+                location.href = "/search.html?query=" + url;
+            }
+        }
+    </script>
+</span>
+
+            </div>
+        </div>
+    
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
+
+
+    <!-- Paginator increased to "infinit" in _config.yml -->
+    <!-- if paginator.posts  -->
+    <!-- <script>
+        var maxPages = parseInt('');
+    </script>
+    <script src="/assets/js/infinitescroll.js"></script> -->
+    <!-- /endif -->
+
+    
+
+
+    <!-- Add Google Analytics  -->
+    <!-- Google Analytics Tracking code -->
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+
+ </script>
+
+
+    <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
+    
+        <script>
+
+// NOTE: Scroll performance is poor in Safari
+// - this appears to be due to the events firing much more slowly in Safari.
+//   Dropping the scroll event and using only a raf loop results in smoother
+//   scrolling but continuous processing even when not scrolling
+$(document).ready(function () {
+    // Start fitVids
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    // End fitVids
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        // show/hide floating header
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+
+    
+
+    <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    <!-- ghost_foot -->
+
+</body>
+</html>
