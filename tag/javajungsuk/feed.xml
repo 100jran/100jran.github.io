@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator>
   <link href="https://100jran.github.io/tag/javajungsuk/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://100jran.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-08-27T00:40:42+09:00</updated>
+  <updated>2021-09-13T19:14:18+09:00</updated>
   <id>https://100jran.github.io/tag/javajungsuk/feed.xml</id>
 
   
@@ -755,18 +755,18 @@
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h2 id=&quot;ch14---55-스트림의-변환&quot;&gt;Ch14 - 55. 스트림의 변환&lt;/h2&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava14/img.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava14/img_1.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava14/img_2.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava14/img_3.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava14/img_4.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava14/img_5.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava14/img_6.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava14/img_7.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava14/img_8.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava14/img_9.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava14/img_10.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava14/img_11.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;</content>
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava14/img.png&quot; width=&quot;80%&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava14/img_1.png&quot; width=&quot;80%&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava14/img_2.png&quot; width=&quot;80%&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava14/img_3.png&quot; width=&quot;80%&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava14/img_4.png&quot; width=&quot;80%&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava14/img_5.png&quot; width=&quot;80%&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava14/img_6.png&quot; width=&quot;80%&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava14/img_7.png&quot; width=&quot;80%&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava14/img_8.png&quot; width=&quot;80%&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava14/img_9.png&quot; width=&quot;80%&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava14/img_10.png&quot; width=&quot;80%&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava14/img_11.png&quot; width=&quot;80%&quot; /&gt;&lt;br /&gt;&lt;/p&gt;</content>
 
       
       
@@ -1382,11 +1382,11 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava11/img.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava11/img.png&quot; width=&quot;80%&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Optional&amp;lt;T&amp;gt;&lt;/code&gt; 사용O&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava11/img_1.png&quot; width=&quot;60%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava11/img_1.png&quot; width=&quot;60%&quot; /&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 2&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -1400,13 +1400,13 @@
 &lt;span class=&quot;n&quot;&gt;Optional&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;optVal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Optional&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava11/img_4.png&quot; width=&quot;60%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava11/img_4.png&quot; width=&quot;60%&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 위의 두 문장을 줄여 한 문장으로 생성&lt;/span&gt;
 &lt;span class=&quot;err&quot;&gt;▷&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Optional&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;optVal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Optional&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;abc&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava11/img_2.png&quot; width=&quot;60%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava11/img_2.png&quot; width=&quot;60%&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h6 id=&quot;-optionalstring에-null-넣기&quot;&gt;▷ &lt;code class=&quot;highlighter-rouge&quot;&gt;Optional&amp;lt;String&amp;gt;&lt;/code&gt;에 &lt;code class=&quot;highlighter-rouge&quot;&gt;null&lt;/code&gt; 넣기&lt;/h6&gt;
 &lt;h6 id=&quot;-ofnullable-사용하여-넣어야-함&quot;&gt;▷ &lt;code class=&quot;highlighter-rouge&quot;&gt;ofNullable()&lt;/code&gt; 사용하여 넣어야 함&lt;/h6&gt;
@@ -1414,7 +1414,7 @@
   &lt;span class=&quot;n&quot;&gt;Optional&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;optVal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Optional&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// ERROR!, NullPointException 발생&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava11/img_3.png&quot; width=&quot;60%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava11/img_3.png&quot; width=&quot;60%&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h3 id=&quot;-null-대신-optionalt-객체-사용하기&quot;&gt;▶ &lt;code class=&quot;highlighter-rouge&quot;&gt;null&lt;/code&gt; 대신 &lt;code class=&quot;highlighter-rouge&quot;&gt;Optional&amp;lt;T&amp;gt;&lt;/code&gt; 객체 사용하기&lt;/h3&gt;
@@ -1893,10 +1893,10 @@
 
 &lt;h3 id=&quot;-map-vs-flatmap&quot;&gt;▶ &lt;code class=&quot;highlighter-rouge&quot;&gt;map()&lt;/code&gt; vs &lt;code class=&quot;highlighter-rouge&quot;&gt;flatMap()&lt;/code&gt;&lt;/h3&gt;
 &lt;h6 id=&quot;-map-1&quot;&gt;▷ &lt;code class=&quot;highlighter-rouge&quot;&gt;map()&lt;/code&gt;&lt;/h6&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava10/img.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava10/img.png&quot; width=&quot;100%&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h6 id=&quot;-flatmap-1&quot;&gt;▷ &lt;code class=&quot;highlighter-rouge&quot;&gt;flatMap()&lt;/code&gt;&lt;/h6&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava10/img_1.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava10/img_1.png&quot; width=&quot;100%&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 5&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -2406,7 +2406,7 @@
 &lt;h3 id=&quot;-스트림이-제공하는-기능&quot;&gt;▶ 스트림이 제공하는 기능&lt;/h3&gt;
 &lt;h6 id=&quot;-중간-연산--연산-결과가-스트림o-0--n번-가능&quot;&gt;▷ 중간 연산 : 연산 결과가 스트림O, 0 ~ n번 가능&lt;/h6&gt;
 &lt;h6 id=&quot;-최종-연산--연산-결과가-스트림x-1번만-가능스트림의-요소를-소모해서&quot;&gt;▷ 최종 연산 : 연산 결과가 스트림X, 1번만 가능(스트림의 요소를 소모해서)&lt;/h6&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava6/img_2.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava6/img_2.png&quot; width=&quot;100%&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;a id=&quot;Verse 2&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -3029,7 +3029,7 @@
   &lt;li&gt;&lt;em&gt;컬렉션의 List, Set, Map를 Stream에 담을 수 있게 됨&lt;/em&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava6/img.png&quot; width=&quot;80%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava6/img.png&quot; width=&quot;80%&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h3 id=&quot;-스트림으로-변환&quot;&gt;▶ 스트림으로 변환&lt;/h3&gt;
@@ -3060,8 +3060,8 @@
 &lt;h3 id=&quot;-스트림이-제공하는-기능&quot;&gt;▶ 스트림이 제공하는 기능&lt;/h3&gt;
 &lt;h6 id=&quot;-중간-연산--연산-결과가-스트림o-0--n번-가능&quot;&gt;▷ 중간 연산 : 연산 결과가 스트림O, 0 ~ n번 가능&lt;/h6&gt;
 &lt;h6 id=&quot;-최종-연산--연산-결과가-스트림x-1번만-가능스트림의-요소를-소모해서&quot;&gt;▷ 최종 연산 : 연산 결과가 스트림X, 1번만 가능(스트림의 요소를 소모해서)&lt;/h6&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava6/img_1.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;
-&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava6/img_2.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava6/img_1.png&quot; width=&quot;100%&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava6/img_2.png&quot; width=&quot;100%&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h6 id=&quot;-예시&quot;&gt;▷ 예시&lt;/h6&gt;
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// ① 스트림 생성&lt;/span&gt;
@@ -3340,7 +3340,7 @@
 &lt;span class=&quot;c1&quot;&gt;// console&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;baek&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;MyClass&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;57&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fa26b7&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava5/img.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava5/img.png&quot; width=&quot;100%&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h6 id=&quot;-myclass-생성자가-매개변수를-가짐&quot;&gt;▷ MyClass 생성자가 매개변수를 가짐&lt;/h6&gt;
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyClass&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
@@ -3352,7 +3352,7 @@
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava5/img_1.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava5/img_1.png&quot; width=&quot;100%&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h6 id=&quot;-supplier를-function으로-변경&quot;&gt;▷ Supplier를 Function으로 변경&lt;/h6&gt;
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
@@ -3378,10 +3378,10 @@
 &lt;span class=&quot;c1&quot;&gt;// console&lt;/span&gt;
 &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava5/img_2.png&quot; width=&quot;100%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava5/img_2.png&quot; width=&quot;100%&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h6 id=&quot;-배열-생성&quot;&gt;▷ 배열 생성&lt;/h6&gt;
-&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava5/img_3.png&quot; width=&quot;50%&quot; align=&quot;left&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;assets/built/postsImages/TheCornerstoneOfJava/2021-06-22-14cornerstoneJava5/img_3.png&quot; width=&quot;50%&quot; /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;Function&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 람다식&lt;/span&gt;
